@@ -1,0 +1,51 @@
+stages:
+  - build
+  - test
+  - deploy
+# Job: Build
+# Installs npm packages, transpiles ES6 -> ES5
+# Passes node_modules/, dist/ onto next steps using artifacts
+build_staging:
+  stage: build
+  script:
+    - cnpm install
+    - cp -f src/dev-config.js src/config.js
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+  only:
+    - dev
+  tags:
+    - offpay-admin
+build_prod:
+  stage: build
+  script:
+    - cnpm install
+    - cp -f src/prod-config.js src/config.js
+    - npm run build
+    - cp -rT dist ~/admin
+  only:
+    - master
+  tags:
+    - ssh
+
+# Job: Test
+# Run tests against our application
+test:
+  stage: test
+  script:
+    - npm run test
+  tags:
+    - offpay-admin
+
+# Job: Deploy
+# Copy dist files into web folder
+deploy_staging:
+  stage: deploy
+  script:
+    - cp -rT dist /var/www/admin/dist
+  only:
+   - dev
+  tags:
+    - offpay-admin

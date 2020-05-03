@@ -1,0 +1,5412 @@
+[
+    {
+        "name": "\u91d1\u5cb8\u7269\u6d41",
+        "value": "\u91d1\u5cb8\u7269\u6d41",
+        "short": "jinan"
+    },
+    {
+        "name": "\u6d77\u5e26\u5b9d",
+        "value": "\u6d77\u5e26\u5b9d",
+        "short": "haidaibao"
+    },
+    {
+        "name": "\u6fb3\u901a\u534e\u4eba\u7269\u6d41",
+        "value": "\u6fb3\u901a\u534e\u4eba\u7269\u6d41",
+        "short": "cllexpress"
+    },
+    {
+        "name": "\u6591\u9a6c\u7269\u6d41",
+        "value": "\u6591\u9a6c\u7269\u6d41",
+        "short": "banma"
+    },
+    {
+        "name": "\u4fe1\u4e30\u7269\u6d41",
+        "value": "\u4fe1\u4e30\u7269\u6d41",
+        "short": "xinfengwuliu"
+    },
+    {
+        "name": "\u5fb7\u56fd(Deutsche",
+        "value": "\u5fb7\u56fd(Deutsche",
+        "short": "Post)"
+    },
+    {
+        "name": "\u82cf\u5b81\u8ba2\u5355",
+        "value": "\u82cf\u5b81\u8ba2\u5355",
+        "short": "suningorder"
+    },
+    {
+        "name": "\u5b9c\u9001\u7269\u6d41",
+        "value": "\u5b9c\u9001\u7269\u6d41",
+        "short": "yiex"
+    },
+    {
+        "name": "AOL\u6fb3\u901a\u901f\u9012",
+        "value": "AOL\u6fb3\u901a\u901f\u9012",
+        "short": "aolau"
+    },
+    {
+        "name": "TRAKPAK",
+        "value": "TRAKPAK",
+        "short": "trakpak"
+    },
+    {
+        "name": "GTS\u5feb\u9012",
+        "value": "GTS\u5feb\u9012",
+        "short": "gts"
+    },
+    {
+        "name": "\u901a\u8fbe\u5174\u7269\u6d41",
+        "value": "\u901a\u8fbe\u5174\u7269\u6d41",
+        "short": "tongdaxing"
+    },
+    {
+        "name": "\u4e2d\u56fd\u9999\u6e2f(HongKong",
+        "value": "\u4e2d\u56fd\u9999\u6e2f(HongKong",
+        "short": "Post)\u82f1\u6587"
+    },
+    {
+        "name": "\u9a8f\u4e30\u56fd\u9645\u901f\u9012",
+        "value": "\u9a8f\u4e30\u56fd\u9645\u901f\u9012",
+        "short": "junfengguoji"
+    },
+    {
+        "name": "\u4fc4\u7f57\u65af\u90ae\u653f(Russian",
+        "value": "\u4fc4\u7f57\u65af\u90ae\u653f(Russian",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4e91\u8fbe\u901a",
+        "value": "\u4e91\u8fbe\u901a",
+        "short": "ydglobe"
+    },
+    {
+        "name": "EU-EXPRESS",
+        "value": "EU-EXPRESS",
+        "short": "euexpress"
+    },
+    {
+        "name": "\u5e7f\u5dde\u6d77\u5173",
+        "value": "\u5e7f\u5dde\u6d77\u5173",
+        "short": "gzcustoms"
+    },
+    {
+        "name": "\u676d\u5dde\u6d77\u5173",
+        "value": "\u676d\u5dde\u6d77\u5173",
+        "short": "hzcustoms"
+    },
+    {
+        "name": "\u5357\u4eac\u6d77\u5173",
+        "value": "\u5357\u4eac\u6d77\u5173",
+        "short": "njcustoms"
+    },
+    {
+        "name": "\u5317\u4eac\u6d77\u5173",
+        "value": "\u5317\u4eac\u6d77\u5173",
+        "short": "bjcustoms"
+    },
+    {
+        "name": "\u7f8e\u897f\u5feb\u9012",
+        "value": "\u7f8e\u897f\u5feb\u9012",
+        "short": "meixi"
+    },
+    {
+        "name": "\u4e00\u7ad9\u901a\u5feb\u9012",
+        "value": "\u4e00\u7ad9\u901a\u5feb\u9012",
+        "short": "zgyzt"
+    },
+    {
+        "name": "\u6613\u8054\u901a\u8fbe",
+        "value": "\u6613\u8054\u901a\u8fbe",
+        "short": "el56"
+    },
+    {
+        "name": "\u9a7f\u626c\u56fd\u9645\u901f\u8fd0",
+        "value": "\u9a7f\u626c\u56fd\u9645\u901f\u8fd0",
+        "short": "iyoungspeed"
+    },
+    {
+        "name": "\u9014\u9c9c\u7269\u6d41",
+        "value": "\u9014\u9c9c\u7269\u6d41",
+        "short": "ibenben"
+    },
+    {
+        "name": "\u8c4c\u8c46\u7269\u6d41",
+        "value": "\u8c4c\u8c46\u7269\u6d41",
+        "short": "wandougongzhu"
+    },
+    {
+        "name": "\u54e5\u58eb\u4f20\u5947\u901f\u9012",
+        "value": "\u54e5\u58eb\u4f20\u5947\u901f\u9012",
+        "short": "gscq365"
+    },
+    {
+        "name": "\u5fc3\u6021\u7269\u6d41",
+        "value": "\u5fc3\u6021\u7269\u6d41",
+        "short": "alog"
+    },
+    {
+        "name": "ME\u7269\u6d41",
+        "value": "ME\u7269\u6d41",
+        "short": "macroexpressco"
+    },
+    {
+        "name": "\u75af\u72c2\u5feb\u9012",
+        "value": "\u75af\u72c2\u5feb\u9012",
+        "short": "crazyexpress"
+    },
+    {
+        "name": "\u97e9\u56fd\u90ae\u653f\u97e9\u6587",
+        "value": "\u97e9\u56fd\u90ae\u653f\u97e9\u6587",
+        "short": "koreapostkr"
+    },
+    {
+        "name": "\u5168\u901f\u7269\u6d41",
+        "value": "\u5168\u901f\u7269\u6d41",
+        "short": "quansu"
+    },
+    {
+        "name": "\u65b0\u6770\u7269\u6d41",
+        "value": "\u65b0\u6770\u7269\u6d41",
+        "short": "sunjex"
+    },
+    {
+        "name": "\u9c81\u901a\u5feb\u8fd0",
+        "value": "\u9c81\u901a\u5feb\u8fd0",
+        "short": "lutong"
+    },
+    {
+        "name": "\u5b89\u7684\u5feb\u9012",
+        "value": "\u5b89\u7684\u5feb\u9012",
+        "short": "gda"
+    },
+    {
+        "name": "\u516b\u8fbe\u901a",
+        "value": "\u516b\u8fbe\u901a",
+        "short": "bdatong"
+    },
+    {
+        "name": "\u7f8e\u56fd\u7533\u901a",
+        "value": "\u7f8e\u56fd\u7533\u901a",
+        "short": "stoexpress"
+    },
+    {
+        "name": "\u6cd5\u56fd\u5c0f\u5305\uff08colissimo\uff09",
+        "value": "\u6cd5\u56fd\u5c0f\u5305\uff08colissimo\uff09",
+        "short": "colissimo"
+    },
+    {
+        "name": "\u6cdb\u6377\u56fd\u9645\u901f\u9012",
+        "value": "\u6cdb\u6377\u56fd\u9645\u901f\u9012",
+        "short": "epanex"
+    },
+    {
+        "name": "\u4e2d\u8fdce\u73af\u7403",
+        "value": "\u4e2d\u8fdce\u73af\u7403",
+        "short": "cosco"
+    },
+    {
+        "name": "\u987a\u8fbe\u5feb\u9012",
+        "value": "\u987a\u8fbe\u5feb\u9012",
+        "short": "sundarexpress"
+    },
+    {
+        "name": "\u6377\u8bb0\u65b9\u821f",
+        "value": "\u6377\u8bb0\u65b9\u821f",
+        "short": "ajexpress"
+    },
+    {
+        "name": "\u65b9\u821f\u901f\u9012",
+        "value": "\u65b9\u821f\u901f\u9012",
+        "short": "arkexpress"
+    },
+    {
+        "name": "\u660e\u5927\u5feb\u9012",
+        "value": "\u660e\u5927\u5feb\u9012",
+        "short": "adaexpress"
+    },
+    {
+        "name": "\u957f\u6c5f\u56fd\u9645\u901f\u9012",
+        "value": "\u957f\u6c5f\u56fd\u9645\u901f\u9012",
+        "short": "changjiang"
+    },
+    {
+        "name": "PCA",
+        "value": "PCA",
+        "short": "Express"
+    },
+    {
+        "name": "\u6d0b\u5305\u88f9",
+        "value": "\u6d0b\u5305\u88f9",
+        "short": "yangbaoguo"
+    },
+    {
+        "name": "\u4f18\u8054\u5409\u8fd0",
+        "value": "\u4f18\u8054\u5409\u8fd0",
+        "short": "uluckex"
+    },
+    {
+        "name": "\u5fb7\u8c6a\u9a7f",
+        "value": "\u5fb7\u8c6a\u9a7f",
+        "short": "dehaoyi"
+    },
+    {
+        "name": "\u5821\u6615\u5fb7\u901f\u9012",
+        "value": "\u5821\u6615\u5fb7\u901f\u9012",
+        "short": "bosind"
+    },
+    {
+        "name": "\u963f\u6839\u5ef7(Correo",
+        "value": "\u963f\u6839\u5ef7(Correo",
+        "short": "Argentina)"
+    },
+    {
+        "name": "\u79d8\u9c81(SERPOST)",
+        "value": "\u79d8\u9c81(SERPOST)",
+        "short": "peru"
+    },
+    {
+        "name": "\u54c8\u8428\u514b\u65af\u5766(Kazpost)",
+        "value": "\u54c8\u8428\u514b\u65af\u5766(Kazpost)",
+        "short": "kazpost"
+    },
+    {
+        "name": "\u5e7f\u901a\u901f\u9012",
+        "value": "\u5e7f\u901a\u901f\u9012",
+        "short": "gtongsudi"
+    },
+    {
+        "name": "\u4e1c\u701a\u7269\u6d41",
+        "value": "\u4e1c\u701a\u7269\u6d41",
+        "short": "donghanwl"
+    },
+    {
+        "name": "rpx",
+        "value": "rpx",
+        "short": "rpx"
+    },
+    {
+        "name": "\u9ed1\u732b\u96c5\u739b\u591a",
+        "value": "\u9ed1\u732b\u96c5\u739b\u591a",
+        "short": "yamato"
+    },
+    {
+        "name": "\u534e\u901a\u5feb\u8fd0",
+        "value": "\u534e\u901a\u5feb\u8fd0",
+        "short": "htongexpress"
+    },
+    {
+        "name": "\u5409\u5c14\u5409\u65af\u65af\u5766(Kyrgyz",
+        "value": "\u5409\u5c14\u5409\u65af\u65af\u5766(Kyrgyz",
+        "short": "Post)"
+    },
+    {
+        "name": "\u62c9\u8131\u7ef4\u4e9a(Latvijas",
+        "value": "\u62c9\u8131\u7ef4\u4e9a(Latvijas",
+        "short": "Pasts)"
+    },
+    {
+        "name": "\u9ece\u5df4\u5ae9(Liban",
+        "value": "\u9ece\u5df4\u5ae9(Liban",
+        "short": "Post)"
+    },
+    {
+        "name": "\u7acb\u9676\u5b9b\uff08Lietuvos",
+        "value": "\u7acb\u9676\u5b9b\uff08Lietuvos",
+        "short": "pa?tas\uff09"
+    },
+    {
+        "name": "\u9a6c\u5c14\u4ee3\u592b(Maldives",
+        "value": "\u9a6c\u5c14\u4ee3\u592b(Maldives",
+        "short": "Post)"
+    },
+    {
+        "name": "\u9a6c\u8033\u4ed6\uff08Malta",
+        "value": "\u9a6c\u8033\u4ed6\uff08Malta",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u9a6c\u5176\u987f(Macedonian",
+        "value": "\u9a6c\u5176\u987f(Macedonian",
+        "short": "Post)"
+    },
+    {
+        "name": "\u65b0\u897f\u5170\uff08New",
+        "value": "\u65b0\u897f\u5170\uff08New",
+        "short": "Zealand"
+    },
+    {
+        "name": "\u6469\u5c14\u591a\u74e6(Posta",
+        "value": "\u6469\u5c14\u591a\u74e6(Posta",
+        "short": "Moldovei)"
+    },
+    {
+        "name": "\u585e\u5c14\u7ef4\u4e9a(PE",
+        "value": "\u585e\u5c14\u7ef4\u4e9a(PE",
+        "short": "Post"
+    },
+    {
+        "name": "\u585e\u6d66\u8def\u65af(Cyprus",
+        "value": "\u585e\u6d66\u8def\u65af(Cyprus",
+        "short": "Post)"
+    },
+    {
+        "name": "\u7a81\u5c3c\u65afEMS(Rapid-Poste)",
+        "value": "\u7a81\u5c3c\u65afEMS(Rapid-Poste)",
+        "short": "tunisia"
+    },
+    {
+        "name": "\u4e4c\u5179\u522b\u514b\u65af\u5766(Post",
+        "value": "\u4e4c\u5179\u522b\u514b\u65af\u5766(Post",
+        "short": "of"
+    },
+    {
+        "name": "\u65b0\u5580\u91cc\u591a\u5c3c\u4e9a[\u6cd5\u56fd](New",
+        "value": "\u65b0\u5580\u91cc\u591a\u5c3c\u4e9a[\u6cd5\u56fd](New",
+        "short": "Caledonia)"
+    },
+    {
+        "name": "\u53d9\u5229\u4e9a(Syrian",
+        "value": "\u53d9\u5229\u4e9a(Syrian",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4e9a\u7f8e\u5c3c\u4e9a(Haypost-Armenian",
+        "value": "\u4e9a\u7f8e\u5c3c\u4e9a(Haypost-Armenian",
+        "short": "Postal)"
+    },
+    {
+        "name": "\u4e5f\u95e8(Yemen",
+        "value": "\u4e5f\u95e8(Yemen",
+        "short": "Post)"
+    },
+    {
+        "name": "\u5370\u5ea6(India",
+        "value": "\u5370\u5ea6(India",
+        "short": "Post)"
+    },
+    {
+        "name": "\u82f1\u56fd(\u5927\u5305,EMS)",
+        "value": "\u82f1\u56fd(\u5927\u5305,EMS)",
+        "short": "england"
+    },
+    {
+        "name": "\u7ea6\u65e6(Jordan",
+        "value": "\u7ea6\u65e6(Jordan",
+        "short": "Post)"
+    },
+    {
+        "name": "\u8d8a\u5357\u5c0f\u5305(Vietnam",
+        "value": "\u8d8a\u5357\u5c0f\u5305(Vietnam",
+        "short": "Posts)"
+    },
+    {
+        "name": "\u9ed1\u5c71(Po?ta",
+        "value": "\u9ed1\u5c71(Po?ta",
+        "short": "Crne"
+    },
+    {
+        "name": "\u54e5\u65af\u8fbe\u9ece\u52a0(Correos",
+        "value": "\u54e5\u65af\u8fbe\u9ece\u52a0(Correos",
+        "short": "de"
+    },
+    {
+        "name": "EFS",
+        "value": "EFS",
+        "short": "Post\uff08\u5e73\u5b89\u5feb\u9012\uff09"
+    },
+    {
+        "name": "TNT",
+        "value": "TNT",
+        "short": "Post"
+    },
+    {
+        "name": "\u7acb\u767d\u5b9d\u51ef\u7269\u6d41",
+        "value": "\u7acb\u767d\u5b9d\u51ef\u7269\u6d41",
+        "short": "lbbk"
+    },
+    {
+        "name": "\u5308\u7259\u5229\uff08Magyar",
+        "value": "\u5308\u7259\u5229\uff08Magyar",
+        "short": "Posta\uff09"
+    },
+    {
+        "name": "\u4e2d\u56fd\u6fb3\u95e8(Macau",
+        "value": "\u4e2d\u56fd\u6fb3\u95e8(Macau",
+        "short": "Post)"
+    },
+    {
+        "name": "\u897f\u5b89\u559c\u6765\u5feb\u9012",
+        "value": "\u897f\u5b89\u559c\u6765\u5feb\u9012",
+        "short": "xilaikd"
+    },
+    {
+        "name": "\u97e9\u6da6",
+        "value": "\u97e9\u6da6",
+        "short": "hanrun"
+    },
+    {
+        "name": "\u683c\u9675\u5170[\u4e39\u9ea6]\uff08TELE",
+        "value": "\u683c\u9675\u5170[\u4e39\u9ea6]\uff08TELE",
+        "short": "Greenland"
+    },
+    {
+        "name": "\u83f2\u5f8b\u5bbe\uff08Philippine",
+        "value": "\u83f2\u5f8b\u5bbe\uff08Philippine",
+        "short": "Postal\uff09"
+    },
+    {
+        "name": "\u5384\u74dc\u591a\u5c14(Correos",
+        "value": "\u5384\u74dc\u591a\u5c14(Correos",
+        "short": "del"
+    },
+    {
+        "name": "\u51b0\u5c9b(Iceland",
+        "value": "\u51b0\u5c9b(Iceland",
+        "short": "Post)"
+    },
+    {
+        "name": "\u6ce2\u5170\u5c0f\u5305(Poczta",
+        "value": "\u6ce2\u5170\u5c0f\u5305(Poczta",
+        "short": "Polska)"
+    },
+    {
+        "name": "\u963f\u5c14\u5df4\u5c3c\u4e9a(Posta",
+        "value": "\u963f\u5c14\u5df4\u5c3c\u4e9a(Posta",
+        "short": "shqipatre)"
+    },
+    {
+        "name": "\u57c3\u53ca\uff08Egypt",
+        "value": "\u57c3\u53ca\uff08Egypt",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u7231\u6c99\u5c3c\u4e9a(Eesti",
+        "value": "\u7231\u6c99\u5c3c\u4e9a(Eesti",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4e91\u8c79\u56fd\u9645\u8d27\u8fd0",
+        "value": "\u4e91\u8c79\u56fd\u9645\u8d27\u8fd0",
+        "short": "leopard"
+    },
+    {
+        "name": "\u4e2d\u5916\u8fd0\u7a7a\u8fd0",
+        "value": "\u4e2d\u5916\u8fd0\u7a7a\u8fd0",
+        "short": "sinoairinex"
+    },
+    {
+        "name": "\u4e0a\u6d77\u660a\u5b8f\u56fd\u9645\u8d27\u7269",
+        "value": "\u4e0a\u6d77\u660a\u5b8f\u56fd\u9645\u8d27\u7269",
+        "short": "hyk"
+    },
+    {
+        "name": "\u57ce\u6653\u56fd\u9645\u5feb\u9012",
+        "value": "\u57ce\u6653\u56fd\u9645\u5feb\u9012",
+        "short": "ckeex"
+    },
+    {
+        "name": "\u4e2d\u94c1\u5feb\u8fd0",
+        "value": "\u4e2d\u94c1\u5feb\u8fd0",
+        "short": "ztky"
+    },
+    {
+        "name": "\u51fa\u53e3\u6613",
+        "value": "\u51fa\u53e3\u6613",
+        "short": "chukou1"
+    },
+    {
+        "name": "\u8de8\u7545\uff08\u76f4\u90ae\u6613\uff09",
+        "value": "\u8de8\u7545\uff08\u76f4\u90ae\u6613\uff09",
+        "short": "kuachangwuliu"
+    },
+    {
+        "name": "WTD\u6d77\u5916\u901a",
+        "value": "WTD\u6d77\u5916\u901a",
+        "short": "wtdex"
+    },
+    {
+        "name": "CHS\u4e2d\u73af\u56fd\u9645\u5feb\u9012",
+        "value": "CHS\u4e2d\u73af\u56fd\u9645\u5feb\u9012",
+        "short": "chszhonghuanguoji"
+    },
+    {
+        "name": "\u6c49\u90a6\u56fd\u9645\u901f\u9012",
+        "value": "\u6c49\u90a6\u56fd\u9645\u901f\u9012",
+        "short": "handboy"
+    },
+    {
+        "name": "\u94f6\u6cb3\u7269\u6d41",
+        "value": "\u94f6\u6cb3\u7269\u6d41",
+        "short": "milkyway"
+    },
+    {
+        "name": "\u8377\u5170\u901f\u9012(Nederland",
+        "value": "\u8377\u5170\u901f\u9012(Nederland",
+        "short": "Post)"
+    },
+    {
+        "name": "\u6fb3\u5dde\u987a\u98ce\u5feb\u9012",
+        "value": "\u6fb3\u5dde\u987a\u98ce\u5feb\u9012",
+        "short": "emms"
+    },
+    {
+        "name": "\u73af\u4e1c\u7269\u6d41",
+        "value": "\u73af\u4e1c\u7269\u6d41",
+        "short": "huandonglg"
+    },
+    {
+        "name": "\u4e2d\u90ae\u901f\u9012",
+        "value": "\u4e2d\u90ae\u901f\u9012",
+        "short": "wondersyd"
+    },
+    {
+        "name": "\u5e03\u8c37\u9e1f\u901f\u9012",
+        "value": "\u5e03\u8c37\u9e1f\u901f\u9012",
+        "short": "cuckooexpess"
+    },
+    {
+        "name": "\u4e07\u5e9a\u56fd\u9645\u901f\u9012",
+        "value": "\u4e07\u5e9a\u56fd\u9645\u901f\u9012",
+        "short": "vangenexpress"
+    },
+    {
+        "name": "FedRoad",
+        "value": "FedRoad",
+        "short": "\u8054\u90a6\u8f6c\u8fd0"
+    },
+    {
+        "name": "Landmark",
+        "value": "Landmark",
+        "short": "Global"
+    },
+    {
+        "name": "\u4f73\u6210\u5feb\u9012",
+        "value": "\u4f73\u6210\u5feb\u9012",
+        "short": "jiacheng"
+    },
+    {
+        "name": "\u8bfa\u5c14\u56fd\u9645\u7269\u6d41",
+        "value": "\u8bfa\u5c14\u56fd\u9645\u7269\u6d41",
+        "short": "nuoer"
+    },
+    {
+        "name": "\u52a0\u8fd0\u7f8e\u901f\u9012",
+        "value": "\u52a0\u8fd0\u7f8e\u901f\u9012",
+        "short": "jym56"
+    },
+    {
+        "name": "\u65b0\u65f6\u901f\u7269\u6d41",
+        "value": "\u65b0\u65f6\u901f\u7269\u6d41",
+        "short": "csxss"
+    },
+    {
+        "name": "\u4e2d\u5b87\u5929\u5730",
+        "value": "\u4e2d\u5b87\u5929\u5730",
+        "short": "zytdscm"
+    },
+    {
+        "name": "\u7fd4\u817e\u7269\u6d41",
+        "value": "\u7fd4\u817e\u7269\u6d41",
+        "short": "xiangteng"
+    },
+    {
+        "name": "\u6052\u745e\u7269\u6d41",
+        "value": "\u6052\u745e\u7269\u6d41",
+        "short": "hengrui56"
+    },
+    {
+        "name": "\u4e2d\u56fd\u7ffc",
+        "value": "\u4e2d\u56fd\u7ffc",
+        "short": "cnws"
+    },
+    {
+        "name": "\u90a6\u5de5\u5feb\u8fd0",
+        "value": "\u90a6\u5de5\u5feb\u8fd0",
+        "short": "bgky100"
+    },
+    {
+        "name": "\u4e0a\u6d77\u65e0\u7586for\u4e70\u5356\u5b9d",
+        "value": "\u4e0a\u6d77\u65e0\u7586for\u4e70\u5356\u5b9d",
+        "short": "shanghaiwujiangmmb"
+    },
+    {
+        "name": "\u65b0\u52a0\u5761\u5c0f\u5305(Singapore",
+        "value": "\u65b0\u52a0\u5761\u5c0f\u5305(Singapore",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4e2d\u4fc4\u901f\u901a\uff08\u6dfc\u4fe1\uff09",
+        "value": "\u4e2d\u4fc4\u901f\u901a\uff08\u6dfc\u4fe1\uff09",
+        "short": "mxe56"
+    },
+    {
+        "name": "\u6d77\u6d3e\u901a",
+        "value": "\u6d77\u6d3e\u901a",
+        "short": "hipito"
+    },
+    {
+        "name": "\u6e90\u5b89\u8fbe",
+        "value": "\u6e90\u5b89\u8fbe",
+        "short": "yuananda"
+    },
+    {
+        "name": "\u8d5b\u6fb3\u9012for\u4e70\u5356\u5b9d",
+        "value": "\u8d5b\u6fb3\u9012for\u4e70\u5356\u5b9d",
+        "short": "saiaodimmb"
+    },
+    {
+        "name": "ECMS",
+        "value": "ECMS",
+        "short": "Express"
+    },
+    {
+        "name": "\u82f1\u8109\u7269\u6d41",
+        "value": "\u82f1\u8109\u7269\u6d41",
+        "short": "gml"
+    },
+    {
+        "name": "\u4f73\u5bb6\u901a\u8d27\u8fd0",
+        "value": "\u4f73\u5bb6\u901a\u8d27\u8fd0",
+        "short": "jiajiatong56"
+    },
+    {
+        "name": "\u5409\u65e5\u4f18\u6d3e",
+        "value": "\u5409\u65e5\u4f18\u6d3e",
+        "short": "jrypex"
+    },
+    {
+        "name": "\u897f\u5b89\u80dc\u5cf0",
+        "value": "\u897f\u5b89\u80dc\u5cf0",
+        "short": "xaetc"
+    },
+    {
+        "name": "logen\u8def\u575a",
+        "value": "logen\u8def\u575a",
+        "short": "ilogen"
+    },
+    {
+        "name": "amazon-\u56fd\u9645\u8ba2\u5355",
+        "value": "amazon-\u56fd\u9645\u8ba2\u5355",
+        "short": "amusorder"
+    },
+    {
+        "name": "CJ\u7269\u6d41",
+        "value": "CJ\u7269\u6d41",
+        "short": "doortodoor"
+    },
+    {
+        "name": "\u8f6c\u8fd0\u56db\u65b9",
+        "value": "\u8f6c\u8fd0\u56db\u65b9",
+        "short": "zhuanyunsifang"
+    },
+    {
+        "name": "\u6210\u90fd\u4e1c\u9a8f\u7269\u6d41",
+        "value": "\u6210\u90fd\u4e1c\u9a8f\u7269\u6d41",
+        "short": "dongjun"
+    },
+    {
+        "name": "\u65e5\u672c\u90f5\u4fbf",
+        "value": "\u65e5\u672c\u90f5\u4fbf",
+        "short": "japanpost"
+    },
+    {
+        "name": "\u7334\u6025\u9001",
+        "value": "\u7334\u6025\u9001",
+        "short": "hjs"
+    },
+    {
+        "name": "\u5168\u4fe1\u901a\u5feb\u9012",
+        "value": "\u5168\u4fe1\u901a\u5feb\u9012",
+        "short": "quanxintong"
+    },
+    {
+        "name": "\u4fe1\u5929\u6377\u5feb\u9012",
+        "value": "\u4fe1\u5929\u6377\u5feb\u9012",
+        "short": "xintianjie"
+    },
+    {
+        "name": "\u6cf0\u56fd138\u56fd\u9645\u7269\u6d41",
+        "value": "\u6cf0\u56fd138\u56fd\u9645\u7269\u6d41",
+        "short": "sd138"
+    },
+    {
+        "name": "\u8377\u5170\u5305\u88f9(PostNL",
+        "value": "\u8377\u5170\u5305\u88f9(PostNL",
+        "short": "International"
+    },
+    {
+        "name": "\u4e50\u5929\u901f\u9012",
+        "value": "\u4e50\u5929\u901f\u9012",
+        "short": "ltexp"
+    },
+    {
+        "name": "\u667a\u901a\u7269\u6d41",
+        "value": "\u667a\u901a\u7269\u6d41",
+        "short": "ztong"
+    },
+    {
+        "name": "\u5168\u901f\u901a",
+        "value": "\u5168\u901f\u901a",
+        "short": "quansutong"
+    },
+    {
+        "name": "\u4e2d\u6280\u7269\u6d41",
+        "value": "\u4e2d\u6280\u7269\u6d41",
+        "short": "zhongjiwuliu"
+    },
+    {
+        "name": "\u4e5d\u66f3\u4f9b\u5e94\u94fe",
+        "value": "\u4e5d\u66f3\u4f9b\u5e94\u94fe",
+        "short": "jiuyescm"
+    },
+    {
+        "name": "\u5f53\u5f53",
+        "value": "\u5f53\u5f53",
+        "short": "dangdang"
+    },
+    {
+        "name": "\u7f8e\u9f99\u5feb\u9012",
+        "value": "\u7f8e\u9f99\u5feb\u9012",
+        "short": "mjexp"
+    },
+    {
+        "name": "\u552f\u54c1\u4f1a(vip)",
+        "value": "\u552f\u54c1\u4f1a(vip)",
+        "short": "vipshop"
+    },
+    {
+        "name": "1\u53f7\u5e97",
+        "value": "1\u53f7\u5e97",
+        "short": "yhdshop"
+    },
+    {
+        "name": "\u7687\u5bb6\u7269\u6d41",
+        "value": "\u7687\u5bb6\u7269\u6d41",
+        "short": "pfcexpress"
+    },
+    {
+        "name": "\u767e\u5343\u8bda\u7269\u6d41",
+        "value": "\u767e\u5343\u8bda\u7269\u6d41",
+        "short": "bqcwl"
+    },
+    {
+        "name": "\u6cd5\u56fd(La",
+        "value": "\u6cd5\u56fd(La",
+        "short": "Poste)"
+    },
+    {
+        "name": "DHL-\u5168\u7403\u4ef6",
+        "value": "DHL-\u5168\u7403\u4ef6",
+        "short": "dhlen"
+    },
+    {
+        "name": "\u8fd0\u901a\u4e2d\u6e2f",
+        "value": "\u8fd0\u901a\u4e2d\u6e2f",
+        "short": "yuntongkuaidi"
+    },
+    {
+        "name": "\u82cf\u5b81\u7269\u6d41",
+        "value": "\u82cf\u5b81\u7269\u6d41",
+        "short": "suning"
+    },
+    {
+        "name": "\u8377\u5170Sky",
+        "value": "\u8377\u5170Sky",
+        "short": "Post"
+    },
+    {
+        "name": "\u745e\u8fbe\u56fd\u9645\u901f\u9012",
+        "value": "\u745e\u8fbe\u56fd\u9645\u901f\u9012",
+        "short": "ruidaex"
+    },
+    {
+        "name": "\u4e30\u7a0b\u7269\u6d41",
+        "value": "\u4e30\u7a0b\u7269\u6d41",
+        "short": "sccod"
+    },
+    {
+        "name": "\u5fb7\u4e2d\u5feb\u9012",
+        "value": "\u5fb7\u4e2d\u5feb\u9012",
+        "short": "decnlh"
+    },
+    {
+        "name": "\u5168\u65f6\u901f\u8fd0",
+        "value": "\u5168\u65f6\u901f\u8fd0",
+        "short": "runhengfeng"
+    },
+    {
+        "name": "\u4e91\u90ae\u8de8\u5883\u5feb\u9012",
+        "value": "\u4e91\u90ae\u8de8\u5883\u5feb\u9012",
+        "short": "hkems"
+    },
+    {
+        "name": "\u4e9a\u98ce\u901f\u9012",
+        "value": "\u4e9a\u98ce\u901f\u9012",
+        "short": "yafengsudi"
+    },
+    {
+        "name": "\u5feb\u6dd8\u5feb\u9012",
+        "value": "\u5feb\u6dd8\u5feb\u9012",
+        "short": "kuaitao"
+    },
+    {
+        "name": "\u946b\u901a\u5b9d\u7269\u6d41",
+        "value": "\u946b\u901a\u5b9d\u7269\u6d41",
+        "short": "xtb"
+    },
+    {
+        "name": "USPS",
+        "value": "USPS",
+        "short": "usps"
+    },
+    {
+        "name": "\u52a0\u62ff\u5927\u90ae\u653f",
+        "value": "\u52a0\u62ff\u5927\u90ae\u653f",
+        "short": "canpostfr"
+    },
+    {
+        "name": "\u6c47\u901a\u5929\u4e0b\u7269\u6d41",
+        "value": "\u6c47\u901a\u5929\u4e0b\u7269\u6d41",
+        "short": "httx56"
+    },
+    {
+        "name": "\u53f0\u6e7e\uff08\u4e2d\u534e\u90ae\u653f\uff09",
+        "value": "\u53f0\u6e7e\uff08\u4e2d\u534e\u90ae\u653f\uff09",
+        "short": "postserv"
+    },
+    {
+        "name": "\u597d\u53c8\u5feb\u7269\u6d41",
+        "value": "\u597d\u53c8\u5feb\u7269\u6d41",
+        "short": "haoyoukuai"
+    },
+    {
+        "name": "\u6c38\u65fa\u8fbe\u5feb\u9012",
+        "value": "\u6c38\u65fa\u8fbe\u5feb\u9012",
+        "short": "yongwangda"
+    },
+    {
+        "name": "\u6728\u6625\u8d27\u8fd0",
+        "value": "\u6728\u6625\u8d27\u8fd0",
+        "short": "mchy"
+    },
+    {
+        "name": "\u7a0b\u5149\u5feb\u9012",
+        "value": "\u7a0b\u5149\u5feb\u9012",
+        "short": "flyway"
+    },
+    {
+        "name": "\u767e\u4e8b\u4ea8\u901a",
+        "value": "\u767e\u4e8b\u4ea8\u901a",
+        "short": "bsht"
+    },
+    {
+        "name": "\u4e07\u5bb6\u901a\u5feb\u9012",
+        "value": "\u4e07\u5bb6\u901a\u5feb\u9012",
+        "short": "timedg"
+    },
+    {
+        "name": "\u5168\u4e4b\u946b\u7269\u6d41",
+        "value": "\u5168\u4e4b\u946b\u7269\u6d41",
+        "short": "qzx56"
+    },
+    {
+        "name": "\u7f8e\u5feb\u56fd\u9645\u7269\u6d41",
+        "value": "\u7f8e\u5feb\u56fd\u9645\u7269\u6d41",
+        "short": "meiquick"
+    },
+    {
+        "name": "ILYANG",
+        "value": "ILYANG",
+        "short": "ilyang"
+    },
+    {
+        "name": "\u5148\u950b\u5feb\u9012",
+        "value": "\u5148\u950b\u5feb\u9012",
+        "short": "xianfeng"
+    },
+    {
+        "name": "\u4ebf\u987a\u822a",
+        "value": "\u4ebf\u987a\u822a",
+        "short": "yishunhang"
+    },
+    {
+        "name": "\u5c1a\u6a59\u7269\u6d41",
+        "value": "\u5c1a\u6a59\u7269\u6d41",
+        "short": "shangcheng"
+    },
+    {
+        "name": "OnTrac",
+        "value": "OnTrac",
+        "short": "ontrac"
+    },
+    {
+        "name": "TNT-\u5168\u7403\u4ef6",
+        "value": "TNT-\u5168\u7403\u4ef6",
+        "short": "tnten"
+    },
+    {
+        "name": "\u987a\u4e30-\u7f8e\u56fd\u4ef6",
+        "value": "\u987a\u4e30-\u7f8e\u56fd\u4ef6",
+        "short": "shunfengen"
+    },
+    {
+        "name": "\u5171\u901f\u8fbe",
+        "value": "\u5171\u901f\u8fbe",
+        "short": "gongsuda"
+    },
+    {
+        "name": "\u6e90\u4f1f\u4e30",
+        "value": "\u6e90\u4f1f\u4e30",
+        "short": "yuanweifeng"
+    },
+    {
+        "name": "\u7965\u9f99\u8fd0\u901a\u7269\u6d41",
+        "value": "\u7965\u9f99\u8fd0\u901a\u7269\u6d41",
+        "short": "xianglongyuntong"
+    },
+    {
+        "name": "\u504c\u4e9a\u5965\u56fd\u9645\u5feb\u9012",
+        "value": "\u504c\u4e9a\u5965\u56fd\u9645\u5feb\u9012",
+        "short": "nuoyaao"
+    },
+    {
+        "name": "\u966a\u884c\u7269\u6d41",
+        "value": "\u966a\u884c\u7269\u6d41",
+        "short": "peixingwuliu"
+    },
+    {
+        "name": "\u5929\u5929\u5feb\u9012",
+        "value": "\u5929\u5929\u5feb\u9012",
+        "short": "tiantian"
+    },
+    {
+        "name": "CCES/\u56fd\u901a\u5feb\u9012",
+        "value": "CCES/\u56fd\u901a\u5feb\u9012",
+        "short": "cces"
+    },
+    {
+        "name": "\u5f6a\u8bb0\u5feb\u9012",
+        "value": "\u5f6a\u8bb0\u5feb\u9012",
+        "short": "biaojikuaidi"
+    },
+    {
+        "name": "\u5b89\u4fe1\u8fbe",
+        "value": "\u5b89\u4fe1\u8fbe",
+        "short": "anxindakuaixi"
+    },
+    {
+        "name": "\u914d\u601d\u8d27\u8fd0",
+        "value": "\u914d\u601d\u8d27\u8fd0",
+        "short": "peisihuoyunkuaidi"
+    },
+    {
+        "name": "\u5927\u7530\u7269\u6d41",
+        "value": "\u5927\u7530\u7269\u6d41",
+        "short": "datianwuliu"
+    },
+    {
+        "name": "\u90ae\u653f\u5feb\u9012\u5305\u88f9",
+        "value": "\u90ae\u653f\u5feb\u9012\u5305\u88f9",
+        "short": "youzhengguonei"
+    },
+    {
+        "name": "\u6587\u6377\u822a\u7a7a",
+        "value": "\u6587\u6377\u822a\u7a7a",
+        "short": "wenjiesudi"
+    },
+    {
+        "name": "BHT",
+        "value": "BHT",
+        "short": "bht"
+    },
+    {
+        "name": "\u5317\u9752\u5c0f\u7ea2\u5e3d",
+        "value": "\u5317\u9752\u5c0f\u7ea2\u5e3d",
+        "short": "xiaohongmao"
+    },
+    {
+        "name": "GSM",
+        "value": "GSM",
+        "short": "gsm"
+    },
+    {
+        "name": "\u6c47\u5f3a\u5feb\u9012",
+        "value": "\u6c47\u5f3a\u5feb\u9012",
+        "short": "huiqiangkuaidi"
+    },
+    {
+        "name": "\u660a\u76db\u7269\u6d41",
+        "value": "\u660a\u76db\u7269\u6d41",
+        "short": "haoshengwuliu"
+    },
+    {
+        "name": "\u8054\u90a6\u5feb\u9012-\u82f1\u6587",
+        "value": "\u8054\u90a6\u5feb\u9012-\u82f1\u6587",
+        "short": "lianbangkuaidien"
+    },
+    {
+        "name": "\u4f0d\u5706\u901f\u9012",
+        "value": "\u4f0d\u5706\u901f\u9012",
+        "short": "wuyuansudi"
+    },
+    {
+        "name": "\u5357\u4eac100",
+        "value": "\u5357\u4eac100",
+        "short": "nanjing"
+    },
+    {
+        "name": "\u5168\u901a\u5feb\u8fd0",
+        "value": "\u5168\u901a\u5feb\u8fd0",
+        "short": "quantwl"
+    },
+    {
+        "name": "\u5b85\u6025\u4fbf",
+        "value": "\u5b85\u6025\u4fbf",
+        "short": "zhaijibian"
+    },
+    {
+        "name": "\u52a0\u62ff\u5927(Canada",
+        "value": "\u52a0\u62ff\u5927(Canada",
+        "short": "Post)"
+    },
+    {
+        "name": "COE",
+        "value": "COE",
+        "short": "coe"
+    },
+    {
+        "name": "\u767e\u901a\u7269\u6d41",
+        "value": "\u767e\u901a\u7269\u6d41",
+        "short": "buytong"
+    },
+    {
+        "name": "\u53cb\u5bb6\u901f\u9012",
+        "value": "\u53cb\u5bb6\u901f\u9012",
+        "short": "youjia"
+    },
+    {
+        "name": "\u65b0\u5143\u5feb\u9012",
+        "value": "\u65b0\u5143\u5feb\u9012",
+        "short": "xingyuankuaidi"
+    },
+    {
+        "name": "\u4e2d\u6fb3\u901f\u9012",
+        "value": "\u4e2d\u6fb3\u901f\u9012",
+        "short": "cnausu"
+    },
+    {
+        "name": "\u8054\u5408\u5feb\u9012",
+        "value": "\u8054\u5408\u5feb\u9012",
+        "short": "gslhkd"
+    },
+    {
+        "name": "\u6cb3\u5357\u6b21\u6668\u8fbe",
+        "value": "\u6cb3\u5357\u6b21\u6668\u8fbe",
+        "short": "ccd"
+    },
+    {
+        "name": "\u5954\u817e\u7269\u6d41",
+        "value": "\u5954\u817e\u7269\u6d41",
+        "short": "benteng"
+    },
+    {
+        "name": "\u4eca\u67ab\u56fd\u9645\u5feb\u8fd0",
+        "value": "\u4eca\u67ab\u56fd\u9645\u5feb\u8fd0",
+        "short": "mapleexpress"
+    },
+    {
+        "name": "\u4e2d\u8fd0\u5168\u901f",
+        "value": "\u4e2d\u8fd0\u5168\u901f",
+        "short": "topspeedex"
+    },
+    {
+        "name": "\u4e2d\u6b27\u5feb\u8fd0",
+        "value": "\u4e2d\u6b27\u5feb\u8fd0",
+        "short": "otobv"
+    },
+    {
+        "name": "\u5b9c\u5bb6\u884c",
+        "value": "\u5b9c\u5bb6\u884c",
+        "short": "yjxlm"
+    },
+    {
+        "name": "\u91d1\u9a6c\u7532",
+        "value": "\u91d1\u9a6c\u7532",
+        "short": "jmjss"
+    },
+    {
+        "name": "\u4e00\u53f7\u4ed3",
+        "value": "\u4e00\u53f7\u4ed3",
+        "short": "onehcang"
+    },
+    {
+        "name": "\u8bba\u9053\u56fd\u9645\u7269\u6d41",
+        "value": "\u8bba\u9053\u56fd\u9645\u7269\u6d41",
+        "short": "lundao"
+    },
+    {
+        "name": "\u987a\u901a\u5feb\u9012",
+        "value": "\u987a\u901a\u5feb\u9012",
+        "short": "stkd"
+    },
+    {
+        "name": "globaltracktrace",
+        "value": "globaltracktrace",
+        "short": "globaltracktrace"
+    },
+    {
+        "name": "\u5fb7\u65b9\u7269\u6d41",
+        "value": "\u5fb7\u65b9\u7269\u6d41",
+        "short": "ahdf"
+    },
+    {
+        "name": "\u901f\u9012\u4e2d\u56fd",
+        "value": "\u901f\u9012\u4e2d\u56fd",
+        "short": "sendtochina"
+    },
+    {
+        "name": "NLE",
+        "value": "NLE",
+        "short": "nle"
+    },
+    {
+        "name": "\u4e9a\u6b27\u4e13\u7ebf",
+        "value": "\u4e9a\u6b27\u4e13\u7ebf",
+        "short": "nlebv"
+    },
+    {
+        "name": "\u4fe1\u8054\u901a",
+        "value": "\u4fe1\u8054\u901a",
+        "short": "sinatone"
+    },
+    {
+        "name": "\u6fb3\u5fb7\u7269\u6d41",
+        "value": "\u6fb3\u5fb7\u7269\u6d41",
+        "short": "auod"
+    },
+    {
+        "name": "\u5fae\u8f6c\u8fd0",
+        "value": "\u5fae\u8f6c\u8fd0",
+        "short": "wzhaunyun"
+    },
+    {
+        "name": "iExpress",
+        "value": "iExpress",
+        "short": "iexpress"
+    },
+    {
+        "name": "\u8fdc\u6210\u5feb\u8fd0",
+        "value": "\u8fdc\u6210\u5feb\u8fd0",
+        "short": "ycgky"
+    },
+    {
+        "name": "\u9ad8\u8003\u901a\u77e5\u4e66",
+        "value": "\u9ad8\u8003\u901a\u77e5\u4e66",
+        "short": "emsluqu"
+    },
+    {
+        "name": "\u5b89\u9c9c\u8fbe",
+        "value": "\u5b89\u9c9c\u8fbe",
+        "short": "exfresh"
+    },
+    {
+        "name": "BCWELT",
+        "value": "BCWELT",
+        "short": "bcwelt"
+    },
+    {
+        "name": "\u6b27\u4e9a\u4e13\u7ebf",
+        "value": "\u6b27\u4e9a\u4e13\u7ebf",
+        "short": "euasia"
+    },
+    {
+        "name": "\u4e50\u9012\u4f9b\u5e94\u94fe",
+        "value": "\u4e50\u9012\u4f9b\u5e94\u94fe",
+        "short": "ledii"
+    },
+    {
+        "name": "\u4e07\u901a\u5feb\u9012",
+        "value": "\u4e07\u901a\u5feb\u9012",
+        "short": "gswtkd"
+    },
+    {
+        "name": "\u7279\u6025\u9001",
+        "value": "\u7279\u6025\u9001",
+        "short": "lntjs"
+    },
+    {
+        "name": "\u91d1\u5927\u7269\u6d41",
+        "value": "\u91d1\u5927\u7269\u6d41",
+        "short": "jindawuliu"
+    },
+    {
+        "name": "\u6c11\u822a\u5feb\u9012",
+        "value": "\u6c11\u822a\u5feb\u9012",
+        "short": "minghangkuaidi"
+    },
+    {
+        "name": "\u7ea2\u9a6c\u7532\u7269\u6d41",
+        "value": "\u7ea2\u9a6c\u7532\u7269\u6d41",
+        "short": "sxhongmajia"
+    },
+    {
+        "name": "amazon-\u56fd\u5185\u8ba2\u5355",
+        "value": "amazon-\u56fd\u5185\u8ba2\u5355",
+        "short": "amcnorder"
+    },
+    {
+        "name": "ABF",
+        "value": "ABF",
+        "short": "abf"
+    },
+    {
+        "name": "\u5c0f\u7c73",
+        "value": "\u5c0f\u7c73",
+        "short": "xiaomi"
+    },
+    {
+        "name": "\u65b0\u5143\u56fd\u9645",
+        "value": "\u65b0\u5143\u56fd\u9645",
+        "short": "xynyc"
+    },
+    {
+        "name": "\u5c0fC\u6d77\u6dd8",
+        "value": "\u5c0fC\u6d77\u6dd8",
+        "short": "xiaocex"
+    },
+    {
+        "name": "\u822a\u7a7a\u5feb\u9012",
+        "value": "\u822a\u7a7a\u5feb\u9012",
+        "short": "airgtc"
+    },
+    {
+        "name": "\u53ee\u549a\u6fb3\u6d32\u8f6c\u8fd0",
+        "value": "\u53ee\u549a\u6fb3\u6d32\u8f6c\u8fd0",
+        "short": "dindon"
+    },
+    {
+        "name": "\u73af\u7403\u901a\u8fbe",
+        "value": "\u73af\u7403\u901a\u8fbe",
+        "short": "hqtd"
+    },
+    {
+        "name": "\u65b0\u897f\u5170\u4e2d\u901a",
+        "value": "\u65b0\u897f\u5170\u4e2d\u901a",
+        "short": "nzzto"
+    },
+    {
+        "name": "\u826f\u85e4\u56fd\u9645\u901f\u9012",
+        "value": "\u826f\u85e4\u56fd\u9645\u901f\u9012",
+        "short": "lmfex"
+    },
+    {
+        "name": "\u901f\u54c1\u5feb\u9012",
+        "value": "\u901f\u54c1\u5feb\u9012",
+        "short": "supinexpress"
+    },
+    {
+        "name": "\u6d77\u9f9f\u56fd\u9645\u5feb\u9012",
+        "value": "\u6d77\u9f9f\u56fd\u9645\u5feb\u9012",
+        "short": "turtle"
+    },
+    {
+        "name": "\u97e9\u56fd\u90ae\u653f",
+        "value": "\u97e9\u56fd\u90ae\u653f",
+        "short": "koreapostcn"
+    },
+    {
+        "name": "\u97f5\u4e30\u7269\u6d41",
+        "value": "\u97f5\u4e30\u7269\u6d41",
+        "short": "yunfeng56"
+    },
+    {
+        "name": "\u6613\u8fbe\u901a\u5feb\u9012",
+        "value": "\u6613\u8fbe\u901a\u5feb\u9012",
+        "short": "qexpress"
+    },
+    {
+        "name": "\u4e00\u8fd0\u5168\u6210\u7269\u6d41",
+        "value": "\u4e00\u8fd0\u5168\u6210\u7269\u6d41",
+        "short": "yyqc56"
+    },
+    {
+        "name": "\u6cdb\u8fdc\u56fd\u9645\u7269\u6d41",
+        "value": "\u6cdb\u8fdc\u56fd\u9645\u7269\u6d41",
+        "short": "farlogistis"
+    },
+    {
+        "name": "\u8fbe\u901f\u7269\u6d41",
+        "value": "\u8fbe\u901f\u7269\u6d41",
+        "short": "dasu"
+    },
+    {
+        "name": "\u6052\u901a\u5feb\u9012",
+        "value": "\u6052\u901a\u5feb\u9012",
+        "short": "lqht"
+    },
+    {
+        "name": "\u58f9\u54c1\u901f\u9012",
+        "value": "\u58f9\u54c1\u901f\u9012",
+        "short": "ypsd"
+    },
+    {
+        "name": "\u9e70\u8fd0\u56fd\u9645\u901f\u9012",
+        "value": "\u9e70\u8fd0\u56fd\u9645\u901f\u9012",
+        "short": "vipexpress"
+    },
+    {
+        "name": "\u5357\u65b9\u4f20\u5a92\u7269\u6d41",
+        "value": "\u5357\u65b9\u4f20\u5a92\u7269\u6d41",
+        "short": "ndwl"
+    },
+    {
+        "name": "\u901f\u5448\u5b85\u914d",
+        "value": "\u901f\u5448\u5b85\u914d",
+        "short": "sucheng"
+    },
+    {
+        "name": "\u4e91\u5357\u6ec7\u9a7f\u7269\u6d41",
+        "value": "\u4e91\u5357\u6ec7\u9a7f\u7269\u6d41",
+        "short": "dianyi"
+    },
+    {
+        "name": "\u56db\u5ddd\u661f\u7a0b\u5feb\u9012",
+        "value": "\u56db\u5ddd\u661f\u7a0b\u5feb\u9012",
+        "short": "scxingcheng"
+    },
+    {
+        "name": "\u8fd0\u901a\u4e2d\u6e2f\u5feb\u9012",
+        "value": "\u8fd0\u901a\u4e2d\u6e2f\u5feb\u9012",
+        "short": "ytkd"
+    },
+    {
+        "name": "Gati-\u82f1\u6587",
+        "value": "Gati-\u82f1\u6587",
+        "short": "gatien"
+    },
+    {
+        "name": "jcex",
+        "value": "jcex",
+        "short": "jcex"
+    },
+    {
+        "name": "\u51ef\u4fe1\u8fbe",
+        "value": "\u51ef\u4fe1\u8fbe",
+        "short": "kxda"
+    },
+    {
+        "name": "\u5b89\u8fbe\u4fe1",
+        "value": "\u5b89\u8fbe\u4fe1",
+        "short": "advancing"
+    },
+    {
+        "name": "\u4ebf\u7fd4",
+        "value": "\u4ebf\u7fd4",
+        "short": "yxexpress"
+    },
+    {
+        "name": "\u52a0\u8fd0\u7f8e",
+        "value": "\u52a0\u8fd0\u7f8e",
+        "short": "jiayunmeiwuliu"
+    },
+    {
+        "name": "\u8d5b\u6fb3\u9012",
+        "value": "\u8d5b\u6fb3\u9012",
+        "short": "saiaodi"
+    },
+    {
+        "name": "\u5eb7\u529b\u7269\u6d41",
+        "value": "\u5eb7\u529b\u7269\u6d41",
+        "short": "kangliwuliu"
+    },
+    {
+        "name": "\u946b\u98de\u9e3f",
+        "value": "\u946b\u98de\u9e3f",
+        "short": "xinhongyukuaidi"
+    },
+    {
+        "name": "\u5168\u4e00\u5feb\u9012",
+        "value": "\u5168\u4e00\u5feb\u9012",
+        "short": "quanyikuaidi"
+    },
+    {
+        "name": "\u534e\u4f01\u5feb\u8fd0",
+        "value": "\u534e\u4f01\u5feb\u8fd0",
+        "short": "huaqikuaiyun"
+    },
+    {
+        "name": "\u9752\u5c9b\u5b89\u6377\u5feb\u9012",
+        "value": "\u9752\u5c9b\u5b89\u6377\u5feb\u9012",
+        "short": "anjiekuaidi"
+    },
+    {
+        "name": "\u9012\u56db\u65b9",
+        "value": "\u9012\u56db\u65b9",
+        "short": "disifang"
+    },
+    {
+        "name": "\u4e09\u6001\u901f\u9012",
+        "value": "\u4e09\u6001\u901f\u9012",
+        "short": "santaisudi"
+    },
+    {
+        "name": "\u6210\u90fd\u7acb\u5373\u9001",
+        "value": "\u6210\u90fd\u7acb\u5373\u9001",
+        "short": "lijisong"
+    },
+    {
+        "name": "\u6cb3\u5317\u5efa\u534e",
+        "value": "\u6cb3\u5317\u5efa\u534e",
+        "short": "hebeijianhua"
+    },
+    {
+        "name": "\u98ce\u884c\u5929\u4e0b",
+        "value": "\u98ce\u884c\u5929\u4e0b",
+        "short": "fengxingtianxia"
+    },
+    {
+        "name": "\u4e00\u7edf\u98de\u9e3f",
+        "value": "\u4e00\u7edf\u98de\u9e3f",
+        "short": "yitongfeihong"
+    },
+    {
+        "name": "\u6d77\u5916\u73af\u7403",
+        "value": "\u6d77\u5916\u73af\u7403",
+        "short": "haiwaihuanqiu"
+    },
+    {
+        "name": "DHL-\u4e2d\u56fd\u4ef6",
+        "value": "DHL-\u4e2d\u56fd\u4ef6",
+        "short": "dhl"
+    },
+    {
+        "name": "\u897f\u5b89\u57ce\u8054\u901f\u9012",
+        "value": "\u897f\u5b89\u57ce\u8054\u901f\u9012",
+        "short": "xianchengliansudi"
+    },
+    {
+        "name": "\u4e00\u67d2\u56fd\u9645\u7269\u6d41",
+        "value": "\u4e00\u67d2\u56fd\u9645\u7269\u6d41",
+        "short": "yiqiguojiwuliu"
+    },
+    {
+        "name": "\u5e7f\u4e1c\u901a\u8def",
+        "value": "\u5e7f\u4e1c\u901a\u8def",
+        "short": "guangdongtonglu"
+    },
+    {
+        "name": "\u4e2d\u56fd\u9999\u6e2f\u9a8f\u8f89\u7269\u6d41",
+        "value": "\u4e2d\u56fd\u9999\u6e2f\u9a8f\u8f89\u7269\u6d41",
+        "short": "chunfai"
+    },
+    {
+        "name": "\u4e09\u4e09\u56fd\u9645\u7269\u6d41",
+        "value": "\u4e09\u4e09\u56fd\u9645\u7269\u6d41",
+        "short": "zenzen"
+    },
+    {
+        "name": "\u6bd4\u5229\u65f6\u56fd\u9645(Bpost",
+        "value": "\u6bd4\u5229\u65f6\u56fd\u9645(Bpost",
+        "short": "international)"
+    },
+    {
+        "name": "\u6d77\u7ea2for\u4e70\u5356\u5b9d",
+        "value": "\u6d77\u7ea2for\u4e70\u5356\u5b9d",
+        "short": "haihongmmb"
+    },
+    {
+        "name": "FedEx-\u82f1\u56fd\u4ef6\uff08FedEx",
+        "value": "FedEx-\u82f1\u56fd\u4ef6\uff08FedEx",
+        "short": "UK)"
+    },
+    {
+        "name": "FedEx-\u82f1\u56fd\u4ef6",
+        "value": "FedEx-\u82f1\u56fd\u4ef6",
+        "short": "fedexukcn"
+    },
+    {
+        "name": "\u53ee\u549a\u5feb\u9012",
+        "value": "\u53ee\u549a\u5feb\u9012",
+        "short": "dingdong"
+    },
+    {
+        "name": "MRW",
+        "value": "MRW",
+        "short": "mrw"
+    },
+    {
+        "name": "Chronopost",
+        "value": "Chronopost",
+        "short": "Portugal"
+    },
+    {
+        "name": "\u897f\u73ed\u7259(Correos",
+        "value": "\u897f\u73ed\u7259(Correos",
+        "short": "de"
+    },
+    {
+        "name": "\u4e39\u9ea6(Post",
+        "value": "\u4e39\u9ea6(Post",
+        "short": "Denmark)"
+    },
+    {
+        "name": "Purolator",
+        "value": "Purolator",
+        "short": "purolator"
+    },
+    {
+        "name": "\u6cd5\u56fd\u5927\u5305\u3001EMS-\u6cd5\u6587\uff08Chronopost",
+        "value": "\u6cd5\u56fd\u5927\u5305\u3001EMS-\u6cd5\u6587\uff08Chronopost",
+        "short": "France\uff09"
+    },
+    {
+        "name": "Selektvracht",
+        "value": "Selektvracht",
+        "short": "selektvracht"
+    },
+    {
+        "name": "\u84dd\u5f27\u5feb\u9012",
+        "value": "\u84dd\u5f27\u5feb\u9012",
+        "short": "lanhukuaidi"
+    },
+    {
+        "name": "\u6bd4\u5229\u65f6(Belgium",
+        "value": "\u6bd4\u5229\u65f6(Belgium",
+        "short": "Post)"
+    },
+    {
+        "name": "\u665f\u90a6\u7269\u6d41",
+        "value": "\u665f\u90a6\u7269\u6d41",
+        "short": "nanjingshengbang"
+    },
+    {
+        "name": "UPS",
+        "value": "UPS",
+        "short": "Mail"
+    },
+    {
+        "name": "\u632a\u5a01\uff08Posten",
+        "value": "\u632a\u5a01\uff08Posten",
+        "short": "Norge\uff09"
+    },
+    {
+        "name": "\u745e\u58eb(Swiss",
+        "value": "\u745e\u58eb(Swiss",
+        "short": "Post)"
+    },
+    {
+        "name": "\u82f1\u56fd\u90ae\u653f\u5c0f\u5305",
+        "value": "\u82f1\u56fd\u90ae\u653f\u5c0f\u5305",
+        "short": "royalmailcn"
+    },
+    {
+        "name": "\u82f1\u56fd\u5c0f\u5305\uff08Royal",
+        "value": "\u82f1\u56fd\u5c0f\u5305\uff08Royal",
+        "short": "Mail\uff09"
+    },
+    {
+        "name": "DHL",
+        "value": "DHL",
+        "short": "Benelux"
+    },
+    {
+        "name": "DHL-\u8377\u5170\uff08DHL",
+        "value": "DHL-\u8377\u5170\uff08DHL",
+        "short": "Netherlands\uff09"
+    },
+    {
+        "name": "OPEK",
+        "value": "OPEK",
+        "short": "opek"
+    },
+    {
+        "name": "Italy",
+        "value": "Italy",
+        "short": "SDA"
+    },
+    {
+        "name": "Fastway",
+        "value": "Fastway",
+        "short": "Ireland"
+    },
+    {
+        "name": "DHL-\u6ce2\u5170\uff08DHL",
+        "value": "DHL-\u6ce2\u5170\uff08DHL",
+        "short": "Poland\uff09"
+    },
+    {
+        "name": "DPD",
+        "value": "DPD",
+        "short": "dpd"
+    },
+    {
+        "name": "\u901f\u901a\u7269\u6d41",
+        "value": "\u901f\u901a\u7269\u6d41",
+        "short": "sutongwuliu"
+    },
+    {
+        "name": "\u8377\u5170\u90ae\u653f-\u4e2d\u6587(PostNL",
+        "value": "\u8377\u5170\u90ae\u653f-\u4e2d\u6587(PostNL",
+        "short": "international"
+    },
+    {
+        "name": "\u8377\u5170\u90ae\u653f(PostNL",
+        "value": "\u8377\u5170\u90ae\u653f(PostNL",
+        "short": "international"
+    },
+    {
+        "name": "\u4e4c\u514b\u5170EMS(EMS",
+        "value": "\u4e4c\u514b\u5170EMS(EMS",
+        "short": "Ukraine)"
+    },
+    {
+        "name": "\u4e4c\u514b\u5170\u90ae\u653f\u5305\u88f9",
+        "value": "\u4e4c\u514b\u5170\u90ae\u653f\u5305\u88f9",
+        "short": "ukrpostcn"
+    },
+    {
+        "name": "\u82f1\u56fd\u5927\u5305\u3001EMS\uff08Parcel",
+        "value": "\u82f1\u56fd\u5927\u5305\u3001EMS\uff08Parcel",
+        "short": "Force\uff09"
+    },
+    {
+        "name": "YODEL",
+        "value": "YODEL",
+        "short": "yodel"
+    },
+    {
+        "name": "UBI",
+        "value": "UBI",
+        "short": "Australia"
+    },
+    {
+        "name": "\u7ea2\u9a6c\u901f\u9012",
+        "value": "\u7ea2\u9a6c\u901f\u9012",
+        "short": "nedahm"
+    },
+    {
+        "name": "\u4e91\u5357\u8bda\u4e2d\u7269\u6d41",
+        "value": "\u4e91\u5357\u8bda\u4e2d\u7269\u6d41",
+        "short": "czwlyn"
+    },
+    {
+        "name": "\u4e07\u535a\u5feb\u9012",
+        "value": "\u4e07\u535a\u5feb\u9012",
+        "short": "wanboex"
+    },
+    {
+        "name": "\u817e\u8fbe\u901f\u9012",
+        "value": "\u817e\u8fbe\u901f\u9012",
+        "short": "nntengda"
+    },
+    {
+        "name": "\u90d1\u5dde\u901f\u6377",
+        "value": "\u90d1\u5dde\u901f\u6377",
+        "short": "sujievip"
+    },
+    {
+        "name": "\u4e2d\u777f\u901f\u9012",
+        "value": "\u4e2d\u777f\u901f\u9012",
+        "short": "zhongruisudi"
+    },
+    {
+        "name": "\u4e2d\u5929\u4e07\u8fd0",
+        "value": "\u4e2d\u5929\u4e07\u8fd0",
+        "short": "zhongtianwanyun"
+    },
+    {
+        "name": "\u65b0\u86cb\u5965\u7855",
+        "value": "\u65b0\u86cb\u5965\u7855",
+        "short": "neweggozzo"
+    },
+    {
+        "name": "\u4e03\u5929\u8fde\u9501",
+        "value": "\u4e03\u5929\u8fde\u9501",
+        "short": "sevendays"
+    },
+    {
+        "name": "UPS-\u5168\u7403\u4ef6",
+        "value": "UPS-\u5168\u7403\u4ef6",
+        "short": "upsen"
+    },
+    {
+        "name": "\u8de8\u8d8a\u901f\u8fd0",
+        "value": "\u8de8\u8d8a\u901f\u8fd0",
+        "short": "kuayue"
+    },
+    {
+        "name": "\u5168\u9645\u901a",
+        "value": "\u5168\u9645\u901a",
+        "short": "quanjitong"
+    },
+    {
+        "name": "UPS",
+        "value": "UPS",
+        "short": "ups"
+    },
+    {
+        "name": "\u4e00\u90a6\u901f\u9012",
+        "value": "\u4e00\u90a6\u901f\u9012",
+        "short": "yibangwuliu"
+    },
+    {
+        "name": "\u4e0a\u6d77\u5feb\u901a",
+        "value": "\u4e0a\u6d77\u5feb\u901a",
+        "short": "shanghaikuaitong"
+    },
+    {
+        "name": "\u54c1\u901f\u5fc3\u8fbe\u5feb\u9012",
+        "value": "\u54c1\u901f\u5fc3\u8fbe\u5feb\u9012",
+        "short": "pinsuxinda"
+    },
+    {
+        "name": "PostNord(Posten",
+        "value": "PostNord(Posten",
+        "short": "AB)"
+    },
+    {
+        "name": "\u57ce\u9645\u901f\u9012",
+        "value": "\u57ce\u9645\u901f\u9012",
+        "short": "chengjisudi"
+    },
+    {
+        "name": "\u6237\u901a\u7269\u6d41",
+        "value": "\u6237\u901a\u7269\u6d41",
+        "short": "hutongwuliu"
+    },
+    {
+        "name": "\u98de\u5eb7\u8fbe",
+        "value": "\u98de\u5eb7\u8fbe",
+        "short": "feikangda"
+    },
+    {
+        "name": "\u661f\u6668\u6025\u4fbf",
+        "value": "\u661f\u6668\u6025\u4fbf",
+        "short": "xingchengjibian"
+    },
+    {
+        "name": "\u5168\u65e5\u901a",
+        "value": "\u5168\u65e5\u901a",
+        "short": "quanritongkuaidi"
+    },
+    {
+        "name": "\u51e4\u51f0\u5feb\u9012",
+        "value": "\u51e4\u51f0\u5feb\u9012",
+        "short": "fenghuangkuaidi"
+    },
+    {
+        "name": "\u5e7f\u4e1c\u90ae\u653f",
+        "value": "\u5e7f\u4e1c\u90ae\u653f",
+        "short": "guangdongyouzhengwuliu"
+    },
+    {
+        "name": "\u957f\u5b87\u7269\u6d41",
+        "value": "\u957f\u5b87\u7269\u6d41",
+        "short": "changyuwuliu"
+    },
+    {
+        "name": "\u4e07\u5bb6\u7269\u6d41",
+        "value": "\u4e07\u5bb6\u7269\u6d41",
+        "short": "wanjiawuliu"
+    },
+    {
+        "name": "EMS-\u56fd\u9645\u4ef6-\u82f1\u6587",
+        "value": "EMS-\u56fd\u9645\u4ef6-\u82f1\u6587",
+        "short": "emsinten"
+    },
+    {
+        "name": "\u98de\u8fdc\u914d\u9001",
+        "value": "\u98de\u8fdc\u914d\u9001",
+        "short": "feiyuanvipshop"
+    },
+    {
+        "name": "\u56fd\u7f8e",
+        "value": "\u56fd\u7f8e",
+        "short": "gome"
+    },
+    {
+        "name": "\u80fd\u8fbe\u901f\u9012",
+        "value": "\u80fd\u8fbe\u901f\u9012",
+        "short": "ganzhongnengda"
+    },
+    {
+        "name": "\u6025\u5148\u8fbe",
+        "value": "\u6025\u5148\u8fbe",
+        "short": "jixianda"
+    },
+    {
+        "name": "\u51e1\u5b87\u5feb\u9012",
+        "value": "\u51e1\u5b87\u5feb\u9012",
+        "short": "fanyukuaidi"
+    },
+    {
+        "name": "\u5e0c\u4f18\u7279",
+        "value": "\u5e0c\u4f18\u7279",
+        "short": "xiyoutekuaidi"
+    },
+    {
+        "name": "\u4e2d\u901a\uff08\u5e26\u7535\u8bdd\uff09",
+        "value": "\u4e2d\u901a\uff08\u5e26\u7535\u8bdd\uff09",
+        "short": "zhongtongphone"
+    },
+    {
+        "name": "\u84dd\u9556\u5feb\u9012",
+        "value": "\u84dd\u9556\u5feb\u9012",
+        "short": "lanbiaokuaidi"
+    },
+    {
+        "name": "\u4f73\u5409\u5feb\u8fd0",
+        "value": "\u4f73\u5409\u5feb\u8fd0",
+        "short": "jiajiwuliu"
+    },
+    {
+        "name": "\u5b8f\u54c1\u7269\u6d41",
+        "value": "\u5b8f\u54c1\u7269\u6d41",
+        "short": "hongpinwuliu"
+    },
+    {
+        "name": "GLS",
+        "value": "GLS",
+        "short": "gls"
+    },
+    {
+        "name": "\u539f\u98de\u822a",
+        "value": "\u539f\u98de\u822a",
+        "short": "yuanfeihangwuliu"
+    },
+    {
+        "name": "\u6d77\u7ea2\u7f51\u9001",
+        "value": "\u6d77\u7ea2\u7f51\u9001",
+        "short": "haihongwangsong"
+    },
+    {
+        "name": "TNT",
+        "value": "TNT",
+        "short": "tnt"
+    },
+    {
+        "name": "\u5143\u667a\u6377\u8bda",
+        "value": "\u5143\u667a\u6377\u8bda",
+        "short": "yuanzhijiecheng"
+    },
+    {
+        "name": "\u56fd\u9645\u5305\u88f9",
+        "value": "\u56fd\u9645\u5305\u88f9",
+        "short": "youzhengguoji"
+    },
+    {
+        "name": "\u57ce\u5e02100",
+        "value": "\u57ce\u5e02100",
+        "short": "city100"
+    },
+    {
+        "name": "DPEX",
+        "value": "DPEX",
+        "short": "dpex"
+    },
+    {
+        "name": "\u829d\u9ebb\u5f00\u95e8",
+        "value": "\u829d\u9ebb\u5f00\u95e8",
+        "short": "zhimakaimen"
+    },
+    {
+        "name": "EMS-\u56fd\u9645\u4ef6",
+        "value": "EMS-\u56fd\u9645\u4ef6",
+        "short": "emsguoji"
+    },
+    {
+        "name": "\u664b\u8d8a\u5feb\u9012",
+        "value": "\u664b\u8d8a\u5feb\u9012",
+        "short": "jinyuekuaidi"
+    },
+    {
+        "name": "\u4e50\u6377\u9012",
+        "value": "\u4e50\u6377\u9012",
+        "short": "lejiedi"
+    },
+    {
+        "name": "\u98de\u529b\u58eb\u7269\u6d41",
+        "value": "\u98de\u529b\u58eb\u7269\u6d41",
+        "short": "flysman"
+    },
+    {
+        "name": "\u767e\u817e\u7269\u6d41",
+        "value": "\u767e\u817e\u7269\u6d41",
+        "short": "baitengwuliu"
+    },
+    {
+        "name": "\u54c1\u9a8f\u5feb\u9012",
+        "value": "\u54c1\u9a8f\u5feb\u9012",
+        "short": "pjbest"
+    },
+    {
+        "name": "\u74e6\u52aa\u963f\u56fe(Vanuatu",
+        "value": "\u74e6\u52aa\u963f\u56fe(Vanuatu",
+        "short": "Post)"
+    },
+    {
+        "name": "\u5df4\u5df4\u591a\u65af(Barbados",
+        "value": "\u5df4\u5df4\u591a\u65af(Barbados",
+        "short": "Post)"
+    },
+    {
+        "name": "\u8428\u6469\u4e9a(Samoa",
+        "value": "\u8428\u6469\u4e9a(Samoa",
+        "short": "Post)"
+    },
+    {
+        "name": "\u6590\u6d4e(Fiji",
+        "value": "\u6590\u6d4e(Fiji",
+        "short": "Post)"
+    },
+    {
+        "name": "\u82f1\u8d85\u7269\u6d41",
+        "value": "\u82f1\u8d85\u7269\u6d41",
+        "short": "yingchao"
+    },
+    {
+        "name": "TNY\u7269\u6d41",
+        "value": "TNY\u7269\u6d41",
+        "short": "tny"
+    },
+    {
+        "name": "\u7f8e\u901a",
+        "value": "\u7f8e\u901a",
+        "short": "valueway"
+    },
+    {
+        "name": "\u65b0\u901f\u822a",
+        "value": "\u65b0\u901f\u822a",
+        "short": "sunspeedy"
+    },
+    {
+        "name": "\u901f\u65b9(Sufast)",
+        "value": "\u901f\u65b9(Sufast)",
+        "short": "bphchina"
+    },
+    {
+        "name": "\u534e\u822a\u5feb\u9012",
+        "value": "\u534e\u822a\u5feb\u9012",
+        "short": "hzpl"
+    },
+    {
+        "name": "Gati-KWE",
+        "value": "Gati-KWE",
+        "short": "gatikwe"
+    },
+    {
+        "name": "Red",
+        "value": "Red",
+        "short": "Express"
+    },
+    {
+        "name": "Toll",
+        "value": "Toll",
+        "short": "Priority(Toll"
+    },
+    {
+        "name": "Estafeta",
+        "value": "Estafeta",
+        "short": "estafeta"
+    },
+    {
+        "name": "\u6e2f\u5feb\u901f\u9012",
+        "value": "\u6e2f\u5feb\u901f\u9012",
+        "short": "gdkd"
+    },
+    {
+        "name": "\u58a8\u897f\u54e5\uff08Correos",
+        "value": "\u58a8\u897f\u54e5\uff08Correos",
+        "short": "de"
+    },
+    {
+        "name": "\u7f57\u9a6c\u5c3c\u4e9a\uff08Posta",
+        "value": "\u7f57\u9a6c\u5c3c\u4e9a\uff08Posta",
+        "short": "Romanian\uff09"
+    },
+    {
+        "name": "DPD",
+        "value": "DPD",
+        "short": "Poland"
+    },
+    {
+        "name": "\u963f\u8054\u914b(Emirates",
+        "value": "\u963f\u8054\u914b(Emirates",
+        "short": "Post)"
+    },
+    {
+        "name": "\u65b0\u987a\u4e30\uff08NSF\uff09",
+        "value": "\u65b0\u987a\u4e30\uff08NSF\uff09",
+        "short": "nsf"
+    },
+    {
+        "name": "\u5df4\u57fa\u65af\u5766(Pakistan",
+        "value": "\u5df4\u57fa\u65af\u5766(Pakistan",
+        "short": "Post)"
+    },
+    {
+        "name": "Asendia",
+        "value": "Asendia",
+        "short": "USA"
+    },
+    {
+        "name": "\u6cd5\u56fd\u5927\u5305\u3001EMS-\u82f1\u6587(Chronopost",
+        "value": "\u6cd5\u56fd\u5927\u5305\u3001EMS-\u82f1\u6587(Chronopost",
+        "short": "France)"
+    },
+    {
+        "name": "\u610f\u5927\u5229(Poste",
+        "value": "\u610f\u5927\u5229(Poste",
+        "short": "Italiane)"
+    },
+    {
+        "name": "\u4e16\u8fd0\u5feb\u9012",
+        "value": "\u4e16\u8fd0\u5feb\u9012",
+        "short": "shiyunkuaidi"
+    },
+    {
+        "name": "\u65b0\u5e72\u7ebf\u5feb\u9012",
+        "value": "\u65b0\u5e72\u7ebf\u5feb\u9012",
+        "short": "anlexpress"
+    },
+    {
+        "name": "\u98de\u6d0b\u5feb\u9012",
+        "value": "\u98de\u6d0b\u5feb\u9012",
+        "short": "shipgce"
+    },
+    {
+        "name": "\u8d1d\u6d77\u56fd\u9645\u901f\u9012",
+        "value": "\u8d1d\u6d77\u56fd\u9645\u901f\u9012",
+        "short": "xlobo"
+    },
+    {
+        "name": "\u9ec4\u9a6c\u7532",
+        "value": "\u9ec4\u9a6c\u7532",
+        "short": "huangmajia"
+    },
+    {
+        "name": "Toll",
+        "value": "Toll",
+        "short": "dpexen"
+    },
+    {
+        "name": "\u5982\u98ce\u8fbe",
+        "value": "\u5982\u98ce\u8fbe",
+        "short": "rufengda"
+    },
+    {
+        "name": "EC-Firstclass",
+        "value": "EC-Firstclass",
+        "short": "ecfirstclass"
+    },
+    {
+        "name": "DTDC",
+        "value": "DTDC",
+        "short": "India"
+    },
+    {
+        "name": "Safexpress",
+        "value": "Safexpress",
+        "short": "safexpress"
+    },
+    {
+        "name": "\u6cf0\u56fd\uff08Thailand",
+        "value": "\u6cf0\u56fd\uff08Thailand",
+        "short": "Thai"
+    },
+    {
+        "name": "SkyNet",
+        "value": "SkyNet",
+        "short": "Malaysia"
+    },
+    {
+        "name": "TNT",
+        "value": "TNT",
+        "short": "Australia"
+    },
+    {
+        "name": "\u9a6c\u6765\u897f\u4e9a\u5c0f\u5305\uff08Malaysia",
+        "value": "\u9a6c\u6765\u897f\u4e9a\u5c0f\u5305\uff08Malaysia",
+        "short": "Post(Registered)\uff09"
+    },
+    {
+        "name": "\u9a6c\u6765\u897f\u4e9a\u5927\u5305\u3001EMS\uff08Malaysia",
+        "value": "\u9a6c\u6765\u897f\u4e9a\u5927\u5305\u3001EMS\uff08Malaysia",
+        "short": "Post(parcel,EMS)\uff09"
+    },
+    {
+        "name": "\u6c99\u7279\u963f\u62c9\u4f2f(Saudi",
+        "value": "\u6c99\u7279\u963f\u62c9\u4f2f(Saudi",
+        "short": "Post)"
+    },
+    {
+        "name": "\u5357\u975e\uff08South",
+        "value": "\u5357\u975e\uff08South",
+        "short": "African"
+    },
+    {
+        "name": "Mexico",
+        "value": "Mexico",
+        "short": "Senda"
+    },
+    {
+        "name": "MyHermes",
+        "value": "MyHermes",
+        "short": "myhermes"
+    },
+    {
+        "name": "DPD",
+        "value": "DPD",
+        "short": "Germany"
+    },
+    {
+        "name": "Nova",
+        "value": "Nova",
+        "short": "Poshta"
+    },
+    {
+        "name": "Estes",
+        "value": "Estes",
+        "short": "estes"
+    },
+    {
+        "name": "TNT",
+        "value": "TNT",
+        "short": "UK"
+    },
+    {
+        "name": "Deltec",
+        "value": "Deltec",
+        "short": "Courier"
+    },
+    {
+        "name": "UPS",
+        "value": "UPS",
+        "short": "Freight"
+    },
+    {
+        "name": "TNT",
+        "value": "TNT",
+        "short": "Italy"
+    },
+    {
+        "name": "Mexico",
+        "value": "Mexico",
+        "short": "Multipack"
+    },
+    {
+        "name": "\u8461\u8404\u7259\uff08Portugal",
+        "value": "\u8461\u8404\u7259\uff08Portugal",
+        "short": "CTT\uff09"
+    },
+    {
+        "name": "Interlink",
+        "value": "Interlink",
+        "short": "Express"
+    },
+    {
+        "name": "DPD",
+        "value": "DPD",
+        "short": "UK"
+    },
+    {
+        "name": "\u4e4c\u514b\u5170EMS-\u4e2d\u6587(EMS",
+        "value": "\u4e4c\u514b\u5170EMS-\u4e2d\u6587(EMS",
+        "short": "Ukraine)"
+    },
+    {
+        "name": "\u4e4c\u514b\u5170\u5c0f\u5305\u3001\u5927\u5305(UkrPost)",
+        "value": "\u4e4c\u514b\u5170\u5c0f\u5305\u3001\u5927\u5305(UkrPost)",
+        "short": "ukrpost"
+    },
+    {
+        "name": "TCI",
+        "value": "TCI",
+        "short": "XPS"
+    },
+    {
+        "name": "\u9ad8\u94c1\u901f\u9012",
+        "value": "\u9ad8\u94c1\u901f\u9012",
+        "short": "hre"
+    },
+    {
+        "name": "\u65b0\u52a0\u5761EMS\u3001\u5927\u5305(Singapore",
+        "value": "\u65b0\u52a0\u5761EMS\u3001\u5927\u5305(Singapore",
+        "short": "Speedpost)"
+    },
+    {
+        "name": "LaserShip",
+        "value": "LaserShip",
+        "short": "lasership"
+    },
+    {
+        "name": "\u82f1\u56fd\u90ae\u653f\u5927\u5305EMS",
+        "value": "\u82f1\u56fd\u90ae\u653f\u5927\u5305EMS",
+        "short": "parcelforcecn"
+    },
+    {
+        "name": "\u540c\u821f\u884c\u7269\u6d41",
+        "value": "\u540c\u821f\u884c\u7269\u6d41",
+        "short": "chinatzx"
+    },
+    {
+        "name": "\u79e6\u90a6\u5feb\u8fd0",
+        "value": "\u79e6\u90a6\u5feb\u8fd0",
+        "short": "qbexpress"
+    },
+    {
+        "name": "skynet",
+        "value": "skynet",
+        "short": "skynet"
+    },
+    {
+        "name": "\u5fe0\u4fe1\u8fbe",
+        "value": "\u5fe0\u4fe1\u8fbe",
+        "short": "zhongxinda"
+    },
+    {
+        "name": "\u95e8\u5bf9\u95e8",
+        "value": "\u95e8\u5bf9\u95e8",
+        "short": "menduimen"
+    },
+    {
+        "name": "\u5fae\u7279\u6d3e",
+        "value": "\u5fae\u7279\u6d3e",
+        "short": "weitepai"
+    },
+    {
+        "name": "\u6d77\u76df\u901f\u9012",
+        "value": "\u6d77\u76df\u901f\u9012",
+        "short": "haimengsudi"
+    },
+    {
+        "name": "\u5723\u5b89\u7269\u6d41",
+        "value": "\u5723\u5b89\u7269\u6d41",
+        "short": "shenganwuliu"
+    },
+    {
+        "name": "\u8054\u90a6\u5feb\u9012",
+        "value": "\u8054\u90a6\u5feb\u9012",
+        "short": "lianbangkuaidi"
+    },
+    {
+        "name": "\u98de\u5feb\u8fbe",
+        "value": "\u98de\u5feb\u8fbe",
+        "short": "feikuaida"
+    },
+    {
+        "name": "EMS",
+        "value": "EMS",
+        "short": "ems"
+    },
+    {
+        "name": "\u5929\u5730\u534e\u5b87",
+        "value": "\u5929\u5730\u534e\u5b87",
+        "short": "tiandihuayu"
+    },
+    {
+        "name": "\u715c\u5609\u7269\u6d41",
+        "value": "\u715c\u5609\u7269\u6d41",
+        "short": "yujiawuliu"
+    },
+    {
+        "name": "\u90d1\u5dde\u5efa\u534e",
+        "value": "\u90d1\u5dde\u5efa\u534e",
+        "short": "zhengzhoujianhua"
+    },
+    {
+        "name": "\u5927\u6d0b\u7269\u6d41",
+        "value": "\u5927\u6d0b\u7269\u6d41",
+        "short": "dayangwuliu"
+    },
+    {
+        "name": "\u9012\u8fbe\u901f\u8fd0",
+        "value": "\u9012\u8fbe\u901f\u8fd0",
+        "short": "didasuyun"
+    },
+    {
+        "name": "\u6613\u901a\u8fbe",
+        "value": "\u6613\u901a\u8fbe",
+        "short": "yitongda"
+    },
+    {
+        "name": "\u90ae\u5fc5\u4f73",
+        "value": "\u90ae\u5fc5\u4f73",
+        "short": "youbijia"
+    },
+    {
+        "name": "EMS-\u82f1\u6587",
+        "value": "EMS-\u82f1\u6587",
+        "short": "emsen"
+    },
+    {
+        "name": "\u95fd\u76db\u5feb\u9012",
+        "value": "\u95fd\u76db\u5feb\u9012",
+        "short": "minshengkuaidi"
+    },
+    {
+        "name": "\u4f73\u60e0\u5c14",
+        "value": "\u4f73\u60e0\u5c14",
+        "short": "syjiahuier"
+    },
+    {
+        "name": "KCS",
+        "value": "KCS",
+        "short": "kcs"
+    },
+    {
+        "name": "ADP\u56fd\u9645\u5feb\u9012",
+        "value": "ADP\u56fd\u9645\u5feb\u9012",
+        "short": "adp"
+    },
+    {
+        "name": "\u98bf\u8fbe\u56fd\u9645\u5feb\u9012",
+        "value": "\u98bf\u8fbe\u56fd\u9645\u5feb\u9012",
+        "short": "fardarww"
+    },
+    {
+        "name": "\u98bf\u8fbe\u56fd\u9645\u5feb\u9012-\u82f1\u6587",
+        "value": "\u98bf\u8fbe\u56fd\u9645\u5feb\u9012-\u82f1\u6587",
+        "short": "fandaguoji"
+    },
+    {
+        "name": "\u6797\u9053\u56fd\u9645\u5feb\u9012",
+        "value": "\u6797\u9053\u56fd\u9645\u5feb\u9012",
+        "short": "shlindao"
+    },
+    {
+        "name": "\u4e2d\u5916\u8fd0\u901f\u9012-\u4e2d\u6587",
+        "value": "\u4e2d\u5916\u8fd0\u901f\u9012-\u4e2d\u6587",
+        "short": "sinoex"
+    },
+    {
+        "name": "\u4e2d\u5916\u8fd0\u901f\u9012",
+        "value": "\u4e2d\u5916\u8fd0\u901f\u9012",
+        "short": "zhongwaiyun"
+    },
+    {
+        "name": "\u6df1\u5733\u5fb7\u521b\u7269\u6d41",
+        "value": "\u6df1\u5733\u5fb7\u521b\u7269\u6d41",
+        "short": "dechuangwuliu"
+    },
+    {
+        "name": "\u6797\u9053\u56fd\u9645\u5feb\u9012-\u82f1\u6587",
+        "value": "\u6797\u9053\u56fd\u9645\u5feb\u9012-\u82f1\u6587",
+        "short": "ldxpres"
+    },
+    {
+        "name": "\u4e2d\u56fd\u9999\u6e2f(HongKong",
+        "value": "\u4e2d\u56fd\u9999\u6e2f(HongKong",
+        "short": "Post)"
+    },
+    {
+        "name": "\u90a6\u9001\u7269\u6d41",
+        "value": "\u90a6\u9001\u7269\u6d41",
+        "short": "bangsongwuliu"
+    },
+    {
+        "name": "\u534e\u8d6b\u7269\u6d41",
+        "value": "\u534e\u8d6b\u7269\u6d41",
+        "short": "nmhuahe"
+    },
+    {
+        "name": "\u987a\u6377\u4e30\u8fbe",
+        "value": "\u987a\u6377\u4e30\u8fbe",
+        "short": "shunjiefengda"
+    },
+    {
+        "name": "\u5929\u9a6c\u8fc5\u8fbe",
+        "value": "\u5929\u9a6c\u8fc5\u8fbe",
+        "short": "tianma"
+    },
+    {
+        "name": "\u6052\u5b87\u8fd0\u901a",
+        "value": "\u6052\u5b87\u8fd0\u901a",
+        "short": "hyytes"
+    },
+    {
+        "name": "\u8003\u62c9\u56fd\u9645\u901f\u9012",
+        "value": "\u8003\u62c9\u56fd\u9645\u901f\u9012",
+        "short": "kaolaexpress"
+    },
+    {
+        "name": "BlueDart",
+        "value": "BlueDart",
+        "short": "bluedart"
+    },
+    {
+        "name": "\u65e5\u65e5\u987a\u5feb\u7ebf",
+        "value": "\u65e5\u65e5\u987a\u5feb\u7ebf",
+        "short": "rrskx"
+    },
+    {
+        "name": "\u8fd0\u4e1c\u897f",
+        "value": "\u8fd0\u4e1c\u897f",
+        "short": "yundx"
+    },
+    {
+        "name": "\u9ed1\u72d7\u7269\u6d41",
+        "value": "\u9ed1\u72d7\u7269\u6d41",
+        "short": "higo"
+    },
+    {
+        "name": "\u9e4f\u8fdc\u56fd\u9645\u901f\u9012",
+        "value": "\u9e4f\u8fdc\u56fd\u9645\u901f\u9012",
+        "short": "pengyuanexpress"
+    },
+    {
+        "name": "\u5b89\u6377\u7269\u6d41",
+        "value": "\u5b89\u6377\u7269\u6d41",
+        "short": "anjie88"
+    },
+    {
+        "name": "\u9a8f\u8fbe\u5feb\u9012",
+        "value": "\u9a8f\u8fbe\u5feb\u9012",
+        "short": "jdexpressusa"
+    },
+    {
+        "name": "C&C\u56fd\u9645\u901f\u9012",
+        "value": "C&C\u56fd\u9645\u901f\u9012",
+        "short": "cncexp"
+    },
+    {
+        "name": "\u5317\u4eacEMS",
+        "value": "\u5317\u4eacEMS",
+        "short": "bjemstckj"
+    },
+    {
+        "name": "airpak",
+        "value": "airpak",
+        "short": "expresss"
+    },
+    {
+        "name": "\u8377\u5170\u90ae\u653f-\u4e2d\u56fd\u4ef6",
+        "value": "\u8377\u5170\u90ae\u653f-\u4e2d\u56fd\u4ef6",
+        "short": "postnlchina"
+    },
+    {
+        "name": "\u5927\u8fbe\u7269\u6d41",
+        "value": "\u5927\u8fbe\u7269\u6d41",
+        "short": "idada"
+    },
+    {
+        "name": "\u76ca\u9012\u7269\u6d41",
+        "value": "\u76ca\u9012\u7269\u6d41",
+        "short": "edlogistics"
+    },
+    {
+        "name": "\u4e2d\u5916\u8fd0",
+        "value": "\u4e2d\u5916\u8fd0",
+        "short": "esinotrans"
+    },
+    {
+        "name": "\u901f\u6d3e\u5feb\u9012(FastGo)",
+        "value": "\u901f\u6d3e\u5feb\u9012(FastGo)",
+        "short": "fastgo"
+    },
+    {
+        "name": "\u6613\u5ba2\u6ee1",
+        "value": "\u6613\u5ba2\u6ee1",
+        "short": "ecmscn"
+    },
+    {
+        "name": "\u7f8e\u56fd\u4e91\u8fbe",
+        "value": "\u7f8e\u56fd\u4e91\u8fbe",
+        "short": "yundaexus"
+    },
+    {
+        "name": "Toll",
+        "value": "Toll",
+        "short": "toll"
+    },
+    {
+        "name": "\u6df1\u5733DPEX",
+        "value": "\u6df1\u5733DPEX",
+        "short": "szdpex"
+    },
+    {
+        "name": "\u4fc4\u987a\u8fbe",
+        "value": "\u4fc4\u987a\u8fbe",
+        "short": "eshunda"
+    },
+    {
+        "name": "\u5e7f\u4e1c\u901f\u817e\u7269\u6d41",
+        "value": "\u5e7f\u4e1c\u901f\u817e\u7269\u6d41",
+        "short": "suteng"
+    },
+    {
+        "name": "\u65b0\u9e4f\u5feb\u9012",
+        "value": "\u65b0\u9e4f\u5feb\u9012",
+        "short": "gdxp"
+    },
+    {
+        "name": "\u5e73\u5b89\u8fbe\u817e\u98de",
+        "value": "\u5e73\u5b89\u8fbe\u817e\u98de",
+        "short": "pingandatengfei"
+    },
+    {
+        "name": "\u7a57\u4f73\u7269\u6d41",
+        "value": "\u7a57\u4f73\u7269\u6d41",
+        "short": "suijiawuliu"
+    },
+    {
+        "name": "\u4f20\u559c\u7269\u6d41",
+        "value": "\u4f20\u559c\u7269\u6d41",
+        "short": "chuanxiwuliu"
+    },
+    {
+        "name": "\u6377\u7279\u5feb\u9012",
+        "value": "\u6377\u7279\u5feb\u9012",
+        "short": "jietekuaidi"
+    },
+    {
+        "name": "\u9686\u6d6a\u5feb\u9012",
+        "value": "\u9686\u6d6a\u5feb\u9012",
+        "short": "longlangkuaidi"
+    },
+    {
+        "name": "\u4f73\u5409\u5feb\u9012",
+        "value": "\u4f73\u5409\u5feb\u9012",
+        "short": "jiajikuaidi"
+    },
+    {
+        "name": "\u5feb\u8fbe\u7269\u6d41",
+        "value": "\u5feb\u8fbe\u7269\u6d41",
+        "short": "kuaidawuliu"
+    },
+    {
+        "name": "\u98de\u72d0\u5feb\u9012",
+        "value": "\u98de\u72d0\u5feb\u9012",
+        "short": "feihukuaidi"
+    },
+    {
+        "name": "\u6f47\u6e58\u6668\u62a5",
+        "value": "\u6f47\u6e58\u6668\u62a5",
+        "short": "xiaoxiangchenbao"
+    },
+    {
+        "name": "\u5df4\u4f26\u652f",
+        "value": "\u5df4\u4f26\u652f",
+        "short": "balunzhi"
+    },
+    {
+        "name": "\u5b89\u80fd\u7269\u6d41",
+        "value": "\u5b89\u80fd\u7269\u6d41",
+        "short": "annengwuliu"
+    },
+    {
+        "name": "\u7533\u901a\u5feb\u9012",
+        "value": "\u7533\u901a\u5feb\u9012",
+        "short": "shentong"
+    },
+    {
+        "name": "\u4ebf\u9886\u901f\u8fd0",
+        "value": "\u4ebf\u9886\u901f\u8fd0",
+        "short": "yilingsuyun"
+    },
+    {
+        "name": "\u5e97\u901a\u5feb\u9012",
+        "value": "\u5e97\u901a\u5feb\u9012",
+        "short": "diantongkuaidi"
+    },
+    {
+        "name": "OCA",
+        "value": "OCA",
+        "short": "Argentina"
+    },
+    {
+        "name": "\u5c3c\u65e5\u5229\u4e9a(Nigerian",
+        "value": "\u5c3c\u65e5\u5229\u4e9a(Nigerian",
+        "short": "Postal)"
+    },
+    {
+        "name": "\u667a\u5229(Correos",
+        "value": "\u667a\u5229(Correos",
+        "short": "Chile)"
+    },
+    {
+        "name": "\u4ee5\u8272\u5217(Israel",
+        "value": "\u4ee5\u8272\u5217(Israel",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4eac\u4e1c\u7269\u6d41",
+        "value": "\u4eac\u4e1c\u7269\u6d41",
+        "short": "jd"
+    },
+    {
+        "name": "\u5965\u5730\u5229(Austrian",
+        "value": "\u5965\u5730\u5229(Austrian",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4e4c\u514b\u5170\u5c0f\u5305\u3001\u5927\u5305(UkrPoshta)",
+        "value": "\u4e4c\u514b\u5170\u5c0f\u5305\u3001\u5927\u5305(UkrPoshta)",
+        "short": "ukraine"
+    },
+    {
+        "name": "\u4e4c\u5e72\u8fbe(Posta",
+        "value": "\u4e4c\u5e72\u8fbe(Posta",
+        "short": "Uganda)"
+    },
+    {
+        "name": "\u963f\u585e\u62dc\u7586EMS(EMS",
+        "value": "\u963f\u585e\u62dc\u7586EMS(EMS",
+        "short": "AzerExpressPost)"
+    },
+    {
+        "name": "\u82ac\u5170(Itella",
+        "value": "\u82ac\u5170(Itella",
+        "short": "Posti"
+    },
+    {
+        "name": "\u65af\u6d1b\u4f10\u514b(Slovensk\u00e1",
+        "value": "\u65af\u6d1b\u4f10\u514b(Slovensk\u00e1",
+        "short": "Posta)"
+    },
+    {
+        "name": "\u963f\u9c81\u5df4[\u8377\u5170]\uff08Post",
+        "value": "\u963f\u9c81\u5df4[\u8377\u5170]\uff08Post",
+        "short": "Aruba\uff09"
+    },
+    {
+        "name": "\u7231\u5c14\u5170(An",
+        "value": "\u7231\u5c14\u5170(An",
+        "short": "Post)"
+    },
+    {
+        "name": "\u5370\u5ea6\u5c3c\u897f\u4e9aEMS(Pos",
+        "value": "\u5370\u5ea6\u5c3c\u897f\u4e9aEMS(Pos",
+        "short": "Indonesia-EMS)"
+    },
+    {
+        "name": "\u6613\u4f18\u5305\u88f9",
+        "value": "\u6613\u4f18\u5305\u88f9",
+        "short": "eupackage"
+    },
+    {
+        "name": "\u5a01\u65f6\u6c9b\u8fd0\u8d27\u8fd0",
+        "value": "\u5a01\u65f6\u6c9b\u8fd0\u8d27\u8fd0",
+        "short": "wtdchina"
+    },
+    {
+        "name": "\u884c\u5fc5\u8fbe",
+        "value": "\u884c\u5fc5\u8fbe",
+        "short": "speeda"
+    },
+    {
+        "name": "\u4e2d\u901a\u56fd\u9645",
+        "value": "\u4e2d\u901a\u56fd\u9645",
+        "short": "zhongtongguoji"
+    },
+    {
+        "name": "\u5343\u987a\u5feb\u9012",
+        "value": "\u5343\u987a\u5feb\u9012",
+        "short": "qskdyxgs"
+    },
+    {
+        "name": "\u897f\u90ae\u5bc4",
+        "value": "\u897f\u90ae\u5bc4",
+        "short": "xipost"
+    },
+    {
+        "name": "\u987a\u6377\u8fbe",
+        "value": "\u987a\u6377\u8fbe",
+        "short": "shunjieda"
+    },
+    {
+        "name": "CE\u6613\u6b27\u901a\u56fd\u9645\u901f\u9012",
+        "value": "CE\u6613\u6b27\u901a\u56fd\u9645\u901f\u9012",
+        "short": "cloudexpress"
+    },
+    {
+        "name": "\u548c\u4e30\u540c\u57ce",
+        "value": "\u548c\u4e30\u540c\u57ce",
+        "short": "hfwuxi"
+    },
+    {
+        "name": "\u5929\u8054\u5feb\u8fd0",
+        "value": "\u5929\u8054\u5feb\u8fd0",
+        "short": "tlky"
+    },
+    {
+        "name": "\u4f18\u901f\u7269\u6d41",
+        "value": "\u4f18\u901f\u7269\u6d41",
+        "short": "youshuwuliu"
+    },
+    {
+        "name": "\u57c3\u585e\u4fc4\u6bd4\u4e9a(Ethiopian",
+        "value": "\u57c3\u585e\u4fc4\u6bd4\u4e9a(Ethiopian",
+        "short": "postal)"
+    },
+    {
+        "name": "\u5362\u68ee\u5821(Luxembourg",
+        "value": "\u5362\u68ee\u5821(Luxembourg",
+        "short": "Post)"
+    },
+    {
+        "name": "\u6bdb\u91cc\u6c42\u65af(Mauritius",
+        "value": "\u6bdb\u91cc\u6c42\u65af(Mauritius",
+        "short": "Post)"
+    },
+    {
+        "name": "\u6587\u83b1(Brunei",
+        "value": "\u6587\u83b1(Brunei",
+        "short": "Postal)"
+    },
+    {
+        "name": "Quantium",
+        "value": "Quantium",
+        "short": "quantium"
+    },
+    {
+        "name": "\u4e2d\u94c1\u7269\u6d41",
+        "value": "\u4e2d\u94c1\u7269\u6d41",
+        "short": "zhongtiewuliu"
+    },
+    {
+        "name": "\u5b87\u946b\u7269\u6d41",
+        "value": "\u5b87\u946b\u7269\u6d41",
+        "short": "yuxinwuliu"
+    },
+    {
+        "name": "\u5df4\u6797(Bahrain",
+        "value": "\u5df4\u6797(Bahrain",
+        "short": "Post)"
+    },
+    {
+        "name": "\u7eb3\u7c73\u6bd4\u4e9a(NamPost)",
+        "value": "\u7eb3\u7c73\u6bd4\u4e9a(NamPost)",
+        "short": "namibia"
+    },
+    {
+        "name": "\u5362\u65fa\u8fbe(Rwanda",
+        "value": "\u5362\u65fa\u8fbe(Rwanda",
+        "short": "i-posita)"
+    },
+    {
+        "name": "\u83b1\u7d22\u6258(Lesotho",
+        "value": "\u83b1\u7d22\u6258(Lesotho",
+        "short": "Post)"
+    },
+    {
+        "name": "\u80af\u5c3c\u4e9a(POSTA",
+        "value": "\u80af\u5c3c\u4e9a(POSTA",
+        "short": "KENYA)"
+    },
+    {
+        "name": "\u5580\u9ea6\u9686(CAMPOST)",
+        "value": "\u5580\u9ea6\u9686(CAMPOST)",
+        "short": "cameroon"
+    },
+    {
+        "name": "\u4f2f\u5229\u5179(Belize",
+        "value": "\u4f2f\u5229\u5179(Belize",
+        "short": "Postal)"
+    },
+    {
+        "name": "\u5df4\u62c9\u572d(Correo",
+        "value": "\u5df4\u62c9\u572d(Correo",
+        "short": "Paraguayo)"
+    },
+    {
+        "name": "\u6ce2\u9ed1(JP",
+        "value": "\u6ce2\u9ed1(JP",
+        "short": "BH"
+    },
+    {
+        "name": "\u73bb\u5229\u7ef4\u4e9a",
+        "value": "\u73bb\u5229\u7ef4\u4e9a",
+        "short": "bolivia"
+    },
+    {
+        "name": "\u67ec\u57d4\u5be8(Cambodia",
+        "value": "\u67ec\u57d4\u5be8(Cambodia",
+        "short": "Post)"
+    },
+    {
+        "name": "\u5170\u5dde\u4f19\u4f34\u7269\u6d41",
+        "value": "\u5170\u5dde\u4f19\u4f34\u7269\u6d41",
+        "short": "huoban"
+    },
+    {
+        "name": "\u5929\u7eb5\u7269\u6d41",
+        "value": "\u5929\u7eb5\u7269\u6d41",
+        "short": "tianzong"
+    },
+    {
+        "name": "\u5766\u6851\u5c3c\u4e9a(Tanzania",
+        "value": "\u5766\u6851\u5c3c\u4e9a(Tanzania",
+        "short": "Posts)"
+    },
+    {
+        "name": "\u963f\u66fc(Oman",
+        "value": "\u963f\u66fc(Oman",
+        "short": "Post)"
+    },
+    {
+        "name": "\u76f4\u5e03\u7f57\u9640[\u82f1\u56fd](",
+        "value": "\u76f4\u5e03\u7f57\u9640[\u82f1\u56fd](",
+        "short": "Royal"
+    },
+    {
+        "name": "\u5c55\u52e4\u5feb\u9012",
+        "value": "\u5c55\u52e4\u5feb\u9012",
+        "short": "byht"
+    },
+    {
+        "name": "\u8d8a\u5357EMS(VNPost",
+        "value": "\u8d8a\u5357EMS(VNPost",
+        "short": "Express)"
+    },
+    {
+        "name": "\u5b89\u8fc5\u7269\u6d41",
+        "value": "\u5b89\u8fc5\u7269\u6d41",
+        "short": "anxl"
+    },
+    {
+        "name": "\u8fbe\u65b9\u7269\u6d41",
+        "value": "\u8fbe\u65b9\u7269\u6d41",
+        "short": "dfpost"
+    },
+    {
+        "name": "\u5341\u65b9\u901a\u7269\u6d41",
+        "value": "\u5341\u65b9\u901a\u7269\u6d41",
+        "short": "sfift"
+    },
+    {
+        "name": "\u98de\u9e70\u7269\u6d41",
+        "value": "\u98de\u9e70\u7269\u6d41",
+        "short": "hnfy"
+    },
+    {
+        "name": "UPS",
+        "value": "UPS",
+        "short": "i-parcel"
+    },
+    {
+        "name": "\u946b\u9510\u8fbe",
+        "value": "\u946b\u9510\u8fbe",
+        "short": "bjxsrd"
+    },
+    {
+        "name": "\u5b5f\u52a0\u62c9\u56fd(EMS)",
+        "value": "\u5b5f\u52a0\u62c9\u56fd(EMS)",
+        "short": "bangladesh"
+    },
+    {
+        "name": "\u5feb\u6377\u901f\u9012",
+        "value": "\u5feb\u6377\u901f\u9012",
+        "short": "kuaijiesudi"
+    },
+    {
+        "name": "\u65e5\u672c\uff08Japan",
+        "value": "\u65e5\u672c\uff08Japan",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u4f17\u8f89\u8fbe\u7269\u6d41",
+        "value": "\u4f17\u8f89\u8fbe\u7269\u6d41",
+        "short": "zhdwl"
+    },
+    {
+        "name": "\u79e6\u8fdc\u7269\u6d41",
+        "value": "\u79e6\u8fdc\u7269\u6d41",
+        "short": "qinyuan"
+    },
+    {
+        "name": "\u6fb3\u90ae\u4e2d\u56fd\u5feb\u8fd0",
+        "value": "\u6fb3\u90ae\u4e2d\u56fd\u5feb\u8fd0",
+        "short": "auexpress"
+    },
+    {
+        "name": "\u65e5\u76ca\u901a\u901f\u9012",
+        "value": "\u65e5\u76ca\u901a\u901f\u9012",
+        "short": "rytsd"
+    },
+    {
+        "name": "\u822a\u5b87\u5feb\u9012",
+        "value": "\u822a\u5b87\u5feb\u9012",
+        "short": "hangyu"
+    },
+    {
+        "name": "\u6025\u987a\u901a",
+        "value": "\u6025\u987a\u901a",
+        "short": "pzhjst"
+    },
+    {
+        "name": "\u4f18\u901f\u901a\u8fbe",
+        "value": "\u4f18\u901f\u901a\u8fbe",
+        "short": "yousutongda"
+    },
+    {
+        "name": "\u98de\u90a6\u5feb\u9012",
+        "value": "\u98de\u90a6\u5feb\u9012",
+        "short": "fbkd"
+    },
+    {
+        "name": "\u534e\u8fbe\u5feb\u8fd0",
+        "value": "\u534e\u8fbe\u5feb\u8fd0",
+        "short": "huada"
+    },
+    {
+        "name": "FOX\u56fd\u9645\u5feb\u9012",
+        "value": "FOX\u56fd\u9645\u5feb\u9012",
+        "short": "fox"
+    },
+    {
+        "name": "\u4f73\u6021\u7269\u6d41",
+        "value": "\u4f73\u6021\u7269\u6d41",
+        "short": "jiayiwuliu"
+    },
+    {
+        "name": "\u9e4f\u7a0b\u5feb\u9012",
+        "value": "\u9e4f\u7a0b\u5feb\u9012",
+        "short": "pengcheng"
+    },
+    {
+        "name": "\u51a0\u5ead\u56fd\u9645\u7269\u6d41",
+        "value": "\u51a0\u5ead\u56fd\u9645\u7269\u6d41",
+        "short": "guanting"
+    },
+    {
+        "name": "\u7f8e\u56fd\u5feb\u9012",
+        "value": "\u7f8e\u56fd\u5feb\u9012",
+        "short": "meiguokuaidi"
+    },
+    {
+        "name": "\u901a\u548c\u5929\u4e0b",
+        "value": "\u901a\u548c\u5929\u4e0b",
+        "short": "tonghetianxia"
+    },
+    {
+        "name": "\u97f3\u7d20\u5feb\u8fd0",
+        "value": "\u97f3\u7d20\u5feb\u8fd0",
+        "short": "yinsu"
+    },
+    {
+        "name": "\u521b\u4e00\u5feb\u9012",
+        "value": "\u521b\u4e00\u5feb\u9012",
+        "short": "chuangyi"
+    },
+    {
+        "name": "\u91cd\u5e86\u661f\u7a0b\u5feb\u9012",
+        "value": "\u91cd\u5e86\u661f\u7a0b\u5feb\u9012",
+        "short": "cqxingcheng"
+    },
+    {
+        "name": "\u8d35\u5dde\u661f\u7a0b\u5feb\u9012",
+        "value": "\u8d35\u5dde\u661f\u7a0b\u5feb\u9012",
+        "short": "gzxingcheng"
+    },
+    {
+        "name": "\u6cb3\u5357\u5168\u901f\u901a",
+        "value": "\u6cb3\u5357\u5168\u901f\u901a",
+        "short": "hnqst"
+    },
+    {
+        "name": "\u5feb\u901f\u9012",
+        "value": "\u5feb\u901f\u9012",
+        "short": "ksudi"
+    },
+    {
+        "name": "\u5317\u6781\u661f\u5feb\u8fd0",
+        "value": "\u5317\u6781\u661f\u5feb\u8fd0",
+        "short": "polarisexpress"
+    },
+    {
+        "name": "6LS",
+        "value": "6LS",
+        "short": "EXPRESS"
+    },
+    {
+        "name": "ANTS",
+        "value": "ANTS",
+        "short": "EXPRESS"
+    },
+    {
+        "name": "S2C",
+        "value": "S2C",
+        "short": "s2c"
+    },
+    {
+        "name": "Hi\u6dd8\u6613\u5feb\u9012",
+        "value": "Hi\u6dd8\u6613\u5feb\u9012",
+        "short": "hitaoe"
+    },
+    {
+        "name": "CNAIR",
+        "value": "CNAIR",
+        "short": "cnair"
+    },
+    {
+        "name": "\u6613\u6b27\u6d32\u56fd\u9645\u7269\u6d41",
+        "value": "\u6613\u6b27\u6d32\u56fd\u9645\u7269\u6d41",
+        "short": "yiouzhou"
+    },
+    {
+        "name": "\u9633\u5149\u5feb\u9012",
+        "value": "\u9633\u5149\u5feb\u9012",
+        "short": "shiningexpress"
+    },
+    {
+        "name": "\u5317\u4eac\u4e30\u8d8a\u4f9b\u5e94\u94fe",
+        "value": "\u5317\u4eac\u4e30\u8d8a\u4f9b\u5e94\u94fe",
+        "short": "beijingfengyue"
+    },
+    {
+        "name": "\u534e\u4e2d\u5feb\u9012",
+        "value": "\u534e\u4e2d\u5feb\u9012",
+        "short": "cpsair"
+    },
+    {
+        "name": "\u9752\u65c5\u7269\u6d41",
+        "value": "\u9752\u65c5\u7269\u6d41",
+        "short": "zqlwl"
+    },
+    {
+        "name": "\u6613\u822a\u7269\u6d41",
+        "value": "\u6613\u822a\u7269\u6d41",
+        "short": "yihangmall"
+    },
+    {
+        "name": "\u57ce\u94c1\u901f\u9012",
+        "value": "\u57ce\u94c1\u901f\u9012",
+        "short": "cex"
+    },
+    {
+        "name": "\u5343\u91cc\u901f\u9012",
+        "value": "\u5343\u91cc\u901f\u9012",
+        "short": "qianli"
+    },
+    {
+        "name": "\u6025\u9012",
+        "value": "\u6025\u9012",
+        "short": "jdpplus"
+    },
+    {
+        "name": "\u4f73\u6377\u7fd4\u7269\u6d41",
+        "value": "\u4f73\u6377\u7fd4\u7269\u6d41",
+        "short": "jjx888"
+    },
+    {
+        "name": "\u6d0b\u53e3\u5cb8",
+        "value": "\u6d0b\u53e3\u5cb8",
+        "short": "ykouan"
+    },
+    {
+        "name": "\u8003\u62c9\u901f\u9012",
+        "value": "\u8003\u62c9\u901f\u9012",
+        "short": "koalaexp"
+    },
+    {
+        "name": "\u5929\u8d8a\u7269\u6d41",
+        "value": "\u5929\u8d8a\u7269\u6d41",
+        "short": "surpassgo"
+    },
+    {
+        "name": "\u90ae\u653f\u6807\u51c6\u5feb\u9012",
+        "value": "\u90ae\u653f\u6807\u51c6\u5feb\u9012",
+        "short": "youzhengbk"
+    },
+    {
+        "name": "\u8fd0\u901a\u5feb\u8fd0",
+        "value": "\u8fd0\u901a\u5feb\u8fd0",
+        "short": "ytky168"
+    },
+    {
+        "name": "\u5362\u68ee\u5821\u822a\u7a7a",
+        "value": "\u5362\u68ee\u5821\u822a\u7a7a",
+        "short": "cargolux"
+    },
+    {
+        "name": "\u4f18\u4f18\u901f\u9012",
+        "value": "\u4f18\u4f18\u901f\u9012",
+        "short": "youyou"
+    },
+    {
+        "name": "\u5168\u5ddd\u7269\u6d41",
+        "value": "\u5168\u5ddd\u7269\u6d41",
+        "short": "quanchuan56"
+    },
+    {
+        "name": "SYNSHIP\u5feb\u9012",
+        "value": "SYNSHIP\u5feb\u9012",
+        "short": "synship"
+    },
+    {
+        "name": "\u4ed3\u9f20\u5feb\u9012",
+        "value": "\u4ed3\u9f20\u5feb\u9012",
+        "short": "cangspeed"
+    },
+    {
+        "name": "\u9012\u4e94\u65b9\u4e91\u4ed3",
+        "value": "\u9012\u4e94\u65b9\u4e91\u4ed3",
+        "short": "di5pll"
+    },
+    {
+        "name": "\u5353\u5fd7\u901f\u8fd0",
+        "value": "\u5353\u5fd7\u901f\u8fd0",
+        "short": "chinaicip"
+    },
+    {
+        "name": "\u95ea\u7535\u5154",
+        "value": "\u95ea\u7535\u5154",
+        "short": "shandiantu"
+    },
+    {
+        "name": "\u65b0\u5b81\u7269\u6d41",
+        "value": "\u65b0\u5b81\u7269\u6d41",
+        "short": "xinning"
+    },
+    {
+        "name": "\u6625\u98ce\u7269\u6d41",
+        "value": "\u6625\u98ce\u7269\u6d41",
+        "short": "spring56"
+    },
+    {
+        "name": "\u9996\u8fbe\u901f\u8fd0",
+        "value": "\u9996\u8fbe\u901f\u8fd0",
+        "short": "sdsy888"
+    },
+    {
+        "name": "\u4e3d\u72ee\u7269\u6d41",
+        "value": "\u4e3d\u72ee\u7269\u6d41",
+        "short": "lishi"
+    },
+    {
+        "name": "\u96c5\u6fb3\u7269\u6d41",
+        "value": "\u96c5\u6fb3\u7269\u6d41",
+        "short": "yourscm"
+    },
+    {
+        "name": "\u76f4\u5fb7\u90ae",
+        "value": "\u76f4\u5fb7\u90ae",
+        "short": "zdepost"
+    },
+    {
+        "name": "\u65e5\u6631\u7269\u6d41",
+        "value": "\u65e5\u6631\u7269\u6d41",
+        "short": "riyuwuliu"
+    },
+    {
+        "name": "Gati-\u4e2d\u6587",
+        "value": "Gati-\u4e2d\u6587",
+        "short": "gaticn"
+    },
+    {
+        "name": "\u6d3e\u5c14\u5feb\u9012",
+        "value": "\u6d3e\u5c14\u5feb\u9012",
+        "short": "peex"
+    },
+    {
+        "name": "\u6c47\u6587",
+        "value": "\u6c47\u6587",
+        "short": "huiwen"
+    },
+    {
+        "name": "\u4e1c\u7ea2\u7269\u6d41",
+        "value": "\u4e1c\u7ea2\u7269\u6d41",
+        "short": "donghong"
+    },
+    {
+        "name": "\u589e\u76ca\u901f\u9012",
+        "value": "\u589e\u76ca\u901f\u9012",
+        "short": "zengyisudi"
+    },
+    {
+        "name": "\u597d\u8fd0\u6765",
+        "value": "\u597d\u8fd0\u6765",
+        "short": "hlyex"
+    },
+    {
+        "name": "\u57ce\u9645\u5feb\u9012",
+        "value": "\u57ce\u9645\u5feb\u9012",
+        "short": "chengji"
+    },
+    {
+        "name": "\u7a0b\u5149\u5feb\u9012",
+        "value": "\u7a0b\u5149\u5feb\u9012",
+        "short": "chengguangkuaidi"
+    },
+    {
+        "name": "\u5929\u7ffc\u5feb\u9012",
+        "value": "\u5929\u7ffc\u5feb\u9012",
+        "short": "tykd"
+    },
+    {
+        "name": "\u4eac\u4e1c\u8ba2\u5355",
+        "value": "\u4eac\u4e1c\u8ba2\u5355",
+        "short": "jdorder"
+    },
+    {
+        "name": "\u84dd\u5929\u5feb\u9012",
+        "value": "\u84dd\u5929\u5feb\u9012",
+        "short": "lantiankuaidi"
+    },
+    {
+        "name": "\u6c38\u660c\u7269\u6d41",
+        "value": "\u6c38\u660c\u7269\u6d41",
+        "short": "yongchangwuliu"
+    },
+    {
+        "name": "\u7b28\u9e1f\u6d77\u6dd8",
+        "value": "\u7b28\u9e1f\u6d77\u6dd8",
+        "short": "birdex"
+    },
+    {
+        "name": "\u4e00\u6b63\u8fbe\u901f\u8fd0",
+        "value": "\u4e00\u6b63\u8fbe\u901f\u8fd0",
+        "short": "yizhengdasuyun"
+    },
+    {
+        "name": "\u5fb7\u610f\u601d",
+        "value": "\u5fb7\u610f\u601d",
+        "short": "dabei"
+    },
+    {
+        "name": "\u4f50\u5ddd\u6025\u4fbf",
+        "value": "\u4f50\u5ddd\u6025\u4fbf",
+        "short": "sagawa"
+    },
+    {
+        "name": "\u4f18\u914d\u901f\u8fd0",
+        "value": "\u4f18\u914d\u901f\u8fd0",
+        "short": "sdyoupei"
+    },
+    {
+        "name": "\u901f\u5fc5\u8fbe",
+        "value": "\u901f\u5fc5\u8fbe",
+        "short": "subida"
+    },
+    {
+        "name": "\u666f\u5149\u7269\u6d41",
+        "value": "\u666f\u5149\u7269\u6d41",
+        "short": "jgwl"
+    },
+    {
+        "name": "\u5fa1\u98ce\u901f\u8fd0",
+        "value": "\u5fa1\u98ce\u901f\u8fd0",
+        "short": "yufeng"
+    },
+    {
+        "name": "\u81f3\u8bda\u901a\u8fbe\u5feb\u9012",
+        "value": "\u81f3\u8bda\u901a\u8fbe\u5feb\u9012",
+        "short": "zhichengtongda"
+    },
+    {
+        "name": "\u7279\u6025\u4fbf\u7269\u6d41",
+        "value": "\u7279\u6025\u4fbf\u7269\u6d41",
+        "short": "sucmj"
+    },
+    {
+        "name": "\u4e9a\u9a6c\u900a\u4e2d\u56fd",
+        "value": "\u4e9a\u9a6c\u900a\u4e2d\u56fd",
+        "short": "yamaxunwuliu"
+    },
+    {
+        "name": "\u8d27\u8fd0\u7687",
+        "value": "\u8d27\u8fd0\u7687",
+        "short": "kingfreight"
+    },
+    {
+        "name": "\u9526\u7a0b\u7269\u6d41",
+        "value": "\u9526\u7a0b\u7269\u6d41",
+        "short": "jinchengwuliu"
+    },
+    {
+        "name": "\u6fb3\u8d27\u901a",
+        "value": "\u6fb3\u8d27\u901a",
+        "short": "auex"
+    },
+    {
+        "name": "\u6fb3\u901f\u7269\u6d41",
+        "value": "\u6fb3\u901f\u7269\u6d41",
+        "short": "aosu"
+    },
+    {
+        "name": "\u6fb3\u4e16\u901f\u9012",
+        "value": "\u6fb3\u4e16\u901f\u9012",
+        "short": "aus"
+    },
+    {
+        "name": "\u73af\u7403\u901f\u8fd0",
+        "value": "\u73af\u7403\u901f\u8fd0",
+        "short": "huanqiu"
+    },
+    {
+        "name": "\u9ea6\u529b\u5feb\u9012",
+        "value": "\u9ea6\u529b\u5feb\u9012",
+        "short": "mailikuaidi"
+    },
+    {
+        "name": "\u745e\u4e30\u901f\u9012",
+        "value": "\u745e\u4e30\u901f\u9012",
+        "short": "rfsd"
+    },
+    {
+        "name": "\u7f8e\u8054\u5feb\u9012",
+        "value": "\u7f8e\u8054\u5feb\u9012",
+        "short": "letseml"
+    },
+    {
+        "name": "CNPEX\u4e2d\u90ae\u5feb\u9012",
+        "value": "CNPEX\u4e2d\u90ae\u5feb\u9012",
+        "short": "cnpex"
+    },
+    {
+        "name": "\u946b\u4e16\u9510\u8fbe",
+        "value": "\u946b\u4e16\u9510\u8fbe",
+        "short": "xsrd"
+    },
+    {
+        "name": "\u987a\u4e30\u4f18\u9009",
+        "value": "\u987a\u4e30\u4f18\u9009",
+        "short": "sfbest"
+    },
+    {
+        "name": "\u5168\u5cf0\u5feb\u9012",
+        "value": "\u5168\u5cf0\u5feb\u9012",
+        "short": "quanfengkuaidi"
+    },
+    {
+        "name": "\u514b\u7f57\u5730\u4e9a\uff08Hrvatska",
+        "value": "\u514b\u7f57\u5730\u4e9a\uff08Hrvatska",
+        "short": "Posta\uff09"
+    },
+    {
+        "name": "\u4fdd\u52a0\u5229\u4e9a\uff08Bulgarian",
+        "value": "\u4fdd\u52a0\u5229\u4e9a\uff08Bulgarian",
+        "short": "Posts\uff09"
+    },
+    {
+        "name": "Portugal",
+        "value": "Portugal",
+        "short": "Seur"
+    },
+    {
+        "name": "International",
+        "value": "International",
+        "short": "Seur"
+    },
+    {
+        "name": "\u4e45\u6613\u5feb\u9012",
+        "value": "\u4e45\u6613\u5feb\u9012",
+        "short": "jiuyicn"
+    },
+    {
+        "name": "Direct",
+        "value": "Direct",
+        "short": "Link"
+    },
+    {
+        "name": "\u5e0c\u814aEMS\uff08ELTA",
+        "value": "\u5e0c\u814aEMS\uff08ELTA",
+        "short": "Courier\uff09"
+    },
+    {
+        "name": "\u6377\u514b\uff08?esk\u00e1",
+        "value": "\u6377\u514b\uff08?esk\u00e1",
+        "short": "po?ta\uff09"
+    },
+    {
+        "name": "Siodemka",
+        "value": "Siodemka",
+        "short": "siodemka"
+    },
+    {
+        "name": "\u7231\u5c14\u5170(An",
+        "value": "\u7231\u5c14\u5170(An",
+        "short": "Post)"
+    },
+    {
+        "name": "\u6e25\u9014\u56fd\u9645\u901f\u8fd0",
+        "value": "\u6e25\u9014\u56fd\u9645\u901f\u8fd0",
+        "short": "wotu"
+    },
+    {
+        "name": "\u4e00\u53f7\u7ebf",
+        "value": "\u4e00\u53f7\u7ebf",
+        "short": "lineone"
+    },
+    {
+        "name": "\u56db\u6d77\u5feb\u9012",
+        "value": "\u56db\u6d77\u5feb\u9012",
+        "short": "sihaiet"
+    },
+    {
+        "name": "\u5fb7\u5764\u7269\u6d41",
+        "value": "\u5fb7\u5764\u7269\u6d41",
+        "short": "dekuncn"
+    },
+    {
+        "name": "\u51c6\u5b9e\u5feb\u8fd0",
+        "value": "\u51c6\u5b9e\u5feb\u8fd0",
+        "short": "zsky123"
+    },
+    {
+        "name": "\u5b8f\u6377\u56fd\u9645\u7269\u6d41",
+        "value": "\u5b8f\u6377\u56fd\u9645\u7269\u6d41",
+        "short": "hongjie"
+    },
+    {
+        "name": "\u9e3f\u8baf\u7269\u6d41",
+        "value": "\u9e3f\u8baf\u7269\u6d41",
+        "short": "hongxun"
+    },
+    {
+        "name": "\u5361\u90a6\u914d\u9001",
+        "value": "\u5361\u90a6\u914d\u9001",
+        "short": "ahkbps"
+    },
+    {
+        "name": "\u51e1\u5ba2\u914d\u9001\uff08\u4f5c\u5e9f\uff09",
+        "value": "\u51e1\u5ba2\u914d\u9001\uff08\u4f5c\u5e9f\uff09",
+        "short": "vancl"
+    },
+    {
+        "name": "\u745e\u58eb\u90ae\u653f",
+        "value": "\u745e\u58eb\u90ae\u653f",
+        "short": "swisspostcn"
+    },
+    {
+        "name": "\u8f89\u8054\u7269\u6d41",
+        "value": "\u8f89\u8054\u7269\u6d41",
+        "short": "huilian"
+    },
+    {
+        "name": "A2U\u901f\u9012",
+        "value": "A2U\u901f\u9012",
+        "short": "a2u"
+    },
+    {
+        "name": "UEQ\u5feb\u9012",
+        "value": "UEQ\u5feb\u9012",
+        "short": "ueq"
+    },
+    {
+        "name": "\u4e2d\u52a0\u56fd\u9645\u5feb\u9012",
+        "value": "\u4e2d\u52a0\u56fd\u9645\u5feb\u9012",
+        "short": "scic"
+    },
+    {
+        "name": "\u6613\u8fbe\u901a",
+        "value": "\u6613\u8fbe\u901a",
+        "short": "yidatong"
+    },
+    {
+        "name": "\u5b9c\u9001",
+        "value": "\u5b9c\u9001",
+        "short": "yisong"
+    },
+    {
+        "name": "\u5168\u7403\u5feb\u8fd0",
+        "value": "\u5168\u7403\u5feb\u8fd0",
+        "short": "abcglobal"
+    },
+    {
+        "name": "\u8292\u679c\u901f\u9012",
+        "value": "\u8292\u679c\u901f\u9012",
+        "short": "mangguo"
+    },
+    {
+        "name": "\u91d1\u6d77\u6dd8",
+        "value": "\u91d1\u6d77\u6dd8",
+        "short": "goldhaitao"
+    },
+    {
+        "name": "\u6781\u5149\u8f6c\u8fd0",
+        "value": "\u6781\u5149\u8f6c\u8fd0",
+        "short": "jiguang"
+    },
+    {
+        "name": "\u5bcc\u817e\u8fbe\u56fd\u9645\u8d27\u8fd0",
+        "value": "\u5bcc\u817e\u8fbe\u56fd\u9645\u8d27\u8fd0",
+        "short": "ftd"
+    },
+    {
+        "name": "DCS",
+        "value": "DCS",
+        "short": "dcs"
+    },
+    {
+        "name": "\u6377\u7f51\u4fc4\u5168\u901a",
+        "value": "\u6377\u7f51\u4fc4\u5168\u901a",
+        "short": "ruexp"
+    },
+    {
+        "name": "\u534e\u901a\u52a1\u8fbe\u7269\u6d41",
+        "value": "\u534e\u901a\u52a1\u8fbe\u7269\u6d41",
+        "short": "htwd"
+    },
+    {
+        "name": "\u7533\u5fc5\u8fbe",
+        "value": "\u7533\u5fc5\u8fbe",
+        "short": "speedoex"
+    },
+    {
+        "name": "\u8054\u8fd0\u5feb\u9012",
+        "value": "\u8054\u8fd0\u5feb\u9012",
+        "short": "lianyun"
+    },
+    {
+        "name": "\u6377\u5b89\u8fbe",
+        "value": "\u6377\u5b89\u8fbe",
+        "short": "jieanda"
+    },
+    {
+        "name": "SHL\u7545\u7075\u56fd\u9645\u7269\u6d41",
+        "value": "SHL\u7545\u7075\u56fd\u9645\u7269\u6d41",
+        "short": "shlexp"
+    },
+    {
+        "name": "EWE\u5168\u7403\u5feb\u9012",
+        "value": "EWE\u5168\u7403\u5feb\u9012",
+        "short": "ewe"
+    },
+    {
+        "name": "\u987a\u90a6\u56fd\u9645\u7269\u6d41",
+        "value": "\u987a\u90a6\u56fd\u9645\u7269\u6d41",
+        "short": "shunbang"
+    },
+    {
+        "name": "\u6210\u8fbe\u56fd\u9645\u901f\u9012",
+        "value": "\u6210\u8fbe\u56fd\u9645\u901f\u9012",
+        "short": "chengda"
+    },
+    {
+        "name": "\u542f\u8fb0\u56fd\u9645\u901f\u9012",
+        "value": "\u542f\u8fb0\u56fd\u9645\u901f\u9012",
+        "short": "qichen"
+    },
+    {
+        "name": "\u5408\u4f17\u901f\u9012(UCS\uff09",
+        "value": "\u5408\u4f17\u901f\u9012(UCS\uff09",
+        "short": "ucs"
+    },
+    {
+        "name": "\u963f\u5bcc\u6c57(Afghan",
+        "value": "\u963f\u5bcc\u6c57(Afghan",
+        "short": "Post)"
+    },
+    {
+        "name": "\u767d\u4fc4\u7f57\u65af(Belpochta)",
+        "value": "\u767d\u4fc4\u7f57\u65af(Belpochta)",
+        "short": "belpost"
+    },
+    {
+        "name": "\u51a0\u6377\u7269\u6d41",
+        "value": "\u51a0\u6377\u7269\u6d41",
+        "short": "gjwl"
+    },
+    {
+        "name": "\u948f\u535a\u7269\u6d41",
+        "value": "\u948f\u535a\u7269\u6d41",
+        "short": "cbo56"
+    },
+    {
+        "name": "\u897f\u7ffc\u7269\u6d41",
+        "value": "\u897f\u7ffc\u7269\u6d41",
+        "short": "westwing"
+    },
+    {
+        "name": "\u4f18\u90a6\u901f\u8fd0",
+        "value": "\u4f18\u90a6\u901f\u8fd0",
+        "short": "ubonex"
+    },
+    {
+        "name": "\u9996\u901a\u5feb\u8fd0",
+        "value": "\u9996\u901a\u5feb\u8fd0",
+        "short": "staky"
+    },
+    {
+        "name": "\u9a6c\u73c2\u535a\u903b",
+        "value": "\u9a6c\u73c2\u535a\u903b",
+        "short": "cnmcpl"
+    },
+    {
+        "name": "\u5c0f\u718a\u7269\u6d41",
+        "value": "\u5c0f\u718a\u7269\u6d41",
+        "short": "littlebearbear"
+    },
+    {
+        "name": "\u73a5\u739b\u901f\u8fd0",
+        "value": "\u73a5\u739b\u901f\u8fd0",
+        "short": "yue777"
+    },
+    {
+        "name": "\u4e0a\u6d77\u822a\u745e\u8d27\u8fd0",
+        "value": "\u4e0a\u6d77\u822a\u745e\u8d27\u8fd0",
+        "short": "hangrui"
+    },
+    {
+        "name": "\u661f\u4e91\u901f\u9012",
+        "value": "\u661f\u4e91\u901f\u9012",
+        "short": "nebuex"
+    },
+    {
+        "name": "\u73af\u521b\u7269\u6d41",
+        "value": "\u73af\u521b\u7269\u6d41",
+        "short": "ghl"
+    },
+    {
+        "name": "\u6797\u5b89\u7269\u6d41",
+        "value": "\u6797\u5b89\u7269\u6d41",
+        "short": "lasy56"
+    },
+    {
+        "name": "\u7b28\u9e1f\u56fd\u9645",
+        "value": "\u7b28\u9e1f\u56fd\u9645",
+        "short": "benniao"
+    },
+    {
+        "name": "\u5168\u901f\u5feb\u9012",
+        "value": "\u5168\u901f\u5feb\u9012",
+        "short": "fsexp"
+    },
+    {
+        "name": "\u6cd5\u7fd4\u901f\u8fd0",
+        "value": "\u6cd5\u7fd4\u901f\u8fd0",
+        "short": "ftlexpress"
+    },
+    {
+        "name": "\u6613\u8f6c\u8fd0",
+        "value": "\u6613\u8f6c\u8fd0",
+        "short": "ezhuanyuan"
+    },
+    {
+        "name": "Superb",
+        "value": "Superb",
+        "short": "Grace"
+    },
+    {
+        "name": "\u84dd\u5929\u56fd\u9645\u5feb\u9012",
+        "value": "\u84dd\u5929\u56fd\u9645\u5feb\u9012",
+        "short": "ltx"
+    },
+    {
+        "name": "\u5723\u98de\u6377\u5feb\u9012",
+        "value": "\u5723\u98de\u6377\u5feb\u9012",
+        "short": "sfjhd"
+    },
+    {
+        "name": "\u6dd8\u97e9\u56fd\u9645\u5feb\u9012",
+        "value": "\u6dd8\u97e9\u56fd\u9645\u5feb\u9012",
+        "short": "krtao"
+    },
+    {
+        "name": "\u5bb9\u667a\u5feb\u8fd0",
+        "value": "\u5bb9\u667a\u5feb\u8fd0",
+        "short": "gdrz58"
+    },
+    {
+        "name": "\u9526\u7a0b\u5feb\u9012",
+        "value": "\u9526\u7a0b\u5feb\u9012",
+        "short": "hrex"
+    },
+    {
+        "name": "\u987a\u65f6\u8fbe\u7269\u6d41",
+        "value": "\u987a\u65f6\u8fbe\u7269\u6d41",
+        "short": "hnssd56"
+    },
+    {
+        "name": "\u9a8f\u7ec5\u7269\u6d41",
+        "value": "\u9a8f\u7ec5\u7269\u6d41",
+        "short": "jsexpress"
+    },
+    {
+        "name": "\u5fb7\u56fd\u96c4\u9e70\u901f\u9012",
+        "value": "\u5fb7\u56fd\u96c4\u9e70\u901f\u9012",
+        "short": "adlerlogi"
+    },
+    {
+        "name": "\u8fdc\u4e3a\u5feb\u9012",
+        "value": "\u8fdc\u4e3a\u5feb\u9012",
+        "short": "ywexpress"
+    },
+    {
+        "name": "\u55d6\u4e00\u4e0b\u540c\u57ce\u5feb\u9012",
+        "value": "\u55d6\u4e00\u4e0b\u540c\u57ce\u5feb\u9012",
+        "short": "sofast56"
+    },
+    {
+        "name": "\u5f00\u5fc3\u5feb\u9012",
+        "value": "\u5f00\u5fc3\u5feb\u9012",
+        "short": "happylink"
+    },
+    {
+        "name": "\u4e94\u516d\u5feb\u8fd0",
+        "value": "\u4e94\u516d\u5feb\u8fd0",
+        "short": "wuliuky"
+    },
+    {
+        "name": "\u5353\u70e8\u5feb\u9012",
+        "value": "\u5353\u70e8\u5feb\u9012",
+        "short": "hrbzykd"
+    },
+    {
+        "name": "ZTE\u4e2d\u5174\u7269\u6d41",
+        "value": "ZTE\u4e2d\u5174\u7269\u6d41",
+        "short": "zteexpress"
+    },
+    {
+        "name": "\u5c3c\u5c14\u5feb\u9012",
+        "value": "\u5c3c\u5c14\u5feb\u9012",
+        "short": "nell"
+    },
+    {
+        "name": "\u9ad8\u94c1\u5feb\u8fd0",
+        "value": "\u9ad8\u94c1\u5feb\u8fd0",
+        "short": "gaotieex"
+    },
+    {
+        "name": "\u4e07\u5bb6\u5eb7\u7269\u6d41",
+        "value": "\u4e07\u5bb6\u5eb7\u7269\u6d41",
+        "short": "wjkwl"
+    },
+    {
+        "name": "\u56fd\u6676\u7269\u6d41",
+        "value": "\u56fd\u6676\u7269\u6d41",
+        "short": "xdshipping"
+    },
+    {
+        "name": "\u5fb7\u56fd\u4e91\u5feb\u9012",
+        "value": "\u5fb7\u56fd\u4e91\u5feb\u9012",
+        "short": "yunexpress"
+    },
+    {
+        "name": "\u5b8f\u9012\u5feb\u8fd0",
+        "value": "\u5b8f\u9012\u5feb\u8fd0",
+        "short": "hd"
+    },
+    {
+        "name": "\u4e00\u8d77\u9001",
+        "value": "\u4e00\u8d77\u9001",
+        "short": "yiqisong"
+    },
+    {
+        "name": "\u8fc8\u9686\u9012\u8fd0",
+        "value": "\u8fc8\u9686\u9012\u8fd0",
+        "short": "mailongdy"
+    },
+    {
+        "name": "\u65b0\u4e9a\u7269\u6d41",
+        "value": "\u65b0\u4e9a\u7269\u6d41",
+        "short": "nalexpress"
+    },
+    {
+        "name": "\u827e\u745e\u65af\u8fdc",
+        "value": "\u827e\u745e\u65af\u8fdc",
+        "short": "ariesfar"
+    },
+    {
+        "name": "\u6fb3\u591a\u591a\u56fd\u9645\u901f\u9012",
+        "value": "\u6fb3\u591a\u591a\u56fd\u9645\u901f\u9012",
+        "short": "adodoxm"
+    },
+    {
+        "name": "CNUP",
+        "value": "CNUP",
+        "short": "\u4e2d\u8054\u90ae"
+    },
+    {
+        "name": "UEX\u56fd\u9645\u7269\u6d41",
+        "value": "UEX\u56fd\u9645\u7269\u6d41",
+        "short": "uex"
+    },
+    {
+        "name": "Hermes",
+        "value": "Hermes",
+        "short": "hermes"
+    },
+    {
+        "name": "PostElbe",
+        "value": "PostElbe",
+        "short": "postelbe"
+    },
+    {
+        "name": "\u7ef4\u666e\u6069\u7269\u6d41",
+        "value": "\u7ef4\u666e\u6069\u7269\u6d41",
+        "short": "vps"
+    },
+    {
+        "name": "\u660e\u8f89\u7269\u6d41",
+        "value": "\u660e\u8f89\u7269\u6d41",
+        "short": "zsmhwl"
+    },
+    {
+        "name": "\u8054\u8fd0\u901a\u7269\u6d41",
+        "value": "\u8054\u8fd0\u901a\u7269\u6d41",
+        "short": "szuem"
+    },
+    {
+        "name": "\u9f99\u8c61\u56fd\u9645\u7269\u6d41",
+        "value": "\u9f99\u8c61\u56fd\u9645\u7269\u6d41",
+        "short": "edragon"
+    },
+    {
+        "name": "\u6c38\u90a6\u56fd\u9645\u7269\u6d41",
+        "value": "\u6c38\u90a6\u56fd\u9645\u7269\u6d41",
+        "short": "yongbangwuliu"
+    },
+    {
+        "name": "51\u8de8\u5883\u901a",
+        "value": "51\u8de8\u5883\u901a",
+        "short": "wykjt"
+    },
+    {
+        "name": "\u901f\u914d\u6b27\u7ffc",
+        "value": "\u901f\u914d\u6b27\u7ffc",
+        "short": "superoz"
+    },
+    {
+        "name": "\u5609\u91cc\u5927\u8363\u7269\u6d41",
+        "value": "\u5609\u91cc\u5927\u8363\u7269\u6d41",
+        "short": "kerrytj"
+    },
+    {
+        "name": "\u4e2d\u56fd\u9999\u6e2f\u73af\u7403\u5feb\u8fd0",
+        "value": "\u4e2d\u56fd\u9999\u6e2f\u73af\u7403\u5feb\u8fd0",
+        "short": "huanqiuabc"
+    },
+    {
+        "name": "CL\u65e5\u4e2d\u901f\u8fd0",
+        "value": "CL\u65e5\u4e2d\u901f\u8fd0",
+        "short": "clsp"
+    },
+    {
+        "name": "SQK\u56fd\u9645\u901f\u9012",
+        "value": "SQK\u56fd\u9645\u901f\u9012",
+        "short": "chinasqk"
+    },
+    {
+        "name": "\u5bb6\u5bb6\u901a\u5feb\u9012",
+        "value": "\u5bb6\u5bb6\u901a\u5feb\u9012",
+        "short": "newsway"
+    },
+    {
+        "name": "\u90ae\u5ba2\u5168\u7403\u901f\u9012",
+        "value": "\u90ae\u5ba2\u5168\u7403\u901f\u9012",
+        "short": "yyox"
+    },
+    {
+        "name": "\u534e\u701a\u5feb\u9012",
+        "value": "\u534e\u701a\u5feb\u9012",
+        "short": "hhair56"
+    },
+    {
+        "name": "\u987a\u58eb\u8fbe\u901f\u8fd0",
+        "value": "\u987a\u58eb\u8fbe\u901f\u8fd0",
+        "short": "shunshid"
+    },
+    {
+        "name": "\u5929\u7fd4\u4e1c\u6377\u8fd0",
+        "value": "\u5929\u7fd4\u4e1c\u6377\u8fd0",
+        "short": "djy56"
+    },
+    {
+        "name": "\u5353\u5b9e\u5feb\u8fd0",
+        "value": "\u5353\u5b9e\u5feb\u8fd0",
+        "short": "zhuoshikuaiyun"
+    },
+    {
+        "name": "\u5409\u7965\u90ae\uff08\u6fb3\u6d32\uff09",
+        "value": "\u5409\u7965\u90ae\uff08\u6fb3\u6d32\uff09",
+        "short": "jixiangyouau"
+    },
+    {
+        "name": "\u84dd\u5929\u5feb\u9012",
+        "value": "\u84dd\u5929\u5feb\u9012",
+        "short": "blueskyexpress"
+    },
+    {
+        "name": "\u5929\u5929\u5feb\u7269\u6d41",
+        "value": "\u5929\u5929\u5feb\u7269\u6d41",
+        "short": "guoeryue"
+    },
+    {
+        "name": "\u7eb5\u901a\u901f\u8fd0",
+        "value": "\u7eb5\u901a\u901f\u8fd0",
+        "short": "ynztsy"
+    },
+    {
+        "name": "\u4e2d\u901a\u5feb\u8fd0",
+        "value": "\u4e2d\u901a\u5feb\u8fd0",
+        "short": "zhongtongkuaiyun"
+    },
+    {
+        "name": "CNE",
+        "value": "CNE",
+        "short": "cnexps"
+    },
+    {
+        "name": "\u5e0c\u814a\u5305\u88f9\uff08ELTA",
+        "value": "\u5e0c\u814a\u5305\u88f9\uff08ELTA",
+        "short": "Hellenic"
+    },
+    {
+        "name": "\u661f\u901f\u9012",
+        "value": "\u661f\u901f\u9012",
+        "short": "starex"
+    },
+    {
+        "name": "\u571f\u8033\u5176",
+        "value": "\u571f\u8033\u5176",
+        "short": "ptt"
+    },
+    {
+        "name": "\u54e5\u4f26\u6bd4\u4e9a(4-72",
+        "value": "\u54e5\u4f26\u6bd4\u4e9a(4-72",
+        "short": "La"
+    },
+    {
+        "name": "\u52a0\u5dde\u732b\u901f\u9012",
+        "value": "\u52a0\u5dde\u732b\u901f\u9012",
+        "short": "jiazhoumao"
+    },
+    {
+        "name": "\u6377\u90a6\u7269\u6d41",
+        "value": "\u6377\u90a6\u7269\u6d41",
+        "short": "jieborne"
+    },
+    {
+        "name": "\u90ae\u653f\u56fd\u5185",
+        "value": "\u90ae\u653f\u56fd\u5185",
+        "short": "yzguonei"
+    },
+    {
+        "name": "Canpar",
+        "value": "Canpar",
+        "short": "canpar"
+    },
+    {
+        "name": "\u6d77\u7855\u9ad8\u94c1\u901f\u9012",
+        "value": "\u6d77\u7855\u9ad8\u94c1\u901f\u9012",
+        "short": "hsgtsd"
+    },
+    {
+        "name": "\u65e5\u65e5\u901a\u56fd\u9645",
+        "value": "\u65e5\u65e5\u901a\u56fd\u9645",
+        "short": "rrthk"
+    },
+    {
+        "name": "\u5929\u7ffc\u7269\u6d41",
+        "value": "\u5929\u7ffc\u7269\u6d41",
+        "short": "tywl99"
+    },
+    {
+        "name": "\u556a\u556a\u4f9b\u5e94\u94fe",
+        "value": "\u556a\u556a\u4f9b\u5e94\u94fe",
+        "short": "papascm"
+    },
+    {
+        "name": "\u4e07\u8fbe\u7f8e",
+        "value": "\u4e07\u8fbe\u7f8e",
+        "short": "wdm"
+    },
+    {
+        "name": "\u5b89\u5f97\u7269\u6d41",
+        "value": "\u5b89\u5f97\u7269\u6d41",
+        "short": "annto"
+    },
+    {
+        "name": "\u5e7f\u4e1c\u8bda\u901a\u7269\u6d41",
+        "value": "\u5e7f\u4e1c\u8bda\u901a\u7269\u6d41",
+        "short": "gdct56"
+    },
+    {
+        "name": "\u5b89\u8fbe\u901f\u9012",
+        "value": "\u5b89\u8fbe\u901f\u9012",
+        "short": "adapost"
+    },
+    {
+        "name": "\u6613\u8fbe\u56fd\u9645\u901f\u9012",
+        "value": "\u6613\u8fbe\u56fd\u9645\u901f\u9012",
+        "short": "eta100"
+    },
+    {
+        "name": "\u897f\u6e38\u5bc4",
+        "value": "\u897f\u6e38\u5bc4",
+        "short": "xiyoug"
+    },
+    {
+        "name": "\u5149\u7ebf\u901f\u9012",
+        "value": "\u5149\u7ebf\u901f\u9012",
+        "short": "gxwl"
+    },
+    {
+        "name": "\u6613\u90ae\u56fd\u9645",
+        "value": "\u6613\u90ae\u56fd\u9645",
+        "short": "euguoji"
+    },
+    {
+        "name": "\u6df1\u5733\u90ae\u653f",
+        "value": "\u6df1\u5733\u90ae\u653f",
+        "short": "szyouzheng"
+    },
+    {
+        "name": "\u7ca4\u4e2d\u56fd\u9645\u8d27\u8fd0\u4ee3\u7406\uff08\u4e0a\u6d77\uff09\u6709\u9650\u516c\u53f8",
+        "value": "\u7ca4\u4e2d\u56fd\u9645\u8d27\u8fd0\u4ee3\u7406\uff08\u4e0a\u6d77\uff09\u6709\u9650\u516c\u53f8",
+        "short": "yuezhongsh"
+    },
+    {
+        "name": "\u57ce\u901a\u7269\u6d41",
+        "value": "\u57ce\u901a\u7269\u6d41",
+        "short": "chengtong"
+    },
+    {
+        "name": "GE2D\u8de8\u5883\u7269\u6d41",
+        "value": "GE2D\u8de8\u5883\u7269\u6d41",
+        "short": "ge2d"
+    },
+    {
+        "name": "\u8d25\u6b27\u6d32",
+        "value": "\u8d25\u6b27\u6d32",
+        "short": "europe8"
+    },
+    {
+        "name": "\u98db\u65af\u7279",
+        "value": "\u98db\u65af\u7279",
+        "short": "bester"
+    },
+    {
+        "name": "\u8499\u53e4\u56fd(Mongol",
+        "value": "\u8499\u53e4\u56fd(Mongol",
+        "short": "Post)"
+    },
+    {
+        "name": "\u4e4c\u62c9\u572d\uff08Correo",
+        "value": "\u4e4c\u62c9\u572d\uff08Correo",
+        "short": "Uruguayo\uff09"
+    },
+    {
+        "name": "\u7259\u4e70\u52a0\uff08Jamaica",
+        "value": "\u7259\u4e70\u52a0\uff08Jamaica",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u683c\u9c81\u5409\u4e9a(Georgian",
+        "value": "\u683c\u9c81\u5409\u4e9a(Georgian",
+        "short": "Pos\uff09"
+    },
+    {
+        "name": "\u7f8e\u8fbe\u5feb\u9012",
+        "value": "\u7f8e\u8fbe\u5feb\u9012",
+        "short": "meidaexpress"
+    },
+    {
+        "name": "\u9a6d\u4e30\u901f\u8fd0",
+        "value": "\u9a6d\u4e30\u901f\u8fd0",
+        "short": "yfsuyun"
+    },
+    {
+        "name": "\u65e0\u5fe7\u7269\u6d41",
+        "value": "\u65e0\u5fe7\u7269\u6d41",
+        "short": "aliexpress"
+    },
+    {
+        "name": "\u90ae\u9e3d\u901f\u8fd0",
+        "value": "\u90ae\u9e3d\u901f\u8fd0",
+        "short": "ugoexpress"
+    },
+    {
+        "name": "\u6fb3\u6d32\u65b0\u5e72\u7ebf\u5feb\u9012",
+        "value": "\u6fb3\u6d32\u65b0\u5e72\u7ebf\u5feb\u9012",
+        "short": "expressplus"
+    },
+    {
+        "name": "\u6807\u6746\u7269\u6d41",
+        "value": "\u6807\u6746\u7269\u6d41",
+        "short": "bmlchina"
+    },
+    {
+        "name": "\u957f\u98ce\u7269\u6d41",
+        "value": "\u957f\u98ce\u7269\u6d41",
+        "short": "longvast"
+    },
+    {
+        "name": "\u90ae\u6765\u901f\u9012",
+        "value": "\u90ae\u6765\u901f\u9012",
+        "short": "youlai"
+    },
+    {
+        "name": "\u9b54\u901f\u8fbe",
+        "value": "\u9b54\u901f\u8fbe",
+        "short": "mosuda"
+    },
+    {
+        "name": "\u5546\u6865\u7269\u6d41",
+        "value": "\u5546\u6865\u7269\u6d41",
+        "short": "shangqiao56"
+    },
+    {
+        "name": "AUV\u56fd\u9645\u5feb\u9012",
+        "value": "AUV\u56fd\u9645\u5feb\u9012",
+        "short": "auvexpress"
+    },
+    {
+        "name": "Newgistics",
+        "value": "Newgistics",
+        "short": "newgistics"
+    },
+    {
+        "name": "FQ\u72c2\u6d3e\u901f\u9012",
+        "value": "FQ\u72c2\u6d3e\u901f\u9012",
+        "short": "freakyquick"
+    },
+    {
+        "name": "\u6cfd\u897f\u5c9b",
+        "value": "\u6cfd\u897f\u5c9b",
+        "short": "jerseypost"
+    },
+    {
+        "name": "\u5a01\u76db\u5feb\u9012",
+        "value": "\u5a01\u76db\u5feb\u9012",
+        "short": "wherexpess"
+    },
+    {
+        "name": "\u8fd0\u901a\u901f\u8fd0",
+        "value": "\u8fd0\u901a\u901f\u8fd0",
+        "short": "yuntong"
+    },
+    {
+        "name": "\u8001\u631d(Lao",
+        "value": "\u8001\u631d(Lao",
+        "short": "Express)"
+    },
+    {
+        "name": "\u5df4\u5e03\u4e9a\u65b0\u51e0\u5185\u4e9a(PNG",
+        "value": "\u5df4\u5e03\u4e9a\u65b0\u51e0\u5185\u4e9a(PNG",
+        "short": "Post)"
+    },
+    {
+        "name": "EASY",
+        "value": "EASY",
+        "short": "EXPRESS"
+    },
+    {
+        "name": "\u58f9\u7c73\u6ef4\u7b54",
+        "value": "\u58f9\u7c73\u6ef4\u7b54",
+        "short": "yimidida"
+    },
+    {
+        "name": "\u98de\u4e91\u5feb\u9012\u7cfb\u7edf",
+        "value": "\u98de\u4e91\u5feb\u9012\u7cfb\u7edf",
+        "short": "fyex"
+    },
+    {
+        "name": "\u8de8\u8dc3\u56fd\u9645",
+        "value": "\u8de8\u8dc3\u56fd\u9645",
+        "short": "kyue"
+    },
+    {
+        "name": "EMS\u5305\u88f9",
+        "value": "EMS\u5305\u88f9",
+        "short": "emsbg"
+    },
+    {
+        "name": "\u73e0\u5cf0\u901f\u8fd0",
+        "value": "\u73e0\u5cf0\u901f\u8fd0",
+        "short": "zf365"
+    },
+    {
+        "name": "\u7518\u8083\u5b89\u7684\u5feb\u9012",
+        "value": "\u7518\u8083\u5b89\u7684\u5feb\u9012",
+        "short": "gansuandi"
+    },
+    {
+        "name": "\u4e00\u8f89\u7269\u6d41",
+        "value": "\u4e00\u8f89\u7269\u6d41",
+        "short": "yatfai"
+    },
+    {
+        "name": "e\u76f4\u8fd0",
+        "value": "e\u76f4\u8fd0",
+        "short": "edtexpress"
+    },
+    {
+        "name": "wish\u90ae",
+        "value": "wish\u90ae",
+        "short": "shpostwish"
+    },
+    {
+        "name": "\u9876\u4e16\u56fd\u9645\u7269\u6d41",
+        "value": "\u9876\u4e16\u56fd\u9645\u7269\u6d41",
+        "short": "topshey"
+    },
+    {
+        "name": "\u9f99\u67ab\u56fd\u9645\u5feb\u9012",
+        "value": "\u9f99\u67ab\u56fd\u9645\u5feb\u9012",
+        "short": "lfexpress"
+    },
+    {
+        "name": "\u5b89\u80fd\u5feb\u9012",
+        "value": "\u5b89\u80fd\u5feb\u9012",
+        "short": "ane66"
+    },
+    {
+        "name": "\u5706\u901a\u5feb\u8fd0",
+        "value": "\u5706\u901a\u5feb\u8fd0",
+        "short": "yuantongkuaiyun"
+    },
+    {
+        "name": "\u5b9d\u901a\u5feb\u9012",
+        "value": "\u5b9d\u901a\u5feb\u9012",
+        "short": "baotongkd"
+    },
+    {
+        "name": "\u7f8e\u56fd\u6c49\u90a6\u5feb\u9012",
+        "value": "\u7f8e\u56fd\u6c49\u90a6\u5feb\u9012",
+        "short": "aplus100"
+    },
+    {
+        "name": "\u6613\u666e\u9012",
+        "value": "\u6613\u666e\u9012",
+        "short": "sixroad"
+    },
+    {
+        "name": "\u901f\u5448",
+        "value": "\u901f\u5448",
+        "short": "sczpds"
+    },
+    {
+        "name": "\u6d77\u6dd8\u7269\u6d41",
+        "value": "\u6d77\u6dd8\u7269\u6d41",
+        "short": "ht22"
+    },
+    {
+        "name": "\u6d77\u7c73\u6d3e\u7269\u6d41",
+        "value": "\u6d77\u7c73\u6d3e\u7269\u6d41",
+        "short": "haimibuy"
+    },
+    {
+        "name": "\u5929\u7fd4\u5feb\u9012",
+        "value": "\u5929\u7fd4\u5feb\u9012",
+        "short": "tianxiang"
+    },
+    {
+        "name": "\u6613\u5883\u8fbe\u56fd\u9645\u7269\u6d41",
+        "value": "\u6613\u5883\u8fbe\u56fd\u9645\u7269\u6d41",
+        "short": "uscbexpress"
+    },
+    {
+        "name": "\u5927\u97e9\u901a\u8fd0",
+        "value": "\u5927\u97e9\u901a\u8fd0",
+        "short": "cjkoreaexpress"
+    },
+    {
+        "name": "\u6fb3\u4e16\u901f\u9012",
+        "value": "\u6fb3\u4e16\u901f\u9012",
+        "short": "ausexpress"
+    },
+    {
+        "name": "\u672a\u6765\u660e\u5929\u5feb\u9012",
+        "value": "\u672a\u6765\u660e\u5929\u5feb\u9012",
+        "short": "weilaimingtian"
+    },
+    {
+        "name": "\u79d1\u6377\u7269\u6d41",
+        "value": "\u79d1\u6377\u7269\u6d41",
+        "short": "kejie"
+    },
+    {
+        "name": "\u5927\u9053\u7269\u6d41",
+        "value": "\u5927\u9053\u7269\u6d41",
+        "short": "dadaoex"
+    },
+    {
+        "name": "\u5168\u8054\u901f\u8fd0",
+        "value": "\u5168\u8054\u901f\u8fd0",
+        "short": "guexp"
+    },
+    {
+        "name": "\u53ef\u53ef\u6811\u7f8e\u4e2d\u901f\u8fd0",
+        "value": "\u53ef\u53ef\u6811\u7f8e\u4e2d\u901f\u8fd0",
+        "short": "excocotree"
+    },
+    {
+        "name": "\u90ae\u90a6\u56fd\u9645",
+        "value": "\u90ae\u90a6\u56fd\u9645",
+        "short": "youban"
+    },
+    {
+        "name": "\u897f\u5b89\u8fd0\u9038\u5feb\u9012",
+        "value": "\u897f\u5b89\u8fd0\u9038\u5feb\u9012",
+        "short": "yyexp"
+    },
+    {
+        "name": "Aplus\u7269\u6d41",
+        "value": "Aplus\u7269\u6d41",
+        "short": "aplusex"
+    },
+    {
+        "name": "\u950b\u9e1f\u7269\u6d41",
+        "value": "\u950b\u9e1f\u7269\u6d41",
+        "short": "beebird"
+    },
+    {
+        "name": "\u9752\u4e91\u7269\u6d41",
+        "value": "\u9752\u4e91\u7269\u6d41",
+        "short": "bjqywl"
+    },
+    {
+        "name": "\u4e07\u9091\u901a",
+        "value": "\u4e07\u9091\u901a",
+        "short": "winit"
+    },
+    {
+        "name": "\u4e2d\u7ffc\u56fd\u9645\u7269\u6d41",
+        "value": "\u4e2d\u7ffc\u56fd\u9645\u7269\u6d41",
+        "short": "chnexp"
+    },
+    {
+        "name": "\u4e9a\u6d32\u987a\u7269\u6d41",
+        "value": "\u4e9a\u6d32\u987a\u7269\u6d41",
+        "short": "yzswuliu"
+    },
+    {
+        "name": "E\u8de8\u901a",
+        "value": "E\u8de8\u901a",
+        "short": "ecallturn"
+    },
+    {
+        "name": "\u9012\u56db\u65b9\u7f8e\u56fd",
+        "value": "\u9012\u56db\u65b9\u7f8e\u56fd",
+        "short": "disifangus"
+    },
+    {
+        "name": "\u661f\u7a7a\u56fd\u9645",
+        "value": "\u661f\u7a7a\u56fd\u9645",
+        "short": "wlwex"
+    },
+    {
+        "name": "\u6781\u5730\u5feb\u9012",
+        "value": "\u6781\u5730\u5feb\u9012",
+        "short": "polarexpress"
+    },
+    {
+        "name": "\u5230\u4e86\u6e2f",
+        "value": "\u5230\u4e86\u6e2f",
+        "short": "camekong"
+    },
+    {
+        "name": "\u65af\u91cc\u5170\u5361(Sri",
+        "value": "\u65af\u91cc\u5170\u5361(Sri",
+        "short": "Lanka"
+    },
+    {
+        "name": "\u65af\u6d1b\u6587\u5c3c\u4e9a(Slovenia",
+        "value": "\u65af\u6d1b\u6587\u5c3c\u4e9a(Slovenia",
+        "short": "Post)"
+    },
+    {
+        "name": "\u591a\u7c73\u5c3c\u52a0\uff08INPOSDOM",
+        "value": "\u591a\u7c73\u5c3c\u52a0\uff08INPOSDOM",
+        "short": "\u2013"
+    },
+    {
+        "name": "\u661f\u8fd0\u5feb\u9012",
+        "value": "\u661f\u8fd0\u5feb\u9012",
+        "short": "staryvr"
+    },
+    {
+        "name": "\u72ee\u7231\u9ad8\u94c1\u7269\u6d41",
+        "value": "\u72ee\u7231\u9ad8\u94c1\u7269\u6d41",
+        "short": "sycawl"
+    },
+    {
+        "name": "\u7231\u62dc\u7269\u6d41",
+        "value": "\u7231\u62dc\u7269\u6d41",
+        "short": "ibuy8"
+    },
+    {
+        "name": "\u5546\u6d77\u5fb7\u7269\u6d41",
+        "value": "\u5546\u6d77\u5fb7\u7269\u6d41",
+        "short": "shd56"
+    },
+    {
+        "name": "\u4e5d\u5bab\u7269\u6d41",
+        "value": "\u4e5d\u5bab\u7269\u6d41",
+        "short": "jiugong"
+    },
+    {
+        "name": "\u7f14\u60e0\u76db\u5408",
+        "value": "\u7f14\u60e0\u76db\u5408",
+        "short": "twkd56"
+    },
+    {
+        "name": "\u5feb\u670d\u52a1",
+        "value": "\u5feb\u670d\u52a1",
+        "short": "kfwnet"
+    },
+    {
+        "name": "dhl\u5c0f\u5305",
+        "value": "dhl\u5c0f\u5305",
+        "short": "dhlecommerce"
+    },
+    {
+        "name": "\u5b87\u4f73\u7269\u6d41",
+        "value": "\u5b87\u4f73\u7269\u6d41",
+        "short": "yujiawl"
+    },
+    {
+        "name": "\u6e58\u8fbe\u7269\u6d41",
+        "value": "\u6e58\u8fbe\u7269\u6d41",
+        "short": "xiangdawuliu"
+    },
+    {
+        "name": "\u8fdc\u76fe\u7269\u6d41",
+        "value": "\u8fdc\u76fe\u7269\u6d41",
+        "short": "yuandun"
+    },
+    {
+        "name": "\u9ed1\u732b\u5b85\u6025\u4fbf",
+        "value": "\u9ed1\u732b\u5b85\u6025\u4fbf",
+        "short": "tcat"
+    },
+    {
+        "name": "\u97f5\u8fbe\u5feb\u8fd0",
+        "value": "\u97f5\u8fbe\u5feb\u8fd0",
+        "short": "yundakuaiyun"
+    },
+    {
+        "name": "\u901f\u6d3e\u5feb\u9012",
+        "value": "\u901f\u6d3e\u5feb\u9012",
+        "short": "fastgoexpress"
+    },
+    {
+        "name": "\u4e2d\u96c6\u51b7\u4e91",
+        "value": "\u4e2d\u96c6\u51b7\u4e91",
+        "short": "cccc58"
+    },
+    {
+        "name": "\u4e45\u4e45\u7269\u6d41",
+        "value": "\u4e45\u4e45\u7269\u6d41",
+        "short": "jiujiuwl"
+    },
+    {
+        "name": "\u5fb7\u56fd\u516b\u6613\u8f6c\u8fd0",
+        "value": "\u5fb7\u56fd\u516b\u6613\u8f6c\u8fd0",
+        "short": "deguo8elog"
+    },
+    {
+        "name": "UTAO\u4f18\u5230",
+        "value": "UTAO\u4f18\u5230",
+        "short": "utaoscm"
+    },
+    {
+        "name": "\u4e7e\u5764\u7269\u6d41",
+        "value": "\u4e7e\u5764\u7269\u6d41",
+        "short": "yatexpress"
+    },
+    {
+        "name": "\u6469\u6d1b\u54e5",
+        "value": "\u6469\u6d1b\u54e5",
+        "short": "("
+    },
+    {
+        "name": "\u5c3c\u6cca\u5c14\uff08Nepal",
+        "value": "\u5c3c\u6cca\u5c14\uff08Nepal",
+        "short": "Postal"
+    },
+    {
+        "name": "\u4f0a\u6717\uff08Iran",
+        "value": "\u4f0a\u6717\uff08Iran",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u5766\u6851\u5c3c\u4e9a\uff08Tanzania",
+        "value": "\u5766\u6851\u5c3c\u4e9a\uff08Tanzania",
+        "short": "Posts"
+    },
+    {
+        "name": "\u83ab\u6851\u6bd4\u514b\uff08Correios",
+        "value": "\u83ab\u6851\u6bd4\u514b\uff08Correios",
+        "short": "de"
+    },
+    {
+        "name": "\u805a\u4e2d\u5927",
+        "value": "\u805a\u4e2d\u5927",
+        "short": "juzhongda"
+    },
+    {
+        "name": "\u4e2d\u90ae\u7535\u5546",
+        "value": "\u4e2d\u90ae\u7535\u5546",
+        "short": "chinapostcb"
+    },
+    {
+        "name": "\u9e3f\u6cf0\u7269\u6d41",
+        "value": "\u9e3f\u6cf0\u7269\u6d41",
+        "short": "hnht56"
+    },
+    {
+        "name": "\u5357\u975eEMS",
+        "value": "\u5357\u975eEMS",
+        "short": "emssouthafrica"
+    },
+    {
+        "name": "\u7533\u901a\u56fd\u9645",
+        "value": "\u7533\u901a\u56fd\u9645",
+        "short": "stosolution"
+    },
+    {
+        "name": "\u76ae\u7259\u5b50\u5feb\u9012",
+        "value": "\u76ae\u7259\u5b50\u5feb\u9012",
+        "short": "bazirim"
+    },
+    {
+        "name": "\u8054\u4f17\u56fd\u9645",
+        "value": "\u8054\u4f17\u56fd\u9645",
+        "short": "epspost"
+    },
+    {
+        "name": "\u4e30\u901a\u5feb\u8fd0",
+        "value": "\u4e30\u901a\u5feb\u8fd0",
+        "short": "ftky365"
+    },
+    {
+        "name": "BorderGuru",
+        "value": "BorderGuru",
+        "short": "borderguru"
+    },
+    {
+        "name": "\u827e\u59c6\u52d2",
+        "value": "\u827e\u59c6\u52d2",
+        "short": "imlb2c"
+    },
+    {
+        "name": "\u4e2d\u6b27\u56fd\u9645\u7269\u6d41",
+        "value": "\u4e2d\u6b27\u56fd\u9645\u7269\u6d41",
+        "short": "eucnrail"
+    },
+    {
+        "name": "\u9012\u56db\u65b9\u6fb3\u6d32",
+        "value": "\u9012\u56db\u65b9\u6fb3\u6d32",
+        "short": "disifangau"
+    },
+    {
+        "name": "\u827a\u51e1\u5feb\u9012",
+        "value": "\u827a\u51e1\u5feb\u9012",
+        "short": "yifankd"
+    },
+    {
+        "name": "\u5b8f\u89c2\u56fd\u9645\u5feb\u9012",
+        "value": "\u5b8f\u89c2\u56fd\u9645\u5feb\u9012",
+        "short": "gvpexpress"
+    },
+    {
+        "name": "\u535a\u8328\u74e6\u7eb3",
+        "value": "\u535a\u8328\u74e6\u7eb3",
+        "short": "botspost"
+    },
+    {
+        "name": "\u585e\u5185\u52a0\u5c14",
+        "value": "\u585e\u5185\u52a0\u5c14",
+        "short": "laposte"
+    },
+    {
+        "name": "\u5361\u5854\u5c14\uff08Qatar",
+        "value": "\u5361\u5854\u5c14\uff08Qatar",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u82cf\u4e39\uff08Sudapost\uff09",
+        "value": "\u82cf\u4e39\uff08Sudapost\uff09",
+        "short": "sudapost"
+    },
+    {
+        "name": "Sureline\u51a0\u6cf0",
+        "value": "Sureline\u51a0\u6cf0",
+        "short": "sureline"
+    },
+    {
+        "name": "\u6d77\u6ca7\u65e0\u5fe7",
+        "value": "\u6d77\u6ca7\u65e0\u5fe7",
+        "short": "hivewms"
+    },
+    {
+        "name": "\u5b89\u4e16\u901a\u5feb\u9012",
+        "value": "\u5b89\u4e16\u901a\u5feb\u9012",
+        "short": "astexpress"
+    },
+    {
+        "name": "\u96c6\u5148\u950b\u5feb\u9012",
+        "value": "\u96c6\u5148\u950b\u5feb\u9012",
+        "short": "jxfex"
+    },
+    {
+        "name": "\u4e30\u5ba2\u7269\u6d41",
+        "value": "\u4e30\u5ba2\u7269\u6d41",
+        "short": "fecobv"
+    },
+    {
+        "name": "\u540c\u57ce\u5feb\u5bc4",
+        "value": "\u540c\u57ce\u5feb\u5bc4",
+        "short": "shpost"
+    },
+    {
+        "name": "\u6d77\u8054\u5feb\u9012",
+        "value": "\u6d77\u8054\u5feb\u9012",
+        "short": "hltop"
+    },
+    {
+        "name": "\u4e2d\u8054\u901f\u9012",
+        "value": "\u4e2d\u8054\u901f\u9012",
+        "short": "auvanda"
+    },
+    {
+        "name": "\u4e09\u8c61\u901f\u9012",
+        "value": "\u4e09\u8c61\u901f\u9012",
+        "short": "sxexpress"
+    },
+    {
+        "name": "\u795e\u9a6c\u5feb\u9012",
+        "value": "\u795e\u9a6c\u5feb\u9012",
+        "short": "shenma"
+    },
+    {
+        "name": "\u4e92\u8054\u5feb\u8fd0",
+        "value": "\u4e92\u8054\u5feb\u8fd0",
+        "short": "hlkytj"
+    },
+    {
+        "name": "\u6e29\u901a\u7269\u6d41",
+        "value": "\u6e29\u901a\u7269\u6d41",
+        "short": "wto56kj"
+    },
+    {
+        "name": "\u56db\u6d77\u6377\u8fd0",
+        "value": "\u56db\u6d77\u6377\u8fd0",
+        "short": "sihiexpress"
+    },
+    {
+        "name": "\u82cf\u901a\u5feb\u8fd0",
+        "value": "\u82cf\u901a\u5feb\u8fd0",
+        "short": "zjstky"
+    },
+    {
+        "name": "\u90a6\u901a\u56fd\u9645",
+        "value": "\u90a6\u901a\u56fd\u9645",
+        "short": "comexpress"
+    },
+    {
+        "name": "\u52b2\u901a\u5feb\u9012",
+        "value": "\u52b2\u901a\u5feb\u9012",
+        "short": "jintongkd"
+    },
+    {
+        "name": "\u51e1\u4ed5\u7279\u7269\u6d41",
+        "value": "\u51e1\u4ed5\u7279\u7269\u6d41",
+        "short": "wlfast"
+    },
+    {
+        "name": "\u7ea2\u80cc\u5fc3",
+        "value": "\u7ea2\u80cc\u5fc3",
+        "short": "hongbeixin"
+    },
+    {
+        "name": "\u5c45\u5bb6\u901a",
+        "value": "\u5c45\u5bb6\u901a",
+        "short": "homexpress"
+    },
+    {
+        "name": "\u4e0a\u5927\u7269\u6d41",
+        "value": "\u4e0a\u5927\u7269\u6d41",
+        "short": "shangda"
+    },
+    {
+        "name": "\u4e2d\u90ae\u7269\u6d41",
+        "value": "\u4e2d\u90ae\u7269\u6d41",
+        "short": "zhongyouwuliu"
+    },
+    {
+        "name": "Fedex-\u56fd\u9645\u4ef6-\u4e2d\u6587",
+        "value": "Fedex-\u56fd\u9645\u4ef6-\u4e2d\u6587",
+        "short": "fedexcn"
+    },
+    {
+        "name": "\u97e9\u56fd\uff08Korea",
+        "value": "\u97e9\u56fd\uff08Korea",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u4e2d\u901a\u5feb\u9012",
+        "value": "\u4e2d\u901a\u5feb\u9012",
+        "short": "zhongtong"
+    },
+    {
+        "name": "\u4eac\u5e7f\u901f\u9012",
+        "value": "\u4eac\u5e7f\u901f\u9012",
+        "short": "jinguangsudikuaijian"
+    },
+    {
+        "name": "FedEx-\u56fd\u9645\u4ef6",
+        "value": "FedEx-\u56fd\u9645\u4ef6",
+        "short": "fedex"
+    },
+    {
+        "name": "\u65e5\u65e5\u987a\u7269\u6d41",
+        "value": "\u65e5\u65e5\u987a\u7269\u6d41",
+        "short": "rrs"
+    },
+    {
+        "name": "\u5fae\u5e97",
+        "value": "\u5fae\u5e97",
+        "short": "weidianorder"
+    },
+    {
+        "name": "\u5f53\u5f53",
+        "value": "\u5f53\u5f53",
+        "short": "dangdangorder"
+    },
+    {
+        "name": "\u56fd\u9001\u5feb\u8fd0",
+        "value": "\u56fd\u9001\u5feb\u8fd0",
+        "short": "guosong"
+    },
+    {
+        "name": "\u8003\u62c9\u8ba2\u5355",
+        "value": "\u8003\u62c9\u8ba2\u5355",
+        "short": "kaolaorder"
+    },
+    {
+        "name": "AAE-\u4e2d\u56fd\u4ef6",
+        "value": "AAE-\u4e2d\u56fd\u4ef6",
+        "short": "aae"
+    },
+    {
+        "name": "\u56db\u5ddd\u5feb\u4f18\u8fbe\u901f\u9012",
+        "value": "\u56db\u5ddd\u5feb\u4f18\u8fbe\u901f\u9012",
+        "short": "kuaiyouda"
+    },
+    {
+        "name": "\u767e\u798f\u4e1c\u65b9",
+        "value": "\u767e\u798f\u4e1c\u65b9",
+        "short": "baifudongfang"
+    },
+    {
+        "name": "TST\u901f\u8fd0\u901a",
+        "value": "TST\u901f\u8fd0\u901a",
+        "short": "tstexp"
+    },
+    {
+        "name": "YUN",
+        "value": "YUN",
+        "short": "TRACK"
+    },
+    {
+        "name": "\u62db\u91d1\u7cbe\u70bc",
+        "value": "\u62db\u91d1\u7cbe\u70bc",
+        "short": "zhaojin"
+    },
+    {
+        "name": "\u5168\u7a0b\u5feb\u9012",
+        "value": "\u5168\u7a0b\u5feb\u9012",
+        "short": "agopost"
+    },
+    {
+        "name": "CDEK",
+        "value": "CDEK",
+        "short": "cdek"
+    },
+    {
+        "name": "\u7b7e\u6536\u5feb\u9012",
+        "value": "\u7b7e\u6536\u5feb\u9012",
+        "short": "signedexpress"
+    },
+    {
+        "name": "\u4f70\u9e92\u5feb\u9012",
+        "value": "\u4f70\u9e92\u5feb\u9012",
+        "short": "beckygo"
+    },
+    {
+        "name": "\u589e\u901f\u8de8\u5883",
+        "value": "\u589e\u901f\u8de8\u5883",
+        "short": "zyzoom"
+    },
+    {
+        "name": "Aramex",
+        "value": "Aramex",
+        "short": "aramex"
+    },
+    {
+        "name": "\u8d8a\u4e2d\u56fd\u9645\u7269\u6d41",
+        "value": "\u8d8a\u4e2d\u56fd\u9645\u7269\u6d41",
+        "short": "vctrans"
+    },
+    {
+        "name": "\u5fb7\u56fd\u4f18\u62dc\u7269\u6d41",
+        "value": "\u5fb7\u56fd\u4f18\u62dc\u7269\u6d41",
+        "short": "ubuy"
+    },
+    {
+        "name": "\u5fb7\u5c1a\u56fd\u9645\u901f\u9012",
+        "value": "\u5fb7\u5c1a\u56fd\u9645\u901f\u9012",
+        "short": "gslexpress"
+    },
+    {
+        "name": "\u5fb7\u56fd",
+        "value": "\u5fb7\u56fd",
+        "short": "EUC"
+    },
+    {
+        "name": "\u6cf0\u56fd\u4e2d\u901aZTO",
+        "value": "\u6cf0\u56fd\u4e2d\u901aZTO",
+        "short": "thaizto"
+    },
+    {
+        "name": "\u6cf0\u56fd\u4e2d\u901aCTO",
+        "value": "\u6cf0\u56fd\u4e2d\u901aCTO",
+        "short": "ctoexp"
+    },
+    {
+        "name": "\u987a\u4e30-\u7e41\u4f53",
+        "value": "\u987a\u4e30-\u7e41\u4f53",
+        "short": "shunfenghk"
+    },
+    {
+        "name": "\u5609\u8bda\u901f\u8fbe",
+        "value": "\u5609\u8bda\u901f\u8fbe",
+        "short": "jcsuda"
+    },
+    {
+        "name": "AFL",
+        "value": "AFL",
+        "short": "afl"
+    },
+    {
+        "name": "\u4f17\u6d3e\u901f\u9012",
+        "value": "\u4f17\u6d3e\u901f\u9012",
+        "short": "zhpex"
+    },
+    {
+        "name": "\u6d77\u661f\u6865\u5feb\u9012",
+        "value": "\u6d77\u661f\u6865\u5feb\u9012",
+        "short": "haixingqiao"
+    },
+    {
+        "name": "\u8611\u83c7\u8857",
+        "value": "\u8611\u83c7\u8857",
+        "short": "mogujieorder"
+    },
+    {
+        "name": "\u5609\u91cc\u5927\u901a",
+        "value": "\u5609\u91cc\u5927\u901a",
+        "short": "jialidatong"
+    },
+    {
+        "name": "\u4e07\u8c61\u7269\u6d41",
+        "value": "\u4e07\u8c61\u7269\u6d41",
+        "short": "wanxiangwuliu"
+    },
+    {
+        "name": "\u6fb3\u5927\u5229\u4e9a(Australia",
+        "value": "\u6fb3\u5927\u5229\u4e9a(Australia",
+        "short": "Post)"
+    },
+    {
+        "name": "\u56fd\u901a\u5feb\u9012",
+        "value": "\u56fd\u901a\u5feb\u9012",
+        "short": "guotongkuaidi"
+    },
+    {
+        "name": "\u5168\u6668\u5feb\u9012",
+        "value": "\u5168\u6668\u5feb\u9012",
+        "short": "quanchenkuaidi"
+    },
+    {
+        "name": "\u98de\u8c79\u5feb\u9012",
+        "value": "\u98de\u8c79\u5feb\u9012",
+        "short": "feibaokuaidi"
+    },
+    {
+        "name": "\u4e2d\u901f\u5feb\u9012",
+        "value": "\u4e2d\u901f\u5feb\u9012",
+        "short": "zhongsukuaidi"
+    },
+    {
+        "name": "\u4f18\u80fd\u7269\u6d41",
+        "value": "\u4f18\u80fd\u7269\u6d41",
+        "short": "mantoo"
+    },
+    {
+        "name": "\u56fd\u7f8e",
+        "value": "\u56fd\u7f8e",
+        "short": "gomeorder"
+    },
+    {
+        "name": "\u4e9a\u9a6c\u900a\u4e2d\u56fd\u8ba2\u5355",
+        "value": "\u4e9a\u9a6c\u900a\u4e2d\u56fd\u8ba2\u5355",
+        "short": "amazoncnorder"
+    },
+    {
+        "name": "\u871c\u82bd\u8ba2\u5355",
+        "value": "\u871c\u82bd\u8ba2\u5355",
+        "short": "miaorder"
+    },
+    {
+        "name": "\u987a\u4e30\u8ba2\u5355",
+        "value": "\u987a\u4e30\u8ba2\u5355",
+        "short": "sfexpressorder"
+    },
+    {
+        "name": "\u7533\u901a\u5feb\u8fd0",
+        "value": "\u7533\u901a\u5feb\u8fd0",
+        "short": "stoe56"
+    },
+    {
+        "name": "City-Link",
+        "value": "City-Link",
+        "short": "citylink"
+    },
+    {
+        "name": "\u5fb7\u90a6\u7269\u6d41",
+        "value": "\u5fb7\u90a6\u7269\u6d41",
+        "short": "debangwuliu"
+    },
+    {
+        "name": "\u94f6\u6377\u901f\u9012",
+        "value": "\u94f6\u6377\u901f\u9012",
+        "short": "yinjiesudi"
+    },
+    {
+        "name": "D\u901f\u5feb\u9012",
+        "value": "D\u901f\u5feb\u9012",
+        "short": "dsukuaidi"
+    },
+    {
+        "name": "\u6c11\u90a6\u901f\u9012",
+        "value": "\u6c11\u90a6\u901f\u9012",
+        "short": "minbangsudi"
+    },
+    {
+        "name": "\u767e\u4e16\u5feb\u8fd0",
+        "value": "\u767e\u4e16\u5feb\u8fd0",
+        "short": "baishiwuliu"
+    },
+    {
+        "name": "DHL-\u5fb7\u56fd\u4ef6\uff08DHL",
+        "value": "DHL-\u5fb7\u56fd\u4ef6\uff08DHL",
+        "short": "Deutschland\uff09"
+    },
+    {
+        "name": "\u80fd\u88c5\u80fd\u9001",
+        "value": "\u80fd\u88c5\u80fd\u9001",
+        "short": "canhold"
+    },
+    {
+        "name": "\u805a\u7f8e\u4f18\u54c1",
+        "value": "\u805a\u7f8e\u4f18\u54c1",
+        "short": "jumeiyoupinorder"
+    },
+    {
+        "name": "\u8bda\u4e00\u7269\u6d41",
+        "value": "\u8bda\u4e00\u7269\u6d41",
+        "short": "parcelchina"
+    },
+    {
+        "name": "\u7f51\u6613\u4e25\u9009",
+        "value": "\u7f51\u6613\u4e25\u9009",
+        "short": "wangyiyxorder"
+    },
+    {
+        "name": "\u9f99\u90a6\u901f\u9012",
+        "value": "\u9f99\u90a6\u901f\u9012",
+        "short": "longbanwuliu"
+    },
+    {
+        "name": "\u660e\u4eae\u7269\u6d41",
+        "value": "\u660e\u4eae\u7269\u6d41",
+        "short": "mingliangwuliu"
+    },
+    {
+        "name": "\u901f\u5c14\u5feb\u9012",
+        "value": "\u901f\u5c14\u5feb\u9012",
+        "short": "suer"
+    },
+    {
+        "name": "\u76db\u8f89\u7269\u6d41",
+        "value": "\u76db\u8f89\u7269\u6d41",
+        "short": "shenghuiwuliu"
+    },
+    {
+        "name": "\u8d8a\u4e30\u7269\u6d41",
+        "value": "\u8d8a\u4e30\u7269\u6d41",
+        "short": "yuefengwuliu"
+    },
+    {
+        "name": "\u6bd4\u5229\u65f6\uff08Bpost\uff09",
+        "value": "\u6bd4\u5229\u65f6\uff08Bpost\uff09",
+        "short": "bpost"
+    },
+    {
+        "name": "\u97f5\u8fbe\u5feb\u9012",
+        "value": "\u97f5\u8fbe\u5feb\u9012",
+        "short": "yunda"
+    },
+    {
+        "name": "\u552f\u54c1\u4f1a",
+        "value": "\u552f\u54c1\u4f1a",
+        "short": "vipshoporder"
+    },
+    {
+        "name": "\u7f8e\u4e3d\u8bf4",
+        "value": "\u7f8e\u4e3d\u8bf4",
+        "short": "meilishuoorder"
+    },
+    {
+        "name": "\u987a\u4e30\u4f18\u9009",
+        "value": "\u987a\u4e30\u4f18\u9009",
+        "short": "sfbestorder"
+    },
+    {
+        "name": "\u9a7c\u5cf0\u56fd\u9645",
+        "value": "\u9a7c\u5cf0\u56fd\u9645",
+        "short": "humpline"
+    },
+    {
+        "name": "\u5c0f\u7c73\u8ba2\u5355",
+        "value": "\u5c0f\u7c73\u8ba2\u5355",
+        "short": "xiaomiorder"
+    },
+    {
+        "name": "\u4e00\u667a\u901a",
+        "value": "\u4e00\u667a\u901a",
+        "short": "1ziton"
+    },
+    {
+        "name": "TransRush",
+        "value": "TransRush",
+        "short": "transrush"
+    },
+    {
+        "name": "\u767e\u4e16\u5feb\u9012",
+        "value": "\u767e\u4e16\u5feb\u9012",
+        "short": "huitongkuaidi"
+    },
+    {
+        "name": "\u8054\u660a\u901a",
+        "value": "\u8054\u660a\u901a",
+        "short": "lianhaowuliu"
+    },
+    {
+        "name": "\u8fdc\u6210\u7269\u6d41",
+        "value": "\u8fdc\u6210\u7269\u6d41",
+        "short": "yuanchengwuliu"
+    },
+    {
+        "name": "FedEx-\u7f8e\u56fd\u4ef6",
+        "value": "FedEx-\u7f8e\u56fd\u4ef6",
+        "short": "fedexus"
+    },
+    {
+        "name": "OCS",
+        "value": "OCS",
+        "short": "ocs"
+    },
+    {
+        "name": "\u5df4\u897f(Brazil",
+        "value": "\u5df4\u897f(Brazil",
+        "short": "Post/Correios)"
+    },
+    {
+        "name": "\u5b54\u592b\u5b50",
+        "value": "\u5b54\u592b\u5b50",
+        "short": "kongfzorder"
+    },
+    {
+        "name": "\u4e00\u53f7\u5e97",
+        "value": "\u4e00\u53f7\u5e97",
+        "short": "yhdshoporder"
+    },
+    {
+        "name": "\u5377\u76ae",
+        "value": "\u5377\u76ae",
+        "short": "juanpiorder"
+    },
+    {
+        "name": "\u6dd8\u5b9d\u8ba2\u5355",
+        "value": "\u6dd8\u5b9d\u8ba2\u5355",
+        "short": "taobaoorder"
+    },
+    {
+        "name": "\u76db\u4e30\u7269\u6d41",
+        "value": "\u76db\u4e30\u7269\u6d41",
+        "short": "shengfengwuliu"
+    },
+    {
+        "name": "\u745e\u5178\uff08Sweden",
+        "value": "\u745e\u5178\uff08Sweden",
+        "short": "Post\uff09"
+    },
+    {
+        "name": "\u5706\u901a\u901f\u9012",
+        "value": "\u5706\u901a\u901f\u9012",
+        "short": "yuantong"
+    },
+    {
+        "name": "\u5b85\u6025\u9001",
+        "value": "\u5b85\u6025\u9001",
+        "short": "zhaijisong"
+    },
+    {
+        "name": "\u65b0\u90a6\u7269\u6d41",
+        "value": "\u65b0\u90a6\u7269\u6d41",
+        "short": "xinbangwuliu"
+    },
+    {
+        "name": "\u6052\u8def\u7269\u6d41",
+        "value": "\u6052\u8def\u7269\u6d41",
+        "short": "hengluwuliu"
+    },
+    {
+        "name": "\u534e\u590f\u9f99",
+        "value": "\u534e\u590f\u9f99",
+        "short": "huaxialongwuliu"
+    },
+    {
+        "name": "\u9f99\u98de\u7965\u5feb\u9012",
+        "value": "\u9f99\u98de\u7965\u5feb\u9012",
+        "short": "longfx"
+    },
+    {
+        "name": "\u57ce\u5e02\u6620\u6025",
+        "value": "\u57ce\u5e02\u6620\u6025",
+        "short": "city56"
+    },
+    {
+        "name": "\u4e94\u516d\u5feb\u8fd0",
+        "value": "\u4e94\u516d\u5feb\u8fd0",
+        "short": "56kuaiyun"
+    },
+    {
+        "name": "\u901f\u901a\u7269\u6d41",
+        "value": "\u901f\u901a\u7269\u6d41",
+        "short": "sut56"
+    },
+    {
+        "name": "\u8fc5\u8fbe\u901f\u9012",
+        "value": "\u8fc5\u8fbe\u901f\u9012",
+        "short": "xdexpress"
+    },
+    {
+        "name": "JDIEX",
+        "value": "JDIEX",
+        "short": "jdiex"
+    },
+    {
+        "name": "\u6cf0\u6377\u8fbe\u56fd\u9645\u7269\u6d41",
+        "value": "\u6cf0\u6377\u8fbe\u56fd\u9645\u7269\u6d41",
+        "short": "ztjieda"
+    },
+    {
+        "name": "\u634e\u5ba2\u7269\u6d41",
+        "value": "\u634e\u5ba2\u7269\u6d41",
+        "short": "shaoke"
+    },
+    {
+        "name": "\u5168\u7403\u901f\u9012",
+        "value": "\u5168\u7403\u901f\u9012",
+        "short": "pdstow"
+    },
+    {
+        "name": "\u5b89\u8fbe\u6613\u56fd\u9645\u901f\u9012",
+        "value": "\u5b89\u8fbe\u6613\u56fd\u9645\u901f\u9012",
+        "short": "adiexpress"
+    },
+    {
+        "name": "\u756a\u85af\u56fd\u9645\u8d27\u8fd0",
+        "value": "\u756a\u85af\u56fd\u9645\u8d27\u8fd0",
+        "short": "koali"
+    },
+    {
+        "name": "\u8d1d\u8d1d",
+        "value": "\u8d1d\u8d1d",
+        "short": "beibeiorder"
+    },
+    {
+        "name": "\u5fb7\u90a6\u5feb\u9012",
+        "value": "\u5fb7\u90a6\u5feb\u9012",
+        "short": "debangkuaidi"
+    },
+    {
+        "name": "\u8054\u5408\u901f\u8fd0",
+        "value": "\u8054\u5408\u901f\u8fd0",
+        "short": "unitedex"
+    },
+    {
+        "name": "\u9f99\u90a6\u7269\u6d41",
+        "value": "\u9f99\u90a6\u7269\u6d41",
+        "short": "lbex"
+    },
+    {
+        "name": "GHT\u7269\u6d41",
+        "value": "GHT\u7269\u6d41",
+        "short": "ghtexpress"
+    },
+    {
+        "name": "\u9999\u6e2f\u4f1f\u8c6a\u56fd\u9645\u7269\u6d41",
+        "value": "\u9999\u6e2f\u4f1f\u8c6a\u56fd\u9645\u7269\u6d41",
+        "short": "whgjkd"
+    },
+    {
+        "name": "\u6fb3\u6d32\u8fc8\u901f\u5feb\u9012",
+        "value": "\u6fb3\u6d32\u8fc8\u901f\u5feb\u9012",
+        "short": "maxeedexpress"
+    },
+    {
+        "name": "TCXB\u56fd\u9645\u7269\u6d41",
+        "value": "TCXB\u56fd\u9645\u7269\u6d41",
+        "short": "tcxbthai"
+    },
+    {
+        "name": "\u8d1d\u4e1a\u7269\u6d41",
+        "value": "\u8d1d\u4e1a\u7269\u6d41",
+        "short": "boyol"
+    },
+    {
+        "name": "\u6ce2\u97f3\u901f\u9012",
+        "value": "\u6ce2\u97f3\u901f\u9012",
+        "short": "overseaex"
+    },
+    {
+        "name": "\u946b\u8fdc\u4e1c\u901f\u8fd0",
+        "value": "\u946b\u8fdc\u4e1c\u901f\u8fd0",
+        "short": "xyd666"
+    },
+    {
+        "name": "\u4e2d\u73af\u5feb\u9012",
+        "value": "\u4e2d\u73af\u5feb\u9012",
+        "short": "zhonghuan"
+    },
+    {
+        "name": "\u6c83\u57c3\u5bb6",
+        "value": "\u6c83\u57c3\u5bb6",
+        "short": "wowvip"
+    },
+    {
+        "name": "OBOR",
+        "value": "OBOR",
+        "short": "Express"
+    },
+    {
+        "name": "\u76db\u4e30\u7269\u6d41",
+        "value": "\u76db\u4e30\u7269\u6d41",
+        "short": "sfwl"
+    },
+    {
+        "name": "\u901f\u8fbe\u901a",
+        "value": "\u901f\u8fbe\u901a",
+        "short": "sdto"
+    },
+    {
+        "name": "\u82cf\u8c6a\u5feb\u9012",
+        "value": "\u82cf\u8c6a\u5feb\u9012",
+        "short": "shipsoho"
+    },
+    {
+        "name": "\u4e09\u76db\u5feb\u9012",
+        "value": "\u4e09\u76db\u5feb\u9012",
+        "short": "sanshengco"
+    },
+    {
+        "name": "\u8fc5\u901f\u5feb\u9012",
+        "value": "\u8fc5\u901f\u5feb\u9012",
+        "short": "xunsuexpress"
+    },
+    {
+        "name": "\u4f17\u5ddd\u56fd\u9645",
+        "value": "\u4f17\u5ddd\u56fd\u9645",
+        "short": "zhongchuan"
+    },
+    {
+        "name": "\u9646\u672c\u901f\u9012",
+        "value": "\u9646\u672c\u901f\u9012",
+        "short": "LUBEN"
+    },
+    {
+        "name": "\u897f\u6fc3\u904b\u8f38",
+        "value": "\u897f\u6fc3\u904b\u8f38",
+        "short": "seino"
+    },
+    {
+        "name": "\u52a0\u62ff\u5927\u8054\u901a\u5feb\u8fd0",
+        "value": "\u52a0\u62ff\u5927\u8054\u901a\u5feb\u8fd0",
+        "short": "fastontime"
+    },
+    {
+        "name": "\u82b1\u74e3\u8f6c\u8fd0",
+        "value": "\u82b1\u74e3\u8f6c\u8fd0",
+        "short": "flowerkd"
+    },
+    {
+        "name": "\u5408\u5fc3\u901f\u9012",
+        "value": "\u5408\u5fc3\u901f\u9012",
+        "short": "hexinexpress"
+    },
+    {
+        "name": "Highsince",
+        "value": "Highsince",
+        "short": "highsince"
+    },
+    {
+        "name": "\u871c\u8702\u901f\u9012",
+        "value": "\u871c\u8702\u901f\u9012",
+        "short": "bee001"
+    },
+    {
+        "name": "\u5929\u4f7f\u7269\u6d41\u4e91",
+        "value": "\u5929\u4f7f\u7269\u6d41\u4e91",
+        "short": "tswlcloud"
+    },
+    {
+        "name": "\u738b\u724c\u5feb\u9012",
+        "value": "\u738b\u724c\u5feb\u9012",
+        "short": "shipbyace"
+    },
+    {
+        "name": "\u534e\u7f8e\u5feb\u9012",
+        "value": "\u534e\u7f8e\u5feb\u9012",
+        "short": "hmus"
+    },
+    {
+        "name": "\u6298800",
+        "value": "\u6298800",
+        "short": "zhe800order"
+    },
+    {
+        "name": "\u5c0f\u7ea2\u4e66",
+        "value": "\u5c0f\u7ea2\u4e66",
+        "short": "xiaohongshuorder"
+    },
+    {
+        "name": "\u94c1\u4e2d\u5feb\u8fd0",
+        "value": "\u94c1\u4e2d\u5feb\u8fd0",
+        "short": "tzky"
+    },
+    {
+        "name": "\u666f\u987a\u7269\u6d41",
+        "value": "\u666f\u987a\u7269\u6d41",
+        "short": "jingshun"
+    },
+    {
+        "name": "\u4e2d\u73af\u8f6c\u8fd0",
+        "value": "\u4e2d\u73af\u8f6c\u8fd0",
+        "short": "zhonghuanus"
+    },
+    {
+        "name": "YCG\u7269\u6d41",
+        "value": "YCG\u7269\u6d41",
+        "short": "ycgglobal"
+    },
+    {
+        "name": "\u9a7f\u9012\u6c47\u901f\u9012",
+        "value": "\u9a7f\u9012\u6c47\u901f\u9012",
+        "short": "yidihui"
+    },
+    {
+        "name": "track-parcel",
+        "value": "track-parcel",
+        "short": "trackparcel"
+    }
+]

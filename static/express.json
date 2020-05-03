@@ -1,0 +1,67 @@
+[
+    {
+        "name": "顺丰速运",
+        "value": "顺丰速运",
+        "short": "shunfeng"
+    },
+    {
+        "name": "圆通速递",
+        "value": "圆通速递",
+        "short": "yuantong"
+    },
+    {
+        "name": "申通快递",
+        "value": "申通快递",
+        "short": "shentong"
+    },
+    {
+        "name": "中通快递",
+        "value": "中通快递",
+        "short": "zhongtong"
+    },
+    {
+        "name": "百世快递",
+        "value": "百世快递",
+        "short": "huitongkuaidi"
+    },
+    {
+        "name": "韵达快递",
+        "value": "韵达快递",
+        "short": "yunda"
+    },
+    {
+        "name": "天天快递",
+        "value": "天天快递",
+        "short": "tiantian"
+    },
+    {
+        "name": "邮政国内",
+        "value": "邮政国内",
+        "short": "yzguonei"
+    },
+    {
+        "name": "宅急送",
+        "value": "宅急送",
+        "short": "zhaijisong"
+    },
+    {
+        "name": "德邦快递",
+        "value": "德邦快递",
+        "short": "debangkuaidi"
+    },
+    {
+        "name": "优优速递",
+        "value": "优优速递",
+        "short": "youyou"
+    },
+    {
+        "name": "全峰快递",
+        "value": "全峰快递",
+        "short": "quanfengkuaidi"
+    },
+    {
+        "name": "EMS",
+        "value": "EMS",
+        "short": "ems"
+    }
+]
