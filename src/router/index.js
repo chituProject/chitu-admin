@@ -3,6 +3,13 @@ import Router from 'vue-router'
 import Index from '@/components/Index/Index'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
+import Goods from '@/components/Goods/index'
+import GoodsList from '@/components/Goods/Goods'
+import GoodsDetail from '@/components/Goods/GoodsDetail'
+import GoodsVerify from '@/components/Goods/GoodsVerify'
+import GoodsCreate from '@/components/Goods/GoodsCreate'
+import SKUCreate from '@/components/Goods/SKUCreate'
+import BatchUpload from '@/components/Goods/Upload/BatchUpload'
 import Customers from '@/components/Customers/index'
 import AfterSale from '@/components/Customers/AfterSale'
 import User from '@/components/User/index'
@@ -114,6 +121,68 @@ let router = new Router({
           component: UserInvite,
           meta: {
             can: 'view User'
+          }
+        }
+      ]
+    },
+    {
+      path: '/goods',
+      component: Goods,
+      meta: {
+        can: 'view Goods'
+      },
+      children: [
+        {
+          path: '',
+          name: 'Goods',
+          component: GoodsList,
+          meta: {
+            can: 'view Goods'
+          }
+        },
+        {
+          path: 'list',
+          component: GoodsList,
+          meta: {
+            can: 'view Goods'
+          }
+        },
+        {
+          path: 'detail/:id',
+          component: GoodsDetail,
+          props: true,
+          meta: {
+            can: 'view Goods'
+          }
+        },
+        {
+          path: 'detail/:id/verify',
+          component: GoodsVerify,
+          props: true,
+          meta: {
+            can: 'view Goods'
+          }
+        },
+        {
+          path: 'add',
+          component: GoodsCreate,
+          meta: {
+            can: 'edit Goods'
+          }
+        },
+        {
+          path: 'add/:id/sku',
+          component: SKUCreate,
+          props: true,
+          meta: {
+            can: 'edit Goods'
+          }
+        },
+        {
+          path: 'upload',
+          component: BatchUpload,
+          meta: {
+            can: 'edit Goods'
           }
         }
       ]
