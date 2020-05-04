@@ -8,31 +8,17 @@ const state = {
    */
   acl: {
     'Goods': 2,
-    'Orders': 2,
-    'Reseller': 2,
-    'Supplier': 2,
-    'Customers': 2,
-    'User': 2,
-    'Platform': 2,
-    'Gift': 2,
-    'Stats': 1,
-    'Auth': 2
+    'Analysis': 2,
+    'User': 2
   }
 }
 
 const policies = ['view', 'edit']
 
 const dict = {
-  'Goods': '商品管理',
-  'Orders': '订单管理',
-  'Reseller': '合伙人',
-  'Supplier': '供应商',
-  'Customers': '客户服务',
-  'User': '用户管理',
-  'Platform': '平台管理',
-  'Gift': '锦鲤君',
-  'Stats': '首页统计',
-  'Auth': '权限管理'
+  'Goods': '基金管理',
+  'Analysis': '基金分析',
+  'User': '用户管理'
 }
 
 const mutations = {

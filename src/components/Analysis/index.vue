@@ -24,9 +24,14 @@ export default {
     return {
       menus: [
         {
-          name: '售后服务',
-          url: '/customers/aftersale',
-          can: 'view Customers'
+          name: '横向比较',
+          url: '/analysis/across',
+          can: 'view Analysis'
+        },
+        {
+          name: '模拟组合',
+          url: '/analysis/simulate',
+          can: 'view Analysis'
         }
       ]
     }

@@ -13,55 +13,12 @@ const SHELF_STATUS = {
   'OFF': '下架'
 }
 
-const GIFT_STATUS = {
-  DRAFT: '草稿',
-  VERIFY: '审核中',
-  MODIFY: '待修改',
-  PRE_ON: '待发布',
-  ON: '已发布',
-  OFF: '暂停中',
-  FINISH: '已结束'
-}
-
-const RESELLER_STATUS = {
-  'AUDITED': '入驻成功',
-  'UNAUDITED': '未审核',
-  'AUDIT_FAILED': '废弃'
-}
 
 const WITHDRAW_STATUS = {
   CANCELED: '已取消',
   CREATED: '已发起',
   DEALING: '提现中',
   TRANSFERRED: '已到账'
-}
-
-const LOTTERY_STATUS = {
-  PRE: '待开奖',
-  FINISH: '已结束',
-  DELIVERY: '已派奖',
-  EXPIRE: '已过期'
-}
-
-const WINNER_STATUS = {
-  VALID: '中奖',
-  INVALID: '已失效'
-}
-
-const ORDER_STATUS = {
-  UNPAID_UNFILLED: '待付款',
-  PAID_UNFILLED: '待填写地址',
-  UNSHIPPED: '待发货',
-  SHIPPING: '已发货',
-  FINISHED: '已完成',
-  CLOSED: '已关闭',
-  CANCELED: '已取消'
-}
-
-const SCENE_STATUS = {
-  'UNAUDITED': '正在审核',
-  'AUDITED': '入驻成功',
-  'AUDIT_FAILED': '入驻失败'
 }
 
 const AFTERSALE_STATUS = {
@@ -1796,27 +1753,13 @@ const SEXS = [
   }
 ]
 
-const RESELLER_TYPE = {
-  ONLINE: '线上合伙人',
-  OFFLINE: '线下合伙人',
-  ACTIVATED: '达人',
-  INACTIVATED: '普通用户'
-}
-
 export default {
   GOODS_TYPE,
   SHELF_STATUS,
-  GIFT_STATUS,
-  ORDER_STATUS,
-  LOTTERY_STATUS,
-  WINNER_STATUS,
   AFTERSALE_STATUS,
-  RESELLER_STATUS,
   WITHDRAW_STATUS,
   PROVINCE,
   CITY,
   SEXS,
-  SCENE_STATUS,
-  RESELLER_TYPE,
   DISCOUNT_STATUS
 }

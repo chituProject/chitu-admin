@@ -35,40 +35,16 @@ export default {
     return {
       menus: [{
         index: 'goods',
-        title: '商品管理',
+        title: '基金管理',
         icon: '&#xe631;'
-      }, {
-        index: 'orders',
-        title: '订单管理',
-        icon: '&#xe67c;'
-      }, {
-        index: 'reseller',
-        title: '合伙人',
-        icon: '&#xe663;'
-      }, {
-        index: 'supplier',
-        title: '供应商',
-        icon: '&#xe621;'
-      }, {
-        index: 'customers',
-        title: '客户服务',
-        icon: '&#xe65e;'
       }, {
         index: 'user',
         title: '用户管理',
         icon: '&#xe61f;'
       }, {
-        index: 'platform',
-        title: '平台管理',
+        index: 'analysis',
+        title: '基金分析',
         icon: '&#xe60b;'
-      }, {
-        index: 'gift',
-        title: '锦礼君',
-        icon: '&#xe63a;'
-      }, {
-        index: 'auth',
-        title: '权限管理',
-        icon: '&#xe61a;'
       }]
     }
   },
@@ -128,22 +104,10 @@ export default {
         this.$router.push('/index')
       } else if (key === 'goods') {
         this.$router.push('/goods')
-      } else if (key === 'orders') {
-        this.$router.push('/orders')
-      } else if (key === 'reseller') {
-        this.$router.push('/reseller')
-      } else if (key === 'supplier') {
-        this.$router.push('/supplier/merchant')
-      } else if (key === 'customers') {
-        this.$router.push('/customers/aftersale')
+      } else if (key === 'analysis') {
+        this.$router.push('/analysis/across')
       } else if (key === 'user') {
         this.$router.push('/user')
-      } else if (key === 'platform') {
-        this.$router.push('/platform')
-      } else if (key === 'gift') {
-        this.$router.push('/gift')
-      } else if (key === 'auth') {
-        this.$router.push('/auth')
       } else {
         if (this.username === '') {
           this.$router.push('/')

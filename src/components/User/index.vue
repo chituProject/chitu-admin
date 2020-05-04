@@ -29,18 +29,8 @@ export default {
           can: 'view User'
         },
         {
-          name: '用户标签',
-          url: '/user/tags',
-          can: 'view User'
-        },
-        {
-          name: '会员中心',
-          url: '/user/vip',
-          can: 'view User'
-        },
-        {
-          name: '邀请助力',
-          url: '/user/invite',
+          name: '联系方式管理',
+          url: '/user/contact',
           can: 'view User'
         }
       ]

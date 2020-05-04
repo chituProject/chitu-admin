@@ -97,26 +97,11 @@ export default {
       }
     }
     return {
-      routers: ['/insider/goods/', '/insider/orders', '/insider/reseller'],
+      routers: ['/insider/goods/'],
       menus: [
         {
           menu: 'Goods',
           label: '商品管理',
-          router: ['/insider/goods/', '/insider/orders']
-        },
-        {
-          menu: 'Orders',
-          label: '订单管理',
-          router: ['/insider/goods/', '/insider/orders']
-        },
-        {
-          menu: 'Supplier',
-          label: '供应商',
-          router: ['/insider/goods/', '/insider/orders']
-        },
-        {
-          menu: 'Reseller',
-          label: '合伙人',
           router: ['/insider/goods/', '/insider/orders']
         }
       ],
