@@ -4,9 +4,6 @@ import router from '../router/index'
 import { Message } from 'element-ui'
 import store from '@/store/index'
 
-// const baseUrl = 'https://api.offpay.cn'
-// const baseUrl = 'https://dev.offpay.cn'
-
 let instance = axios.create({
   baseURL: config.baseUrl,
   withCredentials: true,

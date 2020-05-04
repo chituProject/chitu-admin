@@ -2,7 +2,7 @@
   "name": "chitu-webadmin",
   "version": "1.0.0",
   "description": "Content Management System for chitu",
-  "author": "Zheng Shuyu<darina@offpay.cn>",
+  "author": "Moosbeeren@Github",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0",
@@ -21,8 +21,6 @@
     "js": "^0.1.0",
     "js-md5": "^0.7.3",
     "lodash": "^4.17.14",
-    "qqmap": "^1.0.1",
-    "raven-js": "^3.27.2",
     "uuid-js": "^0.7.5",
     "vue": "^2.5.2",
     "vue-browser-acl": "^0.10.0",
