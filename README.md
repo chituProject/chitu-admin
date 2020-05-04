@@ -30,5 +30,3 @@ launch.sh [test|prod]
 - 图片上传: [腾讯云oss](https://cloud.tencent.com/document/product/436/12260)
 
 **© 2020 chitu, Inc.**
-
-test
