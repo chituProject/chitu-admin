@@ -220,7 +220,7 @@
 <script>
 import { formatTime, formatPrice, deepCopy } from '@/assets/util'
 import ImgSingleUpload from '@/components/ImgSingleUpload'
-import config from '@/config'
+import config from '@/dev-config'
 import EditableTagList from '@/components/EditableTagList'
 
 export default {

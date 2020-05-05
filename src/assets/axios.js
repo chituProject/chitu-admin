@@ -1,5 +1,5 @@
 import axios from 'axios'
-import config from '../config'
+import config from '../../config'
 import router from '../router/index'
 import { Message } from 'element-ui'
 import store from '@/store/index'

@@ -11,7 +11,7 @@ import router from './router'
 import axios from './assets/axios'
 import { ACLRules } from './assets/acl'
 import store from './store'
-import config from './config'
+import config from '../config'
 import { formatPrice, formatTime } from '@/assets/util'
 
 const options = {

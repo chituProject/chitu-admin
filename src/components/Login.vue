@@ -29,7 +29,7 @@
 <script>
 // import md5 from 'js-md5'
 import { Message } from 'element-ui'
-import config from '../config.js'
+import config from '../dev-config.js'
 export default {
   name: 'Login',
   data () {
