@@ -24,14 +24,14 @@ export default {
     return {
       menus: [
         {
-          name: '用户列表',
-          url: '/user/list',
-          can: 'view User'
+          name: '横向比较',
+          url: '/analysis/across',
+          can: 'view Analysis'
         },
         {
-          name: '联系方式管理',
-          url: '/user/contact',
-          can: 'view User'
+          name: '模拟组合',
+          url: '/analysis/simulate',
+          can: 'view Analysis'
         }
       ]
     }

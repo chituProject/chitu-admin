@@ -41,13 +41,13 @@ export default {
         title: '基金管理',
         icon: '&#xe631;'
       }, {
-        index: 'orders',
+        index: 'analysis',
         title: '基金分析',
-        icon: '&#xe67c;'
+        icon: '&#xe60b;'
       }, {
-        index: 'reseller',
+        index: 'user',
         title: '用户管理',
-        icon: '&#xe663;'
+        icon: '&#xe61f;'
       }]
     }
   },
@@ -107,22 +107,8 @@ export default {
         this.$router.push('/index')
       } else if (key === 'goods') {
         this.$router.push('/goods')
-      } else if (key === 'orders') {
-        this.$router.push('/orders')
-      } else if (key === 'reseller') {
-        this.$router.push('/reseller')
-      } else if (key === 'supplier') {
-        this.$router.push('/supplier/merchant')
-      } else if (key === 'customers') {
-        this.$router.push('/customers/aftersale')
-      } else if (key === 'user') {
-        this.$router.push('/user')
-      } else if (key === 'platform') {
-        this.$router.push('/platform')
-      } else if (key === 'gift') {
-        this.$router.push('/gift')
-      } else if (key === 'auth') {
-        this.$router.push('/auth')
+      } else if (key === 'analysis') {
+        this.$router.push('/analysis/across')
       } else {
         if (this.username === '') {
           this.$router.push('/')

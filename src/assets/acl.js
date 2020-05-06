@@ -6,15 +6,9 @@ export const ACLRules = function(acl) {
    * 除统计信息以外其他权限对象都需和对应页面路由相同
    * 由于插件有Bug，暂时不支持权限对象名字全部小写。。。
    *
-   * goods - 商品管理
-   * orders - 订单管理
-   * reseller - 合伙人
-   * supplier - 供应商
-   * customers - 客户服务
+   * goods - 基金管理
+   * analysis - 基金分析
    * user - 用户管理
-   * platform - 平台管理
-   * gift - 锦礼君
-   * stats - 统计信息
    */
   const categories = Object.keys(store.state.acl.acl)
 
