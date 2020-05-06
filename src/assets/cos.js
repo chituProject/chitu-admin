@@ -14,8 +14,8 @@ let cos = new COS({
           TmpSecretKey: res.data.TmpSecretKey,
           XCosSecurityToken: res.data.XCosSecurityToken,
           ExpiredTime: res.data.ExpiredTime,
-        });
       });
+    });
   }
 });
 

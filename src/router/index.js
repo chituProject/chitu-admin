@@ -10,27 +10,6 @@ import GoodsVerify from '@/components/Goods/GoodsVerify'
 import GoodsCreate from '@/components/Goods/GoodsCreate'
 import SKUCreate from '@/components/Goods/SKUCreate'
 import BatchUpload from '@/components/Goods/Upload/BatchUpload'
-import Orders from '@/components/Orders/index'
-import OrdersList from '@/components/Orders/Orders'
-import LifeOrdersList from '@/components/Orders/LifeOrders'
-import SubOrdersList from '@/components/Orders/SubOrders'
-import OrderDetail from '@/components/Orders/OrderDetail'
-import SubOrderDetail from '@/components/Orders/SubOrderDetail'
-import Reseller from '@/components/Reseller/index'
-import ResellerIndividual from '@/components/Reseller/Individual/index'
-import ResellerIndividualDetail from '@/components/Reseller/Individual/detail'
-import ResellerOfficial from '@/components/Reseller/Official/index'
-import ResellerOfficialDetail from '@/components/Reseller/Official/detail'
-import ResellerOfficialAddEdit from '@/components/Reseller/Official/AddEdit'
-import Supplier from '@/components/Supplier/index'
-import MerchantList from '@/components/Supplier/Merchant/list'
-import MerchantUnaudited from '@/components/Supplier/Merchant/unaudited'
-import MerchantAuditFailed from '@/components/Supplier/Merchant/auditFailed'
-import MerchantDetail from '@/components/Supplier/Merchant/detail'
-import MerchantWithdrawal from '@/components/Supplier/Merchant/withdrawal'
-import MerchantAbnormalWithdrawal from '@/components/Supplier/Merchant/AbnormalWithdrawal'
-import MerchantEdit from '@/components/Supplier/Merchant/edit'
-import Brand from '@/components/Supplier/Brand/index'
 import Customers from '@/components/Customers/index'
 import AfterSale from '@/components/Customers/AfterSale'
 import User from '@/components/User/index'
@@ -58,17 +37,6 @@ import PlatformRush from '@/components/Platform/Rush/index'
 import PlatformRushCreate from '@/components/Platform/Rush/create'
 import PlatformRushDetail from '@/components/Platform/Rush/detail'
 import PlatformRushEdit from '@/components/Platform/Rush/edit'
-import Gift from '@/components/Gift/index'
-import GiftList from '@/components/Gift/Gift/index'
-import GiftDetail from '@/components/Gift/Gift/detail'
-import GiftGoods from '@/components/Gift/Goods/index'
-import GiftGoodsCreate from '@/components/Gift/Goods/create'
-import GiftGoodsDetail from '@/components/Gift/Goods/detail'
-import GiftLottery from '@/components/Gift/Lottery/index'
-import GiftLotteryDetail from '@/components/Gift/Lottery/detail'
-import GiftOrders from '@/components/Gift/Orders/index'
-import GiftOrdersDetail from '@/components/Gift/Orders/detail'
-import GiftAfterSale from '@/components/Gift/AfterSale'
 import Auth from '@/components/Auth/index'
 import AuthCreate from '@/components/Auth/create'
 import AuthRoles from '@/components/Auth/roles'
@@ -103,6 +71,59 @@ let router = new Router({
       path: '/logout',
       name: 'Logout',
       component: Logout
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: User,
+      meta: {
+        can: 'view User'
+      },
+      children: [
+        {
+          path: '',
+          component: UserList,
+          meta: {
+            can: 'view User'
+          }
+        },
+        {
+          path: 'list',
+          component: UserList,
+          meta: {
+            can: 'view User'
+          }
+        },
+        {
+          path: 'tags',
+          component: UserTagList,
+          meta: {
+            can: 'view User'
+          }
+        },
+        {
+          path: 'detail/:id',
+          component: UserDetail,
+          props: true,
+          meta: {
+            can: 'view User'
+          }
+        },
+        {
+          path: 'vip',
+          component: UserVIP,
+          meta: {
+            can: 'view User'
+          }
+        },
+        {
+          path: 'invite',
+          component: UserInvite,
+          meta: {
+            can: 'view User'
+          }
+        }
+      ]
     },
     {
       path: '/goods',
@@ -162,255 +183,6 @@ let router = new Router({
           component: BatchUpload,
           meta: {
             can: 'edit Goods'
-          }
-        }
-      ]
-    },
-    {
-      path: '/orders',
-      name: 'Orders',
-      component: Orders,
-      meta: {
-        can: 'view Orders'
-      },
-      children: [
-        {
-          path: '',
-          component: OrdersList,
-          meta: {
-            can: 'view Orders'
-          }
-        },
-        {
-          path: 'sub',
-          component: SubOrdersList,
-          meta: {
-            can: 'view Orders'
-          }
-        },
-        {
-          path: 'life',
-          component: LifeOrdersList,
-          meta: {
-            can: 'view Orders'
-          }
-        },
-        {
-          path: ':id',
-          component: OrderDetail,
-          props: true,
-          meta: {
-            can: 'view Orders'
-          }
-        },
-        {
-          path: 'sub/:id',
-          component: SubOrderDetail,
-          props: true,
-          meta: {
-            can: 'view Orders'
-          }
-        }
-      ]
-    },
-    {
-      path: '/reseller',
-      name: 'Reseller',
-      component: Reseller,
-      meta: {
-        can: 'view Reseller'
-      },
-      children: [
-        {
-          path: '',
-          component: ResellerIndividual,
-          meta: {
-            can: 'view Reseller'
-          }
-        },
-        {
-          path: 'individual',
-          component: ResellerIndividual,
-          meta: {
-            can: 'view Reseller'
-          }
-        },
-        {
-          path: 'individual/:id',
-          component: ResellerIndividualDetail,
-          props: true,
-          meta: {
-            can: 'view Reseller'
-          }
-        },
-        {
-          path: 'offline',
-          component: ResellerOfficial,
-          props: {
-            type: 'OFFLINE'
-          },
-          meta: {
-            can: 'view Reseller'
-          }
-        },
-        {
-          path: 'offline/add',
-          component: ResellerOfficialAddEdit,
-          props: route => {
-            return {
-              type: 'OFFLINE'
-            }
-          },
-          meta: {
-            can: 'edit Reseller'
-          }
-        },
-        {
-          path: 'offline/edit/:uuid',
-          component: ResellerOfficialAddEdit,
-          props: route => {
-            return {
-              uuid: route.params.uuid,
-              type: 'OFFLINE'
-            }
-          },
-          meta: {
-            can: 'edit Reseller'
-          }
-        },
-        {
-          path: 'offline/:uuid',
-          component: ResellerOfficialDetail,
-          props: route => {
-            return {
-              uuid: route.params.uuid,
-              type: 'OFFLINE'
-            }
-          },
-          meta: {
-            can: 'view Reseller'
-          }
-        }
-      ]
-    },
-    {
-      path: '/supplier',
-      name: 'Supplier',
-      component: Supplier,
-      meta: {
-        can: 'view Supplier'
-      },
-      children: [
-        {
-          path: 'merchant',
-          component: MerchantList,
-          meta: {
-            can: 'view Supplier'
-          }
-        },
-        {
-          path: 'merchant/unaudited',
-          component: MerchantUnaudited,
-          meta: {
-            can: 'view Supplier'
-          }
-        },
-        {
-          path: 'merchant/auditfailed',
-          component: MerchantAuditFailed,
-          meta: {
-            can: 'view Supplier'
-          }
-        },
-        {
-          path: 'merchant/abnormal',
-          component: MerchantAbnormalWithdrawal,
-          meta: {
-            can: 'view Supplier'
-          }
-        },
-        {
-          path: 'merchant/:uuid/detail',
-          component: MerchantDetail,
-          props: true,
-          meta: {
-            can: 'view Supplier'
-          }
-        },
-        {
-          path: 'merchant/:uuid/withdrawal',
-          component: MerchantWithdrawal,
-          props: true,
-          meta: {
-            can: 'view Supplier'
-          }
-        },
-        {
-          path: 'merchant/:uuid/edit',
-          component: MerchantEdit,
-          props: true,
-          meta: {
-            can: 'edit Supplier'
-          }
-        },
-        {
-          path: 'brand',
-          component: Brand,
-          meta: {
-            can: 'view Supplier'
-          }
-        }
-      ]
-    },
-    {
-      path: '/user',
-      name: 'User',
-      component: User,
-      meta: {
-        can: 'view User'
-      },
-      children: [
-        {
-          path: '',
-          component: UserList,
-          meta: {
-            can: 'view User'
-          }
-        },
-        {
-          path: 'list',
-          component: UserList,
-          meta: {
-            can: 'view User'
-          }
-        },
-        {
-          path: 'tags',
-          component: UserTagList,
-          meta: {
-            can: 'view User'
-          }
-        },
-        {
-          path: 'detail/:id',
-          component: UserDetail,
-          props: true,
-          meta: {
-            can: 'view User'
-          }
-        },
-        {
-          path: 'vip',
-          component: UserVIP,
-          meta: {
-            can: 'view User'
-          }
-        },
-        {
-          path: 'invite',
-          component: UserInvite,
-          meta: {
-            can: 'view User'
           }
         }
       ]
@@ -589,104 +361,6 @@ let router = new Router({
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      path: '/gift',
-      name: 'Gift',
-      component: Gift,
-      meta: {
-        can: 'view Gift'
-      },
-      children: [
-        {
-          path: '',
-          component: GiftList,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'list',
-          component: GiftList,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'add',
-          component: GiftDetail,
-          meta: {
-            can: 'edit Gift'
-          }
-        },
-        {
-          path: 'detail/:id',
-          component: GiftDetail,
-          props: true,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'goods',
-          component: GiftGoods,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'goods/create',
-          component: GiftGoodsCreate,
-          meta: {
-            can: 'edit Gift'
-          }
-        },
-        {
-          path: 'goods/detail/:id',
-          component: GiftGoodsDetail,
-          props: true,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'lottery',
-          component: GiftLottery,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'lottery/:id',
-          component: GiftLotteryDetail,
-          props: true,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'orders',
-          component: GiftOrders,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'orders/:id',
-          component: GiftOrdersDetail,
-          props: true,
-          meta: {
-            can: 'view Gift'
-          }
-        },
-        {
-          path: 'aftersales',
-          component: GiftAfterSale,
-          meta: {
-            can: 'view Gift'
-          }
         }
       ]
     },
