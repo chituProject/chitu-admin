@@ -4,21 +4,24 @@
     mode="horizontal"
     :default-active="openIndex"
     text-color="#333"
-    active-text-color="#f26250"
+    active-text-color="#ffffff"
     @select="handleSelect">
-    <el-menu-item index="main" style="margin-right: 70px">
-      <img src="../../static/logo.png" width="90px" height="40px"/>
+
+    <el-menu-item v-for="menu in visibleMenus" :key="menu.index" :index="menu.index" class="header-bar">
+      <!--<el-tooltip class="item" effect="dark" :content="menu.title" placement="bottom" popper-class="popper">-->
+      <i class="iconfont" v-html="menu.title"></i>
+      <!--</el-tooltip>-->
+      <!--<span slot="title" v-show="bigScreen || showMenuText(menu.index)">{{ menu.title }}</span>-->
     </el-menu-item>
-    <el-menu-item v-for="menu in visibleMenus" :key="menu.index" :index="menu.index" class="left">
-      <el-tooltip class="item" effect="dark" :content="menu.title" placement="bottom" popper-class="popper">
-        <i class="iconfont" v-html="menu.icon"></i>
-      </el-tooltip>
-      <span slot="title" v-show="bigScreen || showMenuText(menu.index)">{{ menu.title }}</span>
-    </el-menu-item>
-    <el-menu-item index="account" class="right logout" v-if="notLogin">
+
+    <!--<el-menu-item index="account" class="right logout" v-if="notLogin">
       <i class="el-icon-setting"></i>
       <span v-if="username === ''" slot="title">登录</span>
       <span v-else slot="title">登出 ({{username}}) </span>
+    </el-menu-item> -->
+
+    <el-menu-item index="main" class="right" >
+      <img src="../../static/logo.png" height="40px"/>
     </el-menu-item>
   </el-menu>
 </template>
@@ -35,40 +38,16 @@ export default {
     return {
       menus: [{
         index: 'goods',
-        title: '商品管理',
+        title: '基金管理',
         icon: '&#xe631;'
       }, {
         index: 'orders',
-        title: '订单管理',
+        title: '基金分析',
         icon: '&#xe67c;'
       }, {
         index: 'reseller',
-        title: '合伙人',
-        icon: '&#xe663;'
-      }, {
-        index: 'supplier',
-        title: '供应商',
-        icon: '&#xe621;'
-      }, {
-        index: 'customers',
-        title: '客户服务',
-        icon: '&#xe65e;'
-      }, {
-        index: 'user',
         title: '用户管理',
-        icon: '&#xe61f;'
-      }, {
-        index: 'platform',
-        title: '平台管理',
-        icon: '&#xe60b;'
-      }, {
-        index: 'gift',
-        title: '锦礼君',
-        icon: '&#xe63a;'
-      }, {
-        index: 'auth',
-        title: '权限管理',
-        icon: '&#xe61a;'
+        icon: '&#xe663;'
       }]
     }
   },
@@ -166,17 +145,17 @@ export default {
 <style scoped>
 #logout {
   /*color: #ff5a49;*/
-  color: #E46256 !important;
+  color: #9e1306 !important;
 }
 #navbar-menu li {
   font-size: 16px !important;
 }
 .el-menu-demo {
   position: absolute;
-  left: 0;
+  left: 20%;
   right: 0;
   z-index: 50;
-  box-shadow: 0px 3px 7px 0px rgba(215, 211, 211, 0.35);
+  /*box-shadow: 0px 3px 7px 0px rgba(215, 211, 211, 0.35);*/
 }
 .right {
   float: right;
@@ -186,8 +165,10 @@ export default {
   color: #333333;
   font-size: 20px;
 }
-.left {
+.header-bar {
   font-size: 16px;
+  padding-left: 100px;
+  padding-right:100px;
 }
 .left i {
   color: #333333;
@@ -195,7 +176,7 @@ export default {
   margin-right: 3px;
 }
 .is-active i {
-  color: #E46256;
+  color: #000000;
 }
 .popper {
   font-size: 16px;

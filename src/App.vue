@@ -5,9 +5,9 @@
         <yheader></yheader>
       </el-header>
       <router-view></router-view>
-      <!--<el-footer>-->
-      <!--<yfooter></yfooter>-->
-      <!--</el-footer>-->
+      <el-footer>
+        <yfooter></yfooter>
+      </el-footer>
     </el-container>
   </div>
 </template>

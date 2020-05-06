@@ -1,5 +1,5 @@
 <template>
-  <p class="footer">&copy; Copyright 2018 by Offpay.</p>
+  <p class="footer">&copy; Copyright 2020 by chitu.</p>
 </template>
 
 <script>

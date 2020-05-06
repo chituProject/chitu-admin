@@ -791,7 +791,6 @@ export default {
   }
   .add-param {
     margin-left: 30px;
-    /*color: #E46256;*/
   }
   .title {
     font-size: 20px;

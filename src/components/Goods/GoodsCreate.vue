@@ -542,6 +542,5 @@ export default {
   }
   .add-param {
     margin-left: 30px;
-    /*color: #E46256;*/
   }
 </style>
