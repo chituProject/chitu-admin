@@ -138,7 +138,7 @@ export default {
 }
 .el-menu-demo {
   position: absolute;
-  left: 20%;
+  left: 0;
   right: 0;
   z-index: 50;
   /*box-shadow: 0px 3px 7px 0px rgba(215, 211, 211, 0.35);*/
@@ -152,6 +152,7 @@ export default {
   font-size: 20px;
 }
 .header-bar {
+  left: 20%;
   font-size: 16px;
   padding-left: 100px;
   padding-right:100px;

@@ -24,12 +24,12 @@ export default {
     return {
       menus: [
         {
-          name: '商品列表',
+          name: '基金列表',
           url: '/goods/list',
           can: 'view Goods'
         },
         {
-          name: '批量导入商品',
+          name: '批量导入基金',
           url: '/goods/upload',
           can: 'edit Goods'
         }
