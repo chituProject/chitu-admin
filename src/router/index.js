@@ -153,6 +153,14 @@ let router = new Router({
       },
       children: [
         {
+          path: '',
+          name: 'Analysis',
+          component: AnalysisAcross,
+          meta: {
+            can: 'view Analysis'
+          }
+        },
+        {
           path: 'across',
           component: AnalysisAcross,
           meta: {

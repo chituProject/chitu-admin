@@ -16,8 +16,6 @@
         clearable>
       </el-input>
       <el-button type="primary" icon="el-icon-search" class="search-button" size="medium" @click.stop="querySearch">搜索</el-button>
-      <el-button type="primary" icon="el-icon-plus" class="search-button" size="medium" v-can:edit="'User'" @click.stop="addTag">添加标签</el-button>
-      <el-button type="primary" icon="el-icon-minus" class="search-button" size="medium" v-can:edit="'User'" @click.stop="removeTag">移除标签</el-button>
     </div>
     <div class="card-outer">
       <div v-if="userList && userList.length > 0" class="card-container">
