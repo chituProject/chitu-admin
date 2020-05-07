@@ -34,7 +34,7 @@
             v-if="$can('edit', 'User')"
             width="50">
           </el-table-column>
-          <el-table-column
+          <!--<el-table-column
             align="center"
             prop="id"
             label="用户ID"
@@ -55,7 +55,7 @@
             label="微信头像"
             width="90">
             <template slot-scope="scope"><img :src="scope.row.wechat_avatar_url" style="width: 50px; height: 50px"></template>
-          </el-table-column>
+          </el-table-column>-->
           <el-table-column
             align="center"
             prop="wechat_nickname"
@@ -176,14 +176,6 @@ export default {
         {
           label: '手机号',
           value: 'wechat_phone_number__contains'
-        },
-        {
-          label: '标签',
-          value: 'tags__name'
-        },
-        {
-          label: '来源店铺',
-          value: 'from_reseller__name__contains'
         }
       ],
       // list
