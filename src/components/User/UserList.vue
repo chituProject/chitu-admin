@@ -48,13 +48,13 @@
           <el-table-column
             align="center"
             label="当前权限">
-            <template slot-scope="scope">{{ current_status[scope.row.current_auth]
+            <template slot-scope="scope">{{ current_status[scope.row.auth_user.current_auth]
             }}</template>
           </el-table-column>
           <el-table-column
             align="center"
             label="操作">
-            <el-button @click="changeStatus" size="medium">{{ change_status[1 - scope.row.current_auth]
+            <el-button @click="changeStatus(scope.row.auth_user.wechat_nickname)" size="medium">{{ change_status[1 - scope.row.auth_user.current_auth]
             }}</el-button>
           </el-table-column>
         </el-table>
@@ -148,8 +148,11 @@ export default {
       this.currentPage = currentPage
       this.query()
     },
-    changeStatus () {
-      this.status_index = 1 - this.status_index // TODO: bind to row data
+    changeStatus (nickname) {
+      var r = confirm('是否要打开/关闭用户' + nickname + '的使用权限？')
+      if (r) {
+        this.status_index = 1 - this.status_index // TODO: bind to row data
+      }
     }
   },
   created () {
