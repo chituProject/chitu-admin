@@ -1,7 +1,7 @@
 <template>
   <div class="main-col" v-loading="loading">
     <div class="filter-container">
-      <el-select v-model="metric_query_key" class="selecter" placeholder="选择指标">
+      <el-select v-model="metric_query_key" class="selecter" placeholder="XX基金">
         <el-option
           v-for="item in metricOptions"
           :key="item.value"
@@ -9,16 +9,14 @@
           :value="item.value">
         </el-option>
       </el-select>
-      <el-select v-model="fund_query_key" class="selecter" placeholder="选择基金">
-        <el-option
-          v-for="item in fundList"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-      <div style="float: left;">
-        <el-button type="secondary" size="medium" @click="selectAllFunds">全选基金</el-button>
+      <el-input
+        class="search"
+        v-model="input"
+        placeholder="钱数（元）"
+        clearable>
+      </el-input>
+      <div style="float: left; padding-top: 10px;">
+        <el-button type="secondary" size="medium" @click="addComponent">添加</el-button>
       </div>
       <div style="float: right;">
         <el-button type="primary" size="medium" @click="exportData">导出</el-button>
@@ -44,20 +42,9 @@ export default {
       fund_query_key: '',
       metric_query_value: '',
       fund_query_value: '',
-      metricOptions: [
-        {
-          label: '空头仓位',
-          value: '1'
-        },
-        {
-          label: '基金管理费',
-          value: '2'
-        }
-      ],
+      metricOptions: [],
       fundList: [],
       model: {
-        newUser: 5,
-        helperNum: 2
       },
       rules: {
       }
@@ -70,7 +57,7 @@ export default {
     exportDataAsImg () {
       // todo
     },
-    selectAllFunds () {
+    addComponent () {
       // todo
     },
     handleMerchantChange (uuid) {
@@ -109,6 +96,9 @@ export default {
 </script>
 
 <style scoped>
+  .search {
+    width: 120px;
+  }
   .filter-container {
     padding: 12px;
   }
