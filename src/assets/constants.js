@@ -13,7 +13,10 @@ const SHELF_STATUS = {
   'OFF': '下架'
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> draft_1
 const WITHDRAW_STATUS = {
   CANCELED: '已取消',
   CREATED: '已发起',

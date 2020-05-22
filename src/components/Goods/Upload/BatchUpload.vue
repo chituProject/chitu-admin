@@ -114,6 +114,7 @@ import CustomKeys from './CustomKeys'
 import { spuOptions, skuOptions, categoryOptions, extraOptions, parseFile, modifiedEval } from './options'
 
 export default {
+  name: 'BatchUpload',
   components: {
     EmptyPage,
     CustomKeys
