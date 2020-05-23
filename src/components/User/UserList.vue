@@ -24,9 +24,16 @@
           tooltip-effect="dark"
           stripe
           :data="userList"
-          @row-click="onRowClick"
           :row-style="{ cursor: 'pointer' }"
           style="width: 100%">
+          <el-table-column
+            align="center"
+            label="用户头像"
+            width="80">
+            <template slot-scope="scope">
+              <img style="width:100%;height:100%;" :src="scope.row.wechat_avatar_url">
+            </template>
+          </el-table-column>
           <el-table-column
             align="center"
             prop="wechat_nickname"
@@ -47,15 +54,16 @@
           </el-table-column>
           <el-table-column
             align="center"
-            label="当前权限">
-            <template slot-scope="scope">{{ current_status[scope.row.auth_user.current_auth]
-            }}</template>
+            label="当前权限"
+            width="70">
+            <template slot-scope="scope">{{current_status[scope.row.authorize_type]}}</template>
           </el-table-column>
           <el-table-column
             align="center"
             label="操作">
-            <el-button @click="changeStatus(scope.row.auth_user.wechat_nickname)" size="medium">{{ change_status[1 - scope.row.auth_user.current_auth]
-            }}</el-button>
+            <template slot-scope="scope">
+              <el-button @click="changeStatus(scope.row)" size="medium">{{current_status[scope.row.authorize_type]}}</el-button>
+            </template>
           </el-table-column>
         </el-table>
         <el-pagination
@@ -101,14 +109,9 @@ export default {
         }
       ],
       // status
-      status_index: 0,
       current_status: {
-        AUTHORIZE: '已授权',
-        NON_AUTH: '未授权'
-      },
-      change_status: {
-        AUTHORIZE: '授权',
-        NON_AUTH: '关闭授权'
+        ON: '已授权',
+        OFF: '未授权'
       }
     }
   },
@@ -140,19 +143,31 @@ export default {
           that.loading = false
         })
     },
-    onRowClick (row, event, column) {
-      // this.$router.push('/orders/' + row.id)
-      window.open(window.location.origin + '/#/orders/' + row.id)
-    },
     handleCurrentChange (currentPage) {
       this.currentPage = currentPage
       this.query()
     },
-    changeStatus (nickname) {
-      var r = confirm('是否要打开/关闭用户' + nickname + '的使用权限？')
-      if (r) {
-        this.status_index = 1 - this.status_index // TODO: bind to row data
-      }
+    changeStatus (data) {
+      console.log(data)
+      const action = data.authorize_type === 'ON' ? '关闭' : '打开'
+      this.$confirm(`是否要${action}用户` + data.wechat_nickname + '的使用权限？', 'Warning', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        // 调用后台接口
+
+        if (data.authorize_type === 'ON') {
+          data.authorize_type = 'OFF'
+        } else {
+          data.authorize_type = 'ON'
+        }
+
+        this.$message({
+          type: 'success',
+          message: '更改成功'
+        })
+      })
     }
   },
   created () {

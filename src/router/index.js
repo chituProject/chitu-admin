@@ -24,7 +24,7 @@ import AuthUsers from '@/components/Auth/users'
 import AuthPwd from '@/components/Auth/changepwd'
 import axios from '@/assets/axios'
 import store from '@/store/index'
-import { Message } from 'element-ui'
+// import { Message } from 'element-ui'
 
 Vue.use(Router)
 
@@ -235,20 +235,20 @@ router.beforeEach((to, from, next) => {
       .then(res => {
         console.log(res.data)
         store.commit('SET_USERNAME', res.data.user.username)
-        if (!store.state.merchant) {
-          axios.get('/insider/goods/merchant/')
-            .then(res2 => {
-              store.commit('SET_MERCHANT', res2.data)
-              next()
-            })
-            .catch(err => {
-              console.log(err)
-              Message.warning('暂时无法获取供应商列表')
-              next()
-            })
-        } else {
-          next()
-        }
+        // if (!store.state.merchant) {
+        //   axios.get('/insider/goods/merchant/')
+        //     .then(res2 => {
+        //       store.commit('SET_MERCHANT', res2.data)
+        //       next()
+        //     })
+        //     .catch(err => {
+        //       console.log(err)
+        //       Message.warning('暂时无法获取供应商列表')
+        //       next()
+        //     })
+        // } else {
+        //   next()
+        // }
       })
       .catch(err => {
         console.log(err.response, err.status)

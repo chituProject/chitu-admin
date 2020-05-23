@@ -1,4 +1,4 @@
-const baseUrl = 'http://ctdev.hackpku.com'
+const baseUrl = 'http://dev.hackpku.com'
 const Bucket = 'offpay-dev-1256235662'
 const Region = 'ap-guangzhou'
 const isDev = true

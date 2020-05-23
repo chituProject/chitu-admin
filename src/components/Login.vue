@@ -1,6 +1,6 @@
 <template>
   <div class="flex-justify_center index_wrapper">
-    <!--<div class="bg-panel">
+    <div class="bg-panel">
       <img src="/static/img/indexIcon.png" style="position:absolute;margin-left:-143px;margin-top:89px;"/>
     </div>
     <div class="input-panel">
@@ -22,7 +22,7 @@
           </el-form>
         </el-main>
       </el-container>
-    </div>-->
+    </div>
   </div>
 </template>
 
