@@ -45,15 +45,11 @@
 </template>
 
 <script>
-import CategorySelector from '@/components/CategorySelector'
-import EditableTagList from '@/components/EditableTagList'
 import DetailParas from './Detail/DetailParas'
 
 export default {
   name: 'FundsCreate',
   components: {
-    CategorySelector,
-    EditableTagList,
     DetailParas
   },
   data () {

@@ -13,13 +13,9 @@ import AnalysisSimulate from '@/components/Analysis/AnalysisSimulate'
 import User from '@/components/User/index'
 import UserList from '@/components/User/UserList'
 import UserContact from '@/components/User/UserContact'
-import Auth from '@/components/Auth/index'
-import AuthCreate from '@/components/Auth/create'
-import AuthUsers from '@/components/Auth/users'
-import AuthPwd from '@/components/Auth/changepwd'
 import axios from '@/assets/axios'
 import store from '@/store/index'
-// import { Message } from 'element-ui'
+import { Message } from 'element-ui'
 
 Vue.use(Router)
 
@@ -148,40 +144,6 @@ let router = new Router({
           }
         }
       ]
-    },
-    {
-      path: '/auth',
-      component: Auth,
-      meta: {
-        can: 'view Auth'
-      },
-      children: [
-        {
-          path: '',
-          redirect: 'create'
-        },
-        {
-          path: 'password',
-          name: 'AuthPwd',
-          component: AuthPwd
-        },
-        {
-          path: 'create',
-          name: 'AuthCreate',
-          component: AuthCreate,
-          meta: {
-            can: 'edit Auth'
-          }
-        },
-        {
-          path: 'users',
-          name: 'AuthUsers',
-          component: AuthUsers,
-          meta: {
-            can: 'edit Auth'
-          }
-        }
-      ]
     }
   ]
 })
@@ -195,25 +157,21 @@ router.beforeEach((to, from, next) => {
       })
       .catch(err => {
         console.log(err.response, err.status)
-        // if (err.response) {
-        //   if (err.response.status === 401) {
-        //     store.commit('SET_USERNAME', '')
-        //     Message.warning('未登录或登录超时 请登录...')
-        //     next({
-        //       path: '/login',
-        //       query: {redirect: to.fullPath}
-        //     })
-        //   } else if (err.response.status === 403) {
-        //     Message.error('权限错误，请勿同时登陆admin和supplier')
-        //   } else if (err.response.status === 404) {
-        //     Message.error('找不到对应的供应商')
-        //   } else {
-        //     Message.error('未知错误')
-        //   }
-        // } else {
-        //   console.log('Error', err.message)
-        //   Message.error('请求未发出')
-        // }
+        if (err.response) {
+          if (err.response.status === 401) {
+            store.commit('SET_USERNAME', '')
+            Message.warning('未登录或登录超时 请登录...')
+            next({
+              path: '/login',
+              query: {redirect: to.fullPath}
+            })
+          } else {
+            Message.error('未知错误')
+          }
+        } else {
+          console.log('Error', err.message)
+          Message.error('请求未发出')
+        }
       })
   } else {
     next()
