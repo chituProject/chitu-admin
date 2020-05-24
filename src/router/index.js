@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index/Index'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
 import Goods from '@/components/Funds/index'
@@ -35,12 +34,6 @@ let router = new Router({
       path: '/login',
       name: 'Login',
       component: Login
-    },
-    {
-      path: '/index',
-      name: 'Index',
-      component: Index,
-      meta: { requiresAuth: true }
     },
     {
       path: '/logout',
