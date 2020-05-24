@@ -29,7 +29,7 @@
             <el-form-item label="业绩信息" prop="achievement">
             </el-form-item>
             <template v-if="model.type === 'MANAGER'">
-              <detail-paras :edit="true" :title="'概述'" :value="model.general_information" @change="updateGeneralInformation"></detail-paras>
+              <detail-paras :edit="true" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>
               <detail-paras :edit="true" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
               <detail-paras :edit="true" :title="'条款和条件'" :value="model.article" @change="updateArticle"></detail-paras>
               <detail-paras :edit="true" :title="'组合特征'" :value="model.combination" @change="updateCombination"></detail-paras>
@@ -72,7 +72,7 @@ export default {
       model: {
         type: '',
         name: '',
-        general_information: [
+        general_infomation: [
           {key: '基金管理方', value: ''},
           {key: '管理方牌照', value: ''},
           {key: '基金管理规模', value: ''},
@@ -133,7 +133,7 @@ export default {
       this.$router.go(-1)
     },
     updateGeneralInformation (value) {
-      this.$set(this.model, 'general_information', value)
+      this.$set(this.model, 'general_infomation', value)
     },
     updateOperation (value) {
       this.$set(this.model, 'operation', value)
