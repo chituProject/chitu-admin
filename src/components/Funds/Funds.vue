@@ -20,36 +20,58 @@
     </div>
     <div class="card-outer">
       <div v-if="list && list.length > 0" class="card-container">
-        <el-card
-          v-for="(item, index) in list"
-          :key="index"
-          shadow="hover"
-          class="card">
-          <div @click="openDetail(item.id)">
-            <div style="display: flex; flex-direction: row;align-items: center">
-              <el-form class="demo-table-expand" label-width="80px" label-position="left">
-                <el-form-item label="基金经理">
-                  <span>{{item.manager.name}}</span>
-                </el-form-item>
-                <el-form-item label="基金名">
-                  <span>{{item.name}}</span>
-                </el-form-item>
-                <el-form-item label="近一年收益">
-                  <span>{{item.annual_award==null? "" : item.annual_award}}</span>
-                </el-form-item>
-                <el-form-item label="最新月回报">
-                  <span>{{tem.month_award==null? "" : item.month_award}}</span>
-                </el-form-item>
-                <el-form-item label="夏普比率">
-                  <span>{{item.sharp_ratio==null? "" : item.sharp_ratio }}</span>
-                </el-form-item>
-                <el-form-item label="用户是否可见">
-                  <switch-button v-model="item.visibility_status" @click="changeVisibility(item)"></switch-button>
-                </el-form-item>
-              </el-form>
-            </div>
-          </div>
-        </el-card>
+        <el-table
+          :data="list"
+          border
+          class="table"
+          style="width: 100%">
+          <el-table-column
+            prop="manager"
+            label="基金经理"
+            width="150">
+          </el-table-column>
+          <el-table-column
+            prop="name"
+            label="基金名称"
+            width="240">
+          </el-table-column>
+          <el-table-column
+            prop="yearly_profit"
+            label="近一年收益"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="monthly_profit"
+            label="最新月回报"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="sharp_rate"
+            label="夏普比率"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            label="可见性"
+            width="70">
+            <template slot-scope="scope">
+              {{visible_status[scope.row.visible]}}
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="修改可见性"
+            width="100">
+            <template slot-scope="scope">
+              <switch-button v-model="scope.row.visibility" @click="changeVisibility(scope.row)"></switch-button>
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="操作"
+            align="center">
+            <template slot-scope="scope">
+              <el-button @click="openDetail(scope.row.id)" type="primary" size="large">查看</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
         <el-pagination
           v-if="pageSize < totalCnt"
           class="pagination"
@@ -104,6 +126,10 @@ export default {
           value: 'quantization'
         }
       ],
+      visible_status: {
+        TRUE: '可见',
+        FALSE: '不可见'
+      },
       // list
       list: [],
       pageSize: 50,
@@ -127,18 +153,24 @@ export default {
       this.query()
     },
     query () {
-      let that = this
-      that.loading = true
-      this.$axios.get('/insider/goods/?page_num=' + this.currentPage +
+      this.loading = true
+      this.$axios.get('/insider/fund_archive/?page_num=' + this.currentPage +
         '&page_size=' + this.pageSize +
         '&' + this.query_key + '=' + this.query_value)
         .then(res => {
           console.log(res.data)
-          that.totalCnt = res.data.count
-          that.list = res.data.results
+          this.totalCnt = res.data.count
+          for (let i = 0; i < res.data.results.length; ++i) {
+            if (res.data.results[i].visible === 'TRUE') {
+              res.data.results[i].visibility = true
+            } else {
+              res.data.results[i].visibility = false
+            }
+          }
+          this.list = res.data.results
         })
         .finally(() => {
-          that.loading = false
+          this.loading = false
         })
     },
     handleCurrentChange (currentPage) {
@@ -146,8 +178,8 @@ export default {
       this.query()
     },
     openDetail (id) {
-      // this.$router.push('/goods/detail/' + id)
-      window.open(window.location.origin + '/#/goods/detail/' + id)
+      this.$router.push('/goods/detail/' + id)
+      // window.open(window.location.origin + '/#/goods/detail/' + id)
     },
     changeVisibility (item) {
       let that = this
@@ -181,7 +213,7 @@ export default {
   .demo-table-expand .el-form-item {
     margin-bottom: 0;
   }
-  .card:hover {
+  .table:hover {
     cursor: pointer;
   }
 

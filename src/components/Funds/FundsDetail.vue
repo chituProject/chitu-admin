@@ -238,14 +238,12 @@
         </el-tabs>
       </div>
     </div>
-    <category-selector ref="categorySelector" @categoryConfirm="setCategoryConfirm"></category-selector>
   </div>
 </template>
 
 <script>
 import { formatPrice, deepCopy, deformatPrice } from '@/assets/util'
 import constants from '@/assets/constants'
-import CategorySelector from '@/components/CategorySelector'
 import EditableTagList from '@/components/EditableTagList'
 import DetailParas from './Detail/DetailParas'
 import ExtraParas from './Detail/ExtraParas'
@@ -253,7 +251,6 @@ import ExtraParas from './Detail/ExtraParas'
 export default {
   name: 'GoodsDetail',
   components: {
-    CategorySelector,
     EditableTagList,
     ExtraParas,
     DetailParas
@@ -290,7 +287,6 @@ export default {
         tags: [],
         goods_type: '',
         meta_specification: [],
-        category_third: [],
         for_gender: 0,
         merchant: {},
         brand: {}
@@ -402,9 +398,6 @@ export default {
         })
         return item
       }
-    },
-    categories () {
-      return this.$store.state.categories
     }
   },
   methods: {
@@ -416,44 +409,20 @@ export default {
       this.$set(this.model_new, 'detail_paras', value)
     },
     getData () {
-      let that = this
-      that.loading = true
-      this.$axios.get('/insider/goods/merchant/')
+      this.loading = true
+      this.$axios.get('/insider/fund_archive/' + this.id + '/')
         .then(res => {
-          console.log(res.data)
-          that.$store.commit('SET_MERCHANT', res.data)
-
-          that.$axios.get('/insider/goods/' + that.id + '/')
-            .then(res => {
-              console.log('getData', res.data)
-              that.model = that.decodeForm(res.data)
-              if (!that.activeName) {
-                that.activeName = that.model.uuid
-              }
-              if (that.model.merchant != null) {
-                that.handleMerchantChange(that.model.merchant.uuid)
-              }
-            })
-            .finally(() => {
-              that.loading = false
-            })
-        })
-        .catch(err => {
-          console.log(err)
-          that.$message.warning('无法获取品牌信息')
-          that.loading = false
-        })
-    },
-    getStocks (merchantId) {
-      let that = this
-      that.stock_loading = true
-      this.$axios.get('/insider/stock/?merchant=' + merchantId)
-        .then(res => {
-          console.log(res.data)
-          that.stocks = res.data
+          console.log('getData', res.data)
+          this.model = this.decodeForm(res.data)
+          if (!this.activeName) {
+            this.activeName = this.model.uuid
+          }
+          if (this.model.merchant != null) {
+            this.handleMerchantChange(this.model.merchant.uuid)
+          }
         })
         .finally(() => {
-          that.stock_loading = false
+          this.loading = false
         })
     },
     encodeForm (form) {
@@ -485,11 +454,6 @@ export default {
           })
         }
       }
-      let tmpCategory = deepCopy(form.category_third)
-      tmpForm.category_third = []
-      for (let i = 0; i < tmpCategory.length; i++) {
-        tmpForm.category_third.push(tmpCategory[i].id)
-      }
       for (let i = 0; i < tmpForm.sku.length; i++) {
         if (!tmpForm.sku[i].specification.startsWith('[')) {
           // sku 型号旧数据处理
@@ -505,7 +469,7 @@ export default {
       if (this.edit) {
         this.editGoodsCancel()
       } else {
-        window.open('javascript:window.open("", "_self", "");window.close();', '_self')
+        this.$router.go(-1)
       }
     },
     closeWindow () {
@@ -654,7 +618,6 @@ export default {
       if (this.model_new.brand) {
         this.model_new.brand.id = ''
       }
-      this.getStocks(this.model.merchant.uuid)
     },
     groundSKU (action) {
       let that = this
@@ -669,30 +632,6 @@ export default {
           console.log(error)
           that.$message.error((action ? '上架' : '下架') + '失败')
         })
-    },
-    getCategoryLabel (id) {
-      let label = ''
-      this.categories.forEach(item => {
-        if (item.id === id) {
-          label = item.name
-        }
-      })
-      return label
-    },
-    getGoodsTypeLabel (id) {
-      let label = ''
-      this.type.forEach(item => {
-        if (item.id === id) {
-          label = item.name
-        }
-      })
-      return label
-    },
-    setCategory () {
-      this.$refs.categorySelector.open(this.model_new.category_third)
-    },
-    setCategoryConfirm (checked) {
-      this.$set(this.model_new, 'category_third', checked)
     }
   },
   created () {
