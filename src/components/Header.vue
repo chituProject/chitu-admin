@@ -92,14 +92,18 @@ export default {
     },
     handleSelect (key, keyPath) {
       this.refreshHeader()
-      if (key === 'main') {
-        this.$router.push('/index')
-      } else if (key === 'goods') {
+      if (key === 'goods') {
         this.$router.push('/goods')
       } else if (key === 'analysis') {
         this.$router.push('/analysis')
       } else if (key === 'user') {
         this.$router.push('/user')
+      } else {
+        if (this.username === '') {
+          this.$router.push('/')
+        } else {
+          this.$router.push('/logout')
+        }
       }
     }
   },

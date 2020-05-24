@@ -4,12 +4,10 @@ import Index from '@/components/Index/Index'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
 import Goods from '@/components/Goods/index'
-import GoodsList from '@/components/Goods/Goods'
-import GoodsDetail from '@/components/Goods/GoodsDetail'
-import GoodsVerify from '@/components/Goods/GoodsVerify'
-import GoodsCreate from '@/components/Goods/GoodsCreate'
-import SKUCreate from '@/components/Goods/SKUCreate'
-import BatchUpload from '@/components/Goods/Upload/BatchUpload'
+import GoodsList from '@/components/Funds/Funds'
+import GoodsDetail from '@/components/Funds/FundsDetail'
+import GoodsCreate from '@/components/Funds/FundsCreate'
+import BatchUpload from '@/components/Funds/Upload/BatchUpload'
 import Analysis from '@/components/Analysis/index'
 import AnalysisAcross from '@/components/Analysis/AnalysisAcross'
 import AnalysisSimulate from '@/components/Analysis/AnalysisSimulate'
@@ -18,8 +16,6 @@ import UserList from '@/components/User/UserList'
 import UserContact from '@/components/User/UserContact'
 import Auth from '@/components/Auth/index'
 import AuthCreate from '@/components/Auth/create'
-import AuthRoles from '@/components/Auth/roles'
-import AuthMenus from '@/components/Auth/menus'
 import AuthUsers from '@/components/Auth/users'
 import AuthPwd from '@/components/Auth/changepwd'
 import axios from '@/assets/axios'
@@ -113,24 +109,8 @@ let router = new Router({
           }
         },
         {
-          path: 'detail/:id/verify',
-          component: GoodsVerify,
-          props: true,
-          meta: {
-            can: 'view Goods'
-          }
-        },
-        {
           path: 'add',
           component: GoodsCreate,
-          meta: {
-            can: 'edit Goods'
-          }
-        },
-        {
-          path: 'add/:id/sku',
-          component: SKUCreate,
-          props: true,
           meta: {
             can: 'edit Goods'
           }
@@ -196,22 +176,6 @@ let router = new Router({
           path: 'create',
           name: 'AuthCreate',
           component: AuthCreate,
-          meta: {
-            can: 'edit Auth'
-          }
-        },
-        {
-          path: 'role',
-          name: 'AuthRoles',
-          component: AuthRoles,
-          meta: {
-            can: 'edit Auth'
-          }
-        },
-        {
-          path: 'menu',
-          name: 'AuthMenus',
-          component: AuthMenus,
           meta: {
             can: 'edit Auth'
           }

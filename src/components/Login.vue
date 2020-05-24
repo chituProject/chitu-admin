@@ -76,7 +76,7 @@ export default {
                 if (url) {
                   that.$router.replace({path: url})
                 } else {
-                  that.$router.replace({path: '/index'})
+                  that.$router.replace({path: '/goods'})
                 }
               } else {
                 this.$message.error('登录失败，未知错误')
