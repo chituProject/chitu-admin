@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .switch-button-control {
     display: flex;
     flex-direction: row;

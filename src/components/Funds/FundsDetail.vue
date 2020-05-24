@@ -32,45 +32,6 @@
                   <el-form-item label="SPU状态">
                     <span>{{status[model.shelf_status]}}</span>
                   </el-form-item>
-                  <el-form-item v-show="edit" label="供应商" prop="merchant">
-                    <el-select v-model="model_new.merchant.uuid" @change="handleMerchantChange">
-                      <el-option
-                        v-for="item in merchant"
-                        :key="item.uuid"
-                        :label="item.name"
-                        :value="item.uuid">
-                      </el-option>
-                    </el-select>
-                  </el-form-item>
-                  <el-form-item label="供应商" v-show="!edit">
-                    <span>{{model.merchant==null?"":model.merchant.name}}</span>
-                  </el-form-item>
-                  <el-form-item v-show="edit" label="品牌" prop="brand">
-                    <el-select filterable v-model="model_new.brand.id">
-                      <el-option
-                        v-for="item in brand"
-                        :key="item.id"
-                        :label="item.name"
-                        :value="item.id">
-                      </el-option>
-                    </el-select>
-                  </el-form-item>
-                  <el-form-item label="品牌" v-show="!edit">
-                    <span>{{model.brand==null?"":model.brand.name}}</span>
-                  </el-form-item>
-                  <el-form-item v-show="edit" label="所属品类" prop="category_third">
-                    <span v-for="(category, i) in model_new.category_third" :key="i">
-                      <span v-if="i !== 0">，</span>
-                      {{getCategoryLabel(category)}}
-                    </span>
-                    <i class="iconfont clickable" @click="setCategory">&#xe61e;</i>
-                  </el-form-item>
-                  <el-form-item v-show="!edit" label="所属品类">
-                    <span v-for="(category, i) in model.category_third" :key="i">
-                      <span v-if="i !== 0">，</span>
-                      {{getCategoryLabel(category)}}
-                    </span>
-                  </el-form-item>
                   <el-form-item v-show="edit" label="商品类型" prop="goods_type">
                     <el-select v-model="model_new.goods_type">
                       <el-option
@@ -140,148 +101,6 @@
                     <span>{{model.description}}</span>
                   </el-form-item>
                 </div>
-                <div class="divider"></div>
-                <div class="title">商品图片</div>
-                <el-form-item label-width="0" prop="main_picture">
-                  <div>
-                    <span class="pic-label">瀑布流主图：</span>
-                    <span class="pic-info">（封面图片：1张，尺寸大小要求500*500，请上传透明底PNG格式的图片）</span>
-                  </div>
-                  <img-single-cropper-upload
-                    ref="main_picture"
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="main_picture"
-                    :editable="edit"
-                    :widthLimit="500"
-                    :heightLimit="500"
-                    accept="png"
-                    v-if="edit"
-                    v-model="model_new.main_picture">
-                  </img-single-cropper-upload>
-                  <img-single-upload
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="main_picture"
-                    :editable="edit"
-                    v-else
-                    v-model="model.main_picture">
-                  </img-single-upload>
-                </el-form-item>
-                <!-- <el-form-item label-width="0" prop="index_picture">
-                  <div>
-                    <span class="pic-label">首页banner图：</span>
-                    <span class="pic-info">（封面图片：1张，尺寸大小要求710*320，请上传透明底PNG格式的图片）</span>
-                  </div>
-                  <img-single-cropper-upload
-                    ref="index_picture"
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="index_picture"
-                    :editable="edit"
-                    :widthLimit="710"
-                    :heightLimit="320"
-                    accept="image/png"
-                    v-if="edit"
-                    v-model="model_new.index_picture">
-                  </img-single-cropper-upload>
-                  <img-single-upload
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="index_picture"
-                    :editable="edit"
-                    v-else
-                    v-model="model.index_picture">
-                  </img-single-upload>
-                </el-form-item> -->
-                <el-form-item label-width="0" prop="banner_pictures">
-                  <div>
-                    <span class="pic-label">横幅图片：</span>
-                    <span class="pic-info">（详情页轮播图：1～6张，尺寸大小要求750*700，第一张请上传透明底图）</span>
-                  </div>
-                  <img-list-cropper-upload
-                    ref="banner_pictures"
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="banner_pictures"
-                    :limit="6"
-                    :editable="edit"
-                    :widthLimit="750"
-                    :heightLimit="700"
-                    v-if="edit"
-                    v-model="model_new.banner_pictures">
-                  </img-list-cropper-upload>
-                  <img-list-upload
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="banner_pictures"
-                    :limit="4"
-                    :editable="edit"
-                    v-else
-                    v-model="model.banner_pictures">
-                  </img-list-upload>
-                </el-form-item>
-                <el-form-item label-width="0" prop="graphic_text">
-                  <div>
-                    <span class="pic-label">产品故事：</span>
-                    <span class="pic-info">（产品故事展示图：图片宽度要求750px）</span>
-                  </div>
-                  <img-list-upload
-                    ref="graphic_text"
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="graphic_text"
-                    :widthLimit="750"
-                    :editable="edit"
-                    v-if="edit"
-                    v-model="model_new.graphic_text">
-                  </img-list-upload>
-                  <img-list-upload
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="graphic_text"
-                    :limit="10"
-                    :editable="edit"
-                    v-else
-                    v-model="model.graphic_text">
-                  </img-list-upload>
-                </el-form-item>
-                <el-form-item label-width="0" prop="after_sales">
-                  <div>
-                    <span class="pic-label">售后无忧：</span>
-                    <span class="pic-info">（售后展示图：1～3张，图片宽度要求1080px）</span>
-                  </div>
-                  <img-list-upload
-                    ref="after_sales"
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="after_sales"
-                    :widthLimit="1080"
-                    :limit="3"
-                    :editable="edit"
-                    v-if="edit"
-                    v-model="model_new.after_sales">
-                  </img-list-upload>
-                  <img-list-upload
-                    style="margin-top: 20px"
-                    :uuid="model.uuid"
-                    root="goods"
-                    path="after_sales"
-                    :limit="3"
-                    :editable="edit"
-                    v-else
-                    v-model="model.after_sales">
-                  </img-list-upload>
-                </el-form-item>
                 <div class="divider"></div>
                 <detail-paras :edit="edit" :value="model.detail_paras" @change="updateDetailParas"></detail-paras>
                 <extra-paras :edit="edit" :value="model.extra_paras" @change="updateExtraParas"></extra-paras>
@@ -360,20 +179,7 @@
                   <el-form-item label="运费(元)" v-show="!edit">
                     <span>{{formatPrice(item.shipment_fee)}}</span>
                   </el-form-item>
-                  <el-form-item v-show="edit" label="默认快递" prop="default_express">
-                    <!--<el-input v-if="edit" v-model="item.default_express" clearable></el-input>-->
-                    <el-select v-model="sku_new.default_express" filterable placeholder="请选择">
-                      <el-option
-                        v-for="(item, j) in express"
-                        :key="j"
-                        :label="item.name"
-                        :value="item.name">
-                      </el-option>
-                    </el-select>
-                  </el-form-item>
-                  <el-form-item label="默认快递" v-show="!edit">
-                    <span>{{item.default_express}}</span>
-                  </el-form-item>
+
                   <el-form-item v-show="edit" label="库存" prop="inventory_count">
                     <el-input type="number" v-model.number="sku_new.inventory_count" clearable></el-input>
                   </el-form-item>
@@ -424,40 +230,7 @@
                   <el-form-item label="绑定分成(元)" v-show="!edit">
                     <span>{{formatPrice(item.bind_offpay)}}</span>
                   </el-form-item>
-                  <!-- <el-form-item v-show="edit" label="推荐分成(元)" prop="recommend_offpay">
-                    <el-input type="number" v-model.number="sku_new.recommend_offpay" clearable></el-input>
-                  </el-form-item>
-                  <el-form-item label="推荐分成(元)" v-show="!edit">
-                    <span>{{formatPrice(item.recommend_offpay)}}</span>
-                  </el-form-item> -->
                 </div>
-                <el-form-item style="width: 100%" prop="sku_pic">
-                  <div style="margin-left: -120px">
-                    <span class="pic-label">SKU图：</span>
-                    <span class="pic-info">（封面图片：1张，尺寸大小要求340*340）</span>
-                  </div>
-                  <img-single-cropper-upload
-                    ref="sku_picture"
-                    style="margin-top: 20px;margin-left: -120px"
-                    :uuid="item.uuid"
-                    root="sku"
-                    path="main"
-                    :editable="edit"
-                    :widthLimit="340"
-                    :heightLimit="340"
-                    v-if="edit"
-                    v-model="sku_new.sku_pic">
-                  </img-single-cropper-upload>
-                  <img-single-upload
-                    style="margin-top: 20px;margin-left: -120px"
-                    :uuid="item.uuid"
-                    root="sku"
-                    path="main"
-                    :editable="edit"
-                    v-else
-                    v-model="item.sku_pic">
-                  </img-single-upload>
-                </el-form-item>
               </el-form>
             </div>
           </el-tab-pane>
@@ -472,11 +245,6 @@
 <script>
 import { formatPrice, deepCopy, deformatPrice } from '@/assets/util'
 import constants from '@/assets/constants'
-import ImgListUpload from '@/components/ImgListUpload'
-import ImgListCropperUpload from '@/components/ImgListCropperUpload'
-import ImgSingleUpload from '@/components/ImgSingleUpload'
-import ImgSingleCropperUpload from '@/components/ImgSingleCropperUpload'
-import Express from '%/express.json'
 import CategorySelector from '@/components/CategorySelector'
 import EditableTagList from '@/components/EditableTagList'
 import DetailParas from './Detail/DetailParas'
@@ -485,33 +253,12 @@ import ExtraParas from './Detail/ExtraParas'
 export default {
   name: 'GoodsDetail',
   components: {
-    ImgListUpload,
-    ImgSingleUpload,
     CategorySelector,
     EditableTagList,
     ExtraParas,
-    DetailParas,
-    ImgListCropperUpload,
-    ImgSingleCropperUpload
+    DetailParas
   },
   data () {
-    // let validateTags = (rule, value, callback) => {
-    //   console.log(value)
-    //   if (value.length === 0) {
-    //     callback(new Error('请输入产品标签'))
-    //     return
-    //   }
-    //   for (let i = 0; i < value.length; i++) {
-    //     if (value[i] === '') {
-    //       callback(new Error('请输入产品标签'))
-    //       return
-    //     } else if (value[i].length > 31) {
-    //       callback(new Error('产品标签不能多于31个字'))
-    //       return
-    //     }
-    //   }
-    //   callback()
-    // }
     return {
       loading: false,
       edit: false,
@@ -537,9 +284,6 @@ export default {
         full_title: '',
         // waterfall_title: '',
         description: '',
-        main_picture: '',
-        // index_picture: '',
-        banner_pictures: [],
         graphic_text: [],
         detail_paras: [],
         after_sales: [],
@@ -559,11 +303,7 @@ export default {
       dialogVisible: false,
       brand: [],
       // default_sku: '',
-      express: Express,
       rules: {
-        merchant: [
-          { required: true, message: '请选择供应商', trigger: 'change' }
-        ],
         brand: [
           { required: true, message: '请选择品牌', trigger: 'change' }
         ],
@@ -576,9 +316,6 @@ export default {
         full_title: [
           { required: true, message: '请输入完整标题', trigger: 'blur' }
         ],
-        // waterfall_title: [
-        //   { required: true, message: '瀑布流标题限18字以内', trigger: 'blur', max: 18 }
-        // ],
         for_gender: [
           { required: true, message: '请选择适合性别', trigger: 'blur' }
         ],
@@ -593,24 +330,6 @@ export default {
         ],
         default_sku: [
           { required: true, message: '请选择默认SKU', trigger: 'change' }
-        ],
-        category_third: [
-          { required: true, type: 'array', message: '请选择品类' }
-        ],
-        main_picture: [
-          { required: true, message: '请上传商品图片', trigger: 'blur' }
-        ],
-        // index_picture: [
-        //   { required: true, message: '请上传首页banner图', trigger: 'blur' }
-        // ],
-        banner_pictures: [
-          // { required: true, message: '请上传横幅图片', trigger: 'blur' }
-        ],
-        graphic_text: [
-          // { required: true, message: '请上传产品故事', trigger: 'blur' }
-        ],
-        after_sales: [
-          // { required: true, message: '请上传售后无忧', trigger: 'blur' }
         ]
       },
       sku_rules: {
@@ -632,14 +351,8 @@ export default {
         bind_offpay: [
           { required: true, message: '请输入绑定分成', trigger: 'blur' }
         ],
-        // recommend_offpay: [
-        //   { required: true, message: '请输入推荐分成', trigger: 'blur' }
-        // ],
         shipment_fee: [
           { required: true, message: '请输入运费', trigger: 'blur' }
-        ],
-        default_express: [
-          { required: true, message: '请输入默认快递', trigger: 'blur' }
         ],
         delivery_time: [
           { required: true, message: '请输入发货时间', trigger: 'blur' }
@@ -662,9 +375,6 @@ export default {
     }
   },
   computed: {
-    merchant () {
-      return this.$store.state.merchant
-    },
     def_sku () {
       let sku = null
       let that = this

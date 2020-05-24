@@ -25,12 +25,12 @@ export default {
       menus: [
         {
           name: '基金列表',
-          url: '/funds/list',
+          url: '/goods/list',
           can: 'view Goods'
         },
         {
           name: '批量导入基金',
-          url: '/funds/upload',
+          url: '/goods/upload',
           can: 'edit Goods'
         }
       ]

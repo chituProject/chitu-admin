@@ -1,19 +1,20 @@
 <template>
   <div style="padding-top: 40px;">
-    <div class="title">详细参数（`detail_paras`）
+    <div class="title">
+      {{title}}
       <el-button v-if="edit" class="add-param" type="default" @click="addParam" icon="el-icon-plus">添加参数</el-button>
     </div>
     <template v-if="edit">
       <div v-for="(dd, index) in modelNew" :key="index" style="width: 50%; display: inline-block">
         <el-form-item
-          :label="'详细参数 ' + (index + 1)"
-          :rules="{ required: true, message: '请填写详细参数', trigger: 'blur' }"
-          style="width: 250px; display: inline-block">
+          :label="`${title}参数${index + 1}`"
+          :rules="{ required: true, message: `请填写${title}参数${index + 1}的名称`, trigger: 'blur' }"
+          style="width: 350px; display: inline-block">
           <el-input style="width: auto" :value="dd.key" @input="valueChange($event, index, 'key')" placeholder="请输入参数名称"></el-input>
         </el-form-item>
         <el-form-item
           label-width="0"
-          :rules="{ required: true, message: '请填写详细参数', trigger: 'blur' }"
+          :rules="{ required: true, message: `请填写${title}参数${index + 1}的内容`, trigger: 'blur' }"
           style="width: auto; margin-left: 10px; display: inline-block">
           <el-input :value="dd.value" placeholder="请输入参数值" @input="valueChange($event, index, 'value')"></el-input>
         </el-form-item>
@@ -48,6 +49,10 @@
 <script>
 export default {
   props: {
+    title: {
+      type: String,
+      default: ''
+    },
     value: {
       type: Array
     },
@@ -108,5 +113,8 @@ export default {
 }
 .add-param {
   margin-left: 30px;
+}
+.el-icon-error {
+  cursor: pointer;
 }
 </style>

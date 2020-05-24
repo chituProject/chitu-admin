@@ -10,8 +10,8 @@
       <div class="card-container">
         <el-form ref="spuForm" :model="model" :rules="rules" class="demo-table-expand" label-width="160px" label-position="left">
           <div>
-            <el-form-item label="基金类别" prop="goods_type">
-              <el-select v-model="model.goods_type">
+            <el-form-item label="基金类别" prop="fund_type">
+              <el-select v-model="model.fund_type">
                 <el-option
                   v-for="item in type"
                   :key="item.id"
@@ -20,15 +20,20 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="基金名称" prop="goods_name">
-              <el-input v-model="model.goods_name" clearable placeholder= "请输入基金名"></el-input>
+            <el-form-item label="基金名称" prop="fund_name">
+              <el-input v-model="model.fund_name" clearable placeholder= "请输入基金名"></el-input>
             </el-form-item>
             <el-form-item label="业绩信息" prop="achievement">
             </el-form-item>
-            <div v-if="model.goods_type !== 'INDEX_FUND'">
-              <el-form-item label="产品项目档案" prop="archives">
-              </el-form-item>
-            </div>
+            <template v-if="model.fund_type !== 'INDEX_FUND'">
+              <detail-paras :edit="true" :title="'概述'" :value="model.fund_archive.general_information" @change="updateGeneralInformation"></detail-paras>
+              <detail-paras :edit="true" :title="'运营'" :value="model.fund_archive.operation" @change="updateOperation"></detail-paras>
+              <detail-paras :edit="true" :title="'条款和条件'" :value="model.fund_archive.article" @change="updateArticle"></detail-paras>
+              <detail-paras :edit="true" :title="'组合特征'" :value="model.fund_archive.combination" @change="updateCombination"></detail-paras>
+              <detail-paras :edit="true" :title="'多投'" :value="model.fund_archive.long_positions" @change="updateLongPositions"></detail-paras>
+              <detail-paras :edit="true" :title="'空投'" :value="model.fund_archive.short_positions" @change="updateShortPositions"></detail-paras>
+              <detail-paras :edit="true" :title="'整体仓位'" :value="model.fund_archive.designed_exposure" @change="updateDesignedExposure"></detail-paras>
+            </template>
           </div>
         </el-form>
       </div>
@@ -40,19 +45,21 @@
 import UUID from 'uuid-js'
 import CategorySelector from '@/components/CategorySelector'
 import EditableTagList from '@/components/EditableTagList'
+import DetailParas from './Detail/DetailParas'
 
 export default {
-  name: 'GoodsCreate',
+  name: 'FundsCreate',
   components: {
     CategorySelector,
-    EditableTagList
+    EditableTagList,
+    DetailParas
   },
   data () {
     return {
       loading: false,
       type: [
         {
-          id: 'MANAG_FUND',
+          id: 'MANAGE_FUND',
           name: '经理基金'
         },
         {
@@ -61,15 +68,61 @@ export default {
         }
       ],
       model: {
-        goods_type: '',
+        fund_type: '',
         uuid: '',
-        goods_name: ''
+        fund_name: '',
+        fund_archive: {
+          general_information: [
+            {key: '基金名称', value: ''},
+            {key: '基金经理', value: ''},
+            {key: '基金管理方', value: ''},
+            {key: '管理方牌照', value: ''},
+            {key: '基金管理规模', value: ''},
+            {key: '投资范围', value: ''},
+            {key: '是否已投资', value: ''},
+            {key: '基金状况', value: ''},
+            {key: '预期封闭时间', value: ''}
+          ],
+          operation: [
+            {key: '行政管理方', value: ''},
+            {key: '审计师', value: ''},
+            {key: '托管方', value: ''},
+            {key: '法律顾问', value: ''}
+          ],
+          article: [
+            {key: '锁定期', value: ''},
+            {key: '流动性', value: ''},
+            {key: '基金管理费', value: ''},
+            {key: '业绩提成', value: ''},
+            {key: '普通合伙人承诺出资额', value: ''},
+            {key: '基金信息透明度', value: ''}
+          ],
+          combination: [
+            {key: '历史最大多头仓位', value: ''},
+            {key: '历史最大空头仓位', value: ''},
+            {key: '持股数量（多头+空头）', value: ''}
+          ],
+          long_positions: [
+            {key: '持股数量', value: ''},
+            {key: '平均个股仓位', value: ''},
+            {key: '最大个股仓位', value: ''}
+          ],
+          short_positions: [
+            {key: '持股数量', value: ''},
+            {key: '平均个股仓位', value: ''},
+            {key: '最大个股仓位', value: ''}
+          ],
+          designed_exposure: [
+            {key: '目标毛暴露范围', value: ''},
+            {key: '目标净暴露范围', value: ''}
+          ]
+        }
       },
       rules: {
-        goods_type: [
+        fund_type: [
           { required: true, message: '请选择基金类别', trigger: 'blur' }
         ],
-        goods_name: [
+        fund_name: [
           { required: true, message: '基金名称限10字以内', trigger: 'blur', max: 10 }
         ]
       }
@@ -79,24 +132,45 @@ export default {
     goBack () {
       this.$router.go(-1)
     },
+    updateGeneralInformation (value) {
+      this.$set(this.model.fund_archive, 'general_information', value)
+    },
+    updateOperation (value) {
+      this.$set(this.model.fund_archive, 'operation', value)
+    },
+    updateArticle (value) {
+      this.$set(this.model.fund_archive, 'article', value)
+    },
+    updateCombination (value) {
+      this.$set(this.model.fund_archive, 'combination', value)
+    },
+    updateLongPositions (value) {
+      this.$set(this.model.fund_archive, 'long_positions', value)
+    },
+    updateShortPositions (value) {
+      this.$set(this.model.fund_archive, 'short_positions', value)
+    },
+    updateDesignedExposure (value) {
+      this.$set(this.model.fund_archive, 'designed_exposure', value)
+    },
     createGoodsConfirm () {
-      let that = this
       this.$refs.spuForm.validate((valid) => {
         if (valid) {
-          that.loading = true
-          that.$axios.post('/insider/goods/', that.model)
+          this.loading = true
+          this.$axios.post('/insider/fund/', this.model)
             .then(res => {
               console.log(res.data)
             })
             .catch(error => {
               console.log(error)
-              that.$message.error('保存失败')
+              this.$message.error('保存失败')
+              this.loading = false
             })
             .finally(() => {
-              that.loading = false
+              this.loading = false
             })
         } else {
-          that.$message.error('请填写所有项目')
+          this.$message.error('请填写所有项目')
         }
       })
     }
@@ -152,38 +226,6 @@ export default {
     /*width: 90px;*/
     color: #99a9bf;
   }
-  /*.el-form-item .el-form-item__content {*/
-    /*width: 200px !important;*/
-  /*}*/
-  .main-pic {
-    text-align: left;
-    display: block;
-    margin: 20px;
-  }
-  .pic-label {
-    /*font-weight: bold;*/
-  }
-  .pic-info {
-    color: #9b9b9b;
-  }
-  .pic-img {
-    height: 140px;
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-  }
-  .pic-img div {
-    display:inline-block;
-    box-sizing: border-box;
-    height: 100px;
-    margin: 20px;
-    text-align: center;
-  }
-  .pic-img img {
-    height: 100px;
-    border: 1px solid rgb(239,237,237);
-  }
   .button-close {
     font-size: 20px;
     margin: -10px -10px;
@@ -196,22 +238,10 @@ export default {
     -o-transform: scale(0.9,0.9);
     transform: scale(0.9,0.9);
   }
-  .tags {
-    margin-right: 10px;
-    width: 30%;
-    position: relative;
-  }
-  .tags .el-input{
-    width: 80px !important;
-    /*margin-right: 8px;*/
-  }
   .clickable {
     margin-left: 10px;
   }
   .clickable:hover {
     cursor: pointer;
-  }
-  .add-param {
-    margin-left: 30px;
   }
 </style>
