@@ -62,7 +62,8 @@
             align="center"
             label="操作">
             <template slot-scope="scope">
-              <el-button @click="changeStatus(scope.row)" size="medium">{{current_status[scope.row.authorize_type]}}</el-button>
+              <el-button v-if="scope.row.authorize_type === 'OFF'" type="primary" @click="changeStatus(scope.row)" size="medium">{{action_name[scope.row.authorize_type]}}</el-button>
+              <el-button v-else @click="changeStatus(scope.row)" size="medium">{{action_name[scope.row.authorize_type]}}</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -112,6 +113,10 @@ export default {
       current_status: {
         ON: '已授权',
         OFF: '未授权'
+      },
+      action_name: {
+        ON: '取消授权',
+        OFF: '授权'
       }
     }
   },
@@ -150,7 +155,7 @@ export default {
     changeStatus (data) {
       console.log(data)
       const action = data.authorize_type === 'ON' ? '关闭' : '打开'
-      this.$confirm(`是否要${action}用户` + data.wechat_nickname + '的使用权限？', 'Warning', {
+      this.$confirm(`是否要${action}用户` + data.wechat_nickname + '的使用权限？', '重要操作', {
         confirmButtonText: '确认',
         cancelButtonText: '取消',
         type: 'warning'
@@ -177,17 +182,4 @@ export default {
 </script>
 
 <style scoped>
-  .demo-table-expand {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-    grid-column-gap: 10px;
-  }
-  .demo-table-expand .el-form-item {
-    margin-bottom: 0;
-  }
-  .card:hover {
-    cursor: pointer;
-  }
-
 </style>

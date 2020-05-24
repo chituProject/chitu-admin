@@ -53,6 +53,7 @@ export default {
     return {
       loading: false,
       model: {
+        id: -1,
         name: '',
         phone: '',
         email: ''
@@ -72,54 +73,56 @@ export default {
   },
   methods: {
     save () {
-      let that = this
       this.$refs.settingForm.validate((valid) => {
         if (valid) {
-          var r = confirm('是否确认修改？这需要在用户退出小程序再次打开后才生效')
-          if (r) {
-            that.loading = true
-            that.$axios.post('/insider/settings/', {
-              instances: [{
-                func: 'set_scan_contact',
-                params: {
-                  name: that.model.name,
-                  phone: that.model.phone,
-                  email: that.model.email
-                }
-              }]
-            })
-              .then(res => {
-                console.log(res.data)
-                if (res.data[0].code === 200) {
-                  that.$message.success('保存成功')
-                } else {
-                  that.$message.error('保存失败')
-                }
-                that.loading = false
+          this.$confirm('是否确认修改联系方式？这需要在用户退出小程序再次打开后才生效', '重要操作', {
+            confirmButtonText: '确认',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            this.loading = true
+            if (this.model.id > -1) { // 更新
+              this.$axios.patch(`/insider/fund_contact/${this.model.id}/`, {
+                fund_name: this.model.name,
+                phone: this.model.phone,
+                email: this.model.email
               })
-          } else {
-            that.$message.error('不保存本次修改')
-            return false
-          }
+                .then(res => {
+                  console.log(res)
+                  this.$message.success('保存成功')
+                  this.loading = false
+                }).catch(() => {
+                  this.$message.error('保存失败')
+                })
+            } else { // 创建
+              this.$axios.post('/insider/fund_contact/', {
+                fund_name: this.model.name,
+                phone: this.model.phone,
+                email: this.model.email
+              })
+                .then(res => {
+                  console.log(res)
+                  this.$message.success('保存成功')
+                  this.loading = false
+                }).catch(() => {
+                  this.$message.error('保存失败')
+                })
+            }
+          })
         } else {
-          that.$message.error('请填写所有项目')
+          this.$message.error('请填写所有项目')
         }
       })
     },
     getData () {
-      let that = this
-      this.$axios.post('/insider/settings/', {
-        instances: [{
-          func: 'get_current_scan_contact',
-          params: {}
-        }]
-      })
+      this.$axios.get('/insider/fund_contact/')
         .then(res => {
-          console.log('get_current_scan_contact', res.data)
-          if (res.data.length >= 1 && res.data[0].code === 200) {
-            let value = res.data[0].value
-            that.model = {
-              name: value.name,
+          console.log('get_fund_contact', res.data)
+          if (res.data.length >= 1) {
+            let value = res.data[0]
+            this.model = {
+              id: value.id,
+              name: value.fund_name,
               phone: value.phone,
               email: value.email
             }

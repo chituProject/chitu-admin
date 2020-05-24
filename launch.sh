@@ -31,8 +31,4 @@ else
     echo "Usage: $0 [test|prod]"
     echo "You provided $# parameters,but 1 is required."
     exit
-<<<<<<< HEAD
 fi
-=======
-fi
->>>>>>> draft_1

@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import { Message } from 'element-ui'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 export default {
   name: 'yheader',
@@ -86,16 +85,6 @@ export default {
         .then(res => {
           this.$store.commit('SET_USERNAME', res.data.user.username)
           this.$store.dispatch('acl/set', res.data.user.acl)
-          if (!this.$store.state.merchant) {
-            this.$axios.get('/insider/goods/merchant/')
-              .then(res2 => {
-                this.$store.commit('SET_MERCHANT', res2.data)
-              })
-              .catch(err => {
-                console.log(err)
-                Message.warning('暂时无法获取供应商列表')
-              })
-          }
         })
     },
     showMenuText (menuItem) {
@@ -159,10 +148,10 @@ export default {
   margin-right: 3px;
 }
 .is-active i {
-  color: #000000;
+  color: #a5323a;
 }
 .popper {
   font-size: 16px;
-  color: pink;
+  color: #a5323a;
 }
 </style>
