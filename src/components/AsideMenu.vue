@@ -34,8 +34,9 @@ export default {
   },
   methods: {
     handleSelect (key, keyPath) {
-      console.log(key)
-      this.$router.push(key)
+      if (key !== this.$route.path) {
+        this.$router.push(key)
+      }
     }
   }
 }

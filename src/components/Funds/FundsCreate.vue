@@ -72,6 +72,7 @@ export default {
       model: {
         type: '',
         name: '',
+        manager: '',
         general_infomation: [
           {key: '基金管理方', value: ''},
           {key: '管理方牌照', value: ''},

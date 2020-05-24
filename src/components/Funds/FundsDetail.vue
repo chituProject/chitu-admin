@@ -3,8 +3,8 @@
     <div class="filter-container">
       <el-button style="float: left;" icon="el-icon-back" size="medium" plain @click.stop="goBack">返回</el-button>
       <div style="float: right;">
-        <el-button v-if="!edit" size="medium" v-can:edit="'Goods'" @click="editFunds" class="blue_button_filled">编辑</el-button>
-        <el-button v-if="edit" size="medium" @click="editGoodsCancel">取消</el-button>
+        <el-button v-if="!edit" type="primary" v-can:edit="'Goods'" @click="editFunds">编辑</el-button>
+        <el-button v-if="edit" size="medium" @click="editFundsCancel">取消</el-button>
         <el-button v-if="edit" type="primary" v-can:edit="'Goods'" size="medium" @click="editFundsConfirm">保存</el-button>
       </div>
     </div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="divider"></div>
                 <!-- 概述 -->
-                <!--<detail-paras :edit="edit" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>-->
+                <detail-paras :edit="edit" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>
                 <!-- 运营 -->
                 <detail-paras :edit="edit" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
                 <!-- 条款和条件 -->
@@ -82,7 +82,18 @@ export default {
       loading: false,
       edit: false,
       activeName: 'archive',
-      model: {},
+      model: {
+        name: '',
+        type: '',
+        manager: '',
+        general_infomation: [],
+        operation: [],
+        article: [],
+        combination: [],
+        long_positions: [],
+        short_positions: [],
+        designed_exposure: []
+      },
       fund_type: [
         {
           id: 'MANAGER',
@@ -94,19 +105,16 @@ export default {
         }
       ],
       model_new: {
-        title: '',
-        full_title: '',
-        // waterfall_title: '',
-        description: '',
-        graphic_text: [],
-        detail_paras: [],
-        after_sales: [],
-        tags: [],
-        goods_type: '',
-        meta_specification: [],
-        for_gender: 0,
-        merchant: {},
-        brand: {}
+        name: '',
+        type: '',
+        manager: '',
+        general_infomation: [],
+        operation: [],
+        article: [],
+        combination: [],
+        long_positions: [],
+        short_positions: [],
+        designed_exposure: []
       },
       rules: {
         type: [
@@ -155,24 +163,15 @@ export default {
       this.$axios.get('/insider/fund_archive/' + this.id + '/')
         .then(res => {
           this.model = res.data
-          console.log('model', this.model)
-          if (!this.activeName) {
-            this.activeName = this.model.id
-          }
-        })
-        .finally(() => {
           this.loading = false
         })
     },
     goBack () {
       if (this.edit) {
-        this.editGoodsCancel()
+        this.editFundsCancel()
       } else {
         this.$router.go(-1)
       }
-    },
-    closeWindow () {
-      window.open('javascript:window.open("", "_self", "");window.close();', '_self')
     },
     handleClick () {
       this.edit = false
@@ -203,7 +202,7 @@ export default {
           this.loading = false
         })
     },
-    editGoodsCancel () {
+    editFundsCancel () {
       this.edit = false
     }
   },
@@ -247,17 +246,6 @@ export default {
 .el-form-item .el-form-item__content {
   width: 100% !important;
 }
-.main-pic {
-  text-align: left;
-  display: block;
-  margin: 20px;
-}
-.pic-label {
-  /*font-weight: bold;*/
-}
-.pic-info {
-  color: #9b9b9b;
-}
 .button-close {
   font-size: 20px;
   margin: -10px -10px;
@@ -269,24 +257,6 @@ export default {
   -moz-transform: scale(0.9,0.9);
   -o-transform: scale(0.9,0.9);
   transform: scale(0.9,0.9);
-}
-.tags {
-  margin-right: 10px;
-  width: 30%;
-  position: relative;
-}
-.tags .el-input{
-  width: 100px !important;
-  /*margin-right: 8px;*/
-}
-.clickable {
-  margin-left: 10px;
-}
-.clickable:hover {
-  cursor: pointer;
-}
-.add-param {
-  margin-left: 30px;
 }
 .divider {
   position: absolute;
