@@ -19,9 +19,9 @@
       <router-link v-can:edit="'Goods'" to="/goods/add"><el-button class="search-button" size="medium" type="primary" icon="el-icon-plus">新增基金</el-button></router-link>
     </div>
     <div class="card-outer">
-      <div v-if="list && list.length > 0" class="card-container">
+      <div v-if="manager_funds.length > 0 || index_funds.length > 0" class="card-container">
         <el-table
-          :data="list"
+          :data="manager_funds"
           border
           class="table"
           style="width: 100%">
@@ -34,6 +34,53 @@
             prop="name"
             label="基金名称"
             width="240">
+          </el-table-column>
+          <el-table-column
+            prop="yearly_profit"
+            label="近一年收益"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="monthly_profit"
+            label="最新月回报"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="sharp_rate"
+            label="夏普比率"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            label="可见性"
+            width="70">
+            <template slot-scope="scope">
+              {{visible_status[scope.row.visible]}}
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="修改可见性"
+            width="100">
+            <template slot-scope="scope">
+              <switch-button v-model="scope.row.visibility" @click="changeVisibility(scope.row)"></switch-button>
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="操作"
+            align="center">
+            <template slot-scope="scope">
+              <el-button @click="openDetail(scope.row.id)" type="primary" size="large">查看</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+        <el-table
+          :data="index_funds"
+          border
+          class="table"
+          style="width: 100%">
+          <el-table-column
+            prop="name"
+            label="指数名称"
+            width="390">
           </el-table-column>
           <el-table-column
             prop="yearly_profit"
@@ -131,8 +178,9 @@ export default {
         FALSE: '不可见'
       },
       // list
-      list: [],
-      pageSize: 50,
+      manager_funds: [],
+      index_funds: [],
+      pageSize: 20,
       currentPage: 1,
       totalCnt: 0
     }
@@ -166,8 +214,12 @@ export default {
             } else {
               res.data.results[i].visibility = false
             }
+            if (res.data.results[i].type === 'MANAGER') {
+              this.manager_funds.push(res.data.results[i])
+            } else {
+              this.index_funds.push(res.data.results[i])
+            }
           }
-          this.list = res.data.results
         })
         .finally(() => {
           this.loading = false

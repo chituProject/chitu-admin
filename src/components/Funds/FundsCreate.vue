@@ -23,12 +23,12 @@
             <el-form-item label="基金名称" prop="fund_name">
               <el-input v-model="model.name" clearable placeholder= "请输入基金名"></el-input>
             </el-form-item>
-            <el-form-item label="基金经理" prop="fund_manager">
+            <el-form-item v-if="model.type === 'MANAGER'" label="基金经理" prop="fund_manager">
               <el-input v-model="model.manager" clearable placeholder= "请输入基金经理"></el-input>
             </el-form-item>
             <el-form-item label="业绩信息" prop="achievement">
             </el-form-item>
-            <template v-if="model.type !== 'INDEX'">
+            <template v-if="model.type === 'MANAGER'">
               <detail-paras :edit="true" :title="'概述'" :value="model.general_information" @change="updateGeneralInformation"></detail-paras>
               <detail-paras :edit="true" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
               <detail-paras :edit="true" :title="'条款和条件'" :value="model.article" @change="updateArticle"></detail-paras>
@@ -123,7 +123,7 @@ export default {
           { required: true, message: '基金名称限10字以内', trigger: 'blur', max: 10 }
         ],
         manager: [
-          { required: true, message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
+          { message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
         ]
       }
     }
@@ -159,7 +159,7 @@ export default {
           this.loading = true
           this.$axios.post('/insider/fund_archive/', this.model)
             .then(res => {
-              this.$message.error('创建成功')
+              this.$message.success('创建成功')
               this.loading = false
               setTimeout(() => {
                 this.$router.push('/goods/detail/' + res.data.id)
