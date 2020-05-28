@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
-import Goods from '@/components/Funds/index'
-import GoodsList from '@/components/Funds/Funds'
-import GoodsDetail from '@/components/Funds/FundsDetail'
-import GoodsCreate from '@/components/Funds/FundsCreate'
+import Funds from '@/components/Funds/index'
+import FundsList from '@/components/Funds/Funds'
+import FundsDetail from '@/components/Funds/FundsDetail'
+import FundsCreate from '@/components/Funds/FundsCreate'
 import BatchUpload from '@/components/Funds/Upload/BatchUpload'
 import Analysis from '@/components/Analysis/index'
 import AnalysisAcross from '@/components/Analysis/AnalysisAcross'
@@ -69,7 +69,7 @@ let router = new Router({
     },
     {
       path: '/goods',
-      component: Goods,
+      component: Funds,
       meta: {
         can: 'view Goods'
       },
@@ -77,21 +77,21 @@ let router = new Router({
         {
           path: '',
           name: 'Goods',
-          component: GoodsList,
+          component: FundsList,
           meta: {
             can: 'view Goods'
           }
         },
         {
           path: 'list',
-          component: GoodsList,
+          component: FundsList,
           meta: {
             can: 'view Goods'
           }
         },
         {
           path: 'detail/:id',
-          component: GoodsDetail,
+          component: FundsDetail,
           props: true,
           meta: {
             can: 'view Goods'
@@ -99,7 +99,7 @@ let router = new Router({
         },
         {
           path: 'add',
-          component: GoodsCreate,
+          component: FundsCreate,
           meta: {
             can: 'edit Goods'
           }

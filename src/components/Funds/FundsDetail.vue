@@ -23,8 +23,14 @@
                   <el-form-item v-show="edit" label="基金名称" prop="fund_name">
                     <el-input v-model="model_new.name" clearable></el-input>
                   </el-form-item>
-                  <el-form-item label="商品标题" v-show="!edit">
+                  <el-form-item v-show="!edit" label="基金名称">
                     <span>{{model.name}}</span>
+                  </el-form-item>
+                  <el-form-item v-show="edit && model.type === 'MANAGER'" label="基金经理" prop="fund_manager">
+                    <el-input v-model="model_new.manager" clearable placeholder= "请输入基金经理"></el-input>
+                  </el-form-item>
+                  <el-form-item v-show="!edit && model.type === 'MANAGER'" label="基金经理">
+                    <span>{{model.manager}}</span>
                   </el-form-item>
                   <el-form-item v-show="edit" label="基金类别" prop="fund_type">
                     <el-select v-model="model_new.type">

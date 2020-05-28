@@ -178,11 +178,7 @@ export default {
       }
     },
     uploadErrors () {
-      const required = [
-        'title', 'meta_specification', 'retail_price', 'market_price', 'cost',
-        'category_first', 'category_second', 'category_third',
-        'spu_id', 'sku_id', 'full_title'
-      ]
+      const required = [ 'product_name', 'manager_name', 'month', 'net_value' ]
       const customKeys = this.customTableModel.map(i => i.value)
       const uploadKeys = Object.values(this.form).concat(customKeys)
       const errors = required.filter(key => !uploadKeys.includes(key))

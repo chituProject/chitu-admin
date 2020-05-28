@@ -39971,7 +39971,7 @@
     background-color: #fef0f0;
     border-color: #fde2e2; }
     .el-message--error .el-message__content {
-      color: #a2a2a3; }
+      color: #333; }
   .el-message__icon {
     margin-right: 10px; }
   .el-message__content {
