@@ -60,7 +60,7 @@
 <script>
 import EmptyPage from '@/components/EmptyPage'
 import CustomKeys from './CustomKeys'
-import { spuOptions, skuOptions, categoryOptions, extraOptions, parseFile, modifiedEval } from './options'
+import { parseFile, modifiedEval } from './options'
 
 export default {
   name: 'BatchUpload',
@@ -86,12 +86,7 @@ export default {
       // 新增自定义字段
       customTableModel: [],
 
-      primaryKey: null,
-      // 选项
-      spuOptions,
-      skuOptions,
-      categoryOptions,
-      extraOptions
+      primaryKey: null
     }
   },
   computed: {
@@ -132,15 +127,6 @@ export default {
     }
   },
   methods: {
-    select (value, key) {
-      const oldValue = this.form[key]
-      const prefix = key.match(/-type$/)
-      if (prefix && (value !== oldValue || !value)) {
-        const valueKey = key.replace(prefix[0], '-value')
-        this.$set(this.form, valueKey, '')
-      }
-      this.$set(this.form, key, value)
-    },
     updateCustomForm (form) {
       this.customTableModel = form
     },
@@ -296,30 +282,14 @@ export default {
        */
       const isEmpty = (item) => !item || !Object.keys(item).length
 
-      const findThirdCategoryID = (item) => {
-        const categories = this.itemToProduct(item, 'CATEGORY')
-        const c = {1: categories['category_first'], 2: categories['category_second'], 3: categories['category_third']}
-        return this.getCategoryId(3, c)
-      }
-
-      const extractBrand = (item) => {
-        return (this.brands.find(brand => this.stringEquals(item.brand, brand.name)) || {}).id
-      }
-
       // 获取 primaryKey: spuObject 字典
       const spuList = sheet.reduce((acc, cur) => {
         if (!acc[cur[this.primaryKey]]) {
           const spu = this.itemToProduct(cur, 'SPU')
           acc[cur[this.primaryKey]] = spu
 
-          const thirdCategoryId = findThirdCategoryID(cur)
-          if (thirdCategoryId != null) spu['category_third'] = thirdCategoryId
-          const [metaSpecification] = extractMetaSpecification(cur)
-          if (metaSpecification) spu['meta_specification'] = metaSpecification
           const customKeys = extractCustomSpecs(cur, 'SPU')
           if (!isEmpty(customKeys)) Object.assign(spu, customKeys)
-          const brand = extractBrand(spu)
-          if (brand) spu['brand'] = brand
           const extraParas = this.itemToProduct(cur, 'EXTRA')
           if (!isEmpty(extraParas)) spu['extra_paras'] = extraParas
         }
@@ -365,61 +335,6 @@ export default {
       return Object.assign({}, ...values)
     },
     /**
-     * 创建新 category
-     */
-    postCategories (level, name, parentCategoryId) {
-      if (!name) throw new Error('`postCategories` requires post body')
-
-      const data = {name, logo: 'https://via.placeholder.com/100'}
-      if (level === 2) data['category_first'] = parentCategoryId
-      if (level === 3) data['category_second'] = parentCategoryId
-
-      switch (level) {
-        case 1:
-          return this.$axios.post('/insider/category_first/', data).then(res => res.data)
-        case 2:
-          return this.$axios.post('/insider/category_second/', data).then(res => res.data)
-        case 3:
-          return this.$axios.post('/insider/category_third/', data).then(res => res.data)
-        default:
-          throw new Error(`Unsupported category level ${level}`)
-      }
-    },
-    /**
-     * 获取已有 category
-     */
-    getCategories (level) {
-      switch (level) {
-        case 1:
-          return this.$axios.get('/insider/category_first/').then(res => res.data)
-        case 2:
-          return this.$axios.get('/insider/category_second/').then(res => res.data)
-        case 3:
-          return this.$axios.get('/insider/category_third/').then(res => res.data)
-        default:
-          throw new Error(`Unsupported category level ${level}`)
-      }
-    },
-    /**
-     * 根据category名称查找某个category的id
-     * @param level category级别，1、2、3级
-     * @names 所有（包括其父类别）名称，格式{1: name, 2: name, 3: name}
-     */
-    getCategoryId (level, names) {
-      if (![1, 2, 3].includes(level)) return null
-
-      const firstItem = this.avaliableCategories[1].find(item => this.stringEquals(item.name, names[1])) || {}
-      if (level === 1) return firstItem.id
-      const secondItem = this.avaliableCategories[2].find(item =>
-        this.stringEquals(item.name, names[2]) && item['category_first'] === firstItem.id
-      ) || {}
-      if (level === 2) return secondItem.id
-      const thirdItem = this.avaliableCategories[3].find(item =>
-        this.stringEquals(item.name, names[3]) && item['category_second'] === secondItem.id
-      ) || {}
-      if (level === 3) return thirdItem.id
-    },
-    /**
      * 字符串比较（去空格）
      */
     stringEquals (s1, s2) {
@@ -430,17 +345,6 @@ export default {
 </script>
 
 <style scoped>
-.filename {
-  margin: 12px 12px 0 0;
-    text-align: left;
-    line-height: 41px;
-    font-size: 18px;
-    float: left;
-    display: block;
-    padding-left: 12px;
-    font-weight: normal;
-    color: #f26250;
-}
 form {
   float: right;
   margin-top: 22px;

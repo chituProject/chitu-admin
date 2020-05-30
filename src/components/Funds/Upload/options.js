@@ -12,20 +12,6 @@ export const spuOptions = Object.freeze([
   'brand',
   'shipment_fee'
 ])
-export const skuOptions = Object.freeze([
-  'sku_id',
-  'created_at',
-  'updated_at',
-  'retail_price',
-  'market_price',
-  'offpay_limit',
-  'cost'
-])
-export const categoryOptions = Object.freeze([
-  'category_first',
-  'category_second',
-  'category_third'
-])
 export const extraOptions = Object.freeze([
   'url'
 ])

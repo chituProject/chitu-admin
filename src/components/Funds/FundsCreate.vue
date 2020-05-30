@@ -6,11 +6,19 @@
         <el-button type="primary" size="medium" @click="createGoodsConfirm">确认创建</el-button>
       </div>
     </div>
-    <div class="card-outer" v-if="model">
+    <div class="card-outer">
       <div class="card-container">
         <el-form ref="spuForm" :model="model" :rules="rules" class="demo-table-expand" label-width="160px" label-position="left">
           <div>
-            <el-form-item label="基金类别" prop="fund_type">
+            <el-form-item label="业绩信息" prop="achievement">
+              <label for="file" class="el-button search-button">
+                <i class="el-icon-plus"></i>
+                <span>上传文件</span>
+              </label>
+              <input id="file" type="file" @change="onFileChange" />
+              <h3 class="filename">{{ fileName }}</h3>
+            </el-form-item>
+            <el-form-item label="基金类别" prop="type">
               <el-select v-model="model.type">
                 <el-option
                   v-for="item in fund_type"
@@ -20,14 +28,13 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="基金名称" prop="fund_name">
+            <el-form-item label="基金名称" prop="name">
               <el-input v-model="model.name" clearable placeholder= "请输入基金名"></el-input>
             </el-form-item>
-            <el-form-item v-if="model.type === 'MANAGER'" label="基金经理" prop="fund_manager">
+            <el-form-item v-if="model.type === 'MANAGER'" label="基金经理" prop="manager">
               <el-input v-model="model.manager" clearable placeholder= "请输入基金经理"></el-input>
             </el-form-item>
-            <el-form-item label="业绩信息" prop="achievement">
-            </el-form-item>
+
             <template v-if="model.type === 'MANAGER'">
               <detail-paras :edit="true" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>
               <detail-paras :edit="true" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
@@ -46,6 +53,7 @@
 
 <script>
 import DetailParas from './Detail/DetailParas'
+import { parseFile } from './Upload/options'
 
 export default {
   name: 'FundsCreate',
@@ -65,6 +73,10 @@ export default {
           name: '指数基金'
         }
       ],
+      fileName: null, // 文件名称
+      xlsx: {},
+      // Excel预定义字段
+      currentSheet: 0,
       model: {
         type: '',
         name: '',
@@ -112,15 +124,13 @@ export default {
           {key: '目标净暴露范围', value: ''}
         ]
       },
+      fundAchievement: [], // 业绩信息
       rules: {
         type: [
           { required: true, message: '请选择基金类别', trigger: 'blur' }
         ],
         name: [
           { required: true, message: '基金名称限10字以内', trigger: 'blur', max: 10 }
-        ],
-        manager: [
-          { message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
         ]
       }
     }
@@ -150,17 +160,75 @@ export default {
     updateDesignedExposure (value) {
       this.$set(this.model, 'designed_exposure', value)
     },
+    async onFileChange (e) {
+      this.disabled = true
+      const files = e.target.files
+      if (files && files[0]) {
+        this.fileName = files[0].name
+        this.xlsx = await parseFile(files[0])
+        this.disabled = false
+        this.initializeForm()
+      }
+    },
+    initializeForm () {
+      if (!this.xlsx || !this.sheetTabs) return
+      console.log('xlsx', this.xlsx[this.sheetTabs[0]])
+
+      const sheet = this.xlsx[this.sheetTabs[0]]
+      if (!sheet) return
+      // 处理首行填充
+      for (let key in Object.keys(sheet[0])) {
+        const result = Object.keys(sheet[0])[key]
+        const value = Object.values(this.sheet[0])[key]
+        if (result.includes('基金名')) {
+          this.model.name = value
+        } else if (result.match(/(经理|manager)/i)) {
+          this.model.type = 'MANAGER'
+          this.model.manager = value
+        }
+      }
+      let fundAchievement = []
+      sheet.forEach(col => {
+        let a = {}
+        // const a = rule(col)
+        // console.log('col', col, Object.keys(col))
+        for (let key in Object.keys(col)) {
+          const result = Object.keys(col)[key]
+          const value = Object.values(col)[key]
+          if (result.match(/(日期|date)/i)) {
+            a.time = value
+          } else if (result.match(/(净值|value)/i)) {
+            a.net_worth = value
+          }
+        }
+        console.log('a', a)
+        if (a.time && a.net_worth) {
+          fundAchievement.push(a)
+        }
+      })
+      this.fundAchievement = fundAchievement
+    },
     createGoodsConfirm () {
       this.$refs.spuForm.validate((valid) => {
         if (valid) {
           this.loading = true
           this.$axios.post('/insider/fund_archive/', this.model)
             .then(res => {
-              this.$message.success('创建成功')
-              this.loading = false
-              setTimeout(() => {
-                this.$router.push('/goods/detail/' + res.data.id)
-              }, 800)
+              let promiseAll = this.fundAchievement.map((data) => {
+                return this.$axios.patch(`/insider/fund_achievement/${res.data.id}/`, data)
+              })
+              this.$axios.all(promiseAll).then((resArr) => {
+                console.log(resArr)
+                this.$message.success('创建成功')
+                this.loading = false
+                setTimeout(() => {
+                  this.$router.push('/goods/detail/' + res.data.id)
+                }, 800)
+              }).catch(error => {
+                console.log(error)
+                this.$message.error('保存失败')
+                this.loading = false
+              })
             })
             .catch(error => {
               console.log(error)
@@ -173,7 +241,34 @@ export default {
       })
     }
   },
-  created () {
+  computed: {
+    hasData () {
+      return this.xlsx && Object.keys(this.xlsx).length
+    },
+    // 当前选中表格
+    sheet () {
+      if (!this.xlsx) return [{}]
+      return this.xlsx[this.sheetTabs[0]] || [{}]
+    },
+    // 所有表格名称
+    sheetTabs () {
+      return Object.keys(this.xlsx)
+    },
+    // 当前选中表格的表头字段
+    sheetColumns () {
+      if (!this.xlsx) return []
+      return Object.keys(this.sheet[0])
+    },
+    tableModel () {
+      const tab = `${this.sheetTabs[0]}`
+      const firstEntryValues = Object.values(this.sheet[0])
+      return this.sheetColumns.map((col, index) => ({
+        col,
+        example: firstEntryValues[index],
+        type: `${tab}-${col}-type`,
+        value: `${tab}-${col}-value`
+      }))
+    }
   }
 }
 </script>
@@ -240,5 +335,16 @@ export default {
   }
   .clickable:hover {
     cursor: pointer;
+  }
+  .filename {
+    margin: 12px 12px 0 0;
+      text-align: left;
+      line-height: 41px;
+      font-size: 18px;
+      float: left;
+      display: block;
+      padding-left: 12px;
+      font-weight: normal;
+      color: #f26250;
   }
 </style>

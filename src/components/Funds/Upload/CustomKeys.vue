@@ -66,9 +66,6 @@
             <template v-if="customTableModel[scope.$index]['type'] === 'SPU'">
               <el-option v-for="option in spuOptions" :key="option" :label="option" :value="option"></el-option>
             </template>
-            <template v-if="customTableModel[scope.$index]['type'] === 'SKU'">
-              <el-option v-for="option in skuOptions" :key="option" :label="option" :value="option"></el-option>
-            </template>
           </el-select>
         </template>
       </el-table-column>
@@ -88,7 +85,7 @@
 </template>
 
 <script>
-import { spuOptions, skuOptions, categoryOptions, extraOptions, modifiedEval } from './options'
+import { spuOptions, extraOptions, modifiedEval } from './options'
 
 export default {
   props: {
@@ -109,8 +106,6 @@ export default {
       customTableModel: [],
 
       spuOptions,
-      skuOptions,
-      categoryOptions,
       extraOptions
     }
   },
