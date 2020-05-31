@@ -3,12 +3,12 @@
     <div class="filter-container">
       <el-button style="float: left;" icon="el-icon-back" size="medium" plain @click.stop="goBack">返回</el-button>
       <div style="float: right;">
-        <el-button type="primary" size="medium" @click="createGoodsConfirm">确认创建</el-button>
+        <el-button type="primary" size="medium" @click="createFundsConfirm">确认创建</el-button>
       </div>
     </div>
     <div class="card-outer">
       <div class="card-container">
-        <el-form ref="spuForm" :model="model" :rules="rules" class="demo-table-expand" label-width="160px" label-position="left">
+        <el-form ref="spuForm" :model="fundArchive" :rules="rules" class="demo-table-expand" label-width="160px" label-position="left">
           <div>
             <el-form-item label="业绩信息" prop="achievement">
               <label for="file" class="el-button search-button">
@@ -19,7 +19,7 @@
               <h3 class="filename">{{ fileName }}</h3>
             </el-form-item>
             <el-form-item label="基金类别" prop="type">
-              <el-select v-model="model.type">
+              <el-select v-model="fundArchive.type">
                 <el-option
                   v-for="item in fund_type"
                   :key="item.id"
@@ -29,20 +29,20 @@
               </el-select>
             </el-form-item>
             <el-form-item label="基金名称" prop="name">
-              <el-input v-model="model.name" clearable placeholder= "请输入基金名"></el-input>
+              <el-input v-model="fundArchive.name" clearable placeholder= "请输入基金名"></el-input>
             </el-form-item>
-            <el-form-item v-if="model.type === 'MANAGER'" label="基金经理" prop="manager">
-              <el-input v-model="model.manager" clearable placeholder= "请输入基金经理"></el-input>
+            <el-form-item v-if="fundArchive.type === 'MANAGER'" label="基金经理" prop="manager">
+              <el-input v-model="fundArchive.manager" clearable placeholder= "请输入基金经理"></el-input>
             </el-form-item>
 
-            <template v-if="model.type === 'MANAGER'">
-              <detail-paras :edit="true" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>
-              <detail-paras :edit="true" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
-              <detail-paras :edit="true" :title="'条款和条件'" :value="model.article" @change="updateArticle"></detail-paras>
-              <detail-paras :edit="true" :title="'组合特征'" :value="model.combination" @change="updateCombination"></detail-paras>
-              <detail-paras :edit="true" :title="'多投'" :value="model.long_positions" @change="updateLongPositions"></detail-paras>
-              <detail-paras :edit="true" :title="'空投'" :value="model.short_positions" @change="updateShortPositions"></detail-paras>
-              <detail-paras :edit="true" :title="'整体仓位'" :value="model.designed_exposure" @change="updateDesignedExposure"></detail-paras>
+            <template v-if="fundArchive.type === 'MANAGER'">
+              <detail-paras :edit="true" :title="'概述'" :value="fundArchive.general_infomation" @change="updateGeneralInformation"></detail-paras>
+              <detail-paras :edit="true" :title="'运营'" :value="fundArchive.operation" @change="updateOperation"></detail-paras>
+              <detail-paras :edit="true" :title="'条款和条件'" :value="fundArchive.article" @change="updateArticle"></detail-paras>
+              <detail-paras :edit="true" :title="'组合特征'" :value="fundArchive.combination" @change="updateCombination"></detail-paras>
+              <detail-paras :edit="true" :title="'多投'" :value="fundArchive.long_positions" @change="updateLongPositions"></detail-paras>
+              <detail-paras :edit="true" :title="'空投'" :value="fundArchive.short_positions" @change="updateShortPositions"></detail-paras>
+              <detail-paras :edit="true" :title="'整体仓位'" :value="fundArchive.designed_exposure" @change="updateDesignedExposure"></detail-paras>
             </template>
           </div>
         </el-form>
@@ -63,6 +63,7 @@ export default {
   data () {
     return {
       loading: false,
+      fundId: null,
       fund_type: [
         {
           id: 'MANAGER',
@@ -77,7 +78,7 @@ export default {
       xlsx: {},
       // Excel预定义字段
       currentSheet: 0,
-      model: {
+      fundArchive: {
         type: '',
         name: '',
         manager: '',
@@ -140,25 +141,25 @@ export default {
       this.$router.go(-1)
     },
     updateGeneralInformation (value) {
-      this.$set(this.model, 'general_infomation', value)
+      this.$set(this.fundArchive, 'general_infomation', value)
     },
     updateOperation (value) {
-      this.$set(this.model, 'operation', value)
+      this.$set(this.fundArchive, 'operation', value)
     },
     updateArticle (value) {
-      this.$set(this.model, 'article', value)
+      this.$set(this.fundArchive, 'article', value)
     },
     updateCombination (value) {
-      this.$set(this.model, 'combination', value)
+      this.$set(this.fundArchive, 'combination', value)
     },
     updateLongPositions (value) {
-      this.$set(this.model, 'long_positions', value)
+      this.$set(this.fundArchive, 'long_positions', value)
     },
     updateShortPositions (value) {
-      this.$set(this.model, 'short_positions', value)
+      this.$set(this.fundArchive, 'short_positions', value)
     },
     updateDesignedExposure (value) {
-      this.$set(this.model, 'designed_exposure', value)
+      this.$set(this.fundArchive, 'designed_exposure', value)
     },
     async onFileChange (e) {
       this.disabled = true
@@ -180,11 +181,12 @@ export default {
       for (let key in Object.keys(sheet[0])) {
         const result = Object.keys(sheet[0])[key]
         const value = Object.values(this.sheet[0])[key]
+        console.log(value)
         if (result.includes('基金名')) {
-          this.model.name = value
+          this.fundArchive.name = value
         } else if (result.match(/(经理|manager)/i)) {
-          this.model.type = 'MANAGER'
-          this.model.manager = value
+          this.fundArchive.type = 'MANAGER'
+          this.fundArchive.manager = value
         }
       }
       let fundAchievement = []
@@ -201,43 +203,61 @@ export default {
             a.net_worth = value
           }
         }
-        console.log('a', a)
+        // console.log('a', a)
         if (a.time && a.net_worth) {
           fundAchievement.push(a)
         }
       })
       this.fundAchievement = fundAchievement
     },
-    createGoodsConfirm () {
+    createFundsConfirm () {
       this.$refs.spuForm.validate((valid) => {
         if (valid) {
           this.loading = true
-          this.$axios.post('/insider/fund_archive/', this.model)
-            .then(res => {
-              let promiseAll = this.fundAchievement.map((data) => {
-                return this.$axios.patch(`/insider/fund_achievement/${res.data.id}/`, data)
-              })
-              this.$axios.all(promiseAll).then((resArr) => {
-                console.log(resArr)
-                this.$message.success('创建成功')
-                this.loading = false
-                setTimeout(() => {
-                  this.$router.push('/goods/detail/' + res.data.id)
-                }, 800)
+          if (this.fundId) {
+            this.$axios.patch(`/insider/fund_archive/${this.fundId}/`, this.fundArchive)
+              .then(res => {
+                this.uploadFundAchievement(res.data.id)
               }).catch(error => {
                 console.log(error)
-                this.$message.error('保存失败')
+                this.$message.error('创建失败，请检查您的网络连接')
                 this.loading = false
               })
-            })
-            .catch(error => {
-              console.log(error)
-              this.$message.error('保存失败')
-              this.loading = false
-            })
+          } else {
+            this.$axios.post('/insider/fund_archive/', this.fundArchive)
+              .then(res => {
+                this.fundId = res.data.id
+                this.uploadFundAchievement(res.data.id)
+              }).catch(error => {
+                console.log(error)
+                this.$message.error('创建失败，请检查您的网络连接')
+                this.loading = false
+              })
+          }
         } else {
           this.$message.error('请填写所有项目')
         }
+      })
+    },
+    uploadFundAchievement (id) {
+      // 逐条添加业绩信息
+      const promiseAll = this.fundAchievement.map((data, id) => {
+        // if (id === 0) {
+        return this.$axios.post(`/insider/fund_achievement/`, data)
+        //   return this.$axios.patch(`/insider/fund_achievement/${id}/`, data)
+        // }
+      })
+      Promise.all(promiseAll).then((resArr) => {
+        console.log(resArr)
+        this.$message.success('创建成功')
+        this.loading = false
+        setTimeout(() => {
+          this.$router.push(`/goods/detail/${id}/`)
+        }, 800)
+      }).catch(error => {
+        console.log(error)
+        this.$message.error('保存失败')
+        this.loading = false
       })
     }
   },

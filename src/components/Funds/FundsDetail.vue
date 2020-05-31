@@ -196,7 +196,7 @@ export default {
     },
     handleEditConfirm (parm) {
       this.loading = true
-      this.$axios.patch('/insider/fund_archive/' + parm.id + '/', parm)
+      this.$axios.patch(`/insider/fund_archive/${parm.id}/`, parm)
         .then(res => {
           console.log(res.data)
           this.$message.success('保存成功')
