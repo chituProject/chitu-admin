@@ -66,7 +66,13 @@
           </el-tab-pane>
 
           <!-- 基金业绩信息 -->
-          <el-tab-pane label="基金业绩信息" name="achivements">
+          <el-tab-pane label="基金业绩信息" name="achivement">
+            <el-table ref="fundAchievementForm" :data="fundAchievement" stripe>
+              <el-table-column label="表格字段" prop="col">
+              </el-table-column>
+              <el-table-column label="样例数据" prop="example">
+              </el-table-column>
+            </el-table>
           </el-tab-pane>
         </el-tabs>
       </div>
@@ -87,6 +93,7 @@ export default {
     return {
       loading: false,
       edit: false,
+      loadedRes: 0,
       activeName: 'archive',
       model: {
         name: '',
@@ -132,7 +139,8 @@ export default {
         manager: [
           { message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
         ]
-      }
+      },
+      fundAchievement: []
     }
   },
   props: {
@@ -166,10 +174,22 @@ export default {
     },
     getData () {
       this.loading = true
-      this.$axios.get('/insider/fund_archive/' + this.id + '/')
+      this.loadedRes = 0
+      this.$axios.get(`/insider/fund_archive/${this.id}/`)
         .then(res => {
           this.model = res.data
-          this.loading = false
+          this.loadedRes += 1
+          if (this.loadedRes > 1) {
+            this.loading = false
+          }
+        })
+      this.$axios.get(`/insider/fund_achievement/${this.id}/`)
+        .then(res => {
+          this.fundAchievement = res.data
+          this.loadedRes += 1
+          if (this.loadedRes > 1) {
+            this.loading = false
+          }
         })
     },
     goBack () {

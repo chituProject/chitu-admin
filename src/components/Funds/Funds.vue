@@ -24,7 +24,8 @@
           :data="manager_funds"
           border
           class="table"
-          style="width: 100%">
+          style="width: 100%"
+        >
           <el-table-column
             prop="manager"
             label="基金经理"
@@ -68,7 +69,7 @@
             label="操作"
             align="center">
             <template slot-scope="scope">
-              <el-button @click="openDetail(scope.row.id)" type="primary" size="large">查看</el-button>
+              <el-button @click.stop="openDetail(scope.row.id)" type="primary" size="large">查看</el-button>
             </template>
           </el-table-column>
         </el-table>

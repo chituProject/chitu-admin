@@ -241,11 +241,12 @@ export default {
     },
     uploadFundAchievement (id) {
       // 逐条添加业绩信息
-      const promiseAll = this.fundAchievement.map((data, id) => {
-        // if (id === 0) {
-        return this.$axios.post(`/insider/fund_achievement/`, data)
-        //   return this.$axios.patch(`/insider/fund_achievement/${id}/`, data)
-        // }
+      const promiseAll = this.fundAchievement.map((data) => {
+        const params = {
+          ...data,
+          fund: id
+        }
+        return this.$axios.post('/insider/fund_achievement/', params)
       })
       Promise.all(promiseAll).then((resArr) => {
         console.log(resArr)
