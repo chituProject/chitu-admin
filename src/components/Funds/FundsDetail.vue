@@ -66,11 +66,12 @@
           </el-tab-pane>
 
           <!-- 基金业绩信息 -->
-          <el-tab-pane label="基金业绩信息" name="achivement">
-            <el-table ref="fundAchievementForm" :data="fundAchievement" stripe>
-              <el-table-column label="表格字段" prop="col">
+          <el-tab-pane label="基金业绩信息" name="achivement" v-if="model.fund">
+            <div ref="fundAchievementChart" class="achievement-chart"></div>
+            <el-table ref="fundAchievementForm" :data="model.fund" height="360" stripe>
+              <el-table-column label="月份" prop="time">
               </el-table-column>
-              <el-table-column label="样例数据" prop="example">
+              <el-table-column label="净值" prop="net_worth">
               </el-table-column>
             </el-table>
           </el-tab-pane>
@@ -81,19 +82,22 @@
 </template>
 
 <script>
+import ECharts from 'echarts'
+import 'echarts/lib/chart/line'
+import chartOptions from './chartOptions'
 import { deepCopy } from '@/assets/util'
 import DetailParas from './Detail/DetailParas'
 
 export default {
   name: 'FundsDetail',
   components: {
-    DetailParas
+    DetailParas,
+    'chart': ECharts
   },
   data () {
     return {
       loading: false,
       edit: false,
-      loadedRes: 0,
       activeName: 'archive',
       model: {
         name: '',
@@ -105,7 +109,12 @@ export default {
         combination: [],
         long_positions: [],
         short_positions: [],
-        designed_exposure: []
+        designed_exposure: [],
+        fund: [
+          {
+            net_worth: '1'
+          }
+        ]
       },
       fund_type: [
         {
@@ -140,7 +149,8 @@ export default {
           { message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
         ]
       },
-      fundAchievement: []
+      fundAchievement: [],
+      fundAchievementChart: null
     }
   },
   props: {
@@ -174,21 +184,26 @@ export default {
     },
     getData () {
       this.loading = true
-      this.loadedRes = 0
       this.$axios.get(`/insider/fund_archive/${this.id}/`)
         .then(res => {
           this.model = res.data
-          this.loadedRes += 1
-          if (this.loadedRes > 1) {
-            this.loading = false
-          }
-        })
-      this.$axios.get(`/insider/fund_achievement/${this.id}/`)
-        .then(res => {
-          this.fundAchievement = res.data
-          this.loadedRes += 1
-          if (this.loadedRes > 1) {
-            this.loading = false
+          this.loading = false
+          if (res.data.fund) {
+            this.fundAchievementChart.setOption({
+              title: {
+                text: '净值'
+              },
+              xAxis: {
+                data: res.data.fund.map((item) => {
+                  return item.time
+                })
+              },
+              series: {
+                data: res.data.fund.map((item) => {
+                  return parseFloat(item.net_worth)
+                })
+              }
+            })
           }
         })
     },
@@ -237,6 +252,11 @@ export default {
       this.edit = true
     }
     this.getData()
+  },
+  mounted () {
+    this.fundAchievementChart = ECharts.init(this.$refs.fundAchievementChart)
+    console.log('123', this.fundAchievementChart)
+    this.fundAchievementChart.setOption(chartOptions.option)
   }
 }
 </script>
@@ -300,5 +320,11 @@ export default {
 }
 .divider + .title {
   margin-top: 60px;
+}
+.achievement-chart{
+  width: 1000px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

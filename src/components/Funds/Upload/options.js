@@ -1,21 +1,5 @@
 import * as XLSX from 'xlsx'
 
-export const spuOptions = Object.freeze([
-  'spu_id',
-  'created_at',
-  'updated_at',
-  'title',
-  'full_title',
-  'description',
-  'meta_specification',
-  'merchant',
-  'brand',
-  'shipment_fee'
-])
-export const extraOptions = Object.freeze([
-  'url'
-])
-
 export function parseFile (file) {
   var rABS = typeof FileReader !== 'undefined' && (FileReader.prototype || {}).readAsBinaryString
 

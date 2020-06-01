@@ -10,7 +10,7 @@ import axios from './assets/axios'
 import { ACLRules } from './assets/acl'
 import store from './store'
 import config from '../config'
-import { formatPrice, formatTime } from '@/assets/util'
+import { formatTime } from '@/assets/util'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -18,16 +18,6 @@ Vue.use(Acl, store.state.acl.acl, ACLRules, { router, failRoute: {path: '/index'
 Vue.prototype.$axios = axios
 Vue.prototype.$store = store
 Vue.prototype.$config = config
-
-Vue.filter('formatPrice', value => {
-  if (!value) return 0
-  return formatPrice(value, 'float')
-})
-
-Vue.filter('formatPriceFixed', value => {
-  if (!value) return 0
-  return formatPrice(value, 'fixed')
-})
 
 Vue.filter('formatTime', value => {
   if (!value) return ''

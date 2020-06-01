@@ -257,7 +257,7 @@ export default {
         }, 800)
       }).catch(error => {
         console.log(error)
-        this.$message.error('保存失败')
+        this.$message.error('创建失败，请检查您的网络连接')
         this.loading = false
       })
     }
