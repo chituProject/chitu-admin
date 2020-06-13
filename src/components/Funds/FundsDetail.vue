@@ -5,6 +5,7 @@
       <div style="float: right;">
         <el-button v-if="!edit" type="primary" v-can:edit="'Goods'" @click="editFunds">编辑</el-button>
         <el-button v-if="edit" size="medium" @click="editFundsCancel">取消</el-button>
+        <el-button v-if="edit" @click="dialogVisible = true">新增净值</el-button>
         <el-button v-if="edit" type="primary" v-can:edit="'Goods'" size="medium" @click="editFundsConfirm">保存</el-button>
       </div>
     </div>
@@ -68,7 +69,20 @@
           <!-- 基金业绩信息 -->
           <el-tab-pane label="基金业绩信息" name="achivement" v-if="model.fund">
             <div ref="fundAchievementChart" class="achievement-chart"></div>
-            <el-table ref="fundAchievementForm" :data="model.fund" height="360" stripe>
+            <el-form ref="fundAchievementForm" v-if="edit" label-width="160px">
+              <el-form-item
+                v-for="(ff, index) in model_new.fund"
+                :label="`${ff.time}净值`"
+                :key="ff.key"
+                :prop="'funds.' + index + '.net_worth'"
+                :rules="[
+                  { type: 'number', message: '净值必须为数字', trigger: ['blur','change'] }
+                ]"
+              >
+                <el-input v-model="ff.net_worth" size="medium" clearable></el-input>
+              </el-form-item>
+            </el-form>
+            <el-table ref="fundAchievementTable" :data="model.fund" height="360" stripe v-if="!edit">
               <el-table-column label="月份" prop="time">
               </el-table-column>
               <el-table-column label="净值" prop="net_worth">
@@ -78,6 +92,28 @@
         </el-tabs>
       </div>
     </div>
+    <el-dialog
+      title="创建确认"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose">
+      <span>请选择创建时间</span>
+      <el-date-picker
+        v-model="new_time"
+        type="date"
+        placeholder="选择日期"
+        format="yyyy 年 MM 月 dd 日"
+        value-format="yyyy-MM-dd"
+      >
+      </el-date-picker>
+      <br>
+      <span>请输入净值</span>
+      <el-input v-model="new_net_worth" size="medium" clearable></el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="addNetworthConfirm">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -98,6 +134,9 @@ export default {
       loading: false,
       edit: false,
       activeName: 'archive',
+      dialogVisible: false,
+      new_time: '',
+      new_net_worth: '',
       model: {
         name: '',
         type: '',
@@ -135,7 +174,8 @@ export default {
         combination: [],
         long_positions: [],
         short_positions: [],
-        designed_exposure: []
+        designed_exposure: [],
+        fund: []
       },
       rules: {
         type: [
@@ -148,7 +188,6 @@ export default {
           { message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
         ]
       },
-      fundAchievement: [],
       fundAchievementChart: null
     }
   },
@@ -244,6 +283,21 @@ export default {
     },
     editFundsCancel () {
       this.edit = false
+    },
+    addNetworthConfirm() {
+      this.model_new.fund.push({
+        net_worth: this.new_net_worth,
+        time: this.new_time,
+        key: Date.now()
+      });
+      this.dialogVisible = false
+    },
+    handleClose(done) {
+      this.$confirm('确认取消创建？')
+        .then(() => {
+          done();
+        })
+        .catch(() => {});
     }
   },
   created () {

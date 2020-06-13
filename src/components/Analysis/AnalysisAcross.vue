@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { deformatPrice, formatPrice } from '@/assets/util'
+import { deformatPrice } from '@/assets/util'
 
 export default {
   name: 'GoodsCreate',
@@ -211,46 +211,9 @@ export default {
           that.$message.error('请填写所有项目')
         }
       })
-    },
-    handleMerchantChange (uuid) {
-      this.brand = []
-      let that = this
-      this.merchant.forEach(item => {
-        if (item.uuid === uuid) {
-          that.brand = item.brand
-        }
-      })
-      this.model.brand = ''
-    },
-    getData () {
-      let that = this
-      this.$axios.post('/insider/settings/', {
-        instances: [{
-          func: 'get_current_scan_incoming_param',
-          params: {}
-        }]
-      })
-        .then(res => {
-          console.log('get_current_scan_incoming_param', res.data)
-          if (res.data.length >= 1 && res.data[0].code === 200) {
-            let value = res.data[0].value
-            that.model = {
-              newUser: 5,
-              helperNum: 2,
-              x1: formatPrice(value.x1),
-              x2: formatPrice(value.x2),
-              x3: formatPrice(value.x3),
-              x4: formatPrice(value.x4),
-              p1: value.p1,
-              p2: value.p2,
-              p3: value.p3
-            }
-          }
-        })
     }
   },
   mounted () {
-    this.getData()
   }
 }
 </script>

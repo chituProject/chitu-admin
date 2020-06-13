@@ -3,6 +3,8 @@ import ElementUI from 'element-ui'
 import Acl from 'vue-browser-acl'
 import '../theme/index.css'
 import App from './App.vue'
+import VueHtml2Canvas from 'vue-html2canvas';
+
 
 import router from './router'
 import axios from './assets/axios'
@@ -14,6 +16,7 @@ import { formatTime } from '@/assets/util'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Acl, store.state.acl.acl, ACLRules, { router, failRoute: {path: '/index', replace: true} })
+Vue.use(VueHtml2Canvas);
 Vue.prototype.$axios = axios
 Vue.prototype.$store = store
 Vue.prototype.$config = config
