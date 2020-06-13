@@ -70,24 +70,7 @@ export default {
       })
       this.model.brand = ''
     },
-    getData () {
-      let that = this
-      this.$axios.post('/insider/settings/', {
-        instances: [{
-          func: 'get_current_scan_incoming_param',
-          params: {}
-        }]
-      })
-        .then(res => {
-          console.log('get_current_scan_incoming_param', res.data)
-          if (res.data.length >= 1 && res.data[0].code === 200) {
-            that.model = {
-              newUser: 5,
-              helperNum: 2
-            }
-          }
-        })
-    }
+    getData () {}
   },
   mounted () {
     this.getData()

@@ -34,6 +34,9 @@
             <el-form-item v-if="fundArchive.type === 'MANAGER'" label="基金经理" prop="manager">
               <el-input v-model="fundArchive.manager" clearable placeholder= "请输入基金经理"></el-input>
             </el-form-item>
+            <el-form-item v-if="fundArchive.type === 'MANAGER'" label="备忘录" prop="memo">
+              <el-input type="textarea" v-model="fundArchive.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
+            </el-form-item>
 
             <template v-if="fundArchive.type === 'MANAGER'">
               <detail-paras :edit="true" :title="'概述'" :value="fundArchive.general_infomation" @change="updateGeneralInformation"></detail-paras>

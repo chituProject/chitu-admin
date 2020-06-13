@@ -99,3 +99,11 @@ color: rgba(125, 86, 154, 1);*/
   background-color: transparent;
   color: #C0C4CC;
 }
+
+.flex-justify_center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

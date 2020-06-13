@@ -3,9 +3,9 @@
     <div class="filter-container">
       <el-button style="float: left;" icon="el-icon-back" size="medium" plain @click.stop="goBack">返回</el-button>
       <div style="float: right;">
-        <el-button v-if="!edit" type="primary" v-can:edit="'Goods'" @click="editFunds">编辑</el-button>
+        <el-button v-if="!edit" type="primary" @click="editFunds">编辑</el-button>
         <el-button v-if="edit" size="medium" @click="editFundsCancel">取消</el-button>
-        <el-button v-if="edit" @click="dialogVisible = true">新增净值</el-button>
+        <el-button v-if="edit && activeName === 'achivement'" @click="dialogVisible = true">新增净值</el-button>
         <el-button v-if="edit" type="primary" v-can:edit="'Goods'" size="medium" @click="editFundsConfirm">保存</el-button>
       </div>
     </div>
@@ -19,7 +19,7 @@
                 <div class="title">基本信息</div>
                 <div class="spu-table">
                   <el-form-item label="基金编号">
-                    <span>{{model.id}}</span>
+                    <span>{{$route.params.id}}</span>
                   </el-form-item>
                   <el-form-item v-show="edit" label="基金名称" prop="fund_name">
                     <el-input v-model="model_new.name" clearable></el-input>
@@ -45,6 +45,12 @@
                   </el-form-item>
                   <el-form-item v-show="!edit" label="基金类别">
                     <span>{{model.type === 'MANAGER' ? '经理基金' : '指数基金'}}</span>
+                  </el-form-item>
+                  <el-form-item v-show="edit && model.type === 'MANAGER'" label="备忘录" prop="memo">
+                    <el-input type="textarea" v-model="model_new.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
+                  </el-form-item>
+                  <el-form-item v-show="!edit && model.type === 'MANAGER'" label="备忘录">
+                    <span>{{model.memo}}</span>
                   </el-form-item>
                 </div>
                 <div class="divider"></div>
@@ -73,7 +79,7 @@
               <el-form-item
                 v-for="(ff, index) in model_new.fund"
                 :label="`${ff.time}净值`"
-                :key="ff.key"
+                :key="ff.id"
                 :prop="'funds.' + index + '.net_worth'"
                 :rules="[
                   { type: 'number', message: '净值必须为数字', trigger: ['blur','change'] }
@@ -82,7 +88,7 @@
                 <el-input v-model="ff.net_worth" size="medium" clearable></el-input>
               </el-form-item>
             </el-form>
-            <el-table ref="fundAchievementTable" :data="model.fund" height="360" stripe v-if="!edit">
+            <el-table ref="fundAchievementTable" :data="model.fund" height="600" stripe v-if="!edit">
               <el-table-column label="月份" prop="time">
               </el-table-column>
               <el-table-column label="净值" prop="net_worth">
@@ -95,20 +101,23 @@
     <el-dialog
       title="创建确认"
       :visible.sync="dialogVisible"
-      width="30%"
-      :before-close="handleClose">
-      <span>请选择创建时间</span>
-      <el-date-picker
-        v-model="new_time"
-        type="date"
-        placeholder="选择日期"
-        format="yyyy 年 MM 月 dd 日"
-        value-format="yyyy-MM-dd"
-      >
-      </el-date-picker>
-      <br>
-      <span>请输入净值</span>
-      <el-input v-model="new_net_worth" size="medium" clearable></el-input>
+      width="300"
+    >
+      <div class="flex-justify_center">
+        <span>请选择创建时间</span>
+        <el-date-picker
+          v-model="new_time"
+          type="month"
+          placeholder="选择月份"
+          format="yyyy 年 MM 月"
+          value-format="yyyy-MM"
+        >
+        </el-date-picker>
+      </div>
+      <div class="flex-justify_center">
+        <span>请输入净值</span>
+        <el-input v-model="new_net_worth" size="small" clearable></el-input>
+      </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="addNetworthConfirm">确 定</el-button>
@@ -222,7 +231,7 @@ export default {
     },
     getData () {
       this.loading = true
-      this.$axios.get(`/insider/fund_archive/${this.id}/`)
+      this.$axios.get(`/insider/fund_archive/${this.$route.params.id}/`)
         .then(res => {
           this.model = res.data
           this.loading = false
@@ -270,13 +279,15 @@ export default {
     handleEditConfirm (parm) {
       this.loading = true
       this.$axios.patch(`/insider/fund_archive/${this.$route.params.id}/`, parm)
-        .then(res => {
-          console.log(res.data)
-          this.$message.success('保存成功')
-          this.getData()
-        })
-        .catch(error => {
-          console.log(error)
+        .then(() => {
+          const promiseAll = parm.fund.map((data) => {
+            return this.$axios.patch(`/insider/fund_achievement/${data.id}/`, data)
+          })
+          Promise.all(promiseAll).then(() => {
+            this.$message.success('保存成功')
+            this.getData()
+          })
+        }).catch(() => {
           this.$message.error('保存失败')
           this.loading = false
         })
@@ -285,19 +296,16 @@ export default {
       this.edit = false
     },
     addNetworthConfirm() {
-      this.model_new.fund.push({
+      const params = {
         net_worth: this.new_net_worth,
         time: this.new_time,
-        key: Date.now()
-      });
-      this.dialogVisible = false
-    },
-    handleClose(done) {
-      this.$confirm('确认取消创建？')
-        .then(() => {
-          done();
-        })
-        .catch(() => {});
+        fund: this.$route.params.id
+      }
+      this.$axios.post('/insider/fund_achievement/', params).then(res => {
+        console.log(res)
+        this.model_new.fund.push(res.data)
+        this.dialogVisible = false
+      })
     }
   },
   created () {
