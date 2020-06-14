@@ -153,7 +153,6 @@ export default {
       this.query()
     },
     changeStatus (data) {
-      console.log(data)
       const action = data.authorize_type === 'ON' ? '关闭' : '打开'
       this.$confirm(`是否要${action}用户` + data.wechat_nickname + '的使用权限？', '重要操作', {
         confirmButtonText: '确认',
@@ -161,13 +160,11 @@ export default {
         type: 'warning'
       }).then(() => {
         // 调用后台接口
-
-        if (data.authorize_type === 'ON') {
-          data.authorize_type = 'OFF'
-        } else {
-          data.authorize_type = 'ON'
-        }
-
+        const authorize_type = data.authorize_type === 'ON' ? 'OFF' : 'ON'
+        this.$axios.post(`/insider/customer_user/${data.id}/user_authorize_type/`,{ authorize_type: authorize_type })
+        .then(()=>{
+          data.authorize_type = authorize_type
+        })
         this.$message({
           type: 'success',
           message: '更改成功'

@@ -216,6 +216,12 @@ export default {
     createFundsConfirm () {
       this.$refs.spuForm.validate((valid) => {
         if (valid) {
+          if (this.fundArchive.type === 'MANAGER') {
+            if (!this.fundArchive.manager){
+              this.$message.error('请填写基金经理！')
+              return
+            }
+          }
           this.loading = true
           if (this.fundId) {
             this.$axios.patch(`/insider/fund_archive/${this.fundId}/`, this.fundArchive)

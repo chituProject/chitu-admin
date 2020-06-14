@@ -29,37 +29,47 @@
           <el-table-column
             prop="manager"
             label="基金经理"
-            width="150">
+            width="90">
           </el-table-column>
           <el-table-column
             prop="name"
             label="基金名称"
-            width="240">
+            width="210">
           </el-table-column>
           <el-table-column
-            prop="yearly_profit"
-            label="近一年收益"
+            prop="recently_monthly_yield"
+            label="最近月收益率"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="monthly_profit"
-            label="最新月回报"
+            prop="one_year_profit"
+            label="近一年收益率"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="sharp_rate"
+            prop="three_year_profit"
+            label="近三年收益率"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="sharpe_ratio"
             label="夏普比率"
             width="100">
           </el-table-column>
           <el-table-column
+            prop="ytd"
+            label="YTD"
+            width="100">
+          </el-table-column>
+          <!--<el-table-column
             label="可见性"
-            width="70">
+            width="60">
             <template slot-scope="scope">
               {{visible_status[scope.row.visible]}}
             </template>
-          </el-table-column>
+          </el-table-column>-->
           <el-table-column
-            label="修改可见性"
+            label="用户是否可见"
             width="100">
             <template slot-scope="scope">
               <switch-button v-model="scope.row.visibility" @click="changeVisibility(scope.row)"></switch-button>
@@ -81,32 +91,42 @@
           <el-table-column
             prop="name"
             label="指数名称"
-            width="390">
+            width="300">
           </el-table-column>
           <el-table-column
-            prop="yearly_profit"
-            label="近一年收益"
+            prop="recently_monthly_yield"
+            label="最近月收益率"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="monthly_profit"
-            label="最新月回报"
+            prop="one_year_profit"
+            label="近一年收益率"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="sharp_rate"
+            prop="three_year_profit"
+            label="近三年收益率"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="sharpe_ratio"
             label="夏普比率"
             width="100">
           </el-table-column>
           <el-table-column
+            prop="ytd"
+            label="YTD"
+            width="100">
+          </el-table-column>
+          <!--<el-table-column
             label="可见性"
-            width="70">
+            width="60">
             <template slot-scope="scope">
               {{visible_status[scope.row.visible]}}
             </template>
-          </el-table-column>
+          </el-table-column>-->
           <el-table-column
-            label="修改可见性"
+            label="用户是否可见"
             width="100">
             <template slot-scope="scope">
               <switch-button v-model="scope.row.visibility" @click="changeVisibility(scope.row)"></switch-button>

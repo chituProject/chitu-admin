@@ -7,17 +7,18 @@
     </div>
     <div class="card-outer" v-if="fundList">
       <div class="card-container">
-        <div class="title">选择基金
-          <el-button type="primary" size="medium" @click="selectFundsConfirm">确认基金选择</el-button>
-          <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange" border size="medium">全选基金</el-checkbox>
+        <div class="title">
+          选择基金
+          <el-button style="margin: 0 12px" type="primary" size="medium" @click="selectFundsConfirm">确认基金选择</el-button>
+          <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange" border size="medium">全选</el-checkbox>
         </div>
         <el-checkbox-group v-model="checkedFunds" @change="handleCheckedFundsChange">
-          <div style="margin: 24px;">
-            <div class="fs-18 line-30">经理基金</div> 
+          <div style="margin: 24px;text-align:left;">
+            <div class="fs-18 line-30 main-color" style="margin:12px 0;">经理基金</div> 
             <el-checkbox v-for="item in manager_funds" :label="item" :key="item.id">{{item.name}}</el-checkbox>
           </div>
-          <div style="margin: 24px;">
-            <div class="fs-18 line-30">指数基金</div> 
+          <div style="margin: 24px;text-align:left;">
+            <div class="fs-18 line-30 main-color" style="margin:12px 0;">指数基金</div> 
             <el-checkbox v-for="item in index_funds" :label="item" :key="item.id">{{item.name}}</el-checkbox>
           </div>
         </el-checkbox-group>
