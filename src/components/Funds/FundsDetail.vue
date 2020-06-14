@@ -352,18 +352,6 @@ export default {
 .el-form-item .el-form-item__content {
   width: 100% !important;
 }
-.button-close {
-  font-size: 20px;
-  margin: -10px -10px;
-  position: absolute;
-}
-.button-close:hover {
-  cursor: pointer;
-  -webkit-transform: scale(0.9,0.9);
-  -moz-transform: scale(0.9,0.9);
-  -o-transform: scale(0.9,0.9);
-  transform: scale(0.9,0.9);
-}
 .divider {
   position: absolute;
   left: 0;

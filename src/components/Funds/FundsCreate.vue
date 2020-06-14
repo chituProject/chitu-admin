@@ -247,8 +247,7 @@ export default {
         }
         return this.$axios.post('/insider/fund_achievement/', params)
       })
-      Promise.all(promiseAll).then((resArr) => {
-        console.log(resArr)
+      Promise.all(promiseAll).then(() => {
         this.$message.success('创建成功')
         this.loading = false
         setTimeout(() => {

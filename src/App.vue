@@ -161,7 +161,7 @@ input[type='file'] {
   background-color: #f8f6f6;
 }
 .selecter {
-  width: 10%;
+  width: 20%;
   margin-top: 10px;
   margin-left: 20px;
   float: left;

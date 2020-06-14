@@ -1,32 +1,36 @@
 <template>
   <div class="main-col" v-loading="loading">
     <div class="filter-container">
-      <el-select v-model="metric_query_key" class="selecter" placeholder="XX基金">
-        <el-option
-          v-for="item in metricOptions"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-      <el-input
-        class="search"
-        v-model="input"
-        placeholder="钱数（元）"
-        clearable>
-      </el-input>
-      <div style="float: left; padding-top: 10px;">
-        <el-button type="secondary" size="medium" @click="addComponent">添加</el-button>
-      </div>
       <div style="float: right;">
-        <el-button type="primary" size="medium" @click="exportData">导出</el-button>
-        <el-button type="primary" size="medium" @click="exportDataAsImg">导出为图片</el-button>
+        <el-button type="primary" size="medium" @click="exportData">导出为excel</el-button>
       </div>
     </div>
-    <div class="card-outer" v-if="model">
+    <div class="card-outer" v-if="fundList">
       <div class="card-container">
-        <el-form ref="settingForm" :model="model" :rules="rules" class="demo-table-expand" label-width="160px" label-position="left">
-        </el-form>
+        <div class="title">选择基金
+          <el-button type="primary" size="medium" @click="selectFundsConfirm">确认基金选择</el-button>
+          <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange" border size="medium">全选基金</el-checkbox>
+        </div>
+        <el-checkbox-group v-model="checkedFunds" @change="handleCheckedFundsChange">
+          <div style="margin: 24px;">
+            <div class="fs-18 line-30">经理基金</div> 
+            <el-checkbox v-for="item in manager_funds" :label="item" :key="item.id">{{item.name}}</el-checkbox>
+          </div>
+          <div style="margin: 24px;">
+            <div class="fs-18 line-30">指数基金</div> 
+            <el-checkbox v-for="item in index_funds" :label="item" :key="item.id">{{item.name}}</el-checkbox>
+          </div>
+        </el-checkbox-group>
+
+        <template v-if="isConfirmedFunds">
+          <div class="title">选择指标
+            <el-button type="primary" size="medium" @click="selectMetricsConfirm">确认指标选择</el-button>
+          </div>
+          <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
+          <el-checkbox-group :max="10" v-model="checkedFunds" @change="handleCheckedFundsChange">
+            <el-checkbox v-for="item in manager_funds" :label="item" :key="item.id">{{item.name}}</el-checkbox>
+          </el-checkbox-group>
+        </template>
       </div>
     </div>
   </div>
@@ -38,39 +42,61 @@ export default {
   data () {
     return {
       loading: false,
-      metric_query_key: '',
-      fund_query_key: '',
-      metric_query_value: '',
-      fund_query_value: '',
-      metricOptions: [],
+      isConfirmedFunds: false,
+      // list
       fundList: [],
-      model: {
-      },
-      rules: {
-      }
+      manager_funds: [],
+      index_funds: [],
+      checkAll: false,
+      checkedFunds: [],
+      isIndeterminate: true,
+      metricList: [],
+      selectedMetrics: [],
     }
   },
   methods: {
     exportData () {
-      // todo
+      // TODO: 导出为EXCEL
     },
-    exportDataAsImg () {
-      // todo
+    selectFundsConfirm () {
+      this.isConfirmedFunds = true
+      // TODO: 向后台发送请求，获取所有key
     },
-    addComponent () {
-      // todo
+    selectMetricsConfirm () {
+      // TODO: 向后台发送请求，生成table
     },
-    handleMerchantChange (uuid) {
-      this.brand = []
-      let that = this
-      this.merchant.forEach(item => {
-        if (item.uuid === uuid) {
-          that.brand = item.brand
-        }
-      })
-      this.model.brand = ''
+    getData () {
+      this.loading = true
+      this.$axios.get('/insider/fund_archive/')
+        .then(res => {
+          for (let i = 0; i < res.data.results.length; ++i) {
+            if (res.data.results[i].visible === 'TRUE') {
+              res.data.results[i].visibility = true
+            } else {
+              res.data.results[i].visibility = false
+            }
+            if (res.data.results[i].type === 'MANAGER') {
+              this.manager_funds.push(res.data.results[i])
+            } else {
+              this.index_funds.push(res.data.results[i])
+            }
+          }
+          this.fundList = res.data.results
+        })
+        .finally(() => {
+          this.loading = false
+        })
     },
-    getData () {}
+    handleCheckAllChange(val) {
+      this.checkedFunds = val ? this.fundList : [];
+      console.log(this.checkedFunds)
+      this.isIndeterminate = false;
+    },
+    handleCheckedFundsChange(value) {
+      let checkedCount = value.length;
+      this.checkAll = checkedCount === this.fundList.length;
+      this.isIndeterminate = checkedCount > 0 && checkedCount < this.fundList.length;
+    }
   },
   mounted () {
     this.getData()
@@ -79,22 +105,8 @@ export default {
 </script>
 
 <style scoped>
-  .search {
-    width: 120px;
-  }
   .filter-container {
     padding: 12px;
-  }
-  .demo-table-expand {
-    margin: 0 20px 20px;
-    font-size: 0;
-    text-align: left;
-  }
-  .demo-table-expand .el-form-item {
-    width: 360px;
-    /*margin-right: 0;*/
-    margin-bottom: 0;
-    padding-bottom: 20px;
   }
   .card-container {
     position: relative;
@@ -115,10 +127,6 @@ export default {
   }
   .divider + .title {
     margin-top: 40px;
-  }
-  .demo-table-expand label {
-    /*width: 90px;*/
-    color: #99a9bf;
   }
   .flex-section {
     display: flex;
