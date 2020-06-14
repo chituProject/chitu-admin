@@ -221,9 +221,7 @@ export default {
             this.$axios.patch(`/insider/fund_archive/${this.fundId}/`, this.fundArchive)
               .then(res => {
                 this.uploadFundAchievement(res.data.id)
-              }).catch(error => {
-                console.log(error)
-                this.$message.error('创建失败，请检查您的网络连接')
+              }).catch(() => {
                 this.loading = false
               })
           } else {
@@ -231,9 +229,7 @@ export default {
               .then(res => {
                 this.fundId = res.data.id
                 this.uploadFundAchievement(res.data.id)
-              }).catch(error => {
-                console.log(error)
-                this.$message.error('创建失败，请检查您的网络连接')
+              }).catch(() => {
                 this.loading = false
               })
           }
@@ -258,9 +254,7 @@ export default {
         setTimeout(() => {
           this.$router.push(`/goods/detail/${id}/`)
         }, 800)
-      }).catch(error => {
-        console.log(error)
-        this.$message.error('创建失败，请检查您的网络连接')
+      }).catch(() => {
         this.loading = false
       })
     }

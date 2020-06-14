@@ -26,7 +26,7 @@
                   class="import-button"
                   :disabled="disabled"
                   type="primary"
-                  @click="onSubmit()"
+                  @click="onSubmit"
                 >
                   导入该表格
                 </el-button>
@@ -173,15 +173,21 @@ export default {
       this.percentage = 10
 
       this.fundArchive.map((data, index) => {
-        console.log('data', data, index)
         this.$axios.post(`/insider/fund_archive/`, data).then((res) => {
-          this.message = '上传基金业绩中，请稍候'
-          this.percentage += 45.0 / this.sheetTabs.length
-          console.log(res)
-          this.uploadFundAchievement(res.data.id, index)
-        }).catch(error => {
-          console.log(error)
-          this.$message.error('创建失败，请检查您的网络连接')
+          if (res.data.id) {
+            this.message = '上传基金业绩中，请稍候'
+            this.percentage += 45.0 / this.sheetTabs.length
+            this.uploadFundAchievement(res.data.id, index)
+          } else if (res.data.fund_id && res.data.fund_id[0]) {
+            this.$axios.patch(`/insider/fund_archive/${res.data.fund_id[0]}/`, data).then(() => {
+              this.message = '上传基金业绩中，请稍候'
+              this.percentage += 45.0 / this.sheetTabs.length
+              this.uploadFundAchievement(res.data.fund_id[0], index)
+            }).catch(() => {
+              this.disabled = false
+            })
+          }
+        }).catch(() => {
           this.disabled = false
         })
       })
@@ -199,9 +205,7 @@ export default {
         this.message = `基金业绩上传完成${this.sended}个，还有${this.sheetTabs.length - this.sended}个`
         this.percentage += 45.0 / this.sheetTabs.length
         this.sended += 1
-      }).catch(error => {
-        console.log(error)
-        this.$message.error('创建失败，请检查您的网络连接')
+      }).catch(() => {
         this.disabled = false
       })
     }

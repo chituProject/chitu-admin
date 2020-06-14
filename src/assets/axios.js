@@ -26,11 +26,10 @@ instance.interceptors.response.use(data => {
     // 悄悄404掉
   } else {
     console.log('axios:', err.response.data)
-    alert('请求出错!\n错误码: '+err.response.status+'\n错误信息: '+JSON.stringify(err.response.data.detail))
+    Message.error('请求出错!\n错误码: '+err.response.status+'\n错误信息: '+JSON.stringify(err.response.data.detail))
+    if (err.response.data.fund_id)
+      return Promise.resolve(err.response);
   }
-  // Alert('<p><strong>错误码 <i>'+err.response.status+'</i></strong><br/>错误信息: '+JSON.stringify(err.response.data.detail)+'</p>', '请求出错', {
-  //   dangerouslyUseHTMLString: true
-  // })
   return Promise.reject(err);
 })
 
