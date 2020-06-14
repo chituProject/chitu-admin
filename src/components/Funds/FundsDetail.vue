@@ -304,7 +304,9 @@ export default {
     },
     handleEditConfirm (parm) {
       this.loading = true
-      this.$axios.patch(`/insider/fund_archive/${this.$route.params.id}/`, parm)
+      let archive = parm
+      delete archive.fund
+      this.$axios.patch(`/insider/fund_archive/${this.$route.params.id}/`, archive)
         .then(() => {
           const promiseAll = parm.fund.map((data) => {
             return this.$axios.patch(`/insider/fund_achievement/${data.id}/`, data)

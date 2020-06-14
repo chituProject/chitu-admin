@@ -22,14 +22,24 @@
               <el-select v-model="fundArchive.type">
                 <el-option
                   v-for="item in fund_type"
-                  :key="item.id"
-                  :label="item.name"
-                  :value="item.id">
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="基金名称" prop="name">
               <el-input v-model="fundArchive.name" clearable placeholder= "请输入基金名"></el-input>
+            </el-form-item>
+            <el-form-item v-if="fundArchive.type === 'MANAGER'" label="基金策略" prop="strategy">
+              <el-select v-model="fundArchive.strategy">
+                <el-option
+                  v-for="item in fund_strategy"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
             </el-form-item>
             <el-form-item v-if="fundArchive.type === 'MANAGER'" label="基金经理" prop="manager">
               <el-input v-model="fundArchive.manager" clearable placeholder= "请输入基金经理"></el-input>
@@ -69,12 +79,42 @@ export default {
       fundId: null,
       fund_type: [
         {
-          id: 'MANAGER',
-          name: '经理基金'
+          label: '经理基金',
+          value: 'MANAGER'
         },
         {
-          id: 'INDEX',
-          name: '指数基金'
+          label: '指数基金',
+          value: 'INDEX'
+        }
+      ],
+      fund_strategy: [
+        {
+          label: '量化',
+          value: 'quantification'
+        },
+        {
+          label: '固收',
+          value: 'fixed__income'
+        },
+        {
+          label: '宏观对冲',
+          value: 'macro__hedging'
+        },
+        {
+          label: '纯多头',
+          value: 'pure__bull'
+        },
+        {
+          label: '多空',
+          value: 'long__short'
+        },
+        {
+          label: '复合',
+          value: 'combination'
+        },
+        {
+          label: '其他',
+          value: 'other'
         }
       ],
       fileName: null, // 文件名称
@@ -85,6 +125,7 @@ export default {
         type: '',
         name: '',
         manager: '',
+        strategy: '',
         general_infomation: [
           {key: '基金管理方', value: ''},
           {key: '管理方牌照', value: ''},
@@ -217,8 +258,12 @@ export default {
       this.$refs.spuForm.validate((valid) => {
         if (valid) {
           if (this.fundArchive.type === 'MANAGER') {
-            if (!this.fundArchive.manager){
+            if (!this.fundArchive.manager) {
               this.$message.error('请填写基金经理！')
+              return
+            }
+            if (!this.fundArchive.strategy) {
+              this.$message.error('请选择基金策略！')
               return
             }
           }

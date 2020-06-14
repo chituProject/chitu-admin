@@ -23,6 +23,7 @@
         <el-table
           :data="manager_funds"
           border
+          stripe
           class="table"
           style="width: 100%"
         >
@@ -57,18 +58,27 @@
             width="100">
           </el-table-column>
           <el-table-column
+            prop="roll_year_win"
+            label="滚动一年收益"
+            width="100">
+          </el-table-column>
+          <el-table-column
             prop="ytd"
             label="YTD"
             width="100">
           </el-table-column>
-          <!--<el-table-column
-            label="可见性"
-            width="60">
-            <template slot-scope="scope">
-              {{visible_status[scope.row.visible]}}
-            </template>
-          </el-table-column>-->
           <el-table-column
+            prop="max_fallback"
+            label="最大回撤"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="max_fallback_created_at"
+            label="最大回撤日期"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            fixed="right"
             label="用户是否可见"
             width="100">
             <template slot-scope="scope">
@@ -76,6 +86,7 @@
             </template>
           </el-table-column>
           <el-table-column
+            fixed="right"
             label="操作"
             align="center">
             <template slot-scope="scope">
@@ -86,6 +97,7 @@
         <el-table
           :data="index_funds"
           border
+          stripe
           class="table"
           style="width: 100%">
           <el-table-column
@@ -118,14 +130,18 @@
             label="YTD"
             width="100">
           </el-table-column>
-          <!--<el-table-column
-            label="可见性"
-            width="60">
-            <template slot-scope="scope">
-              {{visible_status[scope.row.visible]}}
-            </template>
-          </el-table-column>-->
           <el-table-column
+            prop="max_fallback"
+            label="最大回撤"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            prop="max_fallback_created_at"
+            label="最大回撤日期"
+            width="100">
+          </el-table-column>
+          <el-table-column
+            fixed="right"
             label="用户是否可见"
             width="100">
             <template slot-scope="scope">
@@ -133,6 +149,7 @@
             </template>
           </el-table-column>
           <el-table-column
+            fixed="right"
             label="操作"
             align="center">
             <template slot-scope="scope">
@@ -178,24 +195,8 @@ export default {
         {
           label: '全部',
           value: 'all'
-        },
-        {
-          label: '赤兔访谈',
-          value: 'chitu__interview'
-        },
-        {
-          label: '百亿私募',
-          value: 'tenbillion__private__placement'
-        },
-        {
-          label: '量化',
-          value: 'quantization'
         }
       ],
-      visible_status: {
-        TRUE: '可见',
-        FALSE: '不可见'
-      },
       // list
       manager_funds: [],
       index_funds: [],
@@ -275,15 +276,6 @@ export default {
 </script>
 
 <style scoped>
-  .demo-table-expand {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-    grid-column-gap: 10px;
-  }
-  .demo-table-expand .el-form-item {
-    margin-bottom: 0;
-  }
   .table:hover {
     cursor: pointer;
   }

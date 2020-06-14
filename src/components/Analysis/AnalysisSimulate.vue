@@ -19,7 +19,6 @@
         <el-button type="secondary" size="medium" @click="addComponent">添加</el-button>
       </div>
       <div style="float: right;">
-        <el-button type="primary" size="medium" @click="exportData">导出</el-button>
         <el-button type="primary" size="medium" @click="exportDataAsImg">导出为图片</el-button>
       </div>
     </div>
@@ -51,9 +50,6 @@ export default {
     }
   },
   methods: {
-    exportData () {
-      // todo
-    },
     exportDataAsImg () {
       // todo
     },
