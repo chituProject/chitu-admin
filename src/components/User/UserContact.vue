@@ -86,9 +86,7 @@ export default {
                 fund_name: this.model.name,
                 phone: this.model.phone,
                 email: this.model.email
-              })
-                .then(res => {
-                  console.log(res)
+              }).then(() => {
                   this.$message.success('保存成功')
                   this.loading = false
                 }).catch(() => {

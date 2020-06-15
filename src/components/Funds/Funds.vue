@@ -126,6 +126,11 @@
             width="100">
           </el-table-column>
           <el-table-column
+            prop="roll_year_win"
+            label="滚动一年收益"
+            width="100">
+          </el-table-column>
+          <el-table-column
             prop="ytd"
             label="YTD"
             width="100">

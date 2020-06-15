@@ -10,30 +10,34 @@
     </div>
     <div class="card-outer">
       <div class="card-container">
-        <el-tabs v-model="currentSheet" type="card" v-if="hasData">
-          <el-tab-pane v-for="key in sheetTabs" :key="key" :label="key" :disabled="disabled">
-            <!-- 原始excel表格 -->
-            <el-table ref="form" :data="tableModel" stripe>
-              <el-table-column label="表格字段" prop="col">
-              </el-table-column>
-              <el-table-column label="样例数据" prop="example">
-              </el-table-column>
-            </el-table>
-            <!-- 原始excel表格 END -->
-            <el-form inline>
-              <el-form-item>
-                <el-button
-                  class="import-button"
-                  :disabled="disabled"
-                  type="primary"
-                  @click="onSubmit"
-                >
-                  导入该表格
-                </el-button>
-              </el-form-item>
-            </el-form>
-          </el-tab-pane>
-        </el-tabs>
+        <el-row v-if="hasData">  
+          <el-col :span="24">
+            <el-tabs v-model="currentSheet" type="card">
+              <el-tab-pane v-for="key in sheetTabs" :key="key" :label="key" :disabled="disabled">
+                <!-- 原始excel表格 -->
+                <el-table ref="form" :data="tableModel" stripe>
+                  <el-table-column label="表格字段" prop="col">
+                  </el-table-column>
+                  <el-table-column label="样例数据" prop="example">
+                  </el-table-column>
+                </el-table>
+                <!-- 原始excel表格 END -->
+                <el-form inline>
+                  <el-form-item>
+                    <el-button
+                      class="import-button"
+                      :disabled="disabled"
+                      type="primary"
+                      @click="onSubmit"
+                    >
+                      导入该表格
+                    </el-button>
+                  </el-form-item>
+                </el-form>
+              </el-tab-pane>
+            </el-tabs>
+          </el-col>
+        </el-row>  
         <empty-page v-else></empty-page>
         <el-dialog :visible="disabled && !!message" :show-close="false" :title="message">
           <el-progress :percentage="percentage"></el-progress>
