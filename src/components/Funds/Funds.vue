@@ -20,6 +20,7 @@
     </div>
     <div class="card-outer">
       <div v-if="manager_funds.length > 0 || index_funds.length > 0" class="card-container">
+        <div class="title">经理基金</div>
         <el-table
           :data="manager_funds"
           border
@@ -82,7 +83,7 @@
             label="用户是否可见"
             width="100">
             <template slot-scope="scope">
-              <switch-button v-model="scope.row.visibility" @click="changeVisibility(scope.row)"></switch-button>
+              <switch-button v-model="scope.row.visibility" @toggle="changeVisibility(scope.row)"></switch-button>
             </template>
           </el-table-column>
           <el-table-column
@@ -94,6 +95,8 @@
             </template>
           </el-table-column>
         </el-table>
+        
+        <div class="title">指数基金</div>
         <el-table
           :data="index_funds"
           border
@@ -150,7 +153,7 @@
             label="用户是否可见"
             width="100">
             <template slot-scope="scope">
-              <switch-button v-model="scope.row.visibility" @click="changeVisibility(scope.row)"></switch-button>
+              <switch-button v-model="scope.row.visibility" @toggle="changeVisibility(scope.row)"></switch-button>
             </template>
           </el-table-column>
           <el-table-column
@@ -259,18 +262,13 @@ export default {
       // window.open(window.location.origin + '/#/goods/detail/' + id)
     },
     changeVisibility (item) {
-      let that = this
-      let newStatus = !item.visibility_status
-      that.loading = true
-      this.$axios.post('/insider/goods/' + item.id + '/ground/', {
-        visibility_status: newStatus
-      })
-        .then(() => {
-          that.getData()
-        })
-        .catch(error => {
-          console.log(error)
-          that.loading = false
+      this.loading = true
+      this.$axios.post(`/insider/fund_archive/${item.id}/fund_visible/`, {
+        visible: item.visibility ? 'TRUE' : 'FALSE'
+      }).then(() => {
+          this.getData()
+        }).catch(() => {
+          this.loading = false
         })
     }
   },
@@ -285,4 +283,10 @@ export default {
     cursor: pointer;
   }
 
+  .title {
+    font-size: 20px !important;
+    /*font-weight: bold;*/
+    text-align: left;
+    margin: 20px 0 20px;
+  }
 </style>
