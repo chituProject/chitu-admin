@@ -2,7 +2,7 @@
   <div class="main-col" v-loading="loading">
     <div class="filter-container">
       <div style="float: right;">
-        <el-button type="primary" size="medium" @click="exportData">导出为excel</el-button>
+        <el-button :disabled="confirmStage < 2" type="primary" size="medium" @click="exportData">导出为excel</el-button>
       </div>
     </div>
     <div class="card-outer" v-if="fundList">
@@ -23,11 +23,11 @@
           </div>
         </el-checkbox-group>
 
-        <template v-if="isConfirmedFunds">
+        <template v-if="confirmStage > 0">
           <div class="title">选择指标
             <el-button style="margin: 0 12px" type="primary" size="medium" @click="selectMetricsConfirm">确认指标选择</el-button>
           </div>
-          <el-checkbox-group :max="5" v-model="checkedMetrics">
+          <el-checkbox-group :max="20" v-model="checkedMetrics">
             <div style="margin: 24px;text-align:left;" v-if="fund_data">
               <div class="fs-18 line-30 main-color" style="margin:12px 0;">基金档案</div> 
               <el-checkbox style="margin:8px;" v-for="item in fund_data" :label="item" :key="item">{{item}}</el-checkbox>
@@ -38,59 +38,64 @@
             </div>
           </el-checkbox-group>
         </template>
-      </div>
-      <template v-if="fundAchievementTable.length > 0">
-        <div class="title"> 基金业绩 </div>
-        <el-table
-          :data="fundAchievementTable"
-          border
-          stripe
-          class="table"
-          style="width: 100%"
-        >
-          <el-table-column
-            v-for="(header, key) in fundAchievementHeader"
-            :key="key"
-            :label="header"
+        <template v-if="fundAchievementTable.length > 0 && confirmStage > 1">
+          <div class="title"> 基金业绩 </div>
+          <el-table
+            id="fundAchievementTable"
+            :data="fundAchievementTable"
+            border
+            stripe
+            class="table"
+            style="width: 100%"
           >
-            <template slot-scope="scope">
-            {{fundAchievementTable[scope.$index][key]}}
-            </template>
-          </el-table-column>
-        </el-table>
-      </template>
+            <el-table-column
+              v-for="(header, key) in fundAchievementHeader"
+              :key="key"
+              :label="header"
+            >
+              <template slot-scope="scope">
+              {{fundAchievementTable[scope.$index][key]}}
+              </template>
+            </el-table-column>
+          </el-table>
+        </template>
 
-      <template v-if="fundArchiveTable.length > 0">
-        <div class="title"> 基金档案 </div>
-        <el-table
-          :data="fundArchiveTable"
-          border
-          stripe
-          class="table"
-          style="width: 100%"
-        >
-          <el-table-column
-            v-for="(header, key) in fundArchiveHeader"
-            :key="key"
-            :label="header"
+        <template v-if="fundArchiveTable.length > 0 && confirmStage > 1">
+          <div class="title"> 基金档案 </div>
+          <el-table
+            id="fundArchiveTable"
+            :data="fundArchiveTable"
+            border
+            stripe
+            class="table"
+            style="width: 100%"
           >
-            <template slot-scope="scope">
-            {{fundArchiveTable[scope.$index][key]}}
-            </template>
-          </el-table-column>
-        </el-table>
-      </template>
+            <el-table-column
+              v-for="(header, key) in fundArchiveHeader"
+              :key="key"
+              :label="header"
+            >
+              <template slot-scope="scope">
+              {{fundArchiveTable[scope.$index][key]}}
+              </template>
+            </el-table-column>
+          </el-table>
+        </template>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import FileSaver from "file-saver";
+import * as XLSX from 'xlsx'
+
 export default {
   name: 'AnalysisCreate',
   data () {
     return {
       loading: false,
-      isConfirmedFunds: false,
+      confirmStage: 0,
       // list
       fundList: [],
       manager_funds: [],
@@ -111,10 +116,46 @@ export default {
   },
   methods: {
     exportData () {
-      // TODO: 导出为EXCEL
+      var xlsxParam = { raw: true }; // 导出的内容只做解析，不进行格式转换(添加此行代码表格中的百分比就不会再导出的时候被转换成小数点)
+      const wb = XLSX.utils.book_new();
+
+      if (this.fundArchiveTable.length > 0) {
+        const sheet1 = XLSX.utils.table_to_sheet(
+          document.querySelector("#fundArchiveTable"),
+          xlsxParam
+        );
+        XLSX.utils.book_append_sheet(wb, sheet1, '基金档案');
+      }
+      if (this.fundAchievementTable.length > 0) {
+        const sheet2 = XLSX.utils.table_to_sheet(
+          document.querySelector("#fundAchievementTable"),
+          xlsxParam
+        );
+        XLSX.utils.book_append_sheet(wb, sheet2, '基金业绩');
+      }
+
+      const wbout = XLSX.write(wb, {
+        bookType: "xlsx",
+        bookSST: true,
+        type: "array"
+      });
+      // 获取当前的时间戳，用来当文件名
+      try {
+        let str=''
+        this.checkedFunds.map( data => {
+          str += `-${data.name}`
+        })
+        FileSaver.saveAs(
+          new Blob([wbout], { type: "application/octet-stream" }),
+          `赤兔基金-横向比较${str}.xlsx`
+        );
+      } catch (e) {
+        if (typeof console !== "undefined") console.log(e, wbout);
+      }
+      return wbout;
     },
     selectFundsConfirm () {
-      this.isConfirmedFunds = true
+      this.confirmStage += 1
       let idsStr = ''
       this.checkedFunds.map((data,index) => {
         idsStr += index === 0 ? `${data.id}` : `,${data.id}`
@@ -126,6 +167,7 @@ export default {
       })
     },
     selectMetricsConfirm () {
+      this.confirmStage += 1
       let fundachievementsStr = '', fundarchiveStr = '', f1 = 0, f2 = 0
       this.fundAchievementHeader = ['基金名称']
       this.fundArchiveHeader = ['基金名称']
@@ -183,13 +225,13 @@ export default {
         })
     },
     handleCheckAllChange(val) {
-      this.isConfirmedFunds = false
+      this.confirmStage = 0
       this.checkedFunds = val ? this.fundList : [];
       console.log(this.checkedFunds)
       this.isIndeterminate = false;
     },
     handleCheckedFundsChange(value) {
-      this.isConfirmedFunds = false
+      this.confirmStage = 0
       let checkedCount = value.length;
       this.checkAll = checkedCount === this.fundList.length;
       this.isIndeterminate = checkedCount > 0 && checkedCount < this.fundList.length;
