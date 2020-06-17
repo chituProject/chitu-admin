@@ -155,6 +155,10 @@ export default {
       return wbout;
     },
     selectFundsConfirm () {
+      if (this.checkedFunds.length < 2) {
+        this.$message.error('请先选择至少两个基金')
+        return
+      }
       this.confirmStage += 1
       let idsStr = ''
       this.checkedFunds.map((data,index) => {
@@ -167,6 +171,10 @@ export default {
       })
     },
     selectMetricsConfirm () {
+      if (this.checkedMetrics.length < 2) {
+        this.$message('请先选择至少两个指标')
+        return
+      }
       this.confirmStage += 1
       let fundachievementsStr = '', fundarchiveStr = '', f1 = 0, f2 = 0
       this.fundAchievementHeader = ['基金名称']
@@ -227,7 +235,6 @@ export default {
     handleCheckAllChange(val) {
       this.confirmStage = 0
       this.checkedFunds = val ? this.fundList : [];
-      console.log(this.checkedFunds)
       this.isIndeterminate = false;
     },
     handleCheckedFundsChange(value) {
