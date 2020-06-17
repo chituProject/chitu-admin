@@ -9,7 +9,7 @@
       <div class="card-container">
         <div class="title">
           选择基金
-          <el-button style="margin: 0 12px" type="primary" size="medium" @click="selectFundsConfirm">确认基金选择</el-button>
+          <el-button :disabled="checkedFunds.length < 2" style="margin: 0 12px" type="primary" size="medium" @click="selectFundsConfirm">确认基金选择</el-button>
           <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange" border size="medium">全选</el-checkbox>
         </div>
         <el-checkbox-group v-model="checkedFunds" @change="handleCheckedFundsChange">
@@ -25,7 +25,7 @@
 
         <template v-if="confirmStage > 0">
           <div class="title">选择指标
-            <el-button style="margin: 0 12px" type="primary" size="medium" @click="selectMetricsConfirm">确认指标选择</el-button>
+            <el-button :disabled="checkedMetrics.length < 2" style="margin: 0 12px" type="primary" size="medium" @click="selectMetricsConfirm">确认指标选择</el-button>
           </div>
           <el-checkbox-group :max="20" v-model="checkedMetrics">
             <div style="margin: 24px;text-align:left;" v-if="fund_data">
@@ -155,10 +155,6 @@ export default {
       return wbout;
     },
     selectFundsConfirm () {
-      if (this.checkedFunds.length < 2) {
-        this.$message.error('请先选择至少两个基金')
-        return
-      }
       this.confirmStage += 1
       let idsStr = ''
       this.checkedFunds.map((data,index) => {
@@ -171,10 +167,6 @@ export default {
       })
     },
     selectMetricsConfirm () {
-      if (this.checkedMetrics.length < 2) {
-        this.$message('请先选择至少两个指标')
-        return
-      }
       this.confirmStage += 1
       let fundachievementsStr = '', fundarchiveStr = '', f1 = 0, f2 = 0
       this.fundAchievementHeader = ['基金名称']

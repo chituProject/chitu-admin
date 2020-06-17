@@ -17,8 +17,8 @@
         clearable>
       </el-input>
       <div style="float:left;padding: 10px;">
-        <el-button type="primary" size="medium" @click="addFund">添加</el-button>
-        <el-button type="primary" size="medium" @click="simulationConfirm">确认组合选择</el-button>
+        <el-button :disabled="!selectedFund.name || investment < 0.000001" type="primary" size="medium" @click="addFund">添加</el-button>
+        <el-button :disabled="selectedFundsTable.length < 2" type="primary" size="medium" @click="simulationConfirm">确认组合选择</el-button>
       </div>
     </div>
     <div class="card-outer" v-if="selectedFundsTable">
@@ -90,14 +90,6 @@ export default {
   },
   methods: {
     addFund () {
-      if (!this.selectedFund.name) {
-        this.$message.error('请选择基金！')
-        return
-      }
-      if (this.investment < 0.000001) {
-        this.$message.error('请输入正确的投资金额！')
-        return
-      }
       let flag = false
       this.selectedFundsTable.map((item) => {
         if (item[0] === this.selectedFund.name) {
@@ -116,10 +108,6 @@ export default {
       })
     },
     simulationConfirm() {
-      if (this.selectedFundsTable.length < 2) {
-        this.$message.error('请先选择至少两个基金')
-        return
-      }
       // TODO: 请求接口
     },
     getData () {
