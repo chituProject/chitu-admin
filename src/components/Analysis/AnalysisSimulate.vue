@@ -1,6 +1,7 @@
 <template>
   <div class="main-col" v-loading="loading">
     <div class="filter-container">
+      <div style="float:left;">
       <el-select v-model="selectedFund" value-key="id" class="selecter" placeholder="请选择基金">
         <el-option
           v-for="item in fundList"
@@ -16,14 +17,17 @@
         placeholder="投资金额（万元）"
         clearable>
       </el-input>
-      <div style="float:left;padding: 10px;">
         <el-button :disabled="!selectedFund.name || investment < 0.000001" type="primary" size="medium" @click="addFund">添加</el-button>
         <el-button :disabled="selectedFundsTable.length < 2" type="primary" size="medium" @click="simulationConfirm">确认组合选择</el-button>
+      </div>
+      <div style="float: right;">
+        <el-button :disabled="confirmStage < 1" type="primary" size="medium" @click="exportData">导出为excel</el-button>
       </div>
     </div>
     <div class="card-outer" v-if="selectedFundsTable">
       <div class="card-container">
         <el-table
+          id="selectedFundsTable"
           :data="selectedFundsTable"
           border
           stripe
@@ -56,7 +60,13 @@
         </el-table>
 
         <div v-show="simulationTable.length > 0" ref="simulationTableChart" class="achievement-chart"></div>
-        <el-table v-show="simulationTable.length > 0" ref="simulationTable" :data="simulationTable" height="800" stripe>
+        <el-table
+          v-show="simulationTable.length > 0"
+          id="simulationTable"
+          :data="simulationTable"
+          height="800"
+          stripe
+        >
           <el-table-column label="月份" width="90">
             <template slot-scope="scope">
               {{formatTimeMonth(scope.row.time)}}
@@ -75,6 +85,8 @@
 </template>
 
 <script>
+import FileSaver from "file-saver";
+import * as XLSX from 'xlsx'
 import ECharts from 'echarts'
 import 'echarts/lib/chart/line'
 import chartOptions from './chartOptions'
@@ -86,6 +98,7 @@ export default {
     return {
       loading: false,
       investment: 0,
+      confirmStage: 0,
       selectedFund: {},
       fundList: [],
       fundsCombination: [],
@@ -113,9 +126,10 @@ export default {
   methods: {
     formatTimeMonth,
     addFund () {
+      this.confirmStage = 0
       let flag = false
       this.selectedFundsTable.map((item) => {
-        if (item[0] === this.selectedFund.name) {
+        if (item.name === this.selectedFund.name) {
           this.$message.error('请不要重复添加同一基金！')
           flag = true
         }
@@ -125,6 +139,7 @@ export default {
       this.selectedFundsTable.push(this.selectedFund)
     },
     deleteFund(row) {
+      this.confirmStage = 0
       this.selectedFundsTable.map((item, index) => {
         if (item.name === row.name)
           this.selectedFundsTable.splice(index, 1)
@@ -160,8 +175,48 @@ export default {
           })
         })
         .finally(() => {
+          this.confirmStage += 1
           this.loading = false
         })
+    },
+    exportData () {
+      var xlsxParam = { raw: true }; // 导出的内容只做解析，不进行格式转换(添加此行代码表格中的百分比就不会再导出的时候被转换成小数点)
+      const wb = XLSX.utils.book_new();
+
+      if (this.selectedFundsTable.length > 0) {
+        const sheet1 = XLSX.utils.table_to_sheet(
+          document.querySelector("#selectedFundsTable"),
+          xlsxParam
+        );
+        XLSX.utils.book_append_sheet(wb, sheet1, '基金组合');
+      }
+      if (this.simulationTable.length > 0) {
+        const sheet2 = XLSX.utils.table_to_sheet(
+          document.querySelector("#simulationTable"),
+          xlsxParam
+        );
+        XLSX.utils.book_append_sheet(wb, sheet2, '组合净值');
+      }
+
+      const wbout = XLSX.write(wb, {
+        bookType: "xlsx",
+        bookSST: true,
+        type: "array"
+      });
+      // 获取当前的时间戳，用来当文件名
+      try {
+        let str=''
+        this.selectedFundsTable.map( data => {
+          str += `-${data.name}`
+        })
+        FileSaver.saveAs(
+          new Blob([wbout], { type: "application/octet-stream" }),
+          `赤兔基金-模拟组合${str}.xlsx`
+        );
+      } catch (e) {
+        if (typeof console !== "undefined") console.log(e, wbout);
+      }
+      return wbout;
     },
     getData () {
       this.loading = true
@@ -184,7 +239,11 @@ export default {
 
 <style scoped>
   .search {
+    margin: 0 12px;
     width: 200px;
+  }
+  .selecter {
+    margin: 0;
   }
   .filter-container {
     padding: 12px;
