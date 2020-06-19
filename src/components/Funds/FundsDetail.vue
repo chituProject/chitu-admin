@@ -48,6 +48,19 @@
                       <el-form-item v-show="!edit" label="基金类别">
                         <span>{{model.type === 'MANAGER' ? '经理基金' : '指数基金'}}</span>
                       </el-form-item>
+                      <el-form-item v-show="edit" label="基金策略" prop="strategy">
+                        <el-select v-model="model_new.strategy">
+                          <el-option
+                            v-for="item in fund_strategy"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                          </el-option>
+                        </el-select>
+                      </el-form-item>
+                      <el-form-item v-show="!edit" label="基金策略">
+                        <span>{{fund_strategy_name[model.strategy]}}</span>
+                      </el-form-item>
                       <el-form-item v-show="edit && model.type === 'MANAGER'" label="备忘录" prop="memo">
                         <el-input type="textarea" v-model="model_new.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
                       </el-form-item>
@@ -203,6 +216,45 @@ export default {
           name: '指数基金'
         }
       ],
+      fund_strategy: [
+        {
+          label: '量化',
+          value: 'quantification'
+        },
+        {
+          label: '固收',
+          value: 'fixed__income'
+        },
+        {
+          label: '宏观对冲',
+          value: 'macro__hedging'
+        },
+        {
+          label: '纯多头',
+          value: 'pure__bull'
+        },
+        {
+          label: '多空',
+          value: 'long__short'
+        },
+        {
+          label: '复合',
+          value: 'combination'
+        },
+        {
+          label: '其他',
+          value: 'other'
+        }
+      ],
+      fund_strategy_name: {
+        quantification: '量化',
+        fixed__income: '固收',
+        macro__hedging: '宏观对冲',
+        pure__bull: '纯多头',
+        long__short: '多空',
+        combination: '复合',
+        other: '其他'
+      },
       model_new: {
         name: '',
         type: '',
@@ -310,17 +362,31 @@ export default {
       this.loading = true
       this.$axios.patch(`/insider/fund_archive/${this.$route.params.id}/`, parm)
         .then(() => {
-          const promiseAll = parm.fund.map((data) => {
-            return this.$axios.patch(`/insider/fund_achievement/${data.id}/`, data)
-          })
-          Promise.all(promiseAll).then(() => {
-            this.$message.success('保存成功')
-            this.getData()
-          })
+          // 并行
+          // const promiseAll = parm.fund.map((data) => {
+          //   return this.$axios.patch(`/insider/fund_achievement/${data.id}/`, data)
+          // })
+          // Promise.all(promiseAll).then(() => {
+          //   this.$message.success('保存成功')
+          //   this.getData()
+          // })
+          // 串行
+          this.patchAchievement(parm,0)
         }).catch(() => {
           this.$message.error('保存失败')
           this.loading = false
         })
+    },
+    patchAchievement(parm, index) {
+      if (index > parm.fund.length - 1) {
+        this.$message.success('保存成功')
+        this.getData()
+        return
+      } else {
+        this.$axios.patch(`/insider/fund_achievement/${parm.fund[index].id}/`, parm.fund[index]).then(()=>{
+          this.patchAchievement(parm, index + 1)
+        })
+      }
     },
     editFundsCancel () {
       this.edit = false
@@ -332,8 +398,10 @@ export default {
         fund: this.$route.params.id
       }
       this.$axios.post('/insider/fund_achievement/', params).then(res => {
-        console.log(res)
-        this.model_new.fund.push(res.data)
+        if (res.data)
+          this.model_new.fund.push(res.data)
+        else
+          this.$message.error(res.msg)
         this.dialogVisible = false
       })
     }
