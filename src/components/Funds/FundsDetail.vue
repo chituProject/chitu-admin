@@ -59,7 +59,7 @@
                         </el-select>
                       </el-form-item>
                       <el-form-item v-show="!edit" label="基金策略">
-                        <span>{{fund_strategy_name[model.strategy]}}</span>
+                        <span>{{ fund_strategy_name[model.strategy] }}</span>
                       </el-form-item>
                       <el-form-item v-show="edit && model.type === 'MANAGER'" label="备忘录" prop="memo">
                         <el-input type="textarea" v-model="model_new.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
@@ -104,7 +104,10 @@
                   </el-form-item>
                 </el-form>
                 <el-table ref="fundAchievementTable" :data="model.fund" height="600" stripe v-if="!edit">
-                  <el-table-column label="月份" prop="time" width="90">
+                  <el-table-column label="月份" width="90">
+                    <template slot-scope="scope">
+                      {{formatTimeMonth(scope.row.time)}}
+                    </template>
                   </el-table-column>
                   <el-table-column label="净值" prop="net_worth">
                   </el-table-column>
@@ -173,7 +176,7 @@
 import ECharts from 'echarts'
 import 'echarts/lib/chart/line'
 import chartOptions from './chartOptions'
-import { deepCopy } from '@/assets/util'
+import { deepCopy, formatTimeMonth } from '@/assets/util'
 import DetailParas from './Detail/DetailParas'
 
 export default {
@@ -287,9 +290,8 @@ export default {
       type: String
     }
   },
-  computed: {
-  },
   methods: {
+    formatTimeMonth,
     updateGeneralInformation (value) {
       this.$set(this.model_new, 'general_infomation', value)
     },

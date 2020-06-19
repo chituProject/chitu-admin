@@ -54,12 +54,31 @@
             </template>
           </el-table-column>
         </el-table>
+
+        <div v-show="simulationTable.length > 0" ref="simulationTableChart" class="achievement-chart"></div>
+        <el-table v-show="simulationTable.length > 0" ref="simulationTable" :data="simulationTable" height="800" stripe>
+          <el-table-column label="月份" width="90">
+            <template slot-scope="scope">
+              {{formatTimeMonth(scope.row.time)}}
+            </template>
+          </el-table-column>
+          <el-table-column label="净值" prop="net_worth">
+          </el-table-column>
+          <el-table-column label="月收益率" prop="monthly_yield">
+          </el-table-column>
+          <el-table-column label="回撤" prop="fallback">
+          </el-table-column>
+        </el-table>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ECharts from 'echarts'
+import 'echarts/lib/chart/line'
+import chartOptions from './chartOptions'
+import { formatTimeMonth } from '@/assets/util'
 
 export default {
   name: 'AnalysisCreate',
@@ -71,6 +90,8 @@ export default {
       fundList: [],
       fundsCombination: [],
       selectedFundsTable: [],
+      simulationTableChart: null,
+      simulationTable: [],
       edit: true
     }
   },
@@ -82,13 +103,15 @@ export default {
           sum += row.investment * 1.0
         })
         this.selectedFundsTable.map(row=> {
-          row.propotion = `${(row.investment / sum * 100).toFixed(2)}%`
+          row.weight = row.investment / sum
+          row.propotion = `${(row.weight * 100).toFixed(2)}%`
         })
       },
       immediate: true
     }
   },
   methods: {
+    formatTimeMonth,
     addFund () {
       let flag = false
       this.selectedFundsTable.map((item) => {
@@ -108,9 +131,40 @@ export default {
       })
     },
     simulationConfirm() {
-      // TODO: 请求接口
+      this.loading = true
+      let data = []
+      this.selectedFundsTable.map((item) => {
+        const tmp = {
+          fund_id: item.id,
+          weight: item.weight
+        }
+        data.push(tmp)
+      })
+      this.$axios.post('/insider/fund_archive/simulation/', {data:data})
+        .then(res => {
+          this.simulationTable = res.data.results
+          this.simulationTableChart.setOption({
+            title: {
+              text: '净值'
+            },
+            xAxis: {
+              data: this.simulationTable.map((item) => {
+                return item.time
+              })
+            },
+            series: {
+              data: this.simulationTable.map((item) => {
+                return parseFloat(item.net_worth)
+              })
+            }
+          })
+        })
+        .finally(() => {
+          this.loading = false
+        })
     },
     getData () {
+      this.loading = true
       this.$axios.get('/insider/fund_archive/')
         .then(res => {
           this.fundList = res.data.results
@@ -121,6 +175,8 @@ export default {
     }
   },
   mounted () {
+    this.simulationTableChart = ECharts.init(this.$refs.simulationTableChart)
+    this.simulationTableChart.setOption(chartOptions.option)
     this.getData()
   }
 }
@@ -145,5 +201,11 @@ export default {
   }
   .divider + .title {
     margin-top: 40px;
+  }
+  .achievement-chart{
+    width: 800px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>

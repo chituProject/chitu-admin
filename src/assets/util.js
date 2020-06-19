@@ -38,37 +38,14 @@ export function formatTime(tt) {
   return `${y}-${m}-${d} ${time}`
 }
 
-export function formatTimeNew(tt, delta) {
+export function formatTimeMonth(tt) {
   if (!tt) {
     return '无'
   }
-  const end_at = new Date(tt.replace(/-/g, '/').replace(/T/, ' ').substr(0, 16));
-  end_at.setMinutes(end_at.getMinutes() + delta);
-  const y = end_at.getFullYear();
-  const m = end_at.getMonth() + 1;
-  const d = end_at.getDate();
-  const h = end_at.getHours();
-  let minutes = end_at.getMinutes();
-   if (minutes < 10) {
-     minutes = `0${minutes}`;
-   }
-  return `${y}-${m}-${d} ${h+":"+minutes}`
-}
-
-export function formatPrice(n) {
-  if (n) {
-    return (n / 100).toFixed(2);
-  } else {
-    return '0.00'
-  }
-}
-
-export function deformatPrice(str) {
-  let num = parseFloat(str);
-  if (isNaN(num)) {
-    return 0;
-  }
-  return Math.round(num * 100);
+  const a = tt.split('-');
+  const y = a[0];
+  const m = a[1];
+  return `${y}-${m}`
 }
 
 export function isNumber(val) {
@@ -97,8 +74,7 @@ export function randomStr (l) {
 
 export default {
   formatTime,
-  formatPrice,
-  deformatPrice,
+  formatTimeMonth,
   isNumber,
   dateFormat,
   deepCopy,

@@ -1,6 +1,7 @@
 <template>
   <div class="main-col" v-loading="loading">
     <div class="filter-container">
+      <!--
       <el-select v-model="query_key" class="selecter">
         <el-option
           v-for="item in options"
@@ -16,6 +17,7 @@
         clearable>
       </el-input>
       <el-button type="primary" icon="el-icon-search" class="search-button" size="medium" @click.stop="querySearch">搜索</el-button>
+      -->
       <router-link v-can:edit="'Goods'" to="/goods/add"><el-button class="search-button" size="medium" type="primary" icon="el-icon-plus">新增基金</el-button></router-link>
     </div>
     <div class="card-outer">
@@ -36,7 +38,14 @@
           <el-table-column
             prop="name"
             label="基金名称"
-            width="210">
+            width="180">
+          </el-table-column>
+           <el-table-column
+            label="基金策略"
+            width="90">
+            <template slot-scope="scope">
+            {{ fund_strategy_name[scope.row.strategy] }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="recently_monthly_yield"
@@ -74,9 +83,12 @@
             width="100">
           </el-table-column>
           <el-table-column
-            prop="max_fallback_created_at"
-            label="最大回撤日期"
+            label="最大回撤月份"
             width="100">
+            <template slot-scope="scope">
+              {{formatTimeMonth(scope.row.max_fallback_created_at)}}
+            </template>
+
           </el-table-column>
           <el-table-column
             fixed="right"
@@ -106,7 +118,7 @@
           <el-table-column
             prop="name"
             label="指数名称"
-            width="300">
+            width="120">
           </el-table-column>
           <el-table-column
             prop="recently_monthly_yield"
@@ -181,7 +193,7 @@
 </template>
 
 <script>
-import { formatTime } from '@/assets/util'
+import { formatTimeMonth } from '@/assets/util'
 import EmptyPage from '../EmptyPage'
 import SwitchButton from '@/components/SwitchButton'
 
@@ -210,11 +222,20 @@ export default {
       index_funds: [],
       pageSize: 20,
       currentPage: 1,
-      totalCnt: 0
+      totalCnt: 0,
+      fund_strategy_name: {
+        quantification: '量化',
+        fixed__income: '固收',
+        macro__hedging: '宏观对冲',
+        pure__bull: '纯多头',
+        long__short: '多空',
+        combination: '复合',
+        other: '其他'
+      }
     }
   },
   methods: {
-    formatTime,
+    formatTimeMonth,
     getData () {
       this.is_search = false
       this.input = ''

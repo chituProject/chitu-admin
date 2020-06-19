@@ -1,7 +1,7 @@
 <template>
   <div class="main-col">
     <div class="filter-container">
-      <label for="file" class="el-button search-button">
+      <label for="file" class="el-button el-button--primary el-button--medium search-button">
         <i class="el-icon-plus"></i>
         <span>上传文件</span>
       </label>
