@@ -33,16 +33,24 @@
           <el-table-column
             prop="manager"
             label="基金经理"
+            align="center"
             width="90">
           </el-table-column>
           <el-table-column
             prop="name"
             label="基金名称"
-            width="180">
+            align="center"
+            width="150">
           </el-table-column>
            <el-table-column
+            prop="strategy"
+            column-key="strategy"
             label="基金策略"
-            width="90">
+            align="center"
+            width="100"
+            :filters="fund_strategy"
+            :filter-method="filterHandler"
+            >
             <template slot-scope="scope">
             {{ fund_strategy_name[scope.row.strategy] }}
             </template>
@@ -50,49 +58,65 @@
           <el-table-column
             prop="recently_monthly_yield"
             label="最近月收益率"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="one_year_profit"
             label="近一年收益率"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="three_year_profit"
             label="近三年收益率"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="sharpe_ratio"
             label="夏普比率"
+            align="center"
+            sortable
             width="100">
           </el-table-column>
           <el-table-column
             prop="roll_year_win"
             label="滚动一年收益"
-            width="100">
+            sortable
+            align="center"
+            width="120">
           </el-table-column>
           <el-table-column
             prop="ytd"
             label="YTD"
-            width="100">
+            align="center"
+            sortable
+            width="90">
           </el-table-column>
           <el-table-column
             prop="max_fallback"
             label="最大回撤"
+            align="center"
+            sortable
             width="100">
           </el-table-column>
           <el-table-column
             label="最大回撤月份"
-            width="100">
+            align="center"
+            sortable
+            width="120">
             <template slot-scope="scope">
               {{formatTimeMonth(scope.row.max_fallback_created_at)}}
             </template>
-
           </el-table-column>
           <el-table-column
             fixed="right"
             label="用户是否可见"
+            align="center"
             width="100">
             <template slot-scope="scope">
               <switch-button v-model="scope.row.visibility" @toggle="changeVisibility(scope.row)"></switch-button>
@@ -118,51 +142,69 @@
           <el-table-column
             prop="name"
             label="指数名称"
+            align="center"
             width="120">
           </el-table-column>
           <el-table-column
             prop="recently_monthly_yield"
             label="最近月收益率"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="one_year_profit"
             label="近一年收益率"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="three_year_profit"
             label="近三年收益率"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="sharpe_ratio"
             label="夏普比率"
+            align="center"
+            sortable
             width="100">
           </el-table-column>
           <el-table-column
             prop="roll_year_win"
             label="滚动一年收益"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             prop="ytd"
             label="YTD"
-            width="100">
+            align="center"
+            sortable
+            width="90">
           </el-table-column>
           <el-table-column
             prop="max_fallback"
             label="最大回撤"
+            align="center"
+            sortable
             width="100">
           </el-table-column>
           <el-table-column
             prop="max_fallback_created_at"
             label="最大回撤日期"
-            width="100">
+            align="center"
+            sortable
+            width="120">
           </el-table-column>
           <el-table-column
             fixed="right"
             label="用户是否可见"
+            align="center"
             width="100">
             <template slot-scope="scope">
               <switch-button v-model="scope.row.visibility" @toggle="changeVisibility(scope.row)"></switch-button>
@@ -223,6 +265,36 @@ export default {
       pageSize: 20,
       currentPage: 1,
       totalCnt: 0,
+      fund_strategy: [
+        {
+          text: '量化',
+          value: 'quantification'
+        },
+        {
+          text: '固收',
+          value: 'fixed__income'
+        },
+        {
+          text: '宏观对冲',
+          value: 'macro__hedging'
+        },
+        {
+          text: '纯多头',
+          value: 'pure__bull'
+        },
+        {
+          text: '多空',
+          value: 'long__short'
+        },
+        {
+          text: '复合',
+          value: 'combination'
+        },
+        {
+          text: '其他',
+          value: 'other'
+        }
+      ],
       fund_strategy_name: {
         quantification: '量化',
         fixed__income: '固收',
@@ -243,34 +315,40 @@ export default {
       this.currentPage = 1
       this.query()
     },
-    querySearch () {
-      this.is_search = true
-      this.currentPage = 1
-      this.query_value = this.input
-      this.query()
+    filterHandler(value, row, column) {
+      const property = column['property'];
+      return row[property] === value;
     },
+    // querySearch () {
+    //   this.is_search = true
+    //   this.currentPage = 1
+    //   this.query_value = this.input
+    //   this.query()
+    // },
     query () {
       this.loading = true
+      this.manager_funds = []
+      this.index_funds = []
       this.$axios.get('/insider/fund_archive/?page_num=' + this.currentPage +
         '&page_size=' + this.pageSize +
         '&' + this.query_key + '=' + this.query_value)
         .then(res => {
-          console.log(res.data)
           this.totalCnt = res.data.count
-          for (let i = 0; i < res.data.results.length; ++i) {
-            if (res.data.results[i].visible === 'TRUE') {
-              res.data.results[i].visibility = true
+          res.data.results.map(item=>{
+            if (item.visible === 'TRUE') {
+              item.visibility = true
             } else {
-              res.data.results[i].visibility = false
+              item.visibility = false
             }
-            if (res.data.results[i].type === 'MANAGER') {
-              this.manager_funds.push(res.data.results[i])
+            if (item.type === 'MANAGER') {
+              this.manager_funds.push(item)
             } else {
-              this.index_funds.push(res.data.results[i])
+              this.index_funds.push(item)
             }
-          }
-        })
-        .finally(() => {
+          })
+        }).finally(() => {
+          this.loading = false
+        }).catch(() => {
           this.loading = false
         })
     },

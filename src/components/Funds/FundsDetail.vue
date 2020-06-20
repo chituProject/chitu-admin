@@ -19,7 +19,7 @@
                 <div>
                   <el-form ref="spuForm" :model="model_new" :rules="rules" class="demo-table-expand" label-width="100px" label-position="left">
                     <div class="title">基本信息</div>
-                    <div class="spu-table">
+                    <div class="fund_archive-table">
                       <el-form-item label="基金编号">
                         <span>{{$route.params.id}}</span>
                       </el-form-item>
@@ -65,7 +65,7 @@
                         <el-input type="textarea" v-model="model_new.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
                       </el-form-item>
                       <el-form-item v-show="!edit && model.type === 'MANAGER'" label="备忘录">
-                        <span>{{model.memo}}</span>
+                        {{model.memo}}
                       </el-form-item>
                     </div>
                     <div class="divider"></div>
@@ -89,6 +89,30 @@
 
               <!-- 基金业绩信息 -->
               <el-tab-pane label="基金业绩信息" name="achivement" v-if="model.fund">
+                <el-form class="demo-table-expand" label-width="100px" label-position="left">
+                  <div class="title">基本信息</div>
+                  <div class="fund_archive-table">
+                    <el-form-item label="最大回撤">
+                      {{model.max_fallback}}
+                    </el-form-item>
+                    <el-form-item label="最大回撤月份">
+                      {{formatTimeMonth(model.max_fallback_created_at)}}
+                    </el-form-item>
+                    <el-form-item label="滚动一年收益">
+                      {{model.roll_year_win}}
+                    </el-form-item>
+                    <el-form-item label="夏普比例">
+                      {{model.sharpe_ratio}}
+                    </el-form-item>
+                    <el-form-item label="YTD">
+                      {{model.ytd}}
+                    </el-form-item>
+                    <el-form-item label="近三年收益率">
+                      {{model.three_year_profit}}
+                    </el-form-item>
+                  </div>
+                </el-form>
+                <div class="divider"></div>
                 <div ref="fundAchievementChart" class="achievement-chart"></div>
                 <el-form ref="fundAchievementForm" v-if="edit" label-width="160px">
                   <el-form-item
@@ -150,8 +174,9 @@
       width="300"
     >
       <div class="flex-justify_center">
-        <span>请选择创建时间</span>
+        <span>请选择月份<br>（请按时间先后顺序插入，否则可能会有计算错误）</span>
         <el-date-picker
+          style="margin-left:12px;width:220px;"
           v-model="new_time"
           type="month"
           placeholder="选择月份"
@@ -160,9 +185,9 @@
         >
         </el-date-picker>
       </div>
-      <div class="flex-justify_center">
+      <div class="flex-justify_center" style="margin-top:24px;">
         <span>请输入净值</span>
-        <el-input v-model="new_net_worth" size="small" clearable></el-input>
+        <el-input v-model="new_net_worth" type="number" style="margin-left:12px;width:220px;" size="small" clearable></el-input>
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
@@ -430,17 +455,11 @@ export default {
   font-size: 0;
   text-align: left;
 }
-.spu-table {
+.fund_archive-table {
   width: 100%;
   display: grid;
   grid-template-columns: repeat( 2, 1fr );
   grid-column-gap: 10px;
-}
-.sku-table {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat( 2, 1fr );
-  grid-column-gap: 20px;
 }
 .demo-table-expand label {
   /*width: 90px;*/
@@ -472,7 +491,6 @@ export default {
 .achievement-chart{
   width: 800px;
   height: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 48px auto 0;
 }
 </style>

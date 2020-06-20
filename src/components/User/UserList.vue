@@ -28,8 +28,14 @@
           style="width: 100%">
           <el-table-column
             align="center"
+            prop="id"
+            label="注册id"
+            width="90">
+          </el-table-column>
+          <el-table-column
+            align="center"
             label="用户头像"
-            width="80">
+            width="90">
             <template slot-scope="scope">
               <img style="width:100%;height:100%;" :src="scope.row.wechat_avatar_url">
             </template>
@@ -42,13 +48,28 @@
           </el-table-column>
           <el-table-column
             align="center"
-            prop="id"
-            label="openid"
+            prop="wechat_phone_number"
+            label="手机号"
+            width="150">
+          </el-table-column>
+          <el-table-column
+            align="center"
+            label="性别"
+            width="60">
+            <template slot-scope="scope">
+              {{scope.row.wechat_gender === 'male' ? '男' : '女'}}
+            </template>
+          </el-table-column>
+          <el-table-column
+            align="center"
+            prop="wechat_city"
+            label="微信所在地"
             width="150">
           </el-table-column>
           <el-table-column
             align="center"
             label="首次登录时间"
+            sortable
             width="150">
             <template slot-scope="scope">{{ formatTime(scope.row.auth_user.date_joined) }}</template>
           </el-table-column>

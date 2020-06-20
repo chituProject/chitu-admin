@@ -35,6 +35,11 @@
           style="width: 100%"
         >
           <el-table-column
+            label="基金经理"
+            prop="manager"
+            align="center">
+          </el-table-column>
+          <el-table-column
             label="基金名称"
             prop="name"
             align="center">
