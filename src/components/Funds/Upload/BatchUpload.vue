@@ -1,6 +1,16 @@
 <template>
   <div class="main-col">
     <div class="filter-container">
+      <div style="float: right;margin-top:12px;margin-right:12px;">
+        <el-button
+          :disabled="!fileName || disabled"
+          size="medium"
+          type="primary"
+          @click="onSubmit"
+        >
+          导入该表格
+        </el-button>
+      </div>
       <label for="file" class="el-button el-button--primary el-button--medium search-button">
         <i class="el-icon-plus"></i>
         <span>上传文件</span>
@@ -22,18 +32,6 @@
                   </el-table-column>
                 </el-table>
                 <!-- 原始excel表格 END -->
-                <el-form inline>
-                  <el-form-item>
-                    <el-button
-                      class="import-button"
-                      :disabled="disabled"
-                      type="primary"
-                      @click="onSubmit"
-                    >
-                      导入该表格
-                    </el-button>
-                  </el-form-item>
-                </el-form>
               </el-tab-pane>
             </el-tabs>
           </el-col>

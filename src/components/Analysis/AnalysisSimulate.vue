@@ -150,10 +150,20 @@ export default {
       this.selectedFundsTable.push(this.selectedFund)
     },
     deleteFund(row) {
-      this.confirmStage = 0
-      this.selectedFundsTable.map((item, index) => {
-        if (item.name === row.name)
-          this.selectedFundsTable.splice(index, 1)
+      this.$confirm('确认删除此基金？', 'Warning', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.confirmStage = 0
+        this.selectedFundsTable.map((item, index) => {
+          if (item.name === row.name)
+            this.selectedFundsTable.splice(index, 1)
+        })
+        this.$message({
+          type: 'success',
+          message: '删除成功'
+        })
       })
     },
     simulationConfirm() {
