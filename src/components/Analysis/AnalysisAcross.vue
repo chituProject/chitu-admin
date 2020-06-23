@@ -189,8 +189,13 @@ export default {
         res.data.result.map(data => {
           let tmp = [data.fund_name]
           this.fundAchievementHeader.map(header => {
-            if(data.fund_achievement[header])
-              tmp.push(data.fund_achievement[header])
+            let a = data.fund_achievement[header]
+            if (header === '月收益率' || header === '回撤' || header === '成立以来收益' || header === '最近一年收益' || header === '最近二年收益' || header === '最近三年收益' || header === '最近五年收益'
+              || header === '最近一年年化' || header === '最近二年年化' || header === '最近三年年化' || header === '最近五年年化' ){
+              a = `${(parseFloat(a) * 100).toFixed(2)}%`
+            }
+            if (a)
+              tmp.push(a)
           })
           this.fundAchievementTable.push(tmp)
           tmp = [data.fund_name]

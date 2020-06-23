@@ -93,22 +93,22 @@
                   <div class="title">基本信息</div>
                   <div class="fund_archive-table">
                     <el-form-item label="最大回撤">
-                      {{model.max_fallback}}
+                      {{`${(model.max_fallback * 100 ).toFixed(2)}%`}}
                     </el-form-item>
                     <el-form-item label="最大回撤月份">
                       {{formatTimeMonth(model.max_fallback_created_at)}}
                     </el-form-item>
                     <el-form-item label="滚动一年收益">
-                      {{model.roll_year_win}}
+                      {{`${(model.roll_year_win * 100 ).toFixed(2)}%`}}
                     </el-form-item>
                     <el-form-item label="夏普比率">
                       {{model.sharpe_ratio}}
                     </el-form-item>
                     <el-form-item label="YTD">
-                      {{model.ytd}}
+                      {{`${(model.ytd * 100 ).toFixed(2)}%`}}
                     </el-form-item>
                     <el-form-item label="近三年收益率">
-                      {{model.three_year_profit}}
+                      {{`${(model.three_year_profit * 100 ).toFixed(2)}%`}}
                     </el-form-item>
                   </div>
                 </el-form>
@@ -136,30 +136,66 @@
                   <el-table-column label="净值" prop="net_worth">
                   </el-table-column>
                   <el-table-column label="月收益率" prop="monthly_yield">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.monthly_yield * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
                   <el-table-column label="回撤" prop="fallback">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.fallback * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
                   <el-table-column label="滚动一年" prop="roll_year">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.roll_year * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
                   <el-table-column label="夏普比率" prop="sharpe_ratio">
                   </el-table-column>
-                  <el-table-column label="成立以来收益" prop="profit" width="100">
+                  <el-table-column label="成立以来收益" prop="profit">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.profit * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近一年收益" prop="one_year_profit" width="100">
+                  <el-table-column label="最近一年收益" prop="one_year_profit">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.one_year_profit * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近一年年化" prop="one_year_annualized" width="100">
+                  <el-table-column label="最近一年年化" prop="one_year_annualized">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.one_year_annualized * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近两年收益" prop="two_year_profit" width="100">
+                  <el-table-column label="最近两年收益" prop="two_year_profit">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.two_year_profit * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近两年年化" prop="two_year_annualized" width="100">
+                  <el-table-column label="最近两年年化" prop="two_year_annualized">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.two_year_annualized * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近三年收益" prop="three_year_profit" width="100">
+                  <el-table-column label="最近三年收益" prop="three_year_profit">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.three_year_profit * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近三年年化" prop="three_year_annualized" width="100">
+                  <el-table-column label="最近三年年化" prop="three_year_annualized">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.three_year_annualized * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近五年收益" prop="five_year_profit" width="100">
+                  <el-table-column label="最近五年收益" prop="five_year_profit">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.five_year_profit * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
-                  <el-table-column label="最近五年年化" prop="five_year_annualized" width="100">
+                  <el-table-column label="最近五年年化" prop="five_year_annualized">
+                    <template slot-scope="scope">
+                    {{ `${(scope.row.five_year_annualized * 100 ).toFixed(2)}%` }}
+                    </template>
                   </el-table-column>
                 </el-table>
               </el-tab-pane>

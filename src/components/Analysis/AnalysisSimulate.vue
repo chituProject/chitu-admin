@@ -72,7 +72,7 @@
           height="800"
           stripe
         >
-          <el-table-column label="月份" width="90">
+          <el-table-column label="月份">
             <template slot-scope="scope">
               {{formatTimeMonth(scope.row.time)}}
             </template>
@@ -80,8 +80,14 @@
           <el-table-column label="净值" prop="net_worth">
           </el-table-column>
           <el-table-column label="月收益率" prop="monthly_yield">
+            <template slot-scope="scope">
+            {{ `${(scope.row.monthly_yield * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column label="回撤" prop="fallback">
+            <template slot-scope="scope">
+            {{ `${(scope.row.fallback * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
         </el-table>
       </div>
@@ -249,6 +255,7 @@ export default {
   }
   .selecter {
     margin: 0;
+    width: 200px;
   }
   .filter-container {
     padding: 12px;

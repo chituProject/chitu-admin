@@ -30,19 +30,9 @@
           class="table"
           style="width: 100%"
         >
+          <el-table-column prop="manager" label="基金经理" align="center" width="90"></el-table-column>
+          <el-table-column prop="name" label="基金名称" align="center" width="150"></el-table-column>
           <el-table-column
-            prop="manager"
-            label="基金经理"
-            align="center"
-            width="90">
-          </el-table-column>
-          <el-table-column
-            prop="name"
-            label="基金名称"
-            align="center"
-            width="150">
-          </el-table-column>
-           <el-table-column
             prop="strategy"
             column-key="strategy"
             label="基金策略"
@@ -61,6 +51,9 @@
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.recently_monthly_yield * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="one_year_profit"
@@ -68,6 +61,9 @@
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.one_year_profit * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="three_year_profit"
@@ -75,6 +71,9 @@
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.three_year_profit * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="sharpe_ratio"
@@ -89,6 +88,9 @@
             sortable
             align="center"
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.roll_year_win * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="ytd"
@@ -96,6 +98,9 @@
             align="center"
             sortable
             width="90">
+            <template slot-scope="scope">
+            {{ `${(scope.row.ytd * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="max_fallback"
@@ -103,6 +108,9 @@
             align="center"
             sortable
             width="100">
+            <template slot-scope="scope">
+            {{ `${(scope.row.max_fallback * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             label="最大回撤月份"
@@ -116,7 +124,6 @@
           <el-table-column
             fixed="right"
             label="用户是否可见"
-            align="center"
             width="100">
             <template slot-scope="scope">
               <switch-button v-model="scope.row.visibility" @toggle="changeVisibility(scope.row)"></switch-button>
@@ -139,18 +146,16 @@
           stripe
           class="table"
           style="width: 100%">
-          <el-table-column
-            prop="name"
-            label="指数名称"
-            align="center"
-            width="120">
-          </el-table-column>
+          <el-table-column prop="name" label="指数名称" align="center" width="120"></el-table-column>
           <el-table-column
             prop="recently_monthly_yield"
             label="最近月收益率"
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.recently_monthly_yield * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="one_year_profit"
@@ -158,6 +163,9 @@
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.one_year_profit * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="three_year_profit"
@@ -165,6 +173,9 @@
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.three_year_profit * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="sharpe_ratio"
@@ -179,6 +190,9 @@
             align="center"
             sortable
             width="120">
+            <template slot-scope="scope">
+            {{ `${(scope.row.roll_year_win * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="ytd"
@@ -186,6 +200,9 @@
             align="center"
             sortable
             width="90">
+            <template slot-scope="scope">
+            {{ `${(scope.row.ytd * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="max_fallback"
@@ -193,6 +210,9 @@
             align="center"
             sortable
             width="100">
+            <template slot-scope="scope">
+            {{ `${(scope.row.max_fallback * 100 ).toFixed(2)}%` }}
+            </template>
           </el-table-column>
           <el-table-column
             prop="max_fallback_created_at"
