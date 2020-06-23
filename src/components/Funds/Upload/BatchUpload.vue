@@ -127,7 +127,6 @@ export default {
       if (!this.xlsx || !this.sheetTabs) return
       console.log('xlsx', this.xlsx)
 
-      // TODO:需要外套一个循环
       this.sheetTabs.forEach(tab => {
         const sheet = this.xlsx[tab]
         if (!sheet) return
@@ -162,7 +161,6 @@ export default {
               a.net_worth = value
             }
           }
-          // console.log('a', a)
           if (a.time && a.net_worth) {
             fundAchievement.push(a)
           }
@@ -174,18 +172,18 @@ export default {
       console.log(this.fundArchive, this.fundAchievement)
       this.disabled = true
       this.message = '上传中，请稍候'
-      this.percentage = 10
+      this.percentage = 2
 
       this.fundArchive.map((data, index) => {
         this.$axios.post(`/insider/fund_archive/`, data).then((res) => {
           if (res.data.id) {
             this.message = '上传基金业绩中，请稍候'
-            this.percentage += 45.0 / this.sheetTabs.length
+            this.percentage += 49.0 / this.sheetTabs.length
             this.uploadFundAchievement(res.data.id, index)
           } else if (res.data.fund_id && res.data.fund_id[0]) {
             this.$axios.patch(`/insider/fund_archive/${res.data.fund_id[0]}/`, data).then(() => {
               this.message = '上传基金业绩中，请稍候'
-              this.percentage += 45.0 / this.sheetTabs.length
+              this.percentage += 49.0 / this.sheetTabs.length
               this.uploadFundAchievement(res.data.fund_id[0], index)
             }).catch(() => {
               this.disabled = false
@@ -196,22 +194,43 @@ export default {
         })
       })
     },
-    uploadFundAchievement (id, index) {
+    uploadFundAchievement (id, tableIndex) {
       // 逐条添加业绩信息
-      const promiseAll = this.fundAchievement[index].map((data) => {
+      // 并行
+      // const promiseAll = this.fundAchievement[tableIndex].map((data) => {
+      //   const params = {
+      //     ...data,
+      //     fund: id
+      //   }
+      //   return this.$axios.post('/insider/fund_achievement/', params)
+      // })
+      // Promise.all(promiseAll).then(() => {
+      //   this.message = `基金业绩上传完成${this.sended}个，还有${this.sheetTabs.length - this.sended}个`
+      //   this.percentage += 49.0 / this.sheetTabs.length
+      //   this.sended += 1
+      // }).catch(() => {
+      //   this.disabled = false
+      // })
+      // 串行
+      this.patchAchievement(this.fundAchievement[tableIndex], id, 0)
+    },
+    patchAchievement(parm, id, index) {
+      if (index > parm.length - 1) {
+        this.message = '基金业绩上传完成！'
+        this.sended += 1
+        return
+      } else {
+        this.percentage = Math.round(100 * this.percentage + 4900 / (this.sheetTabs.length * parm.length)) / 100
+        // console.log('parm index', parm[index])
         const params = {
-          ...data,
+          ...parm[index],
           fund: id
         }
-        return this.$axios.post('/insider/fund_achievement/', params)
-      })
-      Promise.all(promiseAll).then(() => {
-        this.message = `基金业绩上传完成${this.sended}个，还有${this.sheetTabs.length - this.sended}个`
-        this.percentage += 45.0 / this.sheetTabs.length
-        this.sended += 1
-      }).catch(() => {
-        this.disabled = false
-      })
+        // console.log('params', params)
+        this.$axios.post(`/insider/fund_achievement/`, params).then(()=>{
+          this.patchAchievement(parm, id, index + 1)
+        })
+      }
     }
   }
 }

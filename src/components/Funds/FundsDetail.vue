@@ -101,7 +101,7 @@
                     <el-form-item label="滚动一年收益">
                       {{model.roll_year_win}}
                     </el-form-item>
-                    <el-form-item label="夏普比例">
+                    <el-form-item label="夏普比率">
                       {{model.sharpe_ratio}}
                     </el-form-item>
                     <el-form-item label="YTD">
@@ -141,7 +141,7 @@
                   </el-table-column>
                   <el-table-column label="滚动一年" prop="roll_year">
                   </el-table-column>
-                  <el-table-column label="夏普比例" prop="sharpe_ratio">
+                  <el-table-column label="夏普比率" prop="sharpe_ratio">
                   </el-table-column>
                   <el-table-column label="成立以来收益" prop="profit" width="100">
                   </el-table-column>

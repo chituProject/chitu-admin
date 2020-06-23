@@ -53,8 +53,8 @@
               <detail-paras :edit="true" :title="'运营'" :value="fundArchive.operation" @change="updateOperation"></detail-paras>
               <detail-paras :edit="true" :title="'条款和条件'" :value="fundArchive.article" @change="updateArticle"></detail-paras>
               <detail-paras :edit="true" :title="'组合特征'" :value="fundArchive.combination" @change="updateCombination"></detail-paras>
-              <detail-paras :edit="true" :title="'多投'" :value="fundArchive.long_positions" @change="updateLongPositions"></detail-paras>
-              <detail-paras :edit="true" :title="'空投'" :value="fundArchive.short_positions" @change="updateShortPositions"></detail-paras>
+              <detail-paras :edit="true" :title="'多头'" :value="fundArchive.long_positions" @change="updateLongPositions"></detail-paras>
+              <detail-paras :edit="true" :title="'空头'" :value="fundArchive.short_positions" @change="updateShortPositions"></detail-paras>
               <detail-paras :edit="true" :title="'整体仓位'" :value="fundArchive.designed_exposure" @change="updateDesignedExposure"></detail-paras>
             </template>
           </div>
@@ -175,7 +175,7 @@ export default {
           { required: true, message: '请选择基金类别', trigger: 'blur' }
         ],
         name: [
-          { required: true, message: '基金名称限10字以内', trigger: 'blur', max: 10 }
+          { required: true, message: '基金名称限50字以内', trigger: 'blur', max: 50 }
         ]
       }
     }
@@ -291,22 +291,43 @@ export default {
     },
     uploadFundAchievement (id) {
       // 逐条添加业绩信息
-      const promiseAll = this.fundAchievement.map((data) => {
-        const params = {
-          ...data,
-          fund: id
-        }
-        return this.$axios.post('/insider/fund_achievement/', params)
-      })
-      Promise.all(promiseAll).then(() => {
+      // 并行
+      // const promiseAll = this.fundAchievement.map((data) => {
+      //   const params = {
+      //     ...data,
+      //     fund: id
+      //   }
+      //   return this.$axios.post('/insider/fund_achievement/', params)
+      // })
+      // Promise.all(promiseAll).then(() => {
+      //   this.$message.success('创建成功')
+      //   this.loading = false
+      //   setTimeout(() => {
+      //     this.$router.push(`/goods/detail/${id}/`)
+      //   }, 800)
+      // }).catch(() => {
+      //   this.loading = false
+      // })
+      // 串行
+      this.patchAchievement(this.fundAchievement, id, 0)
+    },
+    patchAchievement(parm, id, index) {
+      if (index > parm.length - 1) {
         this.$message.success('创建成功')
         this.loading = false
         setTimeout(() => {
           this.$router.push(`/goods/detail/${id}/`)
         }, 800)
-      }).catch(() => {
-        this.loading = false
-      })
+        return
+      } else {
+        const params = {
+          ...parm[index],
+          fund: id
+        }
+        this.$axios.post(`/insider/fund_achievement/`, params).then(()=>{
+          this.patchAchievement(parm, id, index + 1)
+        })
+      }
     }
   },
   computed: {
