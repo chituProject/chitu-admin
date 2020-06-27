@@ -135,6 +135,7 @@
             align="center">
             <template slot-scope="scope">
               <el-button @click.stop="openDetail(scope.row.id)" type="primary" size="large">查看</el-button>
+              <el-button @click.stop="deleteFund(scope.row.id)" size="large">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -379,6 +380,21 @@ export default {
     openDetail (id) {
       this.$router.push('/goods/detail/' + id)
       // window.open(window.location.origin + '/#/goods/detail/' + id)
+    },
+    deleteFund (id) {
+      this.$confirm('确认删除此基金？', 'Warning', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$axios.delete(`/insider/fund_archive/${id}/`).then(() => {
+          this.getData()
+          this.$message({
+            type: 'success',
+            message: '删除成功'
+          })
+        })
+      })
     },
     changeVisibility (item) {
       this.loading = true
