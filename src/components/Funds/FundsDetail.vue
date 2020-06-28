@@ -4,7 +4,9 @@
       <el-button style="float: left;" icon="el-icon-back" size="medium" plain @click.stop="goBack">返回</el-button>
       <div style="float: right;">
         <el-button v-if="!edit" size="medium" type="primary" @click="editFund">编辑</el-button>
-        <el-button v-if="!edit" size="medium" @click="deleteFund">删除</el-button>
+        <el-button v-if="!edit && model.fund.length === 0" size="medium" type="primary" @click="addArchive">上传业绩</el-button>
+        <el-button v-if="!edit && model.fund.length > 0" size="medium" @click="deleteArchive">删除业绩</el-button>
+        <el-button v-if="!edit" size="medium" @click="deleteFund">删除基金</el-button>
         <el-button v-if="edit" size="medium" @click="editFundCancel">取消</el-button>
         <el-button v-if="edit && activeName === 'achivement'" @click="dialogVisible = true">新增净值</el-button>
         <el-button v-if="edit" type="primary" v-can:edit="'Goods'" size="medium" @click="editFundConfirm">保存</el-button>
@@ -15,81 +17,9 @@
         <el-row>  
           <el-col :span="24">
             <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-              <!-- 基金档案管理 -->
-              <el-tab-pane label="基金档案管理" name="archive">
-                <div>
-                  <el-form ref="spuForm" :model="model_new" :rules="rules" class="demo-table-expand" label-width="100px" label-position="left">
-                    <div class="title">基本信息</div>
-                    <div class="fund_archive-table">
-                      <el-form-item label="基金编号">
-                        <span>{{$route.params.id}}</span>
-                      </el-form-item>
-                      <el-form-item v-show="edit" label="基金名称" prop="fund_name">
-                        <el-input v-model="model_new.name" clearable></el-input>
-                      </el-form-item>
-                      <el-form-item v-show="!edit" label="基金名称">
-                        <span>{{model.name}}</span>
-                      </el-form-item>
-                      <el-form-item v-show="edit && model.type === 'MANAGER'" label="基金经理" prop="fund_manager">
-                        <el-input v-model="model_new.manager" clearable placeholder= "请输入基金经理"></el-input>
-                      </el-form-item>
-                      <el-form-item v-show="!edit && model.type === 'MANAGER'" label="基金经理">
-                        <span>{{model.manager}}</span>
-                      </el-form-item>
-                      <el-form-item v-show="edit" label="基金类别" prop="fund_type">
-                        <el-select v-model="model_new.type">
-                          <el-option
-                            v-for="item in fund_type"
-                            :key="item.id"
-                            :label="item.name"
-                            :value="item.id">
-                          </el-option>
-                        </el-select>
-                      </el-form-item>
-                      <el-form-item v-show="!edit" label="基金类别">
-                        <span>{{model.type === 'MANAGER' ? '经理基金' : '指数基金'}}</span>
-                      </el-form-item>
-                      <el-form-item v-show="edit" label="基金策略" prop="strategy">
-                        <el-select v-model="model_new.strategy">
-                          <el-option
-                            v-for="item in fund_strategy"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                          </el-option>
-                        </el-select>
-                      </el-form-item>
-                      <el-form-item v-show="!edit" label="基金策略">
-                        <span>{{ fund_strategy_name[model.strategy] }}</span>
-                      </el-form-item>
-                      <el-form-item v-show="edit && model.type === 'MANAGER'" label="备忘录" prop="memo">
-                        <el-input type="textarea" v-model="model_new.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
-                      </el-form-item>
-                      <el-form-item v-show="!edit && model.type === 'MANAGER'" label="备忘录">
-                        {{model.memo}}
-                      </el-form-item>
-                    </div>
-                    <div class="divider"></div>
-                    <!-- 概述 -->
-                    <detail-paras :edit="edit" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>
-                    <!-- 运营 -->
-                    <detail-paras :edit="edit" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
-                    <!-- 条款和条件 -->
-                    <detail-paras :edit="edit" :title="'条款和条件'" :value="model.article" @change="updateArticle"></detail-paras>
-                    <!-- 组合特征 -->
-                    <detail-paras :edit="edit" :title="'组合特征'" :value="model.combination" @change="updateCombination"></detail-paras>
-                    <!-- 多头 -->
-                    <detail-paras :edit="edit" :title="'多头'" :value="model.long_positions" @change="updateLongPositions"></detail-paras>
-                    <!-- 空头 -->
-                    <detail-paras :edit="edit" :title="'空头'" :value="model.short_positions" @change="updateShortPositions"></detail-paras>
-                    <!-- 总体仓位 -->
-                    <detail-paras :edit="edit" :title="'总体仓位'" :value="model.designed_exposure" @change="updateDesignedExposure"></detail-paras>
-                  </el-form>
-                </div>
-              </el-tab-pane>
-
               <!-- 基金业绩信息 -->
-              <el-tab-pane label="基金业绩信息" name="achivement" v-if="model.fund">
+              <el-tab-pane label="基金业绩信息" name="achivement">
+              <template v-if="model.fund && model.fund.length > 0">
                 <el-form class="demo-table-expand" label-width="100px" label-position="left">
                   <div class="title">基本信息</div>
                   <div class="fund_archive-table">
@@ -224,6 +154,91 @@
                     </template>
                   </el-table-column>
                 </el-table>
+              </template>
+              <template v-else>
+                <el-form class="demo-table-expand" label-width="100px" label-position="left">
+                  <el-form-item label="业绩信息" prop="achievement">
+                    <label for="file" class="el-button search-button">
+                      <i class="el-icon-plus"></i>
+                      <span>上传文件</span>
+                    </label>
+                    <input id="file" type="file" @change="onFileChange" />
+                    <h3 class="filename">{{ fileName }}</h3>
+                  </el-form-item>
+                </el-form>
+              </template>
+              </el-tab-pane>
+              <!-- 基金档案管理 -->
+              <el-tab-pane label="基金档案管理" name="archive">
+                <div>
+                  <el-form ref="spuForm" :model="model_new" :rules="rules" class="demo-table-expand" label-width="100px" label-position="left">
+                    <div class="title">基本信息</div>
+                    <div class="fund_archive-table">
+                      <el-form-item label="基金编号">
+                        <span>{{$route.params.id}}</span>
+                      </el-form-item>
+                      <el-form-item v-show="edit" label="基金名称" prop="fund_name">
+                        <el-input v-model="model_new.name" clearable></el-input>
+                      </el-form-item>
+                      <el-form-item v-show="!edit" label="基金名称">
+                        <span>{{model.name}}</span>
+                      </el-form-item>
+                      <el-form-item v-show="edit && model.type === 'MANAGER'" label="基金经理" prop="fund_manager">
+                        <el-input v-model="model_new.manager" clearable placeholder= "请输入基金经理"></el-input>
+                      </el-form-item>
+                      <el-form-item v-show="!edit && model.type === 'MANAGER'" label="基金经理">
+                        <span>{{model.manager}}</span>
+                      </el-form-item>
+                      <el-form-item v-show="edit" label="基金类别" prop="fund_type">
+                        <el-select v-model="model_new.type">
+                          <el-option
+                            v-for="item in fund_type"
+                            :key="item.id"
+                            :label="item.name"
+                            :value="item.id">
+                          </el-option>
+                        </el-select>
+                      </el-form-item>
+                      <el-form-item v-show="!edit" label="基金类别">
+                        <span>{{model.type === 'MANAGER' ? '经理基金' : '指数基金'}}</span>
+                      </el-form-item>
+                      <el-form-item v-show="edit" label="基金策略" prop="strategy">
+                        <el-select v-model="model_new.strategy">
+                          <el-option
+                            v-for="item in fund_strategy"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                          </el-option>
+                        </el-select>
+                      </el-form-item>
+                      <el-form-item v-show="!edit" label="基金策略">
+                        <span>{{ fund_strategy_name[model.strategy] }}</span>
+                      </el-form-item>
+                      <el-form-item v-show="edit && model.type === 'MANAGER'" label="备忘录" prop="memo">
+                        <el-input type="textarea" v-model="model_new.memo" :rows="5" placeholder= "请输入备忘录"></el-input>
+                      </el-form-item>
+                      <el-form-item v-show="!edit && model.type === 'MANAGER'" label="备忘录">
+                        {{model.memo}}
+                      </el-form-item>
+                    </div>
+                    <div class="divider"></div>
+                    <!-- 概述 -->
+                    <detail-paras :edit="edit" :title="'概述'" :value="model.general_infomation" @change="updateGeneralInformation"></detail-paras>
+                    <!-- 运营 -->
+                    <detail-paras :edit="edit" :title="'运营'" :value="model.operation" @change="updateOperation"></detail-paras>
+                    <!-- 条款和条件 -->
+                    <detail-paras :edit="edit" :title="'条款和条件'" :value="model.article" @change="updateArticle"></detail-paras>
+                    <!-- 组合特征 -->
+                    <detail-paras :edit="edit" :title="'组合特征'" :value="model.combination" @change="updateCombination"></detail-paras>
+                    <!-- 多头 -->
+                    <detail-paras :edit="edit" :title="'多头'" :value="model.long_positions" @change="updateLongPositions"></detail-paras>
+                    <!-- 空头 -->
+                    <detail-paras :edit="edit" :title="'空头'" :value="model.short_positions" @change="updateShortPositions"></detail-paras>
+                    <!-- 总体仓位 -->
+                    <detail-paras :edit="edit" :title="'总体仓位'" :value="model.designed_exposure" @change="updateDesignedExposure"></detail-paras>
+                  </el-form>
+                </div>
               </el-tab-pane>
             </el-tabs>
           </el-col>  
@@ -262,6 +277,7 @@
 <script>
 import ECharts from 'echarts'
 import 'echarts/lib/chart/line'
+import { parseFile } from './Upload/options'
 import chartOptions from './chartOptions'
 import { deepCopy, formatTimeMonth } from '@/assets/util'
 import DetailParas from './Detail/DetailParas'
@@ -275,7 +291,7 @@ export default {
     return {
       loading: false,
       edit: false,
-      activeName: 'archive',
+      activeName: 'achivement',
       dialogVisible: false,
       new_time: '',
       new_net_worth: '',
@@ -369,12 +385,26 @@ export default {
           { message: '基金经理名限10字以内', trigger: 'blur', max: 10 }
         ]
       },
+      fileName: null, // 文件名称
+      xlsx: {},
+      fundAchievement: [], // 业绩信息
       fundAchievementChart: null
     }
   },
   props: {
     id: {
       type: String
+    }
+  },
+  computed: {
+    // 当前选中表格
+    sheet () {
+      if (!this.xlsx) return [{}]
+      return this.xlsx[this.sheetTabs[0]] || [{}]
+    },
+    // 所有表格名称
+    sheetTabs () {
+      return Object.keys(this.xlsx)
     }
   },
   methods: {
@@ -425,6 +455,56 @@ export default {
           }
         })
     },
+    async onFileChange (e) {
+      this.loading = true
+      const files = e.target.files
+      if (files && files[0]) {
+        this.fileName = files[0].name
+        this.xlsx = await parseFile(files[0])
+        this.loading = false
+        this.initializeForm()
+      }
+    },
+    initializeForm () {
+      if (!this.xlsx || !this.sheetTabs) return
+      console.log('xlsx', this.xlsx[this.sheetTabs[0]])
+
+      const sheet = this.xlsx[this.sheetTabs[0]]
+      if (!sheet) return
+      // 处理首行填充
+      // for (let key in Object.keys(sheet[0])) {
+      //   const result = Object.keys(sheet[0])[key]
+      //   const value = Object.values(this.sheet[0])[key]
+      //   // console.log(value)
+      //   if (result.includes('基金名')) {
+      //     this.fundArchive.name = value
+      //   } else if (result.match(/(经理|manager)/i)) {
+      //     this.fundArchive.type = 'MANAGER'
+      //     this.fundArchive.manager = value
+      //   }
+      // }
+      let fundAchievement = []
+      sheet.forEach(col => {
+        let a = {}
+        // const a = rule(col)
+        // console.log('col', col, Object.keys(col))
+        for (let key in Object.keys(col)) {
+          const result = Object.keys(col)[key]
+          const value = Object.values(col)[key]
+          if (result.match(/(日期|date)/i)) {
+            a.time = value
+          } else if (result.match(/(净值|value)/i)) {
+            a.net_worth = value
+          }
+        }
+        // console.log('a', a)
+        if (a.time && a.net_worth) {
+          fundAchievement.push(a)
+        }
+      })
+      this.fundAchievement = fundAchievement
+      console.log(this.fundAchievement)
+    },
     goBack () {
       if (this.edit) {
         this.editFundCancel()
@@ -466,8 +546,30 @@ export default {
           this.loading = false
         })
     },
+    addArchive() {
+      this.postAchievement( this.fundAchievement, this.$route.params.id , 0)
+    },
+    postAchievement(parm, id, index) {
+      if (index > parm.length - 1) {
+        this.$message.success('创建成功')
+        this.loading = false
+        setTimeout(() => {
+          this.$router.go(0)
+        }, 800)
+        return
+      } else {
+        const params = {
+          ...parm[index],
+          fund: id
+        }
+        this.$axios.post(`/insider/fund_achievement/`, params).then(()=>{
+          this.postAchievement(parm, id, index + 1)
+        })
+      }
+    },
     patchAchievement(parm, index) {
       if (index > parm.fund.length - 1) {
+        console.log(index, parm)
         this.$message.success('保存成功')
         this.getData()
         return
@@ -476,6 +578,23 @@ export default {
           this.patchAchievement(parm, index + 1)
         })
       }
+    },
+    deleteArchive() {
+      this.$confirm('确认删除基金业绩？', 'Warning', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$axios.delete(`/insider/fund_archive/${this.$route.params.id}/fund_achievement_del/`).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功'
+          })
+          setTimeout(() => {
+            this.$router.go(0)
+          }, 800)
+        })
+      })
     },
     deleteFund() {
       this.$confirm('确认删除此基金？', 'Warning', {

@@ -117,10 +117,6 @@ export default {
           value: 'other'
         }
       ],
-      fileName: null, // 文件名称
-      xlsx: {},
-      // Excel预定义字段
-      currentSheet: 0,
       fundArchive: {
         type: '',
         name: '',
@@ -169,6 +165,8 @@ export default {
           {key: '目标净暴露范围', value: ''}
         ]
       },
+      fileName: null, // 文件名称
+      xlsx: {},
       fundAchievement: [], // 业绩信息
       rules: {
         type: [
@@ -225,7 +223,7 @@ export default {
       for (let key in Object.keys(sheet[0])) {
         const result = Object.keys(sheet[0])[key]
         const value = Object.values(this.sheet[0])[key]
-        console.log(value)
+        // console.log(value)
         if (result.includes('基金名')) {
           this.fundArchive.name = value
         } else if (result.match(/(经理|manager)/i)) {
@@ -309,9 +307,9 @@ export default {
       //   this.loading = false
       // })
       // 串行
-      this.patchAchievement(this.fundAchievement, id, 0)
+      this.postAchievement(this.fundAchievement, id, 0)
     },
-    patchAchievement(parm, id, index) {
+    postAchievement(parm, id, index) {
       if (index > parm.length - 1) {
         this.$message.success('创建成功')
         this.loading = false
@@ -325,7 +323,7 @@ export default {
           fund: id
         }
         this.$axios.post(`/insider/fund_achievement/`, params).then(()=>{
-          this.patchAchievement(parm, id, index + 1)
+          this.postAchievement(parm, id, index + 1)
         })
       }
     }
@@ -347,16 +345,6 @@ export default {
     sheetColumns () {
       if (!this.xlsx) return []
       return Object.keys(this.sheet[0])
-    },
-    tableModel () {
-      const tab = `${this.sheetTabs[0]}`
-      const firstEntryValues = Object.values(this.sheet[0])
-      return this.sheetColumns.map((col, index) => ({
-        col,
-        example: firstEntryValues[index],
-        type: `${tab}-${col}-type`,
-        value: `${tab}-${col}-value`
-      }))
     }
   }
 }
