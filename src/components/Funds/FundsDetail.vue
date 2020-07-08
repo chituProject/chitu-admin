@@ -4,11 +4,11 @@
       <el-button style="float: left;" icon="el-icon-back" size="medium" plain @click.stop="goBack">返回</el-button>
       <div style="float: right;">
         <el-button v-if="!edit" size="medium" type="primary" @click="editFund">编辑</el-button>
-        <el-button v-if="!edit && model.fund.length === 0" size="medium" type="primary" @click="addArchive">上传业绩</el-button>
+        <el-button v-if="!edit && model.fund.length === 0" size="medium" type="primary" @click="addArchive(fundAchievement)">上传业绩</el-button>
         <el-button v-if="!edit && model.fund.length > 0" size="medium" @click="deleteArchive">删除业绩</el-button>
         <el-button v-if="!edit" size="medium" @click="deleteFund">删除基金</el-button>
         <el-button v-if="edit" size="medium" @click="editFundCancel">取消</el-button>
-        <el-button v-if="edit && activeName === 'achivement'" @click="dialogVisible = true">新增净值</el-button>
+        <el-button v-if="edit && activeName === 'achievement'" @click="dialogVisible = true">新增净值</el-button>
         <el-button v-if="edit" type="primary" v-can:edit="'Goods'" size="medium" @click="editFundConfirm">保存</el-button>
       </div>
     </div>
@@ -18,7 +18,7 @@
           <el-col :span="24">
             <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
               <!-- 基金业绩信息 -->
-              <el-tab-pane label="基金业绩信息" name="achivement">
+              <el-tab-pane label="基金业绩信息" name="achievement">
               <template v-if="model.fund && model.fund.length > 0">
                 <el-form class="demo-table-expand" label-width="100px" label-position="left">
                   <div class="title">基本信息</div>
@@ -48,7 +48,7 @@
                 <el-form ref="fundAchievementForm" v-if="edit" label-width="160px">
                   <el-form-item
                     v-for="(ff, index) in model_new.fund"
-                    :label="`${ff.time}净值`"
+                    :label="`${formatTimeMonth(ff.time)}净值`"
                     :key="ff.id"
                     :prop="'funds.' + index + '.net_worth'"
                     :rules="[
@@ -251,7 +251,7 @@
       width="300"
     >
       <div class="flex-justify_center">
-        <span>请选择月份<br>（请按时间先后顺序插入，否则可能会有计算错误）</span>
+        <span>请选择月份<br>（请按时间先后顺序插入，否则可能会有计算错误的问题）</span>
         <el-date-picker
           style="margin-left:12px;width:220px;"
           v-model="new_time"
@@ -291,7 +291,7 @@ export default {
     return {
       loading: false,
       edit: false,
-      activeName: 'achivement',
+      activeName: 'achievement',
       dialogVisible: false,
       new_time: '',
       new_net_worth: '',
@@ -522,44 +522,56 @@ export default {
     editFundConfirm () {
       this.$refs.spuForm.validate((valid) => {
         if (valid) {
-          this.handleEditConfirm(this.model_new)
+          if (this.activeName === 'achievement')
+            this.handleEditAchievement()
+          else
+            this.handleEditArchive(this.model_new)
           this.edit = false
         }
       })
     },
-    handleEditConfirm (parm) {
+    handleEditArchive (parm) {
       this.loading = true
       this.$axios.patch(`/insider/fund_archive/${this.$route.params.id}/`, parm)
         .then(() => {
-          // 并行
-          // const promiseAll = parm.fund.map((data) => {
-          //   return this.$axios.patch(`/insider/fund_achievement/${data.id}/`, data)
-          // })
-          // Promise.all(promiseAll).then(() => {
-          //   this.$message.success('保存成功')
-          //   this.getData()
-          // })
-          // 串行
-          this.patchAchievement(parm,0)
+          this.$message.success('保存成功')
+          this.loading = false
         }).catch(() => {
           this.$message.error('保存失败')
           this.loading = false
         })
     },
-    addArchive() {
-      this.postAchievement( this.fundAchievement, this.$route.params.id , 0)
+    handleEditAchievement () {
+      // 并行
+      // const promiseAll = parm.fund.map((data) => {
+      //   return this.$axios.patch(`/insider/fund_achievement/${data.id}/`, data)
+      // })
+      // Promise.all(promiseAll).then(() => {
+      //   this.$message.success('保存成功')
+      //   this.getData()
+      // })
+      // 串行
+      // this.patchAchievement(parm,0)
+      this.$axios.delete(`/insider/fund_archive/${this.$route.params.id}/fund_achievement_del/`).then(() => {
+        this.addArchive(this.model_new.fund)
+      })
+    },
+    addArchive(parm) {
+      this.postAchievement(parm, this.$route.params.id , 0)
     },
     postAchievement(parm, id, index) {
+      this.loading = true
       if (index > parm.length - 1) {
         this.$message.success('创建成功')
         this.loading = false
-        setTimeout(() => {
-          this.$router.go(0)
-        }, 800)
+        // setTimeout(() => {
+        //   this.$router.go(0)
+        // }, 800)
         return
       } else {
         const params = {
-          ...parm[index],
+          time: formatTimeMonth(parm[index].time),
+          net_worth: parm[index].net_worth,
           fund: id
         }
         this.$axios.post(`/insider/fund_achievement/`, params).then(()=>{
@@ -567,18 +579,19 @@ export default {
         })
       }
     },
-    patchAchievement(parm, index) {
-      if (index > parm.fund.length - 1) {
-        console.log(index, parm)
-        this.$message.success('保存成功')
-        this.getData()
-        return
-      } else {
-        this.$axios.patch(`/insider/fund_achievement/${parm.fund[index].id}/`, parm.fund[index]).then(()=>{
-          this.patchAchievement(parm, index + 1)
-        })
-      }
-    },
+    // patchAchievement(parm, index) {
+    //   if (index > parm.fund.length - 1) {
+    //     console.log(index, parm)
+    //     this.$message.success('保存成功')
+    //     this.getData()
+    //     return
+    //   } else {
+    //     console.log(parm.fund[index])
+    //     this.$axios.patch(`/insider/fund_achievement/${parm.fund[index].id}/`, parm.fund[index]).then(()=>{
+    //       this.patchAchievement(parm, index + 1)
+    //     })
+    //   }
+    // },
     deleteArchive() {
       this.$confirm('确认删除基金业绩？', 'Warning', {
         confirmButtonText: '确认',

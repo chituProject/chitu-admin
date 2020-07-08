@@ -14,7 +14,7 @@
         </div>
         <el-checkbox-group v-model="checkedFunds" @change="handleCheckedFundsChange">
           <div style="margin: 24px;text-align:left;">
-            <div class="fs-18 line-30 main-color" style="margin:12px 0;">经理基金</div> 
+            <div class="fs-18 line-30 main-color" style="margin:12px 0;">赤兔精选基金</div> 
             <el-checkbox style="margin:8px;" v-for="item in manager_funds" :label="item" :key="item.id">{{item.name}}</el-checkbox>
           </div>
           <div style="margin: 24px;text-align:left;">
@@ -212,11 +212,6 @@ export default {
       this.$axios.get('/insider/fund_archive/')
         .then(res => {
           for (let i = 0; i < res.data.results.length; ++i) {
-            if (res.data.results[i].visible === 'TRUE') {
-              res.data.results[i].visibility = true
-            } else {
-              res.data.results[i].visibility = false
-            }
             if (res.data.results[i].type === 'MANAGER') {
               this.manager_funds.push(res.data.results[i])
             } else {
