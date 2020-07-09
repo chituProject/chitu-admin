@@ -14,6 +14,7 @@ if [ $# = 1 ];then
         echo "当前上线服务器：test-server"
         addr="ubuntu@139.198.5.160"
         path="/var/www"
+        mv src/dev-config.js src/config.js
         npm run build
         tar -cf admin_dist.tar dist
         read -s -n1 -p "输入服务器密码，上传dist文件夹，按任意键继续..."
@@ -22,6 +23,20 @@ if [ $# = 1 ];then
         read -s -n1 -p "再次输入服务器密码，确认覆盖ctadmin，按任意键继续..."
         echo ""
         ssh -tt "$addr" "cd $path && rm -rf ctadmin && tar -xvf admin_dist.tar && mv dist ctadmin"
+    elif [ $1 = "prod" ];then
+        echo "当前上线服务器：prod-server"
+        addr="root@121.196.61.146"
+        path="/var/www"
+        mv src/prod-config.js src/config.js
+        npm run build
+        tar -cf admin_dist.tar dist
+        read -s -n1 -p "输入服务器密码，上传dist文件夹，按任意键继续..."
+        echo ""
+        scp -r admin_dist.tar $addr:$path
+        read -s -n1 -p "再次输入服务器密码，确认覆盖ctadmin，按任意键继续..."
+        echo ""
+        ssh -tt "$addr" "cd $path && rm -rf ctadmin && tar -xvf admin_dist.tar && mv dist ctadmin"
+        mv src/dev-config.js src/config.js
     else
         echo "Usage: $0 [test|prod]"
         echo "You provided $1 as parameter 1."
