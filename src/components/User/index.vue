@@ -32,6 +32,11 @@ export default {
           name: '联系方式管理',
           url: '/user/contact',
           can: 'view User'
+        },
+        {
+          name: '修改密码',
+          url: '/user/changepwd',
+          can: 'view User'
         }
       ]
     }

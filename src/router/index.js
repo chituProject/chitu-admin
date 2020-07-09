@@ -13,6 +13,7 @@ import AnalysisSimulate from '@/components/Analysis/AnalysisSimulate'
 import User from '@/components/User/index'
 import UserList from '@/components/User/UserList'
 import UserContact from '@/components/User/UserContact'
+import UserPWD from '@/components/User/Changepwd'
 import axios from '@/assets/axios'
 import store from '@/store/index'
 import { Message } from 'element-ui'
@@ -63,6 +64,13 @@ let router = new Router({
         {
           path: 'contact',
           component: UserContact,
+          meta: {
+            can: 'view User'
+          }
+        },
+        {
+          path: 'changepwd',
+          component: UserPWD,
           meta: {
             can: 'view User'
           }
