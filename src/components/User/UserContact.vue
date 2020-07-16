@@ -3,12 +3,11 @@
     <div class="filter-container">
       <div style="float: right;">
         <el-button type="primary" size="medium" @click="save">保存</el-button>
-        <!--<el-button type="primary" size="medium" @click="save" v-can:edit="'Platform'">保存</el-button>-->
       </div>
     </div>
     <div class="card-outer" v-if="model">
       <div class="card-container">
-        <el-form ref="settingForm" :model="model" :rules="rules" class="demo-table-expand" label-width="160px" label-position="left">
+        <el-form ref="settingForm" :model="model" :rules="rules" class="demo-table-expand" label-width="120px" label-position="left">
           <el-form-item label="联系经理" prop="name" type="name">
             <el-input v-model="model.name" clearable placeholder="请输入"></el-input>
           </el-form-item>

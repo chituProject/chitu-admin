@@ -53,7 +53,7 @@ export default {
           { required: true, message: '请输入新密码' }
         ],
         checkPass: [
-          { required: true, message: '请再次输入密码', validator: validatePass }
+          { required: true, message: '两次输入的密码不一致', validator: validatePass }
         ]
       }
     }
@@ -84,9 +84,9 @@ export default {
               console.log(res)
               this.successful = true
               // Message.success('修改密码成功')
-              setTimeout(() => {
-                this.$router.replace('/login')
-              }, 5000)
+              // setTimeout(() => {
+              //   this.$router.replace('/login')
+              // }, 5000)
             })
             .catch(error => {
               console.log('error', error)
