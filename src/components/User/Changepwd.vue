@@ -79,14 +79,13 @@ export default {
             ...this.resetForm,
             username: this.username
           }
-          this.$axios.post('/insider/session/', this.deleteEmptyString(form))
-            .then(res => {
-              console.log(res)
+          this.$axios.patch('/insider/session/', this.deleteEmptyString(form))
+            .then(() => {
               this.successful = true
-              // Message.success('修改密码成功')
-              // setTimeout(() => {
-              //   this.$router.replace('/login')
-              // }, 5000)
+              Message.success('修改密码成功')
+              setTimeout(() => {
+                this.$router.replace('/login')
+              }, 5000)
             })
             .catch(error => {
               console.log('error', error)
