@@ -4,6 +4,8 @@
       <el-button style="float: left;" icon="el-icon-back" size="medium" plain @click.stop="goBack">返回</el-button>
       <div style="float: right;">
         <el-button v-if="!edit" size="medium" type="primary" @click="editFund">编辑</el-button>
+        <el-button v-if="!edit && isHighWater" size="medium" type="primary" @click="HighWater">取消高水位</el-button>
+        <el-button v-if="!edit && !isHighWater" size="medium" type="primary" @click="HighWater">一键高水位</el-button>
         <el-button v-if="!edit && model.fund.length === 0" size="medium" type="primary" @click="addArchive(fundAchievement)">上传业绩</el-button>
         <el-button v-if="!edit && model.fund.length > 0" size="medium" @click="deleteArchive">删除业绩</el-button>
         <el-button v-if="!edit" size="medium" @click="deleteFund">删除基金</el-button>
@@ -293,6 +295,7 @@ export default {
       edit: false,
       activeName: 'achievement',
       dialogVisible: false,
+      isHighWater: false,
       new_time: '',
       new_net_worth: '',
       model: {
@@ -434,6 +437,7 @@ export default {
       this.loading = true
       this.$axios.get(`/insider/fund_archive/${this.$route.params.id}/`)
         .then(res => {
+          this.isHighWater = false
           this.model = res.data
           this.loading = false
           if (res.data.fund) {
@@ -642,6 +646,18 @@ export default {
           this.$message.error(res.msg)
         this.dialogVisible = false
       })
+    },
+    HighWater() {
+      this.loading = true
+      if(!this.isHighWater) {
+        this.$axios.get(`/insider/fund_high_water/?fund=${this.$route.params.id}`).then(res => {
+          this.isHighWater = true
+          this.model.fund = res.data
+          this.loading = false
+        })
+      } else {
+        this.getData()
+      }
     }
   },
   created () {
