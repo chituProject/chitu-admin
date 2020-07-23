@@ -66,8 +66,8 @@
                       {{formatTimeMonth(scope.row.time)}}
                     </template>
                   </el-table-column>
-                  <el-table-column label="净值" prop="net_worth">
-                  </el-table-column>
+                  <el-table-column v-if="!isHighWater" label="净值" prop="net_worth"></el-table-column>
+                  <el-table-column v-else label="高水位净值" prop="high_water_net_worth"></el-table-column>
                   <el-table-column label="月收益率" prop="monthly_yield">
                     <template slot-scope="scope">
                     {{ `${(scope.row.monthly_yield * 100 ).toFixed(2)}%` }}
@@ -653,6 +653,22 @@ export default {
         this.$axios.get(`/insider/fund_high_water/?fund=${this.$route.params.id}`).then(res => {
           this.isHighWater = true
           this.model.fund = res.data
+          // 图例更新为高水位
+          this.fundAchievementChart.setOption({
+            title: {
+              text: '净值'
+            },
+            xAxis: {
+              data: res.data.map((item) => {
+                return item.time
+              })
+            },
+            series: {
+              data: res.data.map((item) => {
+                return parseFloat(item.high_water_net_worth)
+              })
+            }
+          })
           this.loading = false
         })
       } else {
